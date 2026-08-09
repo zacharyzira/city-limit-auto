@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory | City Limit Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory.html">
+<link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory.html">
+<link rel="icon" href="assets/img/logo.png" type="image/png">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="City Limit Auto logo" class="brand-mark">
+      <div class="brand-text">City Limit Auto<span>Licensed CA Trailer Dealer</span></div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inventory.html" aria-current="page">Inventory</a></li>
+        <li><a href="repairs.html">Repairs</a></li>
+        <li><a href="financing.html">Financing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+    <a href="/es/inventory.html" class="lang-toggle" hreflang="es" lang="es">ES</a>
+    <button class="mobile-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-header">
+    <div class="wrap">
+      <div class="section-eyebrow">Full Stock List</div>
+      <h1>Inventory</h1>
+      <p>Every unit is inspected and priced before it hits the lot. Filter by type or search a unit number.</p>
+      <p style="margin-top:10px;"><strong>Price includes DMV paperwork</strong> — registration, plates, and VIN verification handled here, at no extra charge.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="filter-bar" id="filterBar"></div>
+
+      <div class="inv-grid" id="invGrid"></div>
+      <div class="empty-state" id="emptyState" style="display:none;">No units match that search. Try a different unit number or clear the filters.</div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-inner">
+      <h2>Don't see what you need? We turn over stock weekly.</h2>
+      <a href="contact.html" class="btn btn-dark">Ask Us to Find One</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/img/logo.png" alt="City Limit Auto logo" class="footer-logo">
+        <h4>City Limit Auto</h4>
+        <p>1281 W Oleander Ave<br>Perris, CA 92571</p>
+        <p>Licensed California Dealer — #81620</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+19513307545">(951) 330-7545</a>
+        <a href="mailto:sales@citylimitauto.com">sales@citylimitauto.com</a>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon–Fri: 8am – 5pm</p>
+        <p>Sat&ndash;Sun: Closed</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 City Limit Auto. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+  renderInventory('invGrid');
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | City Limit Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="alternate" hreflang="en" href="https://citylimitauto.com/contact.html">
+<link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/contact.html">
+<link rel="icon" href="assets/img/logo.png" type="image/png">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="City Limit Auto logo" class="brand-mark">
+      <div class="brand-text">City Limit Auto<span>Licensed CA Trailer Dealer</span></div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="repairs.html">Repairs</a></li>
+        <li><a href="financing.html">Financing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+    <a href="/es/contact.html" class="lang-toggle" hreflang="es" lang="es">ES</a>
+    <button class="mobile-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-header">
+    <div class="wrap">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h1>Contact Us</h1>
+      <p>Questions about a unit, financing, or trade-ins? Reach out — we usually respond same day.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap content-grid">
+      <div>
+        <h2 style="font-size:26px;margin-bottom:18px;">Send a message</h2>
+        <form id="contactForm" class="form-grid" action="https://formspree.io/f/xeeyykdp" method="POST">
+          <input type="hidden" name="_subject" value="New Contact Form Submission — City Limit Auto">
+          <div>
+            <label for="c-fname">First Name</label>
+            <input type="text" id="c-fname" name="c-fname" required>
+          </div>
+          <div>
+            <label for="c-lname">Last Name</label>
+            <input type="text" id="c-lname" name="c-lname" required>
+          </div>
+          <div>
+            <label for="c-phone">Phone</label>
+            <input type="tel" id="c-phone" name="c-phone">
+          </div>
+          <div>
+            <label for="c-email">Email</label>
+            <input type="email" id="c-email" name="email" required>
+          </div>
+          <div class="full">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" name="c-message" required placeholder="Tell us what you're looking for…"></textarea>
+          </div>
+          <div class="full">
+            <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Send Message</button>
+          </div>
+        </form>
+      </div>
+      <div class="card">
+        <img src="assets/img/yard-inspection.jpg" alt="City Limit Auto trailer lot in Perris, CA" style="width:calc(100% + 56px);margin:-28px -28px 20px;max-width:none;border-bottom:1px solid var(--steel);">
+        <h3>Visit the lot</h3>
+        <ul>
+          <li>1281 W Oleander Ave, Perris, CA 92571</li>
+          <li>(951) 330-7545</li>
+          <li>sales@citylimitauto.com</li>
+          <li>Mon–Fri: 8am – 5pm · Sat&ndash;Sun: Closed</li>
+        </ul>
+        <iframe
+          src="https://maps.google.com/maps?q=1281+W+Oleander+Ave,+Perris,+CA+92571&output=embed"
+          width="100%" height="240" style="border:0;margin-top:16px;filter:grayscale(0.2) contrast(1.05);" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to City Limit Auto, 1281 W Oleander Ave, Perris, CA 92571">
+        </iframe>
+        <a href="https://www.google.com/maps/search/?api=1&query=1281+W+Oleander+Ave%2C+Perris%2C+CA+92571" target="_blank" rel="noopener" class="tag-link" style="display:inline-block;margin-top:10px;">Get Directions →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/img/logo.png" alt="City Limit Auto logo" class="footer-logo">
+        <h4>City Limit Auto</h4>
+        <p>1281 W Oleander Ave<br>Perris, CA 92571</p>
+        <p>Licensed California Dealer — #81620</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+19513307545">(951) 330-7545</a>
+        <a href="mailto:sales@citylimitauto.com">sales@citylimitauto.com</a>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon–Fri: 8am – 5pm</p>
+        <p>Sat&ndash;Sun: Closed</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 City Limit Auto. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+  wireForm('contactForm', "Thanks — your message is in. We usually respond same day.");
+</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+/* =========================================================
+   City Limit Auto — Shared Stylesheet
+   Brand palette matched to the company logo: black, steel blue,
+   white. Used by every page. Edit here to change the whole site.
+   ========================================================= */
+
+:root{
+  --asphalt:#000000;
+  --asphalt-2:#12161B;
+  --steel:#33414D;
+  --steel-light:#8FA6B8;
+  --paper:#EEF1F4;
+  --paper-dim:#D9DFE4;
+  --blue:#1C97DD;
+  --rust:#B33A3A;
+  --green:#3E7B4F;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--asphalt);
+  font-family:'Inter',sans-serif;
+  line-height:1.5;
+}
+h1,h2,h3,.display{
+  font-family:'Oswald',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:0.02em;
+}
+.mono{font-family:'IBM Plex Mono',monospace;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+/* Skip link */
+.skip-link{position:absolute;left:-999px;top:0;background:var(--blue);color:#fff;padding:10px 16px;z-index:200;font-weight:600;}
+.skip-link:focus{left:12px;top:12px;}
+
+/* ---------- Header / Nav ---------- */
+header{
+  background:var(--asphalt);
+  color:var(--paper);
+  position:sticky;top:0;z-index:100;
+  border-bottom:4px solid var(--blue);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1180px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{
+  width:44px;height:44px;border-radius:50%;flex-shrink:0;display:block;object-fit:cover;
+}
+.brand-text{font-family:'Oswald',sans-serif;font-weight:600;font-size:19px;letter-spacing:0.03em;}
+.brand-text span{display:block;font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.18em;color:var(--steel-light);text-transform:uppercase;}
+nav ul{list-style:none;display:flex;gap:32px;}
+nav ul a{font-size:14px;font-weight:500;letter-spacing:0.03em;text-transform:uppercase;color:var(--paper-dim);transition:color .15s;}
+nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--blue);}
+.nav-cta{
+  background:var(--blue);color:#fff;padding:10px 20px;
+  font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.05em;
+  border:2px solid var(--blue);
+}
+.nav-cta:hover{background:transparent;color:var(--blue);}
+.mobile-toggle{display:none;background:none;border:none;color:var(--paper);font-size:26px;cursor:pointer;}
+
+/* Language toggle — stays visible at every width, including narrow phones. */
+.lang-toggle{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;
+  letter-spacing:0.08em;color:var(--paper-dim);
+  border:1px solid var(--steel);padding:7px 10px;flex-shrink:0;
+  margin-left:14px;
+}
+.lang-toggle:hover,.lang-toggle:focus-visible{color:var(--blue);border-color:var(--blue);}
+
+/* Spanish suggestion banner */
+.lang-banner{
+  background:var(--blue);color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  padding:10px 44px 10px 16px;font-size:14px;position:relative;flex-wrap:wrap;
+}
+.lang-banner-go{
+  background:#fff;color:var(--blue);font-weight:700;font-size:13px;
+  padding:6px 14px;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;
+}
+.lang-banner-close{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  background:none;border:none;color:#fff;font-size:24px;line-height:1;cursor:pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:var(--asphalt);
+  color:var(--paper);
+  position:relative;
+  overflow:hidden;
+  padding:64px 0 0;
+  background-image:
+    repeating-linear-gradient(135deg, rgba(28,151,221,0.06) 0px, rgba(28,151,221,0.06) 2px, transparent 2px, transparent 26px);
+}
+.hero-art{
+  position:absolute;
+  right:0;top:0;bottom:0;
+  width:52%;
+  pointer-events:none;
+  z-index:0;
+  overflow:hidden;
+}
+.hero-art::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg, var(--asphalt) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.15) 100%);
+}
+.hero-art img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-inner{position:relative;z-index:1;max-width:640px;}
+.hero-eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--blue);
+  letter-spacing:0.12em;text-transform:uppercase;margin-bottom:18px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-eyebrow::before{content:'';width:8px;height:8px;background:var(--blue);display:inline-block;}
+.hero h1{font-size:clamp(38px,5.2vw,68px);line-height:0.98;font-weight:700;margin-bottom:22px;}
+.hero h1 em{font-style:normal;color:var(--blue);}
+.hero p{font-size:17px;color:var(--paper-dim);max-width:480px;margin-bottom:30px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px;}
+.btn{
+  display:inline-block;padding:15px 26px;font-weight:700;font-size:14px;
+  text-transform:uppercase;letter-spacing:0.05em;border:2px solid var(--blue);
+  cursor:pointer;background:none;font-family:inherit;
+}
+.btn-primary{background:var(--blue);color:#fff;}
+.btn-primary:hover{background:transparent;color:var(--blue);}
+.btn-ghost{background:transparent;color:var(--paper);border-color:var(--steel);}
+.btn-ghost:hover{border-color:var(--paper);}
+.btn-dark{background:var(--asphalt);color:var(--paper);border:2px solid var(--asphalt);}
+.btn-dark:hover{background:transparent;color:var(--asphalt);}
+
+/* Manifest ticket */
+.manifest{background:var(--paper);color:var(--asphalt);border:1px solid var(--asphalt);align-self:start;}
+.manifest-head{
+  background:var(--asphalt);color:var(--paper);padding:12px 18px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+}
+.manifest-head .stamp{color:var(--blue);}
+.manifest-body{padding:22px 18px;}
+.manifest-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--paper-dim);font-size:14px;}
+.manifest-row:last-child{border-bottom:none;}
+.manifest-row dt{color:var(--steel);font-weight:500;}
+.manifest-row dd{font-family:'IBM Plex Mono',monospace;font-weight:600;}
+
+.stat-strip{position:relative;z-index:2;background:var(--asphalt-2);border-top:1px solid rgba(255,255,255,0.08);}
+.stat-strip .wrap{display:flex;justify-content:space-between;padding:22px 28px;flex-wrap:wrap;gap:18px;}
+.stat{color:var(--paper-dim);font-size:13px;}
+.stat b{display:block;font-family:'Oswald',sans-serif;font-size:26px;color:var(--blue);font-weight:600;}
+
+/* ---------- Page header (for non-home pages) ---------- */
+.page-header{background:var(--asphalt);color:var(--paper);padding:56px 0;border-bottom:1px solid var(--steel);}
+.page-header .section-eyebrow{color:var(--blue);}
+.page-header h1{font-size:clamp(30px,4vw,48px);font-weight:700;}
+.page-header p{color:var(--paper-dim);max-width:520px;margin-top:12px;font-size:16px;}
+
+/* ---------- Sections ---------- */
+.section{padding:76px 0;}
+.section-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:36px;flex-wrap:wrap;gap:16px;
+  border-bottom:3px solid var(--asphalt);padding-bottom:18px;
+}
+.section-eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;
+  color:var(--rust);text-transform:uppercase;margin-bottom:6px;
+}
+.section-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:600;}
+.section-sub{color:var(--steel);font-size:15px;max-width:420px;}
+
+/* ---------- Inventory filter bar ---------- */
+/* Populated by JS from the actual published inventory — see renderInventory()
+   in site.js. Controls, count, and clear button are generated, not hardcoded,
+   so a filter never offers an option that returns zero results. */
+.filter-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:32px;padding:16px;background:var(--asphalt);}
+.filter-bar select,.filter-bar input{
+  font-family:'Inter',sans-serif;font-size:14px;padding:10px 12px;
+  border:1px solid var(--steel);background:var(--asphalt-2);color:var(--paper);
+}
+.filter-bar input[type="text"]{flex:2 1 200px;min-width:180px;}
+.filter-bar select{flex:1 1 150px;min-width:130px;}
+.filter-bar input::placeholder{color:var(--steel-light);}
+.filter-bar select:focus,.filter-bar input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+.filter-clear{
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:600;
+  color:var(--steel-light);background:none;border:1px solid var(--steel);
+  padding:10px 14px;cursor:pointer;white-space:nowrap;
+}
+.filter-clear:hover{color:var(--paper);border-color:var(--paper-dim);}
+.filter-count{
+  flex-basis:100%;font-family:'IBM Plex Mono',monospace;font-size:12px;
+  color:var(--steel-light);letter-spacing:0.03em;
+}
+
+/* ---------- Inventory grid / trailer tag cards ---------- */
+.inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.tag-card{background:var(--asphalt);color:var(--paper);border:1px solid var(--steel);position:relative;}
+.tag-card .tag-photo{
+  height:170px;background:linear-gradient(180deg, var(--asphalt-2) 0%, var(--asphalt) 100%);
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  border-bottom:1px solid var(--steel);
+}
+.tag-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;}
+.photo-placeholder{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--steel-light);
+}
+.tag-photo.clickable{cursor:pointer;}
+.photo-count{
+  position:absolute;bottom:12px;left:12px;z-index:2;
+  background:rgba(0,0,0,0.7);border:1px solid var(--steel-light);color:#fff;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.06em;
+  padding:5px 10px;text-transform:uppercase;
+}
+.badge{
+  position:absolute;top:12px;right:12px;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.08em;
+  padding:5px 10px;text-transform:uppercase;z-index:2;
+}
+.badge-available{background:var(--blue);color:#fff;}
+.badge-sold{background:var(--rust);color:var(--paper);}
+.badge-hold{background:var(--steel-light);color:var(--asphalt);}
+.tag-body{padding:18px;}
+.tag-unit{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--blue);letter-spacing:0.05em;margin-bottom:4px;}
+.tag-vin{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--steel-light);letter-spacing:0.03em;margin-bottom:8px;}
+.tag-title{font-family:'Oswald',sans-serif;font-size:19px;font-weight:600;margin-bottom:10px;}
+.tag-specs{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin-bottom:16px;}
+.tag-specs div{font-size:12px;color:var(--steel-light);}
+.tag-specs div b{display:block;color:var(--paper);font-size:13px;font-weight:600;}
+.tag-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed var(--steel);padding-top:14px;}
+.tag-price{font-family:'Oswald',sans-serif;font-size:22px;font-weight:600;color:var(--paper);}
+.tag-link{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--blue);border-bottom:1px solid var(--blue);padding-bottom:2px;}
+.tag-link:hover{color:var(--paper);border-color:var(--paper);}
+.empty-state{padding:60px 20px;text-align:center;color:var(--steel);border:1px dashed var(--steel);}
+
+/* ---------- Yard strip divider ---------- */
+.yard-strip{background:var(--asphalt);border-top:1px solid var(--steel);border-bottom:1px solid var(--steel);overflow:hidden;padding:18px 0;}
+.yard-strip svg{display:block;width:100%;height:auto;}
+
+/* ---------- Why us / feature grid ---------- */
+.why{background:var(--asphalt);color:var(--paper);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--steel);border:1px solid var(--steel);}
+.why-item{background:var(--asphalt);padding:32px 26px;}
+.why-item .num{font-family:'IBM Plex Mono',monospace;color:var(--blue);font-size:13px;margin-bottom:14px;}
+.why-item h3{font-size:18px;margin-bottom:10px;font-weight:600;}
+.why-item p{color:var(--paper-dim);font-size:14px;}
+
+/* ---------- CTA band ---------- */
+.cta-band{background:var(--blue);color:#fff;padding:56px 0;}
+.cta-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
+.cta-inner h2{font-size:clamp(24px,3vw,34px);max-width:520px;font-weight:600;}
+
+/* ---------- Generic content blocks (About / Financing) ---------- */
+.content-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:48px;align-items:start;}
+.content-grid p{margin-bottom:16px;color:var(--asphalt);font-size:15px;}
+.card{background:var(--asphalt);color:var(--paper);padding:28px;border:1px solid var(--steel);}
+.card h3{font-size:16px;margin-bottom:14px;}
+.card ul{list-style:none;}
+.card li{font-size:14px;color:var(--paper-dim);padding:8px 0;border-bottom:1px dashed var(--steel);}
+.card li:last-child{border-bottom:none;}
+
+/* ---------- Forms (Contact / Financing) ---------- */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-grid .full{grid-column:1 / -1;}
+label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;color:var(--steel);margin-bottom:6px;}
+input[type="text"],input[type="email"],input[type="tel"],select.form-input,textarea{
+  width:100%;padding:12px 14px;border:1px solid var(--steel);background:var(--paper);
+  color:var(--asphalt);font-family:'Inter',sans-serif;font-size:14px;
+}
+textarea{resize:vertical;min-height:120px;}
+input:focus,select.form-input:focus,textarea:focus{outline:2px solid var(--rust);outline-offset:1px;}
+.form-note{font-size:12px;color:var(--steel);margin-top:14px;}
+.form-grid .form-success{
+  background:var(--asphalt);color:var(--paper);border-left:4px solid var(--blue);
+  padding:20px 22px;font-size:15px;font-weight:500;margin-bottom:0;
+}
+
+/* ---------- Footer ---------- */
+footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:36px;}
+.footer-logo{width:52px;height:52px;border-radius:50%;object-fit:cover;margin-bottom:14px;}
+.footer-grid h4{font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:var(--blue);margin-bottom:14px;}
+.footer-grid p,.footer-grid a{font-size:14px;color:var(--paper-dim);display:block;margin-bottom:8px;}
+.footer-grid a:hover{color:var(--blue);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;font-size:12px;color:var(--steel-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+/* ---------- Photo lightbox ---------- */
+.lightbox{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(0,0,0,0.92);
+  display:flex;align-items:center;justify-content:center;
+}
+.lightbox[hidden]{display:none;}
+.lightbox-img{max-width:88vw;max-height:82vh;object-fit:contain;border:1px solid var(--steel);}
+.lightbox-close{
+  position:absolute;top:20px;right:24px;background:none;border:none;
+  color:#fff;font-size:36px;line-height:1;cursor:pointer;
+}
+.lightbox-prev,.lightbox-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(0,0,0,0.5);border:1px solid var(--steel);color:#fff;
+  font-size:28px;width:48px;height:48px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+.lightbox-prev:hover,.lightbox-next:hover,.lightbox-close:hover{border-color:var(--blue);color:var(--blue);}
+.lightbox-prev{left:16px;}
+.lightbox-next{right:16px;}
+.lightbox-count{
+  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+  color:var(--paper-dim);font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.05em;
+}
+
+@media (max-width:860px){
+  nav{display:none;}
+  header.nav-open nav{
+    display:block;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--asphalt);border-bottom:4px solid var(--blue);
+  }
+  header.nav-open nav ul{display:flex;flex-direction:column;gap:0;}
+  header.nav-open nav ul a{display:block;padding:16px 28px;border-top:1px solid var(--steel);}
+  .mobile-toggle{display:block;}
+  .why-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .stat-strip .wrap{justify-content:flex-start;gap:32px;}
+  .content-grid{grid-template-columns:1fr;}
+  .form-grid{grid-template-columns:1fr;}
+}
+/* Narrow phones: brand + CTA + hamburger don't fit on one line, which forces
+   the CTA and brand text to wrap. Contact is already reachable from the
+   hamburger menu, so drop the CTA here and tighten up the header. */
+@media (max-width:560px){
+  .nav-cta{display:none;}
+  .nav{padding:12px 18px;}
+  .brand-mark{width:38px;height:38px;}
+  .brand-text{font-size:17px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}

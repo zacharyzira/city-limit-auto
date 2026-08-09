@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Limit Auto | Used Dry Van Trailers — Perris, CA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="alternate" hreflang="en" href="https://citylimitauto.com/index.html">
+<link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/index.html">
+<link rel="icon" href="assets/img/logo.png" type="image/png">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="City Limit Auto logo" class="brand-mark">
+      <div class="brand-text">City Limit Auto<span>Licensed CA Trailer Dealer</span></div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="repairs.html">Repairs</a></li>
+        <li><a href="financing.html">Financing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+    <a href="/es/index.html" class="lang-toggle" hreflang="es" lang="es">ES</a>
+    <button class="mobile-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="hero-art" aria-hidden="true">
+      <img src="assets/img/hero-yard.jpg" alt="">
+    </div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-eyebrow">Perris, CA · Dealer Lic #81620</div>
+          <h1>Dry van trailers,<br><em>ready to work</em>.</h1>
+          <p>City Limit Auto sources, inspects, and titles used dry van trailers for fleets and owner-operators across Southern California. No games — just clean units and clean paperwork.</p>
+          <div class="hero-actions">
+            <a href="inventory.html" class="btn btn-primary">View Inventory</a>
+            <a href="contact.html" class="btn btn-ghost">Talk to Sales</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-strip">
+        <div class="wrap">
+          <div class="stat"><b>Quality</b>Every trailer inspected before it's listed</div>
+          <div class="stat"><b>Affordable</b>Competitive pricing on every unit</div>
+          <div class="stat"><b>Variety</b>Dry van trailers in a range of specs</div>
+          <div class="stat"><b>Licensed</b>CA Dealer #81620</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="inventory-teaser">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">Current Stock</div>
+          <h2>Available Trailers</h2>
+        </div>
+        <a href="inventory.html" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">View Full Inventory</a>
+      </div>
+      <div class="inv-grid" id="invGrid"></div>
+      <div class="empty-state" id="emptyState" style="display:none;">No units to show right now.</div>
+    </div>
+  </section>
+
+  <div class="yard-strip" aria-hidden="true">
+    <svg viewBox="0 0 1200 90" preserveAspectRatio="xMidYMid meet">
+      <line x1="0" y1="72" x2="1200" y2="72" stroke="#33383D" stroke-width="1"/>
+      <g stroke="#33414D" stroke-width="1.6" fill="none">
+        <rect x="20" y="24" width="120" height="46"/><line x1="80" y1="24" x2="80" y2="70"/>
+        <circle cx="42" cy="76" r="7"/><circle cx="118" cy="76" r="7"/>
+        <rect x="170" y="24" width="120" height="46" stroke="#8FA6B8"/><line x1="230" y1="24" x2="230" y2="70" stroke="#1C97DD"/>
+        <circle cx="192" cy="76" r="7" stroke="#8FA6B8"/><circle cx="268" cy="76" r="7" stroke="#8FA6B8"/>
+        <rect x="320" y="24" width="120" height="46"/><line x1="380" y1="24" x2="380" y2="70"/>
+        <circle cx="342" cy="76" r="7"/><circle cx="418" cy="76" r="7"/>
+        <rect x="470" y="24" width="120" height="46" stroke="#8FA6B8"/><line x1="530" y1="24" x2="530" y2="70" stroke="#1C97DD"/>
+        <circle cx="492" cy="76" r="7" stroke="#8FA6B8"/><circle cx="568" cy="76" r="7" stroke="#8FA6B8"/>
+        <rect x="620" y="24" width="120" height="46"/><line x1="680" y1="24" x2="680" y2="70"/>
+        <circle cx="642" cy="76" r="7"/><circle cx="718" cy="76" r="7"/>
+        <rect x="770" y="24" width="120" height="46" stroke="#8FA6B8"/><line x1="830" y1="24" x2="830" y2="70" stroke="#1C97DD"/>
+        <circle cx="792" cy="76" r="7" stroke="#8FA6B8"/><circle cx="868" cy="76" r="7" stroke="#8FA6B8"/>
+        <rect x="920" y="24" width="120" height="46"/><line x1="980" y1="24" x2="980" y2="70"/>
+        <circle cx="942" cy="76" r="7"/><circle cx="1018" cy="76" r="7"/>
+        <rect x="1070" y="24" width="120" height="46" stroke="#8FA6B8"/><line x1="1130" y1="24" x2="1130" y2="70" stroke="#1C97DD"/>
+        <circle cx="1092" cy="76" r="7" stroke="#8FA6B8"/><circle cx="1168" cy="76" r="7" stroke="#8FA6B8"/>
+      </g>
+    </svg>
+  </div>
+
+  <section class="section">
+    <div class="wrap content-grid">
+      <div>
+        <div class="section-eyebrow">No Extra Charge</div>
+        <h2 style="font-size:clamp(26px,3.4vw,38px);margin-bottom:18px;">We handle the DMV paperwork</h2>
+        <p>Buy a trailer from us and you drive off with plates and registration in hand. We register the unit, pull the paperwork, and hand you the plate — you don't make a DMV appointment or stand in a line.</p>
+        <p>That includes the VIN verification, which is its own headache on a trailer. We take care of it here.</p>
+        <p><strong>None of this costs extra.</strong> It's built into the price of the trailer, not tacked on at signing.</p>
+      </div>
+      <div class="card">
+        <h3>What's included</h3>
+        <ul>
+          <li>Title &amp; registration filed for you</li>
+          <li>License plates before you leave</li>
+          <li>VIN verification done on site</li>
+          <li>No doc fees or add-ons</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap content-grid">
+      <div>
+        <div class="section-eyebrow">Also At Our Yard</div>
+        <h2 style="font-size:clamp(26px,3.4vw,38px);margin-bottom:18px;">Trailer repair — ours and yours</h2>
+        <p>Our own team of mechanics on staff. Every trailer we sell gets gone through before it hits the lot, and we take outside repair work too — whether you bought from us or not.</p>
+        <p>Brakes, tires, suspension, lights, doors, floors, roofs, welding, and DOT inspections. Bring it to the yard in Perris, or we'll come to you.</p>
+        <a href="repairs.html" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);margin-top:8px;">See Repair Services</a>
+      </div>
+      <div class="card">
+        <h3>What we fix</h3>
+        <ul>
+          <li>Brakes, tires &amp; suspension</li>
+          <li>Lights &amp; wiring</li>
+          <li>Doors, floors &amp; roofs</li>
+          <li>Welding &amp; fabrication</li>
+          <li>DOT inspections</li>
+          <li>In-shop or mobile service</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap section">
+      <div class="section-head" style="border-bottom-color:var(--steel);">
+        <div>
+          <div class="section-eyebrow" style="color:var(--blue);">The Difference</div>
+          <h2>Why choose us</h2>
+        </div>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="num">01 / Quality</div>
+          <h3>Thoroughly inspected</h3>
+          <p>Our used trailers undergo thorough inspections to ensure they meet high-quality standards, providing you with units that are both affordable and reliable for any operation.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">02 / Affordability</div>
+          <h3>Priced to move</h3>
+          <p>We're committed to offering competitive prices on all our trailers, making it easier for small businesses and owner-operators to find equipment that fits their budget.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">03 / Variety</div>
+          <h3>A trailer for the job</h3>
+          <p>Our diverse inventory includes various trailer specs, ensuring you find the right solution for your unique transportation and storage needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-inner">
+      <h2>Looking for a specific trailer? Tell us the spec and we'll find it.</h2>
+      <a href="tel:+19513307545" class="btn btn-dark">Call (951) 330-7545</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/img/logo.png" alt="City Limit Auto logo" class="footer-logo">
+        <h4>City Limit Auto</h4>
+        <p>1281 W Oleander Ave<br>Perris, CA 92571</p>
+        <p>Licensed California Dealer — #81620</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+19513307545">(951) 330-7545</a>
+        <a href="mailto:sales@citylimitauto.com">sales@citylimitauto.com</a>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon–Fri: 8am – 5pm</p>
+        <p>Sat&ndash;Sun: Closed</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 City Limit Auto. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+  renderInventory('invGrid', { limit: 3 });
+</script>
+</body>
+</html>

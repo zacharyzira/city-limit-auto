@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Limit Auto | Remolques Secos Usados — Perris, CA</title>
+<meta name="description" content="Venta de remolques secos (dry van) usados en Perris, California. Trámites del DMV incluidos, placas y registro al momento de la entrega. Taller de reparación propio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="alternate" hreflang="en" href="https://citylimitauto.com/index.html">
+<link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/index.html">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Ir al contenido</a>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <img src="/assets/img/logo.png" alt="Logotipo de City Limit Auto" class="brand-mark">
+      <div class="brand-text">City Limit Auto<span>Distribuidor con Licencia</span></div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="inventory.html">Inventario</a></li>
+        <li><a href="repairs.html">Reparaciones</a></li>
+        <li><a href="financing.html">Financiamiento</a></li>
+        <li><a href="about.html">Nosotros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">Cotización</a>
+    <a href="/index.html" class="lang-toggle" hreflang="en" lang="en">EN</a>
+    <button class="mobile-toggle" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="hero-art" aria-hidden="true">
+      <img src="/assets/img/hero-yard.jpg" alt="">
+    </div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-eyebrow">Perris, CA · Lic. #81620</div>
+          <h1>Remolques secos,<br><em>listos para trabajar</em>.</h1>
+          <p>City Limit Auto compra, inspecciona y registra remolques secos usados para flotas y operadores independientes en todo el sur de California. Sin rodeos: unidades limpias y papeleo en regla.</p>
+          <div class="hero-actions">
+            <a href="inventory.html" class="btn btn-primary">Ver Inventario</a>
+            <a href="contact.html" class="btn btn-ghost">Hablar con Ventas</a>
+          </div>
+        </div>
+      </div>
+      <div class="stat-strip">
+        <div class="wrap">
+          <div class="stat"><b>Calidad</b>Cada remolque inspeccionado antes de publicarse</div>
+          <div class="stat"><b>Precio Justo</b>Precios competitivos en cada unidad</div>
+          <div class="stat"><b>Variedad</b>Remolques secos en distintas especificaciones</div>
+          <div class="stat"><b>Con Licencia</b>Distribuidor CA #81620</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="inventory-teaser">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">Disponible Ahora</div>
+          <h2>Remolques Disponibles</h2>
+        </div>
+        <a href="inventory.html" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Ver Todo el Inventario</a>
+      </div>
+      <div class="inv-grid" id="invGrid"></div>
+      <div class="empty-state" id="emptyState" style="display:none;">No hay unidades disponibles en este momento.</div>
+    </div>
+  </section>
+
+  <div class="yard-strip" aria-hidden="true">
+    <svg viewBox="0 0 1200 90" preserveAspectRatio="xMidYMid meet">
+      <line x1="0" y1="72" x2="1200" y2="72" stroke="#33383D" stroke-width="1"/>
+      <g stroke="#33414D" stroke-width="1.6" fill="none">
+        <rect x="20" y="24" width="120" height="46"/><line x1="80" y1="24" x2="80" y2="70"/>
+        <circle cx="42" cy="76" r="7"/><circle cx="118" cy="76" r="7"/>
+        <rect x="170" y="24" width="120" height="46" stroke="#8FA6B8"/><line x1="230" y1="24" x2="230" y2="70" stroke="#1C97DD"/>
+        <circle cx="192" cy="76" r="7" stroke="#8FA6B8"/><circle cx="268" cy="76" r="7" stroke="#8FA6B8"/>
+        <rect x="320" y="24" width="120" height="46"/><line x1="380" y1="24" x2="380" y2="70"/>
+        <circle cx="342" cy="76" r="7"/><circle cx="418" cy="76" r="7"/>
+        <rect x="470" y="24" width="120" height="46" stroke="#8FA6B8"/><line x1="530" y1="24" x2="530" y2="70" stroke="#1C97DD"/>
+        <circle cx="492" cy="76" r="7" stroke="#8FA6B8"/><circle cx="568" cy="76" r="7" stroke="#8FA6B8"/>
+        <rect x="620" y="24" width="120" height="46"/><line x1="680" y1="24" x2="680" y2="70"/>
+        <circle cx="642" cy="76" r="7"/><circle cx="718" cy="76" r="7"/>
+        <rect x="770" y="24" width="120" height="46" stroke="#8FA6B8"/><line x1="830" y1="24" x2="830" y2="70" stroke="#1C97DD"/>
+        <circle cx="792" cy="76" r="7" stroke="#8FA6B8"/><circle cx="868" cy="76" r="7" stroke="#8FA6B8"/>
+        <rect x="920" y="24" width="120" height="46"/><line x1="980" y1="24" x2="980" y2="70"/>
+        <circle cx="942" cy="76" r="7"/><circle cx="1018" cy="76" r="7"/>
+        <rect x="1070" y="24" width="120" height="46" stroke="#8FA6B8"/><line x1="1130" y1="24" x2="1130" y2="70" stroke="#1C97DD"/>
+        <circle cx="1092" cy="76" r="7" stroke="#8FA6B8"/><circle cx="1168" cy="76" r="7" stroke="#8FA6B8"/>
+      </g>
+    </svg>
+  </div>
+
+  <section class="section">
+    <div class="wrap content-grid">
+      <div>
+        <div class="section-eyebrow">Sin Costo Adicional</div>
+        <h2 style="font-size:clamp(26px,3.4vw,38px);margin-bottom:18px;">Nosotros hacemos los trámites del DMV</h2>
+        <p>Compre un remolque con nosotros y se lo lleva con placas y registro en mano. Nosotros registramos la unidad, tramitamos el papeleo y le entregamos la placa — usted no hace cita en el DMV ni espera en la fila.</p>
+        <p>Eso incluye la verificación del número de serie (VIN), que en un remolque suele ser un problema aparte. Aquí se la hacemos.</p>
+        <p><strong>Nada de esto cuesta extra.</strong> Está incluido en el precio del remolque, no se agrega al momento de firmar.</p>
+      </div>
+      <div class="card">
+        <h3>Qué incluye</h3>
+        <ul>
+          <li>Título y registro tramitados por nosotros</li>
+          <li>Placas antes de que se vaya</li>
+          <li>Verificación de VIN aquí mismo</li>
+          <li>Sin cargos por documentación</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap content-grid">
+      <div>
+        <div class="section-eyebrow">También En Nuestro Patio</div>
+        <h2 style="font-size:clamp(26px,3.4vw,38px);margin-bottom:18px;">Reparación de remolques — los nuestros y los suyos</h2>
+        <p>Contamos con nuestro propio equipo de mecánicos. Cada remolque que vendemos se revisa antes de salir a la venta, y también aceptamos trabajo de reparación de afuera — haya comprado con nosotros o no.</p>
+        <p>Frenos, llantas, suspensión, luces, puertas, pisos, techos, soldadura e inspecciones DOT. Traiga su remolque a nuestro patio en Perris, o vamos nosotros a donde usted esté.</p>
+        <a href="repairs.html" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);margin-top:8px;">Ver Servicios de Reparación</a>
+      </div>
+      <div class="card">
+        <h3>Qué reparamos</h3>
+        <ul>
+          <li>Frenos, llantas y suspensión</li>
+          <li>Luces y cableado</li>
+          <li>Puertas, pisos y techos</li>
+          <li>Soldadura y fabricación</li>
+          <li>Inspecciones DOT</li>
+          <li>En taller o servicio móvil</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap section">
+      <div class="section-head" style="border-bottom-color:var(--steel);">
+        <div>
+          <div class="section-eyebrow" style="color:var(--blue);">La Diferencia</div>
+          <h2>Por qué elegirnos</h2>
+        </div>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="num">01 / Calidad</div>
+          <h3>Inspección a fondo</h3>
+          <p>Nuestros remolques usados pasan por una inspección completa para asegurar que cumplan con altos estándares de calidad, ofreciéndole unidades accesibles y confiables para cualquier operación.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">02 / Precio</div>
+          <h3>Precios que se mueven</h3>
+          <p>Ofrecemos precios competitivos en todos nuestros remolques, para que negocios pequeños y operadores independientes encuentren equipo que se ajuste a su presupuesto.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">03 / Variedad</div>
+          <h3>El remolque para el trabajo</h3>
+          <p>Nuestro inventario incluye remolques en distintas especificaciones, para que encuentre la solución correcta a sus necesidades de transporte y almacenamiento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-inner">
+      <h2>¿Busca un remolque en específico? Díganos qué necesita y se lo conseguimos.</h2>
+      <a href="tel:+19513307545" class="btn btn-dark">Llame al (951) 330-7545</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="/assets/img/logo.png" alt="Logotipo de City Limit Auto" class="footer-logo">
+        <h4>City Limit Auto</h4>
+        <p>1281 W Oleander Ave<br>Perris, CA 92571</p>
+        <p>Distribuidor con Licencia en California — #81620</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="tel:+19513307545">(951) 330-7545</a>
+        <a href="mailto:sales@citylimitauto.com">sales@citylimitauto.com</a>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <p>Lun–Vie: 8am – 5pm</p>
+        <p>Sáb–Dom: Cerrado</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 City Limit Auto. Todos los derechos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>
+  renderInventory('invGrid', { limit: 3 });
+</script>
+</body>
+</html>
