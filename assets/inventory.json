@@ -97,6 +97,21 @@
                    ]
     },
     {
+        "unit":  "CTLZ533340",
+        "vin":  "1JJV532W18L201904",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2008,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ533633",
         "vin":  "3H3V532CXCT186009",
         "title":  "53\u0027 Dry Van — Hyundai",
@@ -182,7 +197,7 @@
         "year":  2008,
         "length":  "53\u0027",
         "price":  7500,
-        "suspension":  "",
+        "suspension":  "Air",
         "status":  "Available",
         "photos":  [
 
