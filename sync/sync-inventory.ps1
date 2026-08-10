@@ -27,6 +27,11 @@ $OutputPath      = Join-Path $RepoRoot "assets\inventory.json"
 $LogPath         = Join-Path $ScriptDir "sync.log"
 $PhotosSourceRoot = "C:\Users\ZachZira\OneDrive - Flex Fleet Trailer Leasing (1)\City Limit Auto Shared\Trailer Photos"
 $PhotosPublicRoot = Join-Path $RepoRoot "assets\photos"
+# Local-only cache of "what did this unit's photo folder look like last time
+# we processed it" — lets a run skip re-decoding/re-encoding photos that
+# haven't changed. Never committed (see .gitignore); safe to delete anytime,
+# it just costs one slow full-reprocess run to rebuild.
+$PhotoCachePath = Join-Path $ScriptDir "photo-cache.json"
 
 function Write-Log($msg) {
     $line = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')  $msg"
@@ -80,6 +85,21 @@ try {
     # only used here to find the right source folder — the published photo
     # paths use the unit number, even though VIN itself is also fine to show
     # elsewhere on the listing, same as any used-vehicle site).
+    #
+    # A folder's photos only get (re-)decoded when something about that
+    # folder actually changed since the last run — new file, removed file,
+    # or a file replaced. Untouched folders are skipped entirely, so an
+    # hourly run costs almost nothing once a unit's photos have settled.
+    $photoCache = @{}
+    if (Test-Path $PhotoCachePath) {
+        try {
+            $raw = Get-Content $PhotoCachePath -Raw | ConvertFrom-Json
+            $raw.PSObject.Properties | ForEach-Object { $photoCache[$_.Name] = $_.Value }
+        } catch {
+            Write-Log "WARNING: photo-cache.json unreadable, rebuilding from scratch: $($_.Exception.Message)"
+        }
+    }
+    $photoCacheChanged = $false
     function Convert-PhotoToWebJpg($srcPath, $destPath, $maxWidth = 1600, $quality = 82) {
         $uri = New-Object System.Uri($srcPath)
         $decoder = [System.Windows.Media.Imaging.BitmapDecoder]::Create($uri, [System.Windows.Media.Imaging.BitmapCreateOptions]::None, [System.Windows.Media.Imaging.BitmapCacheOption]::OnLoad)
@@ -114,15 +134,50 @@ try {
         try { $encoder.Save($stream) } finally { $stream.Close() }
     }
 
+    # Staff name photo folders either as the full VIN (e.g. "1JJV532D4EL814819")
+    # or, more commonly in practice, the last 5 characters of the VIN followed
+    # by whatever notes help a human recognize the unit (make, size, etc — e.g.
+    # "04127 vangrd 12'"). Match either convention; ignore anything after the
+    # last-5 prefix since staff notation there isn't consistent.
+    function Find-PhotoFolder($vin) {
+        if ([string]::IsNullOrWhiteSpace($vin) -or -not (Test-Path $PhotosSourceRoot)) { return $null }
+        $last5 = $vin.Substring($vin.Length - 5)
+        $candidates = @(Get-ChildItem $PhotosSourceRoot -Directory | Where-Object {
+            $_.Name -eq $vin -or $_.Name -like "$last5*"
+        })
+        if ($candidates.Count -eq 0) { return $null }
+        if ($candidates.Count -gt 1) {
+            Write-Log "WARNING: multiple photo folders match VIN suffix '$last5' (VIN $vin) — using '$($candidates[0].Name)'. All matches: $($candidates.Name -join ', ')"
+        }
+        return $candidates[0].FullName
+    }
+
     function Get-UnitPhotos($vin, $unitNumber) {
-        if ([string]::IsNullOrWhiteSpace($vin)) { return @() }
-        $srcFolder = Join-Path $PhotosSourceRoot $vin
-        if (-not (Test-Path $srcFolder)) { return @() }
+        $srcFolder = Find-PhotoFolder $vin
+        if (-not $srcFolder) { return @() }
 
         $files = @(Get-ChildItem $srcFolder -File | Where-Object { $_.Extension -match '(?i)^\.(jpe?g|png|heic|heif)$' } | Sort-Object Name)
         if ($files.Count -eq 0) { return @() }
 
+        # Signature = name + size + modified-time for every source file. If
+        # this matches what we saw last time AND the published output is
+        # still there, the folder is untouched — skip straight to reusing
+        # the existing paths instead of re-decoding anything.
+        $signature = ($files | ForEach-Object { "$($_.Name)|$($_.Length)|$($_.LastWriteTimeUtc.Ticks)" }) -join ';'
         $destFolder = Join-Path $PhotosPublicRoot $unitNumber
+        $expectedCount = $files.Count
+
+        if ($photoCache.ContainsKey($vin) -and $photoCache[$vin] -eq $signature -and (Test-Path $destFolder)) {
+            # Numeric sort, not alphabetical — filenames are "1.jpg".."N.jpg",
+            # and a plain string sort would order them 1, 10, 2, 3… which
+            # doesn't match the fresh-encode path and would spuriously flag
+            # a 10+-photo unit as "changed" on every subsequent run.
+            $existing = @(Get-ChildItem $destFolder -File -Filter "*.jpg" | Sort-Object { [int]$_.BaseName })
+            if ($existing.Count -eq $expectedCount) {
+                return @($existing | ForEach-Object { "/assets/photos/$unitNumber/$($_.Name)" })
+            }
+        }
+
         if (Test-Path $destFolder) { [System.IO.Directory]::Delete($destFolder, $true) }
         New-Item -ItemType Directory -Force -Path $destFolder | Out-Null
 
@@ -140,6 +195,9 @@ try {
                 Write-Log "WARNING: couldn't convert photo '$($f.Name)' for unit $unitNumber ($vin): $($_.Exception.Message)"
             }
         }
+
+        $photoCache[$vin] = $signature
+        $script:photoCacheChanged = $true
         return @($publicPaths)
     }
 
@@ -182,6 +240,14 @@ try {
     $unitsWithPhotos = @($publicItems | Where-Object { $_.photos.Count -gt 0 }).Count
     Write-Log "Wrote $($publicItems.Count) available unit(s) to $OutputPath ($photoCount photo(s) across $unitsWithPhotos unit(s))"
 
+    # Persist the photo-folder cache so next run can skip untouched units.
+    # Only rewritten when something actually changed, same spirit as the
+    # inventory JSON itself.
+    if ($photoCacheChanged) {
+        $photoCache | ConvertTo-Json -Depth 3 | Set-Content -Path $PhotoCachePath -Encoding UTF8
+        Write-Log "Updated photo-cache.json ($($photoCache.Count) unit(s) tracked)."
+    }
+
     # ---- Publish via git, if this is a repo with a remote ----
     # Native git errors (e.g. "not a git repository") must not become
     # terminating errors here, or a not-yet-deployed site would fail the
@@ -193,11 +259,23 @@ try {
         $isRepo = (git rev-parse --is-inside-work-tree 2>$null)
         if ($LASTEXITCODE -eq 0 -and $isRepo -eq "true") {
             git add "assets/inventory.json" "assets/photos" | Out-Null
-            $changes = git status --porcelain
+            # Scoped to just the paths this script manages — a repo-wide
+            # `git status` would also pick up unrelated in-progress edits
+            # (e.g. someone editing this very script) and trigger a bogus
+            # commit attempt with nothing actually staged.
+            $changes = git status --porcelain -- "assets/inventory.json" "assets/photos"
             if ($changes) {
                 git commit -m "Auto-sync inventory ($($publicItems.Count) available, $photoCount photo(s))" | Out-Null
-                git push | Out-Null
-                Write-Log "Committed and pushed inventory update."
+                if ($LASTEXITCODE -eq 0) {
+                    git push | Out-Null
+                    if ($LASTEXITCODE -eq 0) {
+                        Write-Log "Committed and pushed inventory update."
+                    } else {
+                        Write-Log "WARNING: commit succeeded but push failed (exit $LASTEXITCODE) — will retry next run."
+                    }
+                } else {
+                    Write-Log "WARNING: git commit failed (exit $LASTEXITCODE) even though changes were detected — nothing pushed this run."
+                }
             } else {
                 Write-Log "No inventory changes since last sync."
             }
