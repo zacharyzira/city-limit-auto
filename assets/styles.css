@@ -194,6 +194,12 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
   flex-basis:100%;font-family:'IBM Plex Mono',monospace;font-size:12px;
   color:var(--steel-light);letter-spacing:0.03em;
 }
+.filter-back{
+  display:inline-block;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;
+  color:var(--steel-light);background:none;border:1px solid var(--steel);
+  padding:10px 14px;white-space:nowrap;
+}
+.filter-back:hover{color:var(--paper);border-color:var(--paper-dim);}
 
 /* ---------- Inventory grid / trailer tag cards ---------- */
 .inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
@@ -232,6 +238,13 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
 .tag-specs div b{display:block;color:var(--paper);font-size:13px;font-weight:600;}
 .tag-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed var(--steel);padding-top:14px;}
 .tag-price{font-family:'Oswald',sans-serif;font-size:22px;font-weight:600;color:var(--paper);}
+.tag-actions{display:flex;align-items:center;gap:14px;}
+.tag-share{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+  color:var(--steel-light);background:none;border:1px solid var(--steel);
+  padding:6px 10px;cursor:pointer;text-transform:uppercase;letter-spacing:0.04em;
+}
+.tag-share:hover{color:var(--paper);border-color:var(--paper-dim);}
 .tag-link{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--blue);border-bottom:1px solid var(--blue);padding-bottom:2px;}
 .tag-link:hover{color:var(--paper);border-color:var(--paper);}
 .empty-state{padding:60px 20px;text-align:center;color:var(--steel);border:1px dashed var(--steel);}

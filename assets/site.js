@@ -184,19 +184,32 @@ async function renderInventory(gridId, opts = {}){
   const F = IS_ES
     ? {search:'Buscar por unidad, marca o VIN…', yearMin:'Año desde', yearMax:'Año hasta', make:'Cualquier marca',
        susp:'Cualquier suspensión', type:'Cualquier tipo', price:'Cualquier precio',
-       upto:'Hasta', clear:'Limpiar filtros',
+       upto:'Hasta', clear:'Limpiar filtros', back:'← Ver todo el inventario',
+       notFound:'Ese remolque ya no está en la lista — puede que se haya vendido.',
        showing:(n,t)=>`Mostrando ${n} de ${t} remolques`}
     : {search:'Search unit #, make, or VIN…', yearMin:'Year from', yearMax:'Year to', make:'Any make',
        susp:'Any suspension', type:'Any type', price:'Any price',
-       upto:'Up to', clear:'Clear filters',
+       upto:'Up to', clear:'Clear filters', back:'← View full inventory',
+       notFound:'That trailer isn’t listed anymore — it may have sold.',
        showing:(n,t)=>`Showing ${n} of ${t} trailers`};
+
+  // A card's Share button links to ?unit=<unit>, so a single trailer can be
+  // viewed and sent to a customer. Only meaningful on a page with a filter
+  // bar (the real inventory listing) — not the homepage teaser grid.
+  const focusUnit = filterBar ? new URLSearchParams(location.search).get('unit') : null;
 
   // Controls are generated from the data that's actually published, so the
   // dropdowns never offer a value that returns zero results, and a filter
   // with only one possible value (e.g. Type when everything is a dry van)
   // is skipped instead of sitting there doing nothing.
   const controls = {};
-  if(filterBar){
+  if(filterBar && focusUnit){
+    const back = document.createElement('a');
+    back.href = location.pathname;
+    back.className = 'filter-back';
+    back.textContent = F.back;
+    filterBar.appendChild(back);
+  } else if(filterBar){
     const uniq = key => [...new Set(inventory.map(i => i[key]).filter(v => v !== undefined && v !== null && String(v).trim() !== ''))];
 
     const search = document.createElement('input');
@@ -256,7 +269,85 @@ async function renderInventory(gridId, opts = {}){
     });
   }
 
+  // Card labels are translated; the data itself (make, "Dry Van", "Air",
+  // measurements) stays as-is since it's proper nouns and numbers.
+  const T = IS_ES
+    ? {unit:'UNIDAD', photos:'FOTOS', soon:'Foto próximamente', year:'Año',
+       length:'Largo', type:'Tipo', susp:'Suspensión', inquire:'Consultar →',
+       contact:'contact.html', share:'Compartir', copied:'¡Copiado!',
+       copyPrompt:'Copie este enlace:', status:{Available:'Disponible', Hold:'Apartado', Sold:'Vendido'}}
+    : {unit:'UNIT', photos:'PHOTOS', soon:'Photo Coming Soon', year:'Year',
+       length:'Length', type:'Type', susp:'Suspension', inquire:'Inquire →',
+       contact:'contact.html', share:'Share', copied:'Copied!',
+       copyPrompt:'Copy this link:', status:{}};
+
+  async function copyShareLink(unit, btn){
+    const path = IS_ES ? '/es/inventory.html' : '/inventory.html';
+    const url = `${location.origin}${path}?unit=${encodeURIComponent(unit)}`;
+    const original = btn.textContent;
+    try {
+      await navigator.clipboard.writeText(url);
+      btn.textContent = T.copied;
+    } catch (e) {
+      window.prompt(T.copyPrompt, url);
+    }
+    setTimeout(() => { btn.textContent = original; }, 1600);
+  }
+
+  function buildCard(item){
+    const card = document.createElement('article');
+    card.className = 'tag-card';
+    const photos = Array.isArray(item.photos) ? item.photos : [];
+    const hasPhoto = photos.length > 0;
+    const statusLabel = T.status[item.status] || item.status;
+
+    card.innerHTML = `
+      <div class="tag-photo${hasPhoto ? ' has-photo clickable' : ''}">
+        <span class="badge ${badgeClass(item.status)}">${statusLabel}</span>
+        ${hasPhoto
+          ? `<img src="${photos[0]}" alt="${item.title}" loading="lazy">
+             ${photos.length > 1 ? `<span class="photo-count">${photos.length} ${T.photos}</span>` : ''}`
+          : `<span class="photo-placeholder">${T.soon}</span>`}
+      </div>
+      <div class="tag-body">
+        <div class="tag-unit">${T.unit} ${item.unit}</div>
+        ${item.vin ? `<div class="tag-vin">VIN ${item.vin}</div>` : ''}
+        <h3 class="tag-title">${item.make}</h3>
+        <div class="tag-specs">
+          <div>${T.year}<b>${item.year}</b></div>
+          <div>${T.length}<b>${item.length}</b></div>
+          <div>${T.type}<b>${item.type}</b></div>
+          <div>${T.susp}<b>${item.suspension || '—'}</b></div>
+        </div>
+        <div class="tag-footer">
+          <span class="tag-price">$${item.price.toLocaleString()}</span>
+          <div class="tag-actions">
+            <button type="button" class="tag-share">${T.share}</button>
+            <a href="${T.contact}" class="tag-link">${T.inquire}</a>
+          </div>
+        </div>
+      </div>
+    `;
+    if (hasPhoto) {
+      card.querySelector('.tag-photo').addEventListener('click', () => openLightbox(photos, 0, item.title));
+    }
+    card.querySelector('.tag-share').addEventListener('click', (e) => copyShareLink(item.unit, e.currentTarget));
+    return card;
+  }
+
   function render(){
+    if(focusUnit){
+      const item = inventory.find(i => (i.unit || '').toLowerCase() === focusUnit.toLowerCase());
+      grid.innerHTML = '';
+      if(emptyState) emptyState.style.display = 'none';
+      if(!item){
+        grid.innerHTML = `<div class="empty-state">${F.notFound}</div>`;
+        return;
+      }
+      grid.appendChild(buildCard(item));
+      return;
+    }
+
     const q = (controls.search?.value || '').trim().toLowerCase();
     const minYear = controls.yearMin?.value ? Number(controls.yearMin.value) : null;
     const maxYear = controls.yearMax?.value ? Number(controls.yearMax.value) : null;
@@ -286,51 +377,7 @@ async function renderInventory(gridId, opts = {}){
     grid.innerHTML = '';
     if(emptyState) emptyState.style.display = filtered.length ? 'none' : 'block';
 
-    filtered.forEach(item => {
-      const card = document.createElement('article');
-      card.className = 'tag-card';
-      const photos = Array.isArray(item.photos) ? item.photos : [];
-      const hasPhoto = photos.length > 0;
-      // Card labels are translated; the data itself (make, "Dry Van", "Air",
-      // measurements) stays as-is since it's proper nouns and numbers.
-      const T = IS_ES
-        ? {unit:'UNIDAD', photos:'FOTOS', soon:'Foto próximamente', year:'Año',
-           length:'Largo', type:'Tipo', susp:'Suspensión', inquire:'Consultar →',
-           contact:'contact.html', status:{Available:'Disponible', Hold:'Apartado', Sold:'Vendido'}}
-        : {unit:'UNIT', photos:'PHOTOS', soon:'Photo Coming Soon', year:'Year',
-           length:'Length', type:'Type', susp:'Suspension', inquire:'Inquire →',
-           contact:'contact.html', status:{}};
-      const statusLabel = T.status[item.status] || item.status;
-
-      card.innerHTML = `
-        <div class="tag-photo${hasPhoto ? ' has-photo clickable' : ''}">
-          <span class="badge ${badgeClass(item.status)}">${statusLabel}</span>
-          ${hasPhoto
-            ? `<img src="${photos[0]}" alt="${item.title}" loading="lazy">
-               ${photos.length > 1 ? `<span class="photo-count">${photos.length} ${T.photos}</span>` : ''}`
-            : `<span class="photo-placeholder">${T.soon}</span>`}
-        </div>
-        <div class="tag-body">
-          <div class="tag-unit">${T.unit} ${item.unit}</div>
-          ${item.vin ? `<div class="tag-vin">VIN ${item.vin}</div>` : ''}
-          <h3 class="tag-title">${item.title}</h3>
-          <div class="tag-specs">
-            <div>${T.year}<b>${item.year}</b></div>
-            <div>${T.length}<b>${item.length}</b></div>
-            <div>${T.type}<b>${item.type}</b></div>
-            <div>${T.susp}<b>${item.suspension || '—'}</b></div>
-          </div>
-          <div class="tag-footer">
-            <span class="tag-price">$${item.price.toLocaleString()}</span>
-            <a href="${T.contact}" class="tag-link">${T.inquire}</a>
-          </div>
-        </div>
-      `;
-      if (hasPhoto) {
-        card.querySelector('.tag-photo').addEventListener('click', () => openLightbox(photos, 0, item.title));
-      }
-      grid.appendChild(card);
-    });
+    filtered.forEach(item => grid.appendChild(buildCard(item)));
   }
 
   render();
