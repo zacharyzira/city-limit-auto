@@ -182,13 +182,13 @@ async function renderInventory(gridId, opts = {}){
   await loadInventory();
 
   const F = IS_ES
-    ? {search:'Buscar por unidad, marca o VIN…', year:'Cualquier año', make:'Cualquier marca',
+    ? {search:'Buscar por unidad, marca o VIN…', yearMin:'Año desde', yearMax:'Año hasta', make:'Cualquier marca',
        susp:'Cualquier suspensión', type:'Cualquier tipo', price:'Cualquier precio',
-       newer:'o más nuevo', upto:'Hasta', clear:'Limpiar filtros',
+       upto:'Hasta', clear:'Limpiar filtros',
        showing:(n,t)=>`Mostrando ${n} de ${t} remolques`}
-    : {search:'Search unit #, make, or VIN…', year:'Any year', make:'Any make',
+    : {search:'Search unit #, make, or VIN…', yearMin:'Year from', yearMax:'Year to', make:'Any make',
        susp:'Any suspension', type:'Any type', price:'Any price',
-       newer:'& newer', upto:'Up to', clear:'Clear filters',
+       upto:'Up to', clear:'Clear filters',
        showing:(n,t)=>`Showing ${n} of ${t} trailers`};
 
   // Controls are generated from the data that's actually published, so the
@@ -217,7 +217,8 @@ async function renderInventory(gridId, opts = {}){
     }
 
     const years = uniq('year').sort((a,b) => b - a);
-    controls.year = addSelect(F.year, years, y => `${y} ${F.newer}`);
+    controls.yearMin = addSelect(F.yearMin, years);
+    controls.yearMax = addSelect(F.yearMax, years);
 
     controls.make = addSelect(F.make, uniq('make').sort());
     controls.susp = addSelect(F.susp, uniq('suspension').sort());
@@ -250,14 +251,15 @@ async function renderInventory(gridId, opts = {}){
     controls.count = count;
 
     if(controls.search) controls.search.addEventListener('input', () => render());
-    ['year','make','susp','type','price'].forEach(k => {
+    ['yearMin','yearMax','make','susp','type','price'].forEach(k => {
       if(controls[k]) controls[k].addEventListener('change', () => render());
     });
   }
 
   function render(){
     const q = (controls.search?.value || '').trim().toLowerCase();
-    const minYear = controls.year?.value ? Number(controls.year.value) : null;
+    const minYear = controls.yearMin?.value ? Number(controls.yearMin.value) : null;
+    const maxYear = controls.yearMax?.value ? Number(controls.yearMax.value) : null;
     const make = controls.make?.value || '';
     const susp = controls.susp?.value || '';
     const type = controls.type?.value || '';
@@ -268,6 +270,7 @@ async function renderInventory(gridId, opts = {}){
         .filter(Boolean).join(' ').toLowerCase();
       if(q && !haystack.includes(q)) return false;
       if(minYear !== null && Number(item.year) < minYear) return false;
+      if(maxYear !== null && Number(item.year) > maxYear) return false;
       if(make && item.make !== make) return false;
       if(susp && item.suspension !== susp) return false;
       if(type && item.type !== type) return false;

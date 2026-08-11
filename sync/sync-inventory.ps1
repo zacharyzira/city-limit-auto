@@ -39,6 +39,17 @@ function Write-Log($msg) {
     Add-Content -Path $LogPath -Value $line
 }
 
+# Keep sync.log from growing forever — it's appended to on every run
+# (hourly, business hours), so without a cap it'd accumulate indefinitely.
+function Trim-Log($maxLines = 500) {
+    if (-not (Test-Path $LogPath)) { return }
+    $lines = @(Get-Content -Path $LogPath)
+    if ($lines.Count -gt $maxLines) {
+        $lines | Select-Object -Last $maxLines | Set-Content -Path $LogPath -Encoding UTF8
+    }
+}
+Trim-Log
+
 try {
     # ---- Load credentials ----
     if (-not (Test-Path $CredsPath)) {
