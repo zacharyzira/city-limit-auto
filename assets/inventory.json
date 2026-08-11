@@ -112,6 +112,21 @@
                    ]
     },
     {
+        "unit":  "CTLZ533382",
+        "vin":  "1JJV532W38L219675",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2008,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ533633",
         "vin":  "3H3V532CXCT186009",
         "title":  "53\u0027 Dry Van — Hyundai",
@@ -251,6 +266,34 @@
         "length":  "53\u0027",
         "price":  7000,
         "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+                       "/assets/photos/PCAZ112269/1.jpg",
+                       "/assets/photos/PCAZ112269/2.jpg",
+                       "/assets/photos/PCAZ112269/3.jpg",
+                       "/assets/photos/PCAZ112269/4.jpg",
+                       "/assets/photos/PCAZ112269/5.jpg",
+                       "/assets/photos/PCAZ112269/6.jpg",
+                       "/assets/photos/PCAZ112269/7.jpg",
+                       "/assets/photos/PCAZ112269/8.jpg",
+                       "/assets/photos/PCAZ112269/9.jpg",
+                       "/assets/photos/PCAZ112269/10.jpg",
+                       "/assets/photos/PCAZ112269/11.jpg",
+                       "/assets/photos/PCAZ112269/12.jpg",
+                       "/assets/photos/PCAZ112269/13.jpg",
+                       "/assets/photos/PCAZ112269/14.jpg"
+                   ]
+    },
+    {
+        "unit":  "PCAZ113492",
+        "vin":  "1S12E95337E516703",
+        "title":  "53\u0027 Dry Van — Strick",
+        "make":  "Strick",
+        "type":  "Dry Van",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "",
         "status":  "Available",
         "photos":  [
 
