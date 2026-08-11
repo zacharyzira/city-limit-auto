@@ -330,6 +330,21 @@
                    ]
     },
     {
+        "unit":  "PT5341",
+        "vin":  "1DW1A532X1S429755",
+        "title":  "53\u0027 Dry Van — Stoughton",
+        "make":  "Stoughton",
+        "type":  "Dry Van",
+        "year":  2001,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "PT5365",
         "vin":  "1GRAA0620RB010030",
         "title":  "53\u0027 Dry Van — Great Dane",
