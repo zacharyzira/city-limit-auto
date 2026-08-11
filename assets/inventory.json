@@ -127,30 +127,6 @@
                    ]
     },
     {
-        "unit":  "CTLZ533633",
-        "vin":  "3H3V532CXCT186009",
-        "title":  "53\u0027 Dry Van — Hyundai",
-        "make":  "Hyundai",
-        "type":  "Dry Van",
-        "year":  2012,
-        "length":  "53\u0027",
-        "price":  10000,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/CTLZ533633/1.jpg",
-                       "/assets/photos/CTLZ533633/2.jpg",
-                       "/assets/photos/CTLZ533633/3.jpg",
-                       "/assets/photos/CTLZ533633/4.jpg",
-                       "/assets/photos/CTLZ533633/5.jpg",
-                       "/assets/photos/CTLZ533633/6.jpg",
-                       "/assets/photos/CTLZ533633/7.jpg",
-                       "/assets/photos/CTLZ533633/8.jpg",
-                       "/assets/photos/CTLZ533633/9.jpg",
-                       "/assets/photos/CTLZ533633/10.jpg"
-                   ]
-    },
-    {
         "unit":  "CTLZ533699",
         "vin":  "1JJV532W68L096678",
         "title":  "53\u0027 Dry Van — Wabash",
