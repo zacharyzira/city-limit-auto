@@ -276,6 +276,21 @@
                    ]
     },
     {
+        "unit":  "PIFZ112040",
+        "vin":  "1DW1A53267B955521",
+        "title":  "53\u0027  — Stoughton",
+        "make":  "Stoughton",
+        "type":  "",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "PIFZ112508",
         "vin":  "1DW1A53217E018218",
         "title":  "53\u0027 Dry Van — Stoughton",
@@ -291,6 +306,21 @@
                    ]
     },
     {
+        "unit":  "PIFZ305016",
+        "vin":  "1DW1A53215S830150",
+        "title":  "53\u0027  — Stoughton",
+        "make":  "Stoughton",
+        "type":  "",
+        "year":  2005,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "PT5303",
         "vin":  "3H3V532CXVT035013",
         "title":  "53\u0027 Dry Van — Hyundai",
@@ -300,21 +330,6 @@
         "length":  "53\u0027",
         "price":  3000,
         "suspension":  "Spring",
-        "status":  "Available",
-        "photos":  [
-
-                   ]
-    },
-    {
-        "unit":  "PT5341",
-        "vin":  "1DW1A532X1S429755",
-        "title":  "53\u0027 Dry Van — Stoughton",
-        "make":  "Stoughton",
-        "type":  "Dry Van",
-        "year":  2001,
-        "length":  "53\u0027",
-        "price":  0,
-        "suspension":  "Air",
         "status":  "Available",
         "photos":  [
 
