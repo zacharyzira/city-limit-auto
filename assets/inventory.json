@@ -108,7 +108,15 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ533340/1.jpg",
+                       "/assets/photos/CTLZ533340/2.jpg",
+                       "/assets/photos/CTLZ533340/3.jpg",
+                       "/assets/photos/CTLZ533340/4.jpg",
+                       "/assets/photos/CTLZ533340/5.jpg",
+                       "/assets/photos/CTLZ533340/6.jpg",
+                       "/assets/photos/CTLZ533340/7.jpg",
+                       "/assets/photos/CTLZ533340/8.jpg",
+                       "/assets/photos/CTLZ533340/9.jpg"
                    ]
     },
     {
@@ -269,22 +277,31 @@
         "year":  2007,
         "length":  "53\u0027",
         "price":  7000,
-        "suspension":  "",
+        "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/PCAZ113492/1.jpg",
+                       "/assets/photos/PCAZ113492/2.jpg",
+                       "/assets/photos/PCAZ113492/3.jpg",
+                       "/assets/photos/PCAZ113492/4.jpg",
+                       "/assets/photos/PCAZ113492/5.jpg",
+                       "/assets/photos/PCAZ113492/6.jpg",
+                       "/assets/photos/PCAZ113492/7.jpg",
+                       "/assets/photos/PCAZ113492/8.jpg",
+                       "/assets/photos/PCAZ113492/9.jpg",
+                       "/assets/photos/PCAZ113492/10.jpg"
                    ]
     },
     {
         "unit":  "PIFZ112040",
         "vin":  "1DW1A53267B955521",
-        "title":  "53\u0027  — Stoughton",
+        "title":  "53\u0027 Dry Van — Stoughton",
         "make":  "Stoughton",
-        "type":  "",
+        "type":  "Dry Van",
         "year":  2007,
         "length":  "53\u0027",
-        "price":  0,
-        "suspension":  "",
+        "price":  7000,
+        "suspension":  "Air",
         "status":  "Available",
         "photos":  [
 
@@ -308,13 +325,13 @@
     {
         "unit":  "PIFZ305016",
         "vin":  "1DW1A53215S830150",
-        "title":  "53\u0027  — Stoughton",
+        "title":  "53\u0027 Dry Van — Stoughton",
         "make":  "Stoughton",
-        "type":  "",
+        "type":  "Dry Van",
         "year":  2005,
         "length":  "53\u0027",
-        "price":  0,
-        "suspension":  "",
+        "price":  5500,
+        "suspension":  "Air",
         "status":  "Available",
         "photos":  [
 
