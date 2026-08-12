@@ -272,14 +272,16 @@ async function renderInventory(gridId, opts = {}){
   // Card labels are translated; the data itself (make, "Dry Van", "Air",
   // measurements) stays as-is since it's proper nouns and numbers.
   const T = IS_ES
-    ? {unit:'UNIDAD', photos:'FOTOS', soon:'Foto próximamente', year:'Año',
+    ? {unit:'UNIDAD', soon:'Foto próximamente', year:'Año',
        length:'Largo', type:'Tipo', susp:'Suspensión', inquire:'Consultar →',
        contact:'contact.html', share:'Compartir', copied:'¡Copiado!',
-       copyPrompt:'Copie este enlace:', status:{Available:'Disponible', Hold:'Apartado', Sold:'Vendido'}}
-    : {unit:'UNIT', photos:'PHOTOS', soon:'Photo Coming Soon', year:'Year',
+       copyPrompt:'Copie este enlace:', prevPhoto:'Foto anterior', nextPhoto:'Foto siguiente',
+       status:{Available:'Disponible', Hold:'Apartado', Sold:'Vendido'}}
+    : {unit:'UNIT', soon:'Photo Coming Soon', year:'Year',
        length:'Length', type:'Type', susp:'Suspension', inquire:'Inquire →',
        contact:'contact.html', share:'Share', copied:'Copied!',
-       copyPrompt:'Copy this link:', status:{}};
+       copyPrompt:'Copy this link:', prevPhoto:'Previous photo', nextPhoto:'Next photo',
+       status:{}};
 
   async function shareLink(item, btn){
     const path = IS_ES ? '/es/inventory.html' : '/inventory.html';
@@ -319,7 +321,11 @@ async function renderInventory(gridId, opts = {}){
         <span class="badge ${badgeClass(item.status)}">${statusLabel}</span>
         ${hasPhoto
           ? `<img src="${photos[0]}" alt="${item.title}" loading="lazy">
-             ${photos.length > 1 ? `<span class="photo-count">${photos.length} ${T.photos}</span>` : ''}`
+             ${photos.length > 1 ? `
+               <button type="button" class="tag-photo-nav tag-photo-prev" aria-label="${T.prevPhoto}">&lsaquo;</button>
+               <button type="button" class="tag-photo-nav tag-photo-next" aria-label="${T.nextPhoto}">&rsaquo;</button>
+               <span class="photo-count">1 / ${photos.length}</span>
+             ` : ''}`
           : `<span class="photo-placeholder">${T.soon}</span>`}
       </div>
       <div class="tag-body">
@@ -342,7 +348,25 @@ async function renderInventory(gridId, opts = {}){
       </div>
     `;
     if (hasPhoto) {
-      card.querySelector('.tag-photo').addEventListener('click', () => openLightbox(photos, 0, item.title));
+      const photoEl = card.querySelector('.tag-photo');
+      const imgEl = photoEl.querySelector('img');
+      const countEl = photoEl.querySelector('.photo-count');
+      let photoIdx = 0;
+
+      // Lets a visitor flip through a trailer's photos right on the grid
+      // card — no need to open the lightbox just to browse.
+      function showPhoto(i){
+        photoIdx = (i + photos.length) % photos.length;
+        imgEl.src = photos[photoIdx];
+        if(countEl) countEl.textContent = `${photoIdx + 1} / ${photos.length}`;
+      }
+
+      const prevBtn = photoEl.querySelector('.tag-photo-prev');
+      const nextBtn = photoEl.querySelector('.tag-photo-next');
+      if(prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPhoto(photoIdx - 1); });
+      if(nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showPhoto(photoIdx + 1); });
+
+      photoEl.addEventListener('click', () => openLightbox(photos, photoIdx, item.title));
     }
     card.querySelector('.tag-share').addEventListener('click', (e) => shareLink(item, e.currentTarget));
     return card;

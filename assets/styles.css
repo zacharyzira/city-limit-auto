@@ -215,6 +215,16 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
   text-transform:uppercase;color:var(--steel-light);
 }
 .tag-photo.clickable{cursor:pointer;}
+.tag-photo-nav{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.35);color:#fff;
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;line-height:1;cursor:pointer;
+}
+.tag-photo-nav:hover{border-color:var(--blue);color:var(--blue);background:rgba(0,0,0,0.75);}
+.tag-photo-prev{left:8px;}
+.tag-photo-next{right:8px;}
 .photo-count{
   position:absolute;bottom:12px;left:12px;z-index:2;
   background:rgba(0,0,0,0.7);border:1px solid var(--steel-light);color:#fff;
