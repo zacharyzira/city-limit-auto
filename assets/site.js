@@ -198,6 +198,15 @@ async function renderInventory(gridId, opts = {}){
   // bar (the real inventory listing) — not the homepage teaser grid.
   const focusUnit = filterBar ? new URLSearchParams(location.search).get('unit') : null;
 
+  // Suspension/type values come from the sales system in English ("Air",
+  // "Spring", "Dry Van"). Translate them for display/filter labels on
+  // Spanish pages; the underlying value used for matching/filtering stays
+  // untranslated.
+  const suspLabel = IS_ES ? {Air:'Aire', Spring:'Muelles'} : {};
+  const trSusp = v => suspLabel[v] || v;
+  const typeLabel = IS_ES ? {'Dry Van':'Caja Seca'} : {};
+  const trType = v => typeLabel[v] || v;
+
   // Controls are generated from the data that's actually published, so the
   // dropdowns never offer a value that returns zero results, and a filter
   // with only one possible value (e.g. Type when everything is a dry van)
@@ -234,8 +243,8 @@ async function renderInventory(gridId, opts = {}){
     controls.yearMax = addSelect(F.yearMax, years);
 
     controls.make = addSelect(F.make, uniq('make').sort());
-    controls.susp = addSelect(F.susp, uniq('suspension').sort());
-    controls.type = addSelect(F.type, uniq('type').sort());
+    controls.susp = addSelect(F.susp, uniq('suspension').sort(), trSusp);
+    controls.type = addSelect(F.type, uniq('type').sort(), trType);
 
     const prices = inventory.map(i => i.price).filter(p => typeof p === 'number');
     if(prices.length){
@@ -273,7 +282,7 @@ async function renderInventory(gridId, opts = {}){
   // measurements) stays as-is since it's proper nouns and numbers.
   const T = IS_ES
     ? {unit:'UNIDAD', soon:'Foto próximamente', year:'Año',
-       length:'Largo', type:'Tipo', susp:'Suspensión', inquire:'Consultar →',
+       length:'Longitud', type:'Tipo', susp:'Suspensión', inquire:'Consultar →',
        contact:'contact.html', share:'Compartir', copied:'¡Copiado!',
        copyPrompt:'Copie este enlace:', prevPhoto:'Foto anterior', nextPhoto:'Foto siguiente',
        status:{Available:'Disponible', Hold:'Apartado', Sold:'Vendido'}}
@@ -335,8 +344,8 @@ async function renderInventory(gridId, opts = {}){
         <div class="tag-specs">
           <div>${T.year}<b>${item.year}</b></div>
           <div>${T.length}<b>${item.length}</b></div>
-          <div>${T.type}<b>${item.type}</b></div>
-          <div>${T.susp}<b>${item.suspension || '—'}</b></div>
+          <div>${T.type}<b>${trType(item.type)}</b></div>
+          <div>${T.susp}<b>${trSusp(item.suspension) || '—'}</b></div>
         </div>
         <div class="tag-footer">
           <span class="tag-price">$${item.price.toLocaleString()}</span>
