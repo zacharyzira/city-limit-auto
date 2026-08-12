@@ -281,15 +281,28 @@ async function renderInventory(gridId, opts = {}){
        contact:'contact.html', share:'Share', copied:'Copied!',
        copyPrompt:'Copy this link:', status:{}};
 
-  async function copyShareLink(unit, btn){
+  async function shareLink(item, btn){
     const path = IS_ES ? '/es/inventory.html' : '/inventory.html';
-    const url = `${location.origin}${path}?unit=${encodeURIComponent(unit)}`;
+    const url = `${location.origin}${path}?unit=${encodeURIComponent(item.unit)}`;
+
+    // On phones/tablets (and some desktop browsers) this opens the native
+    // share sheet — text, email, WhatsApp, etc. — instead of just copying.
+    if(navigator.share){
+      try {
+        await navigator.share({ title: item.title, text: `${item.title} — $${item.price.toLocaleString()}`, url });
+        return;
+      } catch (e) {
+        if(e.name === 'AbortError') return; // user closed the share sheet
+        // otherwise fall through to the clipboard fallback below
+      }
+    }
+
     const original = btn.textContent;
     try {
       await navigator.clipboard.writeText(url);
       btn.textContent = T.copied;
     } catch (e) {
-      window.prompt(T.copyPrompt, url);
+      try { window.prompt(T.copyPrompt, url); } catch (e2) { /* nothing more we can do */ }
     }
     setTimeout(() => { btn.textContent = original; }, 1600);
   }
@@ -331,7 +344,7 @@ async function renderInventory(gridId, opts = {}){
     if (hasPhoto) {
       card.querySelector('.tag-photo').addEventListener('click', () => openLightbox(photos, 0, item.title));
     }
-    card.querySelector('.tag-share').addEventListener('click', (e) => copyShareLink(item.unit, e.currentTarget));
+    card.querySelector('.tag-share').addEventListener('click', (e) => shareLink(item, e.currentTarget));
     return card;
   }
 
