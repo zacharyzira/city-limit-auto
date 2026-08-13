@@ -1,5 +1,20 @@
 ﻿[
     {
+        "unit":  "1638155PLA",
+        "vin":  "1JJV532D3GL912484",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2016,
+        "length":  "53\u0027",
+        "price":  11000,
+        "suspension":  "",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "5832369A",
         "vin":  "1S12E95338E521238",
         "title":  "53\u0027 Dry Van — Strick",
