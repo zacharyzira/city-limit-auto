@@ -173,6 +173,21 @@
                    ]
     },
     {
+        "unit":  "CTLZ534107",
+        "vin":  "3H3V532C0CT186097",
+        "title":  "53\u0027 Dry Van — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ534294",
         "vin":  "1JJV532W08L096644",
         "title":  "53\u0027 Dry Van — Wabash",
@@ -280,21 +295,6 @@
     {
         "unit":  "PIFZ112040",
         "vin":  "1DW1A53267B955521",
-        "title":  "53\u0027 Dry Van — Stoughton",
-        "make":  "Stoughton",
-        "type":  "Dry Van",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7000,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-
-                   ]
-    },
-    {
-        "unit":  "PIFZ112508",
-        "vin":  "1DW1A53217E018218",
         "title":  "53\u0027 Dry Van — Stoughton",
         "make":  "Stoughton",
         "type":  "Dry Van",
