@@ -216,13 +216,15 @@ async function renderInventory(gridId, opts = {}){
   await loadInventory();
 
   const F = IS_ES
-    ? {search:'Buscar por unidad, marca o VIN…', yearMin:'Año desde', yearMax:'Año hasta', make:'Cualquier marca',
-       susp:'Cualquier suspensión', type:'Cualquier tipo', price:'Cualquier precio',
+    ? {search:'Buscar por unidad, marca o VIN…', year:'Año', yearMin:'Año desde', yearMax:'Año hasta',
+       make:'Cualquier marca', susp:'Cualquier suspensión', type:'Cualquier tipo',
+       priceLabel:'Precio', price:'Cualquier precio',
        upto:'Hasta', clear:'Limpiar filtros', back:'← Ver todo el inventario',
        notFound:'Ese remolque ya no está en la lista — puede que se haya vendido.',
        showing:(n,t)=>`Mostrando ${n} de ${t} remolques`}
-    : {search:'Search unit #, make, or VIN…', yearMin:'Year from', yearMax:'Year to', make:'Any make',
-       susp:'Any suspension', type:'Any type', price:'Any price',
+    : {search:'Search unit #, make, or VIN…', year:'Year', yearMin:'Year from', yearMax:'Year to',
+       make:'Any make', susp:'Any suspension', type:'Any type',
+       priceLabel:'Price', price:'Any price',
        upto:'Up to', clear:'Clear filters', back:'← View full inventory',
        notFound:'That trailer isn’t listed anymore — it may have sold.',
        showing:(n,t)=>`Showing ${n} of ${t} trailers`};
@@ -272,23 +274,98 @@ async function renderInventory(gridId, opts = {}){
       return sel;
     }
 
-    const years = uniq('year').sort((a,b) => b - a);
-    controls.yearMin = addSelect(F.yearMin, years);
-    controls.yearMax = addSelect(F.yearMax, years);
+    // Dual-handle year range — dragging either end sets min/max, like the
+    // range sliders on CarGurus/AutoTrader, instead of two separate dropdowns.
+    const years = uniq('year').map(Number).filter(n => !isNaN(n));
+    if(years.length > 1){
+      const yearMin = Math.min(...years), yearMax = Math.max(...years);
+      const wrap = document.createElement('div');
+      wrap.className = 'range-slider';
+      wrap.innerHTML = `
+        <div class="range-slider-label">
+          <span>${F.year}</span>
+          <span class="range-slider-value"><b class="yr-min-val">${yearMin}</b> – <b class="yr-max-val">${yearMax}</b></span>
+        </div>
+        <div class="range-track">
+          <div class="range-fill yr-fill"></div>
+          <input type="range" class="range-input yr-min-input" min="${yearMin}" max="${yearMax}" step="1" value="${yearMin}" aria-label="${F.yearMin}">
+          <input type="range" class="range-input yr-max-input" min="${yearMin}" max="${yearMax}" step="1" value="${yearMax}" aria-label="${F.yearMax}">
+        </div>
+      `;
+      filterBar.appendChild(wrap);
+
+      const minInput = wrap.querySelector('.yr-min-input');
+      const maxInput = wrap.querySelector('.yr-max-input');
+      const fill = wrap.querySelector('.yr-fill');
+      const minVal = wrap.querySelector('.yr-min-val');
+      const maxVal = wrap.querySelector('.yr-max-val');
+
+      function updateYearUI(){
+        const lo = Number(minInput.value), hi = Number(maxInput.value);
+        minVal.textContent = lo;
+        maxVal.textContent = hi;
+        fill.style.left = (((lo - yearMin) / (yearMax - yearMin)) * 100) + '%';
+        fill.style.right = (100 - ((hi - yearMin) / (yearMax - yearMin)) * 100) + '%';
+      }
+      updateYearUI();
+
+      minInput.addEventListener('input', () => {
+        if(Number(minInput.value) > Number(maxInput.value)) minInput.value = maxInput.value;
+        updateYearUI(); render();
+      });
+      maxInput.addEventListener('input', () => {
+        if(Number(maxInput.value) < Number(minInput.value)) maxInput.value = minInput.value;
+        updateYearUI(); render();
+      });
+
+      controls.yearMin = minInput;
+      controls.yearMax = maxInput;
+      controls._yearReset = () => { minInput.value = yearMin; maxInput.value = yearMax; updateYearUI(); };
+    }
 
     controls.make = addSelect(F.make, uniq('make').sort());
     controls.susp = addSelect(F.susp, uniq('suspension').sort(), trSusp);
     controls.type = addSelect(F.type, uniq('type').sort(), trType);
 
+    // Single-handle max-price slider — shoppers look for "under $X," not
+    // "$X and up," so this only ever sets a ceiling, not a floor.
     const prices = inventory.map(i => i.price).filter(p => typeof p === 'number');
-    if(prices.length){
+    if(prices.length > 1){
       const step = 2500;
-      const top = Math.ceil(Math.max(...prices) / step) * step;
-      const brackets = [];
-      for(let p = step; p <= top; p += step){
-        if(p >= Math.min(...prices)) brackets.push(p);
+      const priceMin = Math.floor(Math.min(...prices) / step) * step;
+      const priceMax = Math.ceil(Math.max(...prices) / step) * step;
+      if(priceMin !== priceMax){
+        const wrap = document.createElement('div');
+        wrap.className = 'range-slider';
+        wrap.innerHTML = `
+          <div class="range-slider-label">
+            <span>${F.priceLabel}</span>
+            <span class="range-slider-value pr-val">${F.price}</span>
+          </div>
+          <div class="range-track">
+            <div class="range-fill pr-fill"></div>
+            <input type="range" class="range-input pr-input" min="${priceMin}" max="${priceMax}" step="${step}" value="${priceMax}" aria-label="${F.priceLabel}">
+          </div>
+        `;
+        filterBar.appendChild(wrap);
+
+        const input = wrap.querySelector('.pr-input');
+        const fill = wrap.querySelector('.pr-fill');
+        const val = wrap.querySelector('.pr-val');
+
+        function updatePriceUI(){
+          const v = Number(input.value);
+          val.textContent = v >= priceMax ? F.price : `${F.upto} $${v.toLocaleString()}`;
+          fill.style.left = '0%';
+          fill.style.right = (100 - ((v - priceMin) / (priceMax - priceMin)) * 100) + '%';
+        }
+        updatePriceUI();
+
+        input.addEventListener('input', () => { updatePriceUI(); render(); });
+
+        controls.price = input;
+        controls._priceReset = () => { input.value = priceMax; updatePriceUI(); };
       }
-      controls.price = addSelect(F.price, brackets, p => `${F.upto} $${p.toLocaleString()}`);
     }
 
     const clear = document.createElement('button');
@@ -296,7 +373,12 @@ async function renderInventory(gridId, opts = {}){
     clear.className = 'filter-clear';
     clear.textContent = F.clear;
     clear.addEventListener('click', () => {
-      Object.values(controls).forEach(c => { if(c) c.value = ''; });
+      if(controls.search) controls.search.value = '';
+      if(controls.make) controls.make.value = '';
+      if(controls.susp) controls.susp.value = '';
+      if(controls.type) controls.type.value = '';
+      if(controls._yearReset) controls._yearReset();
+      if(controls._priceReset) controls._priceReset();
       render();
     });
     filterBar.appendChild(clear);
@@ -306,8 +388,11 @@ async function renderInventory(gridId, opts = {}){
     filterBar.appendChild(count);
     controls.count = count;
 
+    // Year and price already have their own 'input' listeners wired above
+    // (with min/max clamping for the year handles); only the plain selects
+    // need a generic 'change' listener here.
     if(controls.search) controls.search.addEventListener('input', () => render());
-    ['yearMin','yearMax','make','susp','type','price'].forEach(k => {
+    ['make','susp','type'].forEach(k => {
       if(controls[k]) controls[k].addEventListener('change', () => render());
     });
   }
