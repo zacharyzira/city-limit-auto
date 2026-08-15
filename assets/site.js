@@ -56,6 +56,39 @@ const IS_ES = location.pathname.startsWith('/es/');
   header.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => setOpen(false)));
 })();
 
+// ---------- Swipe navigation (touch devices) ----------
+// Used by both the in-card photo browser and the lightbox, so photos can be
+// flipped through with a finger, not just the tap arrows.
+function addSwipeNav(el, onSwipeLeft, onSwipeRight){
+  let startX = 0, startY = 0, tracking = false;
+
+  el.addEventListener('touchstart', (e) => {
+    const t = e.touches[0];
+    startX = t.clientX;
+    startY = t.clientY;
+    tracking = true;
+  }, { passive: true });
+
+  el.addEventListener('touchmove', (e) => {
+    if(!tracking) return;
+    const t = e.touches[0];
+    const dx = t.clientX - startX, dy = t.clientY - startY;
+    // Once it's clearly a horizontal drag, stop the page from scrolling.
+    if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) e.preventDefault();
+  }, { passive: false });
+
+  el.addEventListener('touchend', (e) => {
+    if(!tracking) return;
+    tracking = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX, dy = t.clientY - startY;
+    if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){
+      e.preventDefault(); // it was a swipe, not a tap — don't also fire a click
+      if(dx < 0) onSwipeLeft(); else onSwipeRight();
+    }
+  });
+}
+
 // ---------- Photo lightbox (click a trailer photo to view all of them) ----------
 let lightboxPhotos = [];
 let lightboxIndex = 0;
@@ -85,6 +118,7 @@ function ensureLightbox(){
     if(e.key === 'ArrowLeft') showLightboxPhoto(-1);
     if(e.key === 'ArrowRight') showLightboxPhoto(1);
   });
+  addSwipeNav(el, () => showLightboxPhoto(1), () => showLightboxPhoto(-1));
 }
 
 function renderLightboxPhoto(){
@@ -374,6 +408,7 @@ async function renderInventory(gridId, opts = {}){
       const nextBtn = photoEl.querySelector('.tag-photo-next');
       if(prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPhoto(photoIdx - 1); });
       if(nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showPhoto(photoIdx + 1); });
+      if(photos.length > 1) addSwipeNav(photoEl, () => showPhoto(photoIdx + 1), () => showPhoto(photoIdx - 1));
 
       photoEl.addEventListener('click', () => openLightbox(photos, photoIdx, item.title));
     }
