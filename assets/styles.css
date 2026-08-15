@@ -205,7 +205,10 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
 .inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
 .tag-card{background:var(--asphalt);color:var(--paper);border:1px solid var(--steel);position:relative;}
 .tag-card .tag-photo{
-  height:170px;background:linear-gradient(180deg, var(--asphalt-2) 0%, var(--asphalt) 100%);
+  /* Staff shoot trailer photos in portrait (phone held vertically, ~3:4).
+     Matching that ratio here means object-fit:cover barely has to crop
+     anything, instead of a wide/short box slicing off both sides. */
+  aspect-ratio:3/4;background:linear-gradient(180deg, var(--asphalt-2) 0%, var(--asphalt) 100%);
   display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
   border-bottom:1px solid var(--steel);
 }
