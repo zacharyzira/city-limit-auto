@@ -348,12 +348,16 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
   position:fixed;inset:0;z-index:1000;
   background:rgba(0,0,0,0.92);
   display:flex;align-items:center;justify-content:center;
+  touch-action:none;
 }
 .lightbox[hidden]{display:none;}
 /* The stage shrink-wraps around the (normal-flow) main photo, so it always
    has a real measurable pixel width for the swipe-drag math to use — the
    ghost photo used mid-swipe is the only thing absolutely positioned. */
-.lightbox-stage{position:relative;display:inline-block;line-height:0;}
+/* touch-action:none stops the browser's own gesture handling (native scroll/
+   swipe-back) from grabbing the touch before our JS can drag the photo —
+   without it, mobile browsers can turn the drag into an instant jump. */
+.lightbox-stage{position:relative;display:inline-block;line-height:0;touch-action:none;}
 .lightbox-stage .lightbox-img{
   display:block;max-width:88vw;max-height:82vh;
   object-fit:contain;border:1px solid var(--steel);will-change:transform;
