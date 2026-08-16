@@ -398,6 +398,7 @@ function openLightbox(opts){
     <h3 class="lightbox-form-heading">${FORM_T.heading}</h3>
     <form id="lightboxInquireForm" class="lightbox-form" action="https://formspree.io/f/xeeyykdp" method="POST">
       <input type="hidden" name="_subject" value="Trailer Inquiry — Unit ${item.unit}">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <input type="text" name="i-fname" placeholder="${FORM_T.firstName}" required>
       <input type="text" name="i-lname" placeholder="${FORM_T.lastName}" required>
       <input type="tel" name="i-phone" placeholder="${FORM_T.phone}">
