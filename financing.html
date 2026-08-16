@@ -75,6 +75,46 @@
     <div class="wrap">
       <div class="section-head">
         <div>
+          <div class="section-eyebrow">See What It Could Cost</div>
+          <h2>Payment Calculator</h2>
+        </div>
+      </div>
+      <div class="calc-card">
+        <div class="calc-row">
+          <label for="calc-price">Trailer Price</label>
+          <input type="text" id="calc-price" inputmode="numeric" value="10000">
+        </div>
+        <div class="calc-row">
+          <label for="calc-down">Down Payment <span id="calc-down-val"></span></label>
+          <input type="range" id="calc-down" min="0" max="10000" step="250" value="1000">
+        </div>
+        <div class="calc-row">
+          <label for="calc-term">Term</label>
+          <select id="calc-term" class="form-input">
+            <option value="12">12 months</option>
+            <option value="24">24 months</option>
+            <option value="36" selected>36 months</option>
+            <option value="48">48 months</option>
+            <option value="60">60 months</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label for="calc-apr">Estimated APR <span id="calc-apr-val"></span></label>
+          <input type="range" id="calc-apr" min="4" max="20" step="0.1" value="9.9">
+        </div>
+        <div class="calc-result">
+          <span class="calc-result-label">Estimated Monthly Payment</span>
+          <span class="calc-result-value" id="calc-monthly"></span>
+        </div>
+        <p class="form-note">Estimate only, for planning purposes — your actual rate and payment depend on credit approval and the lender's terms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
           <div class="section-eyebrow">Get Pre-Qualified</div>
           <h2>Financing Application</h2>
         </div>
@@ -102,6 +142,16 @@
           <input type="text" id="business-name" name="business-name" placeholder="Leave blank if applying as an individual">
         </div>
         <div>
+          <label for="business-type">Business Type</label>
+          <select id="business-type" name="business-type" class="form-input">
+            <option>Sole Proprietorship</option>
+            <option>LLC</option>
+            <option>Corporation</option>
+            <option>Partnership</option>
+            <option>Individual / Personal</option>
+          </select>
+        </div>
+        <div>
           <label for="years-in-business">Time in Business</label>
           <select id="years-in-business" name="years-in-business" class="form-input">
             <option>Less than 1 year</option>
@@ -109,6 +159,17 @@
             <option>3–5 years</option>
             <option>5+ years</option>
             <option>Applying as an individual</option>
+          </select>
+        </div>
+        <div>
+          <label for="revenue">Annual Business Revenue</label>
+          <select id="revenue" name="revenue" class="form-input">
+            <option>Under $100k</option>
+            <option>$100k – $250k</option>
+            <option>$250k – $500k</option>
+            <option>$500k – $1M</option>
+            <option>Over $1M</option>
+            <option>Not applicable</option>
           </select>
         </div>
         <div>
@@ -125,12 +186,35 @@
           </select>
         </div>
         <div>
+          <label for="unit-number">Specific Unit # (if known)</label>
+          <input type="text" id="unit-number" name="unit-number" placeholder="See our inventory page">
+        </div>
+        <div>
+          <label for="purchase-price">Purchase Price</label>
+          <input type="text" id="purchase-price" name="purchase-price" placeholder="e.g. $10,000">
+        </div>
+        <div>
+          <label for="finance-amount">Amount to Finance</label>
+          <input type="text" id="finance-amount" name="finance-amount" placeholder="e.g. $8,000">
+        </div>
+        <div>
           <label for="down-payment">Estimated Down Payment</label>
           <input type="text" id="down-payment" name="down-payment" placeholder="e.g. $2,000">
         </div>
+        <div>
+          <label for="term">Desired Term</label>
+          <select id="term" name="term" class="form-input">
+            <option>12 months</option>
+            <option>24 months</option>
+            <option>36 months</option>
+            <option>48 months</option>
+            <option>60+ months</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
         <div class="full">
           <label for="notes">Notes</label>
-          <textarea id="notes" name="notes" placeholder="Purchase price range, timeline, fleet size, etc."></textarea>
+          <textarea id="notes" name="notes" placeholder="Timeline, fleet size, anything else that's relevant"></textarea>
         </div>
         <p class="form-note">Please don't include your Social Security number or other sensitive financial documents here — we'll collect anything sensitive securely once we're working on your application together.</p>
         <div class="full">
@@ -170,6 +254,32 @@
 <script src="assets/site.js"></script>
 <script>
   wireForm('financingForm', "Thanks — we've got your application and will follow up within one business day.");
+
+  // Coming from a specific trailer's "Apply" button pre-fills the unit
+  // number and price so people don't have to look them up again.
+  (function(){
+    const params = new URLSearchParams(location.search);
+    const unit = params.get('unit');
+    const price = params.get('price');
+    if(unit){
+      const field = document.getElementById('unit-number');
+      if(field) field.value = unit;
+    }
+
+    const priceInput = document.getElementById('calc-price');
+    if(!priceInput) return;
+    if(price) priceInput.value = price;
+
+    wireCalculator({
+      price: priceInput,
+      down: document.getElementById('calc-down'),
+      downVal: document.getElementById('calc-down-val'),
+      term: document.getElementById('calc-term'),
+      apr: document.getElementById('calc-apr'),
+      aprVal: document.getElementById('calc-apr-val'),
+      monthly: document.getElementById('calc-monthly'),
+    });
+  })();
 </script>
 </body>
 </html>

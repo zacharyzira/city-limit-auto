@@ -414,8 +414,12 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
    tapping) it up reveals the inquiry form beneath. A visible border all the
    way around (not just background contrast) keeps the rounded top corners
    readable against the lightbox's own near-black backdrop. */
+/* The wrapper (not the sheet itself) owns the absolute positioning and the
+   width cap — on a wide desktop screen this keeps the sheet matching the
+   centered photo column's width instead of stretching edge to edge, while
+   the sheet's own transform stays free for the JS drag-to-open animation. */
+.lightbox-sheet-wrap{position:absolute;left:0;right:0;bottom:0;z-index:5;max-width:900px;margin:0 auto;}
 .lightbox-sheet{
-  position:absolute;left:0;right:0;bottom:0;z-index:5;
   background:var(--asphalt-2);
   border:1px solid var(--steel);border-bottom:none;
   border-radius:16px 16px 0 0;box-shadow:0 -8px 24px rgba(0,0,0,0.45);
@@ -448,15 +452,15 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
 .lightbox-info-vin{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--paper);letter-spacing:0.02em;margin-bottom:6px;}
 .lightbox-info-specs{font-family:'Inter',sans-serif;font-size:14px;color:var(--paper);}
 .lightbox-info-actions{display:flex;gap:12px;}
-/* Pill-shaped, same shared rule for both — mirrors the card's matched
+/* Pill-shaped, same shared rule for all three — mirrors the card's matched
    Share/Inquire pair (see .tag-share,.tag-footer .tag-link). */
-.lightbox-info-share,.lightbox-info-btn{
+.lightbox-info-share,.lightbox-info-btn,.lightbox-info-apply{
   flex:1;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;
   font-family:'Inter',sans-serif;font-weight:700;font-size:14px;line-height:1;
   color:#fff;background:var(--blue);border:2px solid var(--blue);border-radius:999px;
   padding:14px 20px;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;cursor:pointer;
 }
-.lightbox-info-share:hover,.lightbox-info-btn:hover{background:transparent;color:var(--blue);}
+.lightbox-info-share:hover,.lightbox-info-btn:hover,.lightbox-info-apply:hover{background:transparent;color:var(--blue);}
 /* Once the sheet is open, Inquire already did its job — hiding it avoids
    leaving a button just sitting there with no clear purpose. Share stays
    (still useful with the form open) and expands to fill the row. */
@@ -484,6 +488,38 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
   background:var(--asphalt);color:var(--paper);border-left:4px solid var(--blue);
   padding:20px 22px;font-size:15px;font-weight:500;
 }
+
+/* ---------- Payment calculator (Financing page + lightbox sheet) ---------- */
+/* Shared .calc-row/.calc-result rules — the Financing page wraps them in
+   .calc-card (light-page context), the lightbox wraps them in .lightbox-calc
+   (already-dark sheet context, so it just needs the divider/spacing). */
+.calc-card{background:var(--asphalt);color:var(--paper);border:1px solid var(--steel);padding:28px;max-width:520px;}
+.lightbox-calc{padding-top:16px;border-bottom:1px solid var(--steel);padding-bottom:4px;margin-bottom:8px;}
+.calc-row{margin-bottom:20px;}
+.calc-row label{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;
+  color:var(--steel-light);margin-bottom:8px;
+}
+.calc-row label span{font-family:'IBM Plex Mono',monospace;color:var(--paper);font-weight:600;font-size:13px;text-transform:none;letter-spacing:0.02em;}
+.calc-row input[type="text"]{
+  width:100%;padding:12px 14px;border:1px solid var(--steel);background:var(--asphalt-2);
+  color:var(--paper);font-family:'Inter',sans-serif;font-size:14px;
+}
+.calc-row input[type="range"]{width:100%;accent-color:var(--blue);}
+/* The site-wide select.form-input rule assumes a light page background —
+   override it here so the calculator's dropdown reads correctly on both the
+   Financing page's dark .calc-card and the lightbox's already-dark sheet. */
+.calc-row select.form-input{
+  width:100%;padding:12px 14px;border:1px solid var(--steel);background:var(--asphalt-2);
+  color:var(--paper);font-family:'Inter',sans-serif;font-size:14px;
+}
+.calc-result{
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px dashed var(--steel);padding-top:18px;margin-top:4px;margin-bottom:14px;
+}
+.calc-result-label{font-size:13px;color:var(--steel-light);text-transform:uppercase;letter-spacing:0.05em;}
+.calc-result-value{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--blue);}
 
 @media (max-width:860px){
   nav{display:none;}

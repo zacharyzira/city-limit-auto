@@ -76,6 +76,46 @@
     <div class="wrap">
       <div class="section-head">
         <div>
+          <div class="section-eyebrow">Vea Cuánto Podría Costar</div>
+          <h2>Calculadora de Pagos</h2>
+        </div>
+      </div>
+      <div class="calc-card">
+        <div class="calc-row">
+          <label for="calc-price">Precio del Remolque</label>
+          <input type="text" id="calc-price" inputmode="numeric" value="10000">
+        </div>
+        <div class="calc-row">
+          <label for="calc-down">Enganche <span id="calc-down-val"></span></label>
+          <input type="range" id="calc-down" min="0" max="10000" step="250" value="1000">
+        </div>
+        <div class="calc-row">
+          <label for="calc-term">Plazo</label>
+          <select id="calc-term" class="form-input">
+            <option value="12">12 meses</option>
+            <option value="24">24 meses</option>
+            <option value="36" selected>36 meses</option>
+            <option value="48">48 meses</option>
+            <option value="60">60 meses</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label for="calc-apr">Tasa Estimada (APR) <span id="calc-apr-val"></span></label>
+          <input type="range" id="calc-apr" min="4" max="20" step="0.1" value="9.9">
+        </div>
+        <div class="calc-result">
+          <span class="calc-result-label">Pago Mensual Estimado</span>
+          <span class="calc-result-value" id="calc-monthly"></span>
+        </div>
+        <p class="form-note">Solo es un estimado, para fines de planificación — su tasa y pago real dependen de la aprobación de crédito y los términos del prestamista.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
           <div class="section-eyebrow">Precalifíquese</div>
           <h2>Solicitud de Financiamiento</h2>
         </div>
@@ -103,6 +143,16 @@
           <input type="text" id="fe-business-name" name="fe-business-name" placeholder="Déjelo en blanco si solicita como individuo">
         </div>
         <div>
+          <label for="fe-business-type">Tipo de Negocio</label>
+          <select id="fe-business-type" name="fe-business-type" class="form-input">
+            <option>Propietario Único</option>
+            <option>LLC</option>
+            <option>Corporación</option>
+            <option>Sociedad</option>
+            <option>Individual / Personal</option>
+          </select>
+        </div>
+        <div>
           <label for="fe-years">Tiempo en el Negocio</label>
           <select id="fe-years" name="fe-years" class="form-input">
             <option>Menos de 1 año</option>
@@ -110,6 +160,17 @@
             <option>3–5 años</option>
             <option>5+ años</option>
             <option>Solicito como individuo</option>
+          </select>
+        </div>
+        <div>
+          <label for="fe-revenue">Ingresos Anuales del Negocio</label>
+          <select id="fe-revenue" name="fe-revenue" class="form-input">
+            <option>Menos de $100k</option>
+            <option>$100k – $250k</option>
+            <option>$250k – $500k</option>
+            <option>$500k – $1M</option>
+            <option>Más de $1M</option>
+            <option>No aplica</option>
           </select>
         </div>
         <div>
@@ -126,12 +187,35 @@
           </select>
         </div>
         <div>
+          <label for="fe-unit-number">Número de Unidad (si lo sabe)</label>
+          <input type="text" id="fe-unit-number" name="fe-unit-number" placeholder="Vea nuestra página de inventario">
+        </div>
+        <div>
+          <label for="fe-purchase-price">Precio de Compra</label>
+          <input type="text" id="fe-purchase-price" name="fe-purchase-price" placeholder="ej. $10,000">
+        </div>
+        <div>
+          <label for="fe-finance-amount">Monto a Financiar</label>
+          <input type="text" id="fe-finance-amount" name="fe-finance-amount" placeholder="ej. $8,000">
+        </div>
+        <div>
           <label for="fe-down">Enganche Estimado</label>
           <input type="text" id="fe-down" name="fe-down" placeholder="ej. $2,000">
         </div>
+        <div>
+          <label for="fe-term">Plazo Deseado</label>
+          <select id="fe-term" name="fe-term" class="form-input">
+            <option>12 meses</option>
+            <option>24 meses</option>
+            <option>36 meses</option>
+            <option>48 meses</option>
+            <option>60+ meses</option>
+            <option>Aún no estoy seguro</option>
+          </select>
+        </div>
         <div class="full">
           <label for="fe-notes">Notas</label>
-          <textarea id="fe-notes" name="fe-notes" placeholder="Rango de precio de compra, cuándo lo necesita, tamaño de la flota, etc."></textarea>
+          <textarea id="fe-notes" name="fe-notes" placeholder="Cuándo lo necesita, tamaño de la flota, cualquier otro detalle relevante"></textarea>
         </div>
         <p class="form-note">Por favor no incluya su número de Seguro Social ni documentos financieros sensibles aquí — recopilaremos cualquier información sensible de forma segura una vez que estemos trabajando juntos en su solicitud.</p>
         <div class="full">
@@ -171,6 +255,32 @@
 <script src="/assets/site.js"></script>
 <script>
   wireForm('financingFormEs', "Gracias — recibimos su solicitud de financiamiento y le responderemos en un día hábil.");
+
+  // Viniendo del botón "Financiar" de un remolque específico, se rellenan
+  // el número de unidad y el precio para que no haya que buscarlos de nuevo.
+  (function(){
+    const params = new URLSearchParams(location.search);
+    const unit = params.get('unit');
+    const price = params.get('price');
+    if(unit){
+      const field = document.getElementById('fe-unit-number');
+      if(field) field.value = unit;
+    }
+
+    const priceInput = document.getElementById('calc-price');
+    if(!priceInput) return;
+    if(price) priceInput.value = price;
+
+    wireCalculator({
+      price: priceInput,
+      down: document.getElementById('calc-down'),
+      downVal: document.getElementById('calc-down-val'),
+      term: document.getElementById('calc-term'),
+      apr: document.getElementById('calc-apr'),
+      aprVal: document.getElementById('calc-apr-val'),
+      monthly: document.getElementById('calc-monthly'),
+    });
+  })();
 </script>
 </body>
 </html>

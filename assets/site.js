@@ -20,13 +20,52 @@ const FORM_T = IS_ES
       phone: 'Teléfono', email: 'Correo electrónico', send: 'Enviar consulta',
       success: (unit) => `¡Gracias! Nos pondremos en contacto sobre la Unidad ${unit} pronto.`,
       prefill: (item) => `Estoy interesado en la Unidad ${item.unit} — ${item.year} ${item.make}, ${item.length}, $${item.price.toLocaleString()}.`,
+      calcHeading: 'Calculadora de Pagos', calcDown: 'Enganche', calcTerm: 'Plazo',
+      calcApr: 'Tasa Estimada (APR)', calcMonthly: 'Pago Mensual Estimado',
+      calcNote: 'Solo es un estimado — su tasa y pago real dependen de la aprobación de crédito.',
     }
   : {
       heading: 'Inquire About This Trailer', firstName: 'First Name', lastName: 'Last Name',
       phone: 'Phone', email: 'Email', send: 'Send Inquiry',
       success: (unit) => `Thanks! We'll be in touch about Unit ${unit} shortly.`,
       prefill: (item) => `I'm interested in Unit ${item.unit} — ${item.year} ${item.make}, ${item.length}, $${item.price.toLocaleString()}.`,
+      calcHeading: 'Payment Calculator', calcDown: 'Down Payment', calcTerm: 'Term',
+      calcApr: 'Estimated APR', calcMonthly: 'Estimated Monthly Payment',
+      calcNote: 'Estimate only — your actual rate and payment depend on credit approval.',
     };
+
+// Shared amortization math for the payment calculator, used both here (the
+// lightbox) and on the standalone Financing page. els.price is a fixed
+// number when the trailer price is already known (lightbox), or an <input>
+// when it's user-editable (Financing page's calculator).
+function wireCalculator(els){
+  function fmt(n){ return '$' + Math.round(n).toLocaleString(); }
+  function getPrice(){
+    return typeof els.price === 'number' ? els.price : Math.max(0, Number(els.price.value) || 0);
+  }
+  function recalc(){
+    const p = getPrice();
+    els.down.max = p;
+    const down = Math.min(Number(els.down.value) || 0, p);
+    els.down.value = down;
+    els.downVal.textContent = fmt(down);
+    els.aprVal.textContent = Number(els.apr.value).toFixed(1) + '%';
+
+    const principal = Math.max(0, p - down);
+    const months = Number(els.term.value);
+    const r = (Number(els.apr.value) / 100) / 12;
+    let monthly;
+    if(principal <= 0) monthly = 0;
+    else if(r === 0) monthly = principal / months;
+    else monthly = principal * (r * Math.pow(1 + r, months)) / (Math.pow(1 + r, months) - 1);
+    els.monthly.textContent = fmt(monthly) + '/mo';
+  }
+  [els.down, els.term, els.apr, typeof els.price !== 'number' ? els.price : null].filter(Boolean).forEach(el => {
+    el.addEventListener('input', recalc);
+    el.addEventListener('change', recalc);
+  });
+  recalc();
+}
 
 // ---------- Spanish suggestion banner ----------
 // If the visitor's browser is set to Spanish and they're on an English page,
@@ -263,10 +302,12 @@ function ensureLightbox(){
       <button class="lightbox-back" aria-label="Back">&larr;</button>
     </div>
     <div class="lightbox-scroll"></div>
-    <div class="lightbox-sheet">
-      <div class="lightbox-sheet-handle"></div>
-      <div class="lightbox-info-peek"></div>
-      <div class="lightbox-info-form-wrap"></div>
+    <div class="lightbox-sheet-wrap">
+      <div class="lightbox-sheet">
+        <div class="lightbox-sheet-handle"></div>
+        <div class="lightbox-info-peek"></div>
+        <div class="lightbox-info-form-wrap"></div>
+      </div>
     </div>
   `;
   document.body.appendChild(el);
@@ -312,6 +353,7 @@ function openLightbox(opts){
     <div class="lightbox-info-actions">
       <button type="button" class="lightbox-info-share">${T.share}</button>
       <button type="button" class="lightbox-info-btn">${T.inquire}</button>
+      <a href="${T.financing}?unit=${encodeURIComponent(item.unit)}&price=${item.price}" class="lightbox-info-apply">${T.apply}</a>
     </div>
   `;
   // Share sits next to Inquire now (not the topbar) — stop its click from
@@ -323,8 +365,36 @@ function openLightbox(opts){
 
   // Swiping/tapping the sheet open reveals this instead of navigating to the
   // Contact page — the message is prefilled with the trailer so people don't
-  // have to type out which unit they mean.
+  // have to type out which unit they mean. The payment calculator uses the
+  // trailer's actual price directly (no separate price field needed, unlike
+  // the standalone Financing page where the price isn't already known).
   el.querySelector('.lightbox-info-form-wrap').innerHTML = `
+    <div class="lightbox-calc">
+      <h3 class="lightbox-form-heading">${FORM_T.calcHeading}</h3>
+      <div class="calc-row">
+        <label>${FORM_T.calcDown} <span class="lightbox-calc-down-val"></span></label>
+        <input type="range" class="lightbox-calc-down" min="0" max="${item.price}" step="250" value="${Math.round(item.price * 0.1)}">
+      </div>
+      <div class="calc-row">
+        <label>${FORM_T.calcTerm}</label>
+        <select class="lightbox-calc-term form-input">
+          <option value="12">12 mo</option>
+          <option value="24">24 mo</option>
+          <option value="36" selected>36 mo</option>
+          <option value="48">48 mo</option>
+          <option value="60">60 mo</option>
+        </select>
+      </div>
+      <div class="calc-row">
+        <label>${FORM_T.calcApr} <span class="lightbox-calc-apr-val"></span></label>
+        <input type="range" class="lightbox-calc-apr" min="4" max="20" step="0.1" value="9.9">
+      </div>
+      <div class="calc-result">
+        <span class="calc-result-label">${FORM_T.calcMonthly}</span>
+        <span class="calc-result-value lightbox-calc-monthly"></span>
+      </div>
+      <p class="form-note">${FORM_T.calcNote}</p>
+    </div>
     <h3 class="lightbox-form-heading">${FORM_T.heading}</h3>
     <form id="lightboxInquireForm" class="lightbox-form" action="https://formspree.io/f/xeeyykdp" method="POST">
       <input type="hidden" name="_subject" value="Trailer Inquiry — Unit ${item.unit}">
@@ -337,6 +407,15 @@ function openLightbox(opts){
     </form>
   `;
   wireForm('lightboxInquireForm', FORM_T.success(item.unit));
+  wireCalculator({
+    price: item.price,
+    down: el.querySelector('.lightbox-calc-down'),
+    downVal: el.querySelector('.lightbox-calc-down-val'),
+    term: el.querySelector('.lightbox-calc-term'),
+    apr: el.querySelector('.lightbox-calc-apr'),
+    aprVal: el.querySelector('.lightbox-calc-apr-val'),
+    monthly: el.querySelector('.lightbox-calc-monthly'),
+  });
 
   el.hidden = false;
   document.body.style.overflow = 'hidden';
@@ -608,12 +687,14 @@ async function renderInventory(gridId, opts = {}){
   const T = IS_ES
     ? {unit:'UNIDAD', soon:'Foto próximamente', year:'Año',
        length:'Longitud', type:'Tipo', susp:'Suspensión', inquire:'Consultar →',
-       contact:'contact.html', share:'Compartir', copied:'¡Copiado!',
+       contact:'contact.html', financing:'financing.html', apply:'Financiar →',
+       share:'Compartir', copied:'¡Copiado!',
        copyPrompt:'Copie este enlace:', prevPhoto:'Foto anterior', nextPhoto:'Foto siguiente',
        status:{Available:'Disponible', Hold:'Apartado', Sold:'Vendido'}}
     : {unit:'UNIT', soon:'Photo Coming Soon', year:'Year',
        length:'Length', type:'Type', susp:'Suspension', inquire:'Inquire →',
-       contact:'contact.html', share:'Share', copied:'Copied!',
+       contact:'contact.html', financing:'financing.html', apply:'Apply →',
+       share:'Share', copied:'Copied!',
        copyPrompt:'Copy this link:', prevPhoto:'Previous photo', nextPhoto:'Next photo',
        status:{}};
 
