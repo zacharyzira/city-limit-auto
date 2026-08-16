@@ -231,7 +231,8 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
 
 /* ---------- Inventory grid / trailer tag cards ---------- */
 .inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
-.tag-card{background:var(--asphalt);color:var(--paper);border:1px solid var(--steel);position:relative;}
+.tag-card{background:var(--asphalt);color:var(--paper);border:1px solid var(--steel);border-radius:12px;overflow:hidden;position:relative;}
+.tag-card.clickable{cursor:pointer;}
 .tag-card .tag-photo{
   /* Staff shoot trailer photos in portrait (phone held vertically, ~3:4).
      A square box crops a little off the top/bottom (sky, pavement) but
@@ -285,7 +286,7 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
   padding:5px 10px;text-transform:uppercase;
 }
 .badge{
-  position:absolute;top:12px;right:12px;
+  position:absolute;top:12px;right:12px;border-radius:6px;
   font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.08em;
   padding:5px 10px;text-transform:uppercase;z-index:2;
 }
@@ -304,12 +305,21 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
 .tag-actions{display:flex;align-items:center;gap:14px;}
 .tag-share{
   font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
-  color:var(--steel-light);background:none;border:1px solid var(--steel);
+  color:var(--steel-light);background:none;border:1px solid var(--steel);border-radius:8px;
   padding:6px 10px;cursor:pointer;text-transform:uppercase;letter-spacing:0.04em;
 }
 .tag-share:hover{color:var(--paper);border-color:var(--paper-dim);}
 .tag-link{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--blue);border-bottom:1px solid var(--blue);padding-bottom:2px;}
 .tag-link:hover{color:var(--paper);border-color:var(--paper);}
+/* On the trailer card specifically (not the standalone .tag-link used
+   elsewhere, like "Get Directions" on the Contact page), Inquire is a real
+   rounded button instead of an underlined text link. */
+.tag-footer .tag-link{
+  display:inline-block;color:#fff;background:var(--blue);
+  border:2px solid var(--blue);border-radius:8px;
+  padding:8px 14px;
+}
+.tag-footer .tag-link:hover{background:transparent;color:var(--blue);}
 .empty-state{padding:60px 20px;text-align:center;color:var(--steel);border:1px dashed var(--steel);}
 
 /* ---------- Yard strip divider ---------- */
@@ -400,21 +410,28 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
 }
 .lightbox-info{
   flex-shrink:0;background:var(--asphalt-2);border-top:1px solid var(--steel);
+  border-radius:16px 16px 0 0;box-shadow:0 -8px 24px rgba(0,0,0,0.45);
   padding:18px 20px;display:flex;justify-content:space-between;align-items:center;
-  gap:16px;
+  gap:16px;position:relative;z-index:5;
 }
 .lightbox-info-text{flex:1;min-width:0;}
 .lightbox-info-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
-.lightbox-info-top .badge{position:static;flex-shrink:0;}
+/* Outlined chip, not a filled block — sitting right next to the Inquire
+   button, a solid-fill badge reads as "another button" rather than a status
+   label. Each status keeps its own color, just as an outline instead of a fill. */
+.lightbox-info-top .badge{position:static;flex-shrink:0;background:none;border:1px solid currentColor;padding:4px 8px;font-size:9px;}
+.lightbox-info-top .badge-available{color:var(--blue);}
+.lightbox-info-top .badge-sold{color:var(--rust);}
+.lightbox-info-top .badge-hold{color:var(--steel-light);}
 .lightbox-info-price{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--paper);}
 .lightbox-info-title{
   font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:var(--paper);
   margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
-.lightbox-info-specs{font-family:'Inter',sans-serif;font-size:14px;color:var(--steel-light);}
+.lightbox-info-specs{font-family:'Inter',sans-serif;font-size:14px;color:var(--paper);}
 .lightbox-info-btn{
   flex-shrink:0;background:var(--blue);color:#fff;font-weight:700;font-size:14px;
-  text-transform:uppercase;letter-spacing:0.04em;padding:14px 20px;
+  text-transform:uppercase;letter-spacing:0.04em;padding:14px 22px;border-radius:10px;
   border:2px solid var(--blue);white-space:nowrap;
 }
 .lightbox-info-btn:hover{background:transparent;color:var(--blue);}

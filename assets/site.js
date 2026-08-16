@@ -593,7 +593,13 @@ async function renderInventory(gridId, opts = {}){
         }
       }
 
-      photoEl.addEventListener('click', () => openLightbox({ item, index: photoIdx, T, trSusp, trType, shareLink }));
+      // The whole card opens the big photo view — except the controls that
+      // have their own job (Share, Inquire, the in-card prev/next arrows).
+      card.classList.add('clickable');
+      card.addEventListener('click', (e) => {
+        if(e.target.closest('.tag-share, .tag-link, .tag-photo-nav')) return;
+        openLightbox({ item, index: photoIdx, T, trSusp, trType, shareLink });
+      });
     }
     card.querySelector('.tag-share').addEventListener('click', (e) => shareLink(item, e.currentTarget));
     return card;
