@@ -56,36 +56,90 @@ const IS_ES = location.pathname.startsWith('/es/');
   header.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => setOpen(false)));
 })();
 
-// ---------- Swipe navigation (touch devices) ----------
-// Used by both the in-card photo browser and the lightbox, so photos can be
-// flipped through with a finger, not just the tap arrows.
-function addSwipeNav(el, onSwipeLeft, onSwipeRight){
-  let startX = 0, startY = 0, tracking = false;
+// ---------- Swipe-to-drag photo carousel (touch devices) ----------
+// The photo tracks the finger 1:1 while dragging (no easing lag, no snap
+// until the finger lifts), then either finishes the transition or springs
+// back — distance OR speed can trigger a commit, so a fast flick advances
+// even on a short drag, the way Redfin's listing-photo swipe behaves.
+// Shared by the lightbox and the in-card photo browser: `stage` is the
+// (position:relative, overflow:hidden) container, `mainImg` is the visible
+// <img> inside it. opts: { count(), getIndex(), photoUrl(index), onSettle(delta) }
+function wireDragCarousel(stage, mainImg, opts){
+  let startX = 0, startY = 0, startTime = 0, dragging = false, direction = 0, ghost = null, stageWidth = 0;
 
-  el.addEventListener('touchstart', (e) => {
+  function cleanupGhost(){
+    if(ghost && ghost.parentNode) ghost.parentNode.removeChild(ghost);
+    ghost = null;
+  }
+
+  stage.addEventListener('touchstart', (e) => {
+    if(opts.count() < 2) return;
     const t = e.touches[0];
-    startX = t.clientX;
-    startY = t.clientY;
-    tracking = true;
+    startX = t.clientX; startY = t.clientY; startTime = Date.now();
+    dragging = true; direction = 0;
+    stageWidth = stage.clientWidth;
+    cleanupGhost();
   }, { passive: true });
 
-  el.addEventListener('touchmove', (e) => {
-    if(!tracking) return;
+  stage.addEventListener('touchmove', (e) => {
+    if(!dragging) return;
     const t = e.touches[0];
     const dx = t.clientX - startX, dy = t.clientY - startY;
-    // Once it's clearly a horizontal drag, stop the page from scrolling.
-    if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) e.preventDefault();
+    if(!direction){
+      if(Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+      direction = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
+      if(direction === 'v'){ dragging = false; return; }
+    }
+    e.preventDefault();
+
+    mainImg.style.transition = 'none';
+    mainImg.style.transform = `translateX(${dx}px)`;
+
+    const goingNext = dx < 0;
+    if(!ghost){
+      const nextIdx = (opts.getIndex() + (goingNext ? 1 : -1) + opts.count()) % opts.count();
+      ghost = document.createElement('img');
+      ghost.className = mainImg.className + ' swipe-img-ghost';
+      ghost.src = opts.photoUrl(nextIdx);
+      ghost.style.transition = 'none';
+      stage.appendChild(ghost);
+    }
+    ghost.style.transform = `translateX(${dx + (goingNext ? stageWidth : -stageWidth)}px)`;
   }, { passive: false });
 
-  el.addEventListener('touchend', (e) => {
-    if(!tracking) return;
-    tracking = false;
+  stage.addEventListener('touchend', (e) => {
+    if(!dragging){ direction = 0; return; }
+    dragging = false;
+    if(direction !== 'h'){ direction = 0; cleanupGhost(); return; }
+
     const t = e.changedTouches[0];
-    const dx = t.clientX - startX, dy = t.clientY - startY;
-    if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){
-      e.preventDefault(); // it was a swipe, not a tap — don't also fire a click
-      if(dx < 0) onSwipeLeft(); else onSwipeRight();
+    const dx = t.clientX - startX;
+    const elapsed = Math.max(1, Date.now() - startTime);
+    const velocity = Math.abs(dx) / elapsed; // px/ms
+    const commit = ghost && (Math.abs(dx) > stageWidth * 0.3 || velocity > 0.5);
+    const goingNext = dx < 0;
+
+    if(commit){
+      mainImg.style.transition = 'transform 200ms ease-out';
+      ghost.style.transition = 'transform 200ms ease-out';
+      mainImg.style.transform = `translateX(${goingNext ? -stageWidth : stageWidth}px)`;
+      ghost.style.transform = 'translateX(0px)';
+      setTimeout(() => {
+        opts.onSettle(goingNext ? 1 : -1);
+        mainImg.style.transition = 'none';
+        mainImg.style.transform = '';
+        cleanupGhost();
+      }, 200);
+    } else {
+      mainImg.style.transition = 'transform 200ms ease-out';
+      mainImg.style.transform = 'translateX(0px)';
+      if(ghost){
+        ghost.style.transition = 'transform 200ms ease-out';
+        ghost.style.transform = `translateX(${goingNext ? stageWidth : -stageWidth}px)`;
+      }
+      setTimeout(cleanupGhost, 200);
     }
+    direction = 0;
   });
 }
 
@@ -120,93 +174,12 @@ function ensureLightbox(){
     if(e.key === 'ArrowLeft') showLightboxPhoto(-1);
     if(e.key === 'ArrowRight') showLightboxPhoto(1);
   });
-  wireLightboxDrag(el.querySelector('.lightbox-stage'));
-}
-
-// The photo tracks the finger 1:1 while dragging (no easing lag, no snap
-// until the finger lifts), then either finishes the transition or springs
-// back — distance OR speed can trigger a commit, so a fast flick advances
-// even on a short drag, the way Redfin's listing-photo swipe behaves.
-function wireLightboxDrag(stage){
-  let startX = 0, startY = 0, startTime = 0, dragging = false, direction = 0, ghost = null, stageWidth = 0;
-
-  function mainImg(){ return stage.querySelector('.lightbox-img'); }
-
-  function cleanupGhost(){
-    if(ghost && ghost.parentNode) ghost.parentNode.removeChild(ghost);
-    ghost = null;
-  }
-
-  stage.addEventListener('touchstart', (e) => {
-    if(lightboxPhotos.length < 2) return;
-    const t = e.touches[0];
-    startX = t.clientX; startY = t.clientY; startTime = Date.now();
-    dragging = true; direction = 0;
-    stageWidth = stage.clientWidth;
-    cleanupGhost();
-  }, { passive: true });
-
-  stage.addEventListener('touchmove', (e) => {
-    if(!dragging) return;
-    const t = e.touches[0];
-    const dx = t.clientX - startX, dy = t.clientY - startY;
-    if(!direction){
-      if(Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
-      direction = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
-      if(direction === 'v'){ dragging = false; return; }
-    }
-    e.preventDefault();
-
-    const cur = mainImg();
-    cur.style.transition = 'none';
-    cur.style.transform = `translateX(${dx}px)`;
-
-    const goingNext = dx < 0;
-    if(!ghost){
-      const nextIdx = (lightboxIndex + (goingNext ? 1 : -1) + lightboxPhotos.length) % lightboxPhotos.length;
-      ghost = document.createElement('img');
-      ghost.className = 'lightbox-img lightbox-img-ghost';
-      ghost.src = lightboxPhotos[nextIdx];
-      ghost.style.transition = 'none';
-      stage.appendChild(ghost);
-    }
-    ghost.style.transform = `translateX(${dx + (goingNext ? stageWidth : -stageWidth)}px)`;
-  }, { passive: false });
-
-  stage.addEventListener('touchend', (e) => {
-    if(!dragging){ direction = 0; return; }
-    dragging = false;
-    if(direction !== 'h'){ direction = 0; cleanupGhost(); return; }
-
-    const t = e.changedTouches[0];
-    const dx = t.clientX - startX;
-    const elapsed = Math.max(1, Date.now() - startTime);
-    const velocity = Math.abs(dx) / elapsed; // px/ms
-    const commit = ghost && (Math.abs(dx) > stageWidth * 0.3 || velocity > 0.5);
-    const goingNext = dx < 0;
-    const cur = mainImg();
-
-    if(commit){
-      cur.style.transition = 'transform 200ms ease-out';
-      ghost.style.transition = 'transform 200ms ease-out';
-      cur.style.transform = `translateX(${goingNext ? -stageWidth : stageWidth}px)`;
-      ghost.style.transform = 'translateX(0px)';
-      setTimeout(() => {
-        showLightboxPhoto(goingNext ? 1 : -1);
-        cur.style.transition = 'none';
-        cur.style.transform = '';
-        cleanupGhost();
-      }, 200);
-    } else {
-      cur.style.transition = 'transform 200ms ease-out';
-      cur.style.transform = 'translateX(0px)';
-      if(ghost){
-        ghost.style.transition = 'transform 200ms ease-out';
-        ghost.style.transform = `translateX(${goingNext ? stageWidth : -stageWidth}px)`;
-      }
-      setTimeout(cleanupGhost, 200);
-    }
-    direction = 0;
+  const stage = el.querySelector('.lightbox-stage');
+  wireDragCarousel(stage, stage.querySelector('.lightbox-img'), {
+    count: () => lightboxPhotos.length,
+    getIndex: () => lightboxIndex,
+    photoUrl: (i) => lightboxPhotos[i],
+    onSettle: (delta) => showLightboxPhoto(delta),
   });
 }
 
@@ -582,7 +555,14 @@ async function renderInventory(gridId, opts = {}){
       const nextBtn = photoEl.querySelector('.tag-photo-next');
       if(prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPhoto(photoIdx - 1); });
       if(nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showPhoto(photoIdx + 1); });
-      if(photos.length > 1) addSwipeNav(photoEl, () => showPhoto(photoIdx + 1), () => showPhoto(photoIdx - 1));
+      if(photos.length > 1){
+        wireDragCarousel(photoEl, imgEl, {
+          count: () => photos.length,
+          getIndex: () => photoIdx,
+          photoUrl: (i) => photos[i],
+          onSettle: (delta) => showPhoto(photoIdx + delta),
+        });
+      }
 
       photoEl.addEventListener('click', () => openLightbox(photos, photoIdx, item.title));
     }
