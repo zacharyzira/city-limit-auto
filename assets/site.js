@@ -237,8 +237,10 @@ function wireSheetDrag(sheet){
   sheet.addEventListener('touchend', onEnd);
 
   return {
-    // Called fresh each time a trailer's lightbox opens, so it always starts collapsed.
-    reset(){ measure(); applyOpen(false, false); },
+    // Called fresh each time a trailer's lightbox opens. Defaults to
+    // collapsed; pass true (e.g. from the Inquire button) to open straight
+    // to the form instead of making people tap/swipe it open themselves.
+    reset(open = false){ measure(); applyOpen(open, false); },
   };
 }
 
@@ -256,13 +258,6 @@ function ensureLightbox(){
   el.innerHTML = `
     <div class="lightbox-topbar">
       <button class="lightbox-back" aria-label="Back">&larr;</button>
-      <button class="lightbox-share" type="button">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3v12"/>
-          <path d="M8 7l4-4 4 4"/>
-          <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>
-        </svg>
-      </button>
     </div>
     <div class="lightbox-scroll"></div>
     <div class="lightbox-sheet">
@@ -284,11 +279,13 @@ function ensureLightbox(){
   el._sheetControls = wireSheetDrag(el.querySelector('.lightbox-sheet'));
 }
 
-// opts: { item, index, T, trSusp, trType, shareLink } — T/trSusp/trType/
-// shareLink are the same translation/share helpers renderInventory() already
-// built for the card, passed through so this reads correctly in Spanish too.
+// opts: { item, index, T, trSusp, trType, shareLink, startOpen } — T/trSusp/
+// trType/shareLink are the same translation/share helpers renderInventory()
+// already built for the card, passed through so this reads correctly in
+// Spanish too. startOpen jumps straight to the inquiry form (the card's
+// Inquire button does this) instead of the usual collapsed peek.
 function openLightbox(opts){
-  const { item, index, T, trSusp, trType, shareLink } = opts;
+  const { item, index, T, trSusp, trType, shareLink, startOpen } = opts;
   ensureLightbox();
   const el = document.getElementById('lightbox');
   const photos = Array.isArray(item.photos) ? item.photos : [];
@@ -298,10 +295,6 @@ function openLightbox(opts){
     `<img src="${src}" alt="${item.title} — ${i + 1}/${photos.length}" loading="${i < 2 ? 'eager' : 'lazy'}">`
   ).join('');
 
-  const shareBtn = el.querySelector('.lightbox-share');
-  shareBtn.setAttribute('aria-label', T.share);
-  shareBtn.onclick = (e) => shareLink(item, e.currentTarget);
-
   const statusLabel = T.status[item.status] || item.status;
   el.querySelector('.lightbox-info-peek').innerHTML = `
     <div class="lightbox-info-text">
@@ -310,10 +303,20 @@ function openLightbox(opts){
         <span class="badge ${badgeClass(item.status)}">${statusLabel}</span>
       </div>
       <div class="lightbox-info-title">${item.make} — ${T.unit} ${item.unit}</div>
+      ${item.vin ? `<div class="lightbox-info-vin">VIN ${item.vin}</div>` : ''}
       <div class="lightbox-info-specs">${item.year} · ${item.length} · ${trType(item.type)} · ${trSusp(item.suspension) || '—'}</div>
     </div>
-    <button type="button" class="lightbox-info-btn">${T.inquire}</button>
+    <div class="lightbox-info-actions">
+      <button type="button" class="lightbox-info-share">${T.share}</button>
+      <button type="button" class="lightbox-info-btn">${T.inquire}</button>
+    </div>
   `;
+  // Share sits next to Inquire now (not the topbar) — stop its click from
+  // also bubbling up to the peek's own open/close toggle.
+  el.querySelector('.lightbox-info-share').addEventListener('click', (e) => {
+    e.stopPropagation();
+    shareLink(item, e.currentTarget);
+  });
 
   // Swiping/tapping the sheet open reveals this instead of navigating to the
   // Contact page — the message is prefilled with the trailer so people don't
@@ -338,7 +341,7 @@ function openLightbox(opts){
   // geometry scrollIntoView needs) forces layout synchronously on its own.
   const target = scroll.children[index] || scroll.children[0];
   if(target) target.scrollIntoView({ block: 'start' });
-  el._sheetControls.reset();
+  el._sheetControls.reset(startOpen);
 }
 
 function closeLightbox(){
@@ -672,16 +675,20 @@ async function renderInventory(gridId, opts = {}){
           <span class="tag-price">$${item.price.toLocaleString()}</span>
           <div class="tag-actions">
             <button type="button" class="tag-share">${T.share}</button>
-            <a href="${T.contact}" class="tag-link">${T.inquire}</a>
+            <button type="button" class="tag-link">${T.inquire}</button>
           </div>
         </div>
       </div>
     `;
+    // Declared out here (not just inside the hasPhoto block) so the Inquire
+    // button below can reference "whichever photo was showing" even for a
+    // unit with no photos yet (it just stays 0, an empty lightbox feed).
+    let photoIdx = 0;
+
     if (hasPhoto) {
       const photoEl = card.querySelector('.tag-photo');
       const imgEl = photoEl.querySelector('img');
       const countEl = photoEl.querySelector('.photo-count');
-      let photoIdx = 0;
 
       // Lets a visitor flip through a trailer's photos right on the grid
       // card — no need to open the lightbox just to browse.
@@ -725,6 +732,13 @@ async function renderInventory(gridId, opts = {}){
       });
     }
     card.querySelector('.tag-share').addEventListener('click', (e) => shareLink(item, e.currentTarget));
+    // Inquire opens the same lightbox, straight to the prefilled inquiry
+    // form — no more sending people to a separate Contact page where they'd
+    // have to type out which trailer they mean.
+    card.querySelector('.tag-link').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openLightbox({ item, index: photoIdx, T, trSusp, trType, shareLink, startOpen: true });
+    });
     return card;
   }
 
