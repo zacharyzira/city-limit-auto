@@ -76,11 +76,11 @@
       <div class="section-head">
         <div>
           <div class="section-eyebrow">Get Pre-Qualified</div>
-          <h2>Request a Quote</h2>
+          <h2>Financing Application</h2>
         </div>
       </div>
       <form id="financingForm" class="form-grid" action="https://formspree.io/f/xeeyykdp" method="POST">
-        <input type="hidden" name="_subject" value="New Financing Inquiry — City Limit Auto">
+        <input type="hidden" name="_subject" value="New Financing Application — City Limit Auto">
         <div>
           <label for="fname">First Name</label>
           <input type="text" id="fname" name="fname" required>
@@ -98,6 +98,24 @@
           <input type="email" id="email" name="email" required>
         </div>
         <div class="full">
+          <label for="business-name">Business / Company Name</label>
+          <input type="text" id="business-name" name="business-name" placeholder="Leave blank if applying as an individual">
+        </div>
+        <div>
+          <label for="years-in-business">Time in Business</label>
+          <select id="years-in-business" name="years-in-business" class="form-input">
+            <option>Less than 1 year</option>
+            <option>1–2 years</option>
+            <option>3–5 years</option>
+            <option>5+ years</option>
+            <option>Applying as an individual</option>
+          </select>
+        </div>
+        <div>
+          <label for="mc-dot">MC / DOT Number</label>
+          <input type="text" id="mc-dot" name="mc-dot" placeholder="If applicable">
+        </div>
+        <div>
           <label for="unit-interest">Trailer Type of Interest</label>
           <select id="unit-interest" name="unit-interest" class="form-input">
             <option>Dry Van</option>
@@ -106,12 +124,17 @@
             <option>Not sure yet</option>
           </select>
         </div>
-        <div class="full">
-          <label for="notes">Notes</label>
-          <textarea id="notes" name="notes" placeholder="Down payment range, timeline, fleet size, etc."></textarea>
+        <div>
+          <label for="down-payment">Estimated Down Payment</label>
+          <input type="text" id="down-payment" name="down-payment" placeholder="e.g. $2,000">
         </div>
         <div class="full">
-          <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Submit Request</button>
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" placeholder="Purchase price range, timeline, fleet size, etc."></textarea>
+        </div>
+        <p class="form-note">Please don't include your Social Security number or other sensitive financial documents here — we'll collect anything sensitive securely once we're working on your application together.</p>
+        <div class="full">
+          <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Submit Application</button>
         </div>
       </form>
     </div>
@@ -146,7 +169,7 @@
 
 <script src="assets/site.js"></script>
 <script>
-  wireForm('financingForm', "Thanks — we've got your request and will follow up within one business day.");
+  wireForm('financingForm', "Thanks — we've got your application and will follow up within one business day.");
 </script>
 </body>
 </html>

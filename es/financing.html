@@ -77,7 +77,7 @@
       <div class="section-head">
         <div>
           <div class="section-eyebrow">Precalifíquese</div>
-          <h2>Solicitar Cotización</h2>
+          <h2>Solicitud de Financiamiento</h2>
         </div>
       </div>
       <form id="financingFormEs" class="form-grid" action="https://formspree.io/f/xeeyykdp" method="POST">
@@ -99,6 +99,24 @@
           <input type="email" id="fe-email" name="email" required>
         </div>
         <div class="full">
+          <label for="fe-business-name">Nombre del Negocio</label>
+          <input type="text" id="fe-business-name" name="fe-business-name" placeholder="Déjelo en blanco si solicita como individuo">
+        </div>
+        <div>
+          <label for="fe-years">Tiempo en el Negocio</label>
+          <select id="fe-years" name="fe-years" class="form-input">
+            <option>Menos de 1 año</option>
+            <option>1–2 años</option>
+            <option>3–5 años</option>
+            <option>5+ años</option>
+            <option>Solicito como individuo</option>
+          </select>
+        </div>
+        <div>
+          <label for="fe-mcdot">Número MC / DOT</label>
+          <input type="text" id="fe-mcdot" name="fe-mcdot" placeholder="Si aplica">
+        </div>
+        <div>
           <label for="fe-interest">Tipo de Remolque de Interés</label>
           <select id="fe-interest" name="fe-interest" class="form-input">
             <option>Dry Van</option>
@@ -107,10 +125,15 @@
             <option>Aún no estoy seguro</option>
           </select>
         </div>
+        <div>
+          <label for="fe-down">Enganche Estimado</label>
+          <input type="text" id="fe-down" name="fe-down" placeholder="ej. $2,000">
+        </div>
         <div class="full">
           <label for="fe-notes">Notas</label>
-          <textarea id="fe-notes" name="fe-notes" placeholder="Rango de enganche, cuándo lo necesita, tamaño de la flota, etc."></textarea>
+          <textarea id="fe-notes" name="fe-notes" placeholder="Rango de precio de compra, cuándo lo necesita, tamaño de la flota, etc."></textarea>
         </div>
+        <p class="form-note">Por favor no incluya su número de Seguro Social ni documentos financieros sensibles aquí — recopilaremos cualquier información sensible de forma segura una vez que estemos trabajando juntos en su solicitud.</p>
         <div class="full">
           <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Enviar Solicitud</button>
         </div>
@@ -147,7 +170,7 @@
 
 <script src="/assets/site.js"></script>
 <script>
-  wireForm('financingFormEs', "Gracias — recibimos su solicitud y le responderemos en un día hábil.");
+  wireForm('financingFormEs', "Gracias — recibimos su solicitud de financiamiento y le responderemos en un día hábil.");
 </script>
 </body>
 </html>
