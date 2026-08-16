@@ -18,6 +18,7 @@
 <meta name="twitter:description" content="Reparación de remolques en taller y servicio móvil en Perris, CA. Frenos, llantas, suspensión, luces, puertas, pisos, techos, soldadura e inspecciones DOT.">
 <meta name="twitter:image" content="https://citylimitauto.com/assets/img/inspection-worker.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="alternate" hreflang="en" href="https://citylimitauto.com/repairs.html">
 <link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/repairs.html">
@@ -26,7 +27,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "AutoDealer",
+  "@type": ["AutoDealer", "AutoRepair"],
   "@id": "https://citylimitauto.com/#business",
   "name": "City Limit Auto",
   "image": "https://citylimitauto.com/assets/img/hero-yard.jpg",
@@ -52,6 +53,56 @@
     }
   ],
   "areaServed": "Southern California"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://citylimitauto.com/es/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Reparaciones", "item": "https://citylimitauto.com/es/repairs.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Trabajan en remolques que no compré con ustedes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Aceptamos trabajo de reparación de afuera en cualquier remolque seco, haya comprado con nosotros o no."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ofrecen reparación móvil de remolques?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, ofrecemos servicio en sitio por todo el sur de California cuando llevar el remolque al taller no es práctico. Llame para confirmar disponibilidad en su zona."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hacen inspecciones DOT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Hacemos inspección y certificación anual DOT para que su equipo siga legal en carretera y listo para una revisión."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo manejan los precios de las reparaciones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Damos presupuestos claros por adelantado, antes de comenzar cualquier trabajo."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -91,7 +142,7 @@
 
   <section class="section" style="padding-bottom:0;">
     <div class="wrap">
-      <img src="/assets/img/inspection-worker.jpg" alt="Mecánico de City Limit Auto inspeccionando un remolque" style="width:100%;border:1px solid var(--steel);">
+      <img src="/assets/img/inspection-worker.jpg" alt="Mecánico de City Limit Auto inspeccionando un remolque" width="1200" height="800" loading="lazy" style="width:100%;border:1px solid var(--steel);">
     </div>
   </section>
 
@@ -153,6 +204,35 @@
           <div class="num">06 / Móvil</div>
           <h3>Vamos a donde esté</h3>
           <p>Reparación en sitio por todo el sur de California cuando llevar el remolque al taller no es práctico. Llame para confirmar disponibilidad en su zona.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">Preguntas Frecuentes</div>
+          <h2>Reparaciones FAQ</h2>
+        </div>
+      </div>
+      <div class="faq-grid">
+        <div>
+          <h3>¿Trabajan en remolques que no compré con ustedes?</h3>
+          <p>Sí. Aceptamos trabajo de reparación de afuera en cualquier remolque seco, haya comprado con nosotros o no.</p>
+        </div>
+        <div>
+          <h3>¿Ofrecen reparación móvil?</h3>
+          <p>Sí, ofrecemos servicio en sitio por todo el sur de California cuando llevar el remolque al taller no es práctico. Llame para confirmar disponibilidad en su zona.</p>
+        </div>
+        <div>
+          <h3>¿Hacen inspecciones DOT?</h3>
+          <p>Sí. Hacemos inspección y certificación anual DOT para que su equipo siga legal en carretera y listo para una revisión.</p>
+        </div>
+        <div>
+          <h3>¿Cómo manejan los precios?</h3>
+          <p>Damos presupuestos claros por adelantado, antes de comenzar cualquier trabajo.</p>
         </div>
       </div>
     </div>

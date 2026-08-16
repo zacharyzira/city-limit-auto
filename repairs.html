@@ -18,6 +18,7 @@
 <meta name="twitter:description" content="In-shop and mobile trailer repair in Perris, CA. Brakes, tires, suspension, lights, doors, floors, roofs, welding, and DOT inspections.">
 <meta name="twitter:image" content="https://citylimitauto.com/assets/img/inspection-worker.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="alternate" hreflang="en" href="https://citylimitauto.com/repairs.html">
 <link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/repairs.html">
@@ -26,7 +27,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "AutoDealer",
+  "@type": ["AutoDealer", "AutoRepair"],
   "@id": "https://citylimitauto.com/#business",
   "name": "City Limit Auto",
   "image": "https://citylimitauto.com/assets/img/hero-yard.jpg",
@@ -52,6 +53,56 @@
     }
   ],
   "areaServed": "Southern California"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://citylimitauto.com/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://citylimitauto.com/repairs.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you work on trailers I didn't buy from you?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We take outside repair work on any dry van trailer, whether you bought it from us or not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer mobile trailer repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, on-site repair is available across Southern California when hauling the trailer in isn't practical. Call to check availability in your area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you handle DOT inspections?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We do annual DOT inspections and certification so your equipment stays road-legal and ready for a roadside check."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle pricing on repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We give clear estimates up front, before any work starts."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -91,7 +142,7 @@
 
   <section class="section" style="padding-bottom:0;">
     <div class="wrap">
-      <img src="assets/img/inspection-worker.jpg" alt="City Limit Auto mechanic inspecting a trailer" style="width:100%;border:1px solid var(--steel);">
+      <img src="assets/img/inspection-worker.jpg" alt="City Limit Auto mechanic inspecting a trailer" width="1200" height="800" loading="lazy" style="width:100%;border:1px solid var(--steel);">
     </div>
   </section>
 
@@ -153,6 +204,35 @@
           <div class="num">06 / Mobile</div>
           <h3>We come to you</h3>
           <p>On-site repair across Southern California when hauling the trailer in isn't practical. Call to check availability in your area.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">Common Questions</div>
+          <h2>Repairs FAQ</h2>
+        </div>
+      </div>
+      <div class="faq-grid">
+        <div>
+          <h3>Do you work on trailers I didn't buy from you?</h3>
+          <p>Yes. We take outside repair work on any dry van trailer, whether you bought it from us or not.</p>
+        </div>
+        <div>
+          <h3>Do you offer mobile trailer repair?</h3>
+          <p>Yes, on-site repair is available across Southern California when hauling the trailer in isn't practical. Call to check availability in your area.</p>
+        </div>
+        <div>
+          <h3>Do you handle DOT inspections?</h3>
+          <p>Yes. We do annual DOT inspections and certification so your equipment stays road-legal and ready for a roadside check.</p>
+        </div>
+        <div>
+          <h3>How do you handle pricing on repairs?</h3>
+          <p>We give clear estimates up front, before any work starts.</p>
         </div>
       </div>
     </div>

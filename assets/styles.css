@@ -346,6 +346,11 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
 /* ---------- Generic content blocks (About / Financing) ---------- */
 .content-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:48px;align-items:start;}
 .content-grid p{margin-bottom:16px;color:var(--asphalt);font-size:15px;}
+
+/* ---------- FAQ blocks (Financing / Repairs) ---------- */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;}
+.faq-grid h3{font-size:16px;margin-bottom:6px;}
+.faq-grid p{color:var(--steel);font-size:15px;}
 .card{background:var(--asphalt);color:var(--paper);padding:28px;border:1px solid var(--steel);}
 .card h3{font-size:16px;margin-bottom:14px;}
 .card ul{list-style:none;}
@@ -542,6 +547,7 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
   .stat-strip .wrap{justify-content:flex-start;gap:32px;}
   .content-grid{grid-template-columns:1fr;}
   .form-grid{grid-template-columns:1fr;}
+  .faq-grid{grid-template-columns:1fr;}
 }
 /* Narrow phones: brand + CTA + hamburger don't fit on one line, which forces
    the CTA and brand text to wrap. Contact is already reachable from the

@@ -485,6 +485,48 @@ function badgeClass(status){
   return 'badge-sold';
 }
 
+// Product/Offer structured data for the current catalog — lets individual
+// trailers become eligible for price/availability in Google's search
+// results, not just the generic business listing. Represents the whole
+// published catalog (not whatever's currently filtered on screen, since
+// filtering is a UI-only concern search engines shouldn't see).
+function injectInventorySchema(items){
+  const existing = document.getElementById('inventory-schema');
+  if(existing) existing.remove();
+  if(!items.length) return;
+
+  const path = IS_ES ? '/es/inventory.html' : '/inventory.html';
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Product',
+        name: `${item.year} ${item.make} ${item.length} ${item.type}`,
+        sku: item.unit,
+        ...(item.vin ? { vehicleIdentificationNumber: item.vin } : {}),
+        ...(item.photos?.length ? { image: `${location.origin}${item.photos[0]}` } : {}),
+        brand: { '@type': 'Brand', name: item.make },
+        offers: {
+          '@type': 'Offer',
+          price: String(item.price),
+          priceCurrency: 'USD',
+          availability: item.status === 'Available' ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+          url: `${location.origin}${path}?unit=${encodeURIComponent(item.unit)}`,
+        },
+      },
+    })),
+  };
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.id = 'inventory-schema';
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+}
+
 async function renderInventory(gridId, opts = {}){
   const grid = document.getElementById(gridId);
   if(!grid) return;
@@ -494,6 +536,9 @@ async function renderInventory(gridId, opts = {}){
 
   grid.innerHTML = `<div class="empty-state">${IS_ES ? 'Cargando inventario…' : 'Loading inventory…'}</div>`;
   await loadInventory();
+  // Only the real inventory listing (has a filterBar), not the homepage
+  // teaser grid — avoids publishing the same structured data from two pages.
+  if(filterBar) injectInventorySchema(inventory);
 
   const F = IS_ES
     ? {search:'Buscar por unidad, marca o VIN…', year:'Año', yearMin:'Año desde', yearMax:'Año hasta',
