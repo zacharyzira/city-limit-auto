@@ -11,6 +11,23 @@ let inventory = [];
 // Spanish pages live under /es/. Everything language-aware keys off this.
 const IS_ES = location.pathname.startsWith('/es/');
 
+// Labels for the inline inquiry form built into the photo lightbox's bottom
+// sheet — kept separate from the card's translation object (T, built fresh
+// per renderInventory() call) since the lightbox is wired up globally.
+const FORM_T = IS_ES
+  ? {
+      heading: 'Consultar sobre este remolque', firstName: 'Nombre', lastName: 'Apellido',
+      phone: 'Teléfono', email: 'Correo electrónico', send: 'Enviar consulta',
+      success: (unit) => `¡Gracias! Nos pondremos en contacto sobre la Unidad ${unit} pronto.`,
+      prefill: (item) => `Estoy interesado en la Unidad ${item.unit} — ${item.year} ${item.make}, ${item.length}, $${item.price.toLocaleString()}.`,
+    }
+  : {
+      heading: 'Inquire About This Trailer', firstName: 'First Name', lastName: 'Last Name',
+      phone: 'Phone', email: 'Email', send: 'Send Inquiry',
+      success: (unit) => `Thanks! We'll be in touch about Unit ${unit} shortly.`,
+      prefill: (item) => `I'm interested in Unit ${item.unit} — ${item.year} ${item.make}, ${item.length}, $${item.price.toLocaleString()}.`,
+    };
+
 // ---------- Spanish suggestion banner ----------
 // If the visitor's browser is set to Spanish and they're on an English page,
 // offer the Spanish version. We suggest rather than auto-redirect, so
@@ -126,9 +143,21 @@ function wireDragCarousel(stage, mainImg, opts){
       ghost.style.transform = 'translateX(0px)';
       setTimeout(() => {
         opts.onSettle(goingNext ? 1 : -1);
-        mainImg.style.transition = 'none';
-        mainImg.style.transform = '';
-        cleanupGhost();
+        // Don't drop the ghost (still showing the correct new photo) until
+        // mainImg's freshly-assigned src has actually finished loading —
+        // otherwise there's a frame where mainImg is back in place but still
+        // painting its old bitmap, flashing the previous photo.
+        let settled = false;
+        const finish = () => {
+          if(settled) return;
+          settled = true;
+          mainImg.style.transition = 'none';
+          mainImg.style.transform = '';
+          cleanupGhost();
+        };
+        mainImg.addEventListener('load', finish, { once: true });
+        mainImg.addEventListener('error', finish, { once: true });
+        setTimeout(finish, 400); // safety net if neither event fires
       }, 200);
     } else {
       mainImg.style.transition = 'transform 200ms ease-out';
@@ -143,10 +172,81 @@ function wireDragCarousel(stage, mainImg, opts){
   });
 }
 
+// ---------- Swipe-up bottom sheet (photo lightbox's info/inquiry panel) ----------
+// Collapsed, it shows the compact price/specs summary; dragging (or tapping)
+// it up reveals an inquiry form below — same drag-follow-then-commit feel as
+// the photo carousel, just vertical with only two resting positions.
+function wireSheetDrag(sheet){
+  const peekEl = sheet.querySelector('.lightbox-info-peek');
+  const handleEl = sheet.querySelector('.lightbox-sheet-handle');
+  let collapsedY = 0, isOpen = false, dragging = false, moved = false;
+  let startY = 0, startTime = 0, baseY = 0;
+
+  function measure(){
+    collapsedY = Math.max(0, sheet.offsetHeight - handleEl.offsetHeight - peekEl.offsetHeight);
+  }
+
+  function applyOpen(open, animate){
+    isOpen = open;
+    sheet.style.transition = animate ? 'transform 260ms ease-out' : 'none';
+    sheet.style.transform = `translateY(${open ? 0 : collapsedY}px)`;
+  }
+
+  function onStart(e){
+    const t = e.touches[0];
+    startY = t.clientY; startTime = Date.now();
+    measure();
+    baseY = isOpen ? 0 : collapsedY;
+    dragging = true; moved = false;
+  }
+
+  function onMove(e){
+    if(!dragging) return;
+    const t = e.touches[0];
+    const dy = t.clientY - startY;
+    if(!moved && Math.abs(dy) < 6) return;
+    moved = true;
+    e.preventDefault();
+    const y = Math.max(0, Math.min(collapsedY, baseY + dy));
+    sheet.style.transition = 'none';
+    sheet.style.transform = `translateY(${y}px)`;
+  }
+
+  function onEnd(e){
+    if(!dragging) return;
+    dragging = false;
+    if(!moved) return; // a plain tap — the click listener below handles it
+    const t = e.changedTouches[0];
+    const dy = t.clientY - startY;
+    const elapsed = Math.max(1, Date.now() - startTime);
+    const velocity = dy / elapsed; // px/ms, negative = moving up
+    const currentY = Math.max(0, Math.min(collapsedY, baseY + dy));
+    const open = Math.abs(velocity) > 0.5 ? velocity < 0 : currentY < collapsedY / 2;
+    applyOpen(open, true);
+    // Reset now (not just at the next onStart) so a later click that isn't
+    // preceded by a fresh touchstart — a mouse click, say — isn't ignored
+    // because it sees this drag's now-stale "moved" flag.
+    moved = false;
+  }
+
+  [handleEl, peekEl].forEach(target => {
+    target.addEventListener('touchstart', onStart, { passive: true });
+    target.addEventListener('click', () => { if(!moved) applyOpen(!isOpen, true); });
+  });
+  sheet.addEventListener('touchmove', onMove, { passive: false });
+  sheet.addEventListener('touchend', onEnd);
+
+  return {
+    // Called fresh each time a trailer's lightbox opens, so it always starts collapsed.
+    reset(){ measure(); applyOpen(false, false); },
+  };
+}
+
 // ---------- Photo lightbox (click a trailer photo to view all of them) ----------
 // A vertical scrolling feed of every photo, Redfin-style, with a persistent
-// info bar at the bottom (unit, specs, price, inquire) — not a one-photo-at-
-// a-time carousel, so there's no swipe/drag logic here, just native scroll.
+// bottom sheet (price/specs summary, swipes up to an inquiry form) — not a
+// one-photo-at-a-time carousel, so there's no horizontal drag logic here,
+// just native scroll for photos.
 function ensureLightbox(){
   if(document.getElementById('lightbox')) return;
   const el = document.createElement('div');
@@ -165,7 +265,11 @@ function ensureLightbox(){
       </button>
     </div>
     <div class="lightbox-scroll"></div>
-    <div class="lightbox-info"></div>
+    <div class="lightbox-sheet">
+      <div class="lightbox-sheet-handle"></div>
+      <div class="lightbox-info-peek"></div>
+      <div class="lightbox-info-form-wrap"></div>
+    </div>
   `;
   document.body.appendChild(el);
 
@@ -177,6 +281,7 @@ function ensureLightbox(){
     if(document.getElementById('lightbox')?.hidden) return;
     if(e.key === 'Escape') closeLightbox();
   });
+  el._sheetControls = wireSheetDrag(el.querySelector('.lightbox-sheet'));
 }
 
 // opts: { item, index, T, trSusp, trType, shareLink } — T/trSusp/trType/
@@ -198,7 +303,7 @@ function openLightbox(opts){
   shareBtn.onclick = (e) => shareLink(item, e.currentTarget);
 
   const statusLabel = T.status[item.status] || item.status;
-  el.querySelector('.lightbox-info').innerHTML = `
+  el.querySelector('.lightbox-info-peek').innerHTML = `
     <div class="lightbox-info-text">
       <div class="lightbox-info-top">
         <span class="lightbox-info-price">$${item.price.toLocaleString()}</span>
@@ -207,15 +312,33 @@ function openLightbox(opts){
       <div class="lightbox-info-title">${item.make} — ${T.unit} ${item.unit}</div>
       <div class="lightbox-info-specs">${item.year} · ${item.length} · ${trType(item.type)} · ${trSusp(item.suspension) || '—'}</div>
     </div>
-    <a href="${T.contact}" class="lightbox-info-btn">${T.inquire}</a>
+    <button type="button" class="lightbox-info-btn">${T.inquire}</button>
   `;
+
+  // Swiping/tapping the sheet open reveals this instead of navigating to the
+  // Contact page — the message is prefilled with the trailer so people don't
+  // have to type out which unit they mean.
+  el.querySelector('.lightbox-info-form-wrap').innerHTML = `
+    <h3 class="lightbox-form-heading">${FORM_T.heading}</h3>
+    <form id="lightboxInquireForm" class="lightbox-form" action="https://formspree.io/f/xeeyykdp" method="POST">
+      <input type="hidden" name="_subject" value="Trailer Inquiry — Unit ${item.unit}">
+      <input type="text" name="i-fname" placeholder="${FORM_T.firstName}" required>
+      <input type="text" name="i-lname" placeholder="${FORM_T.lastName}" required>
+      <input type="tel" name="i-phone" placeholder="${FORM_T.phone}">
+      <input type="email" name="email" placeholder="${FORM_T.email}" required>
+      <textarea name="i-message" required>${FORM_T.prefill(item)}</textarea>
+      <button type="submit" class="lightbox-form-submit">${FORM_T.send}</button>
+    </form>
+  `;
+  wireForm('lightboxInquireForm', FORM_T.success(item.unit));
 
   el.hidden = false;
   document.body.style.overflow = 'hidden';
-  requestAnimationFrame(() => {
-    const target = scroll.children[index] || scroll.children[0];
-    if(target) target.scrollIntoView({ block: 'start' });
-  });
+  // No need to wait a frame — reading offsetHeight inside reset() (and the
+  // geometry scrollIntoView needs) forces layout synchronously on its own.
+  const target = scroll.children[index] || scroll.children[0];
+  if(target) target.scrollIntoView({ block: 'start' });
+  el._sheetControls.reset();
 }
 
 function closeLightbox(){

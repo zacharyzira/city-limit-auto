@@ -241,7 +241,12 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
      made the cards too tall to browse comfortably. */
   aspect-ratio:1/1;background:linear-gradient(180deg, var(--asphalt-2) 0%, var(--asphalt) 100%);
   display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
-  border-bottom:1px solid var(--steel);touch-action:none;
+  border-bottom:1px solid var(--steel);
+  /* pan-y (not none) — lets the browser handle vertical page scroll natively
+     when a drag starts on the photo. Only horizontal drags are intercepted
+     by our own JS (wireDragCarousel); touch-action:none blocked ALL touch
+     gestures here, including scrolling the page past this photo. */
+  touch-action:pan-y;
 }
 /* Absolute so the drag-carousel's ghost photo can stack directly on top of
    the current one and both can be translated independently mid-swipe. */
@@ -402,17 +407,34 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
 .lightbox-scroll{
   flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;
   display:flex;flex-direction:column;align-items:center;
+  /* The sheet overlays the bottom of this area rather than pushing it up
+     (so it can be dragged open without reflowing the photo feed) — this
+     padding keeps the last photo from being permanently hidden behind it. */
+  padding-bottom:170px;
 }
 .lightbox-scroll img{
   width:100%;max-width:900px;display:block;
   aspect-ratio:3/4;object-fit:cover;
   border-bottom:2px solid var(--asphalt);
 }
-.lightbox-info{
-  flex-shrink:0;background:var(--asphalt-2);border-top:1px solid var(--steel);
+/* Swipe-up bottom sheet: collapsed shows just the peek summary, dragging (or
+   tapping) it up reveals the inquiry form beneath. A visible border all the
+   way around (not just background contrast) keeps the rounded top corners
+   readable against the lightbox's own near-black backdrop. */
+.lightbox-sheet{
+  position:absolute;left:0;right:0;bottom:0;z-index:5;
+  background:var(--asphalt-2);
+  border:1px solid var(--steel);border-bottom:none;
   border-radius:16px 16px 0 0;box-shadow:0 -8px 24px rgba(0,0,0,0.45);
-  padding:18px 20px;display:flex;justify-content:space-between;align-items:center;
-  gap:16px;position:relative;z-index:5;
+  max-height:82vh;display:flex;flex-direction:column;
+}
+.lightbox-sheet-handle{
+  width:40px;height:4px;border-radius:2px;background:var(--steel-light);
+  margin:10px auto 2px;flex-shrink:0;touch-action:none;
+}
+.lightbox-info-peek{
+  flex-shrink:0;touch-action:none;cursor:pointer;
+  padding:10px 20px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;
 }
 .lightbox-info-text{flex:1;min-width:0;}
 .lightbox-info-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
@@ -432,9 +454,32 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
 .lightbox-info-btn{
   flex-shrink:0;background:var(--blue);color:#fff;font-weight:700;font-size:14px;
   text-transform:uppercase;letter-spacing:0.04em;padding:14px 22px;border-radius:10px;
-  border:2px solid var(--blue);white-space:nowrap;
+  border:2px solid var(--blue);white-space:nowrap;cursor:pointer;font-family:inherit;
 }
 .lightbox-info-btn:hover{background:transparent;color:var(--blue);}
+
+.lightbox-info-form-wrap{overflow-y:auto;padding:0 20px 24px;border-top:1px solid var(--steel);}
+.lightbox-form-heading{
+  font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;color:var(--paper);
+  text-transform:uppercase;margin:16px 0 14px;
+}
+.lightbox-form{display:flex;flex-direction:column;gap:12px;}
+.lightbox-form input[type="text"],.lightbox-form input[type="tel"],.lightbox-form input[type="email"],.lightbox-form textarea{
+  width:100%;padding:12px 14px;border:1px solid var(--steel);background:var(--asphalt);
+  color:var(--paper);font-family:'Inter',sans-serif;font-size:14px;
+}
+.lightbox-form textarea{resize:vertical;min-height:90px;}
+.lightbox-form input:focus,.lightbox-form textarea:focus{outline:2px solid var(--blue);outline-offset:1px;}
+.lightbox-form-submit{
+  background:var(--blue);color:#fff;font-weight:700;font-size:14px;
+  text-transform:uppercase;letter-spacing:0.04em;padding:14px 20px;border-radius:10px;
+  border:2px solid var(--blue);cursor:pointer;font-family:inherit;
+}
+.lightbox-form-submit:hover{background:transparent;color:var(--blue);}
+.form-success{
+  background:var(--asphalt);color:var(--paper);border-left:4px solid var(--blue);
+  padding:20px 22px;font-size:15px;font-weight:500;
+}
 
 @media (max-width:860px){
   nav{display:none;}
