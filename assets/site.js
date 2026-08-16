@@ -190,6 +190,9 @@ function wireSheetDrag(sheet){
     isOpen = open;
     sheet.style.transition = animate ? 'transform 260ms ease-out' : 'none';
     sheet.style.transform = `translateY(${open ? 0 : collapsedY}px)`;
+    // Once the form is showing, the Inquire button that revealed it has
+    // done its job — leaving it sitting there reads as unclear/dead weight.
+    sheet.classList.toggle('is-open', open);
   }
 
   function onStart(e){
