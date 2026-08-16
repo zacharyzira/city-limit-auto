@@ -156,7 +156,13 @@ function ensureLightbox(){
   el.innerHTML = `
     <div class="lightbox-topbar">
       <button class="lightbox-back" aria-label="Back">&larr;</button>
-      <button class="lightbox-share" type="button"></button>
+      <button class="lightbox-share" type="button">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v12"/>
+          <path d="M8 7l4-4 4 4"/>
+          <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>
+        </svg>
+      </button>
     </div>
     <div class="lightbox-scroll"></div>
     <div class="lightbox-info"></div>
@@ -188,22 +194,20 @@ function openLightbox(opts){
   ).join('');
 
   const shareBtn = el.querySelector('.lightbox-share');
-  shareBtn.textContent = T.share;
+  shareBtn.setAttribute('aria-label', T.share);
   shareBtn.onclick = (e) => shareLink(item, e.currentTarget);
 
   const statusLabel = T.status[item.status] || item.status;
   el.querySelector('.lightbox-info').innerHTML = `
-    <div class="lightbox-info-main">
-      <span class="badge ${badgeClass(item.status)}">${statusLabel}</span>
-      <div>
-        <div class="lightbox-info-title">${item.make} — ${T.unit} ${item.unit}</div>
-        <div class="lightbox-info-specs">${item.year} · ${item.length} · ${trType(item.type)} · ${trSusp(item.suspension) || '—'}</div>
+    <div class="lightbox-info-text">
+      <div class="lightbox-info-top">
+        <span class="lightbox-info-price">$${item.price.toLocaleString()}</span>
+        <span class="badge ${badgeClass(item.status)}">${statusLabel}</span>
       </div>
+      <div class="lightbox-info-title">${item.make} — ${T.unit} ${item.unit}</div>
+      <div class="lightbox-info-specs">${item.year} · ${item.length} · ${trType(item.type)} · ${trSusp(item.suspension) || '—'}</div>
     </div>
-    <div class="lightbox-info-cta">
-      <span class="lightbox-info-price">$${item.price.toLocaleString()}</span>
-      <a href="${T.contact}" class="tag-link">${T.inquire}</a>
-    </div>
+    <a href="${T.contact}" class="lightbox-info-btn">${T.inquire}</a>
   `;
 
   el.hidden = false;
@@ -500,14 +504,16 @@ async function renderInventory(gridId, opts = {}){
       }
     }
 
-    const original = btn.textContent;
+    // innerHTML (not textContent) so this also works for icon-only share
+    // buttons like the lightbox's — swapping textContent would wipe the SVG.
+    const original = btn.innerHTML;
     try {
       await navigator.clipboard.writeText(url);
       btn.textContent = T.copied;
     } catch (e) {
       try { window.prompt(T.copyPrompt, url); } catch (e2) { /* nothing more we can do */ }
     }
-    setTimeout(() => { btn.textContent = original; }, 1600);
+    setTimeout(() => { btn.innerHTML = original; }, 1600);
   }
 
   function buildCard(item){
