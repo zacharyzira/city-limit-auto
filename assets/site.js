@@ -102,7 +102,9 @@ function ensureLightbox(){
   el.innerHTML = `
     <button class="lightbox-close" aria-label="Close">&times;</button>
     <button class="lightbox-prev" aria-label="Previous photo">&lsaquo;</button>
-    <img class="lightbox-img" src="" alt="">
+    <div class="lightbox-stage">
+      <img class="lightbox-img" src="" alt="">
+    </div>
     <button class="lightbox-next" aria-label="Next photo">&rsaquo;</button>
     <div class="lightbox-count"></div>
   `;
@@ -118,7 +120,94 @@ function ensureLightbox(){
     if(e.key === 'ArrowLeft') showLightboxPhoto(-1);
     if(e.key === 'ArrowRight') showLightboxPhoto(1);
   });
-  addSwipeNav(el, () => showLightboxPhoto(1), () => showLightboxPhoto(-1));
+  wireLightboxDrag(el.querySelector('.lightbox-stage'));
+}
+
+// The photo tracks the finger 1:1 while dragging (no easing lag, no snap
+// until the finger lifts), then either finishes the transition or springs
+// back — distance OR speed can trigger a commit, so a fast flick advances
+// even on a short drag, the way Redfin's listing-photo swipe behaves.
+function wireLightboxDrag(stage){
+  let startX = 0, startY = 0, startTime = 0, dragging = false, direction = 0, ghost = null, stageWidth = 0;
+
+  function mainImg(){ return stage.querySelector('.lightbox-img'); }
+
+  function cleanupGhost(){
+    if(ghost && ghost.parentNode) ghost.parentNode.removeChild(ghost);
+    ghost = null;
+  }
+
+  stage.addEventListener('touchstart', (e) => {
+    if(lightboxPhotos.length < 2) return;
+    const t = e.touches[0];
+    startX = t.clientX; startY = t.clientY; startTime = Date.now();
+    dragging = true; direction = 0;
+    stageWidth = stage.clientWidth;
+    cleanupGhost();
+  }, { passive: true });
+
+  stage.addEventListener('touchmove', (e) => {
+    if(!dragging) return;
+    const t = e.touches[0];
+    const dx = t.clientX - startX, dy = t.clientY - startY;
+    if(!direction){
+      if(Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+      direction = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
+      if(direction === 'v'){ dragging = false; return; }
+    }
+    e.preventDefault();
+
+    const cur = mainImg();
+    cur.style.transition = 'none';
+    cur.style.transform = `translateX(${dx}px)`;
+
+    const goingNext = dx < 0;
+    if(!ghost){
+      const nextIdx = (lightboxIndex + (goingNext ? 1 : -1) + lightboxPhotos.length) % lightboxPhotos.length;
+      ghost = document.createElement('img');
+      ghost.className = 'lightbox-img lightbox-img-ghost';
+      ghost.src = lightboxPhotos[nextIdx];
+      ghost.style.transition = 'none';
+      stage.appendChild(ghost);
+    }
+    ghost.style.transform = `translateX(${dx + (goingNext ? stageWidth : -stageWidth)}px)`;
+  }, { passive: false });
+
+  stage.addEventListener('touchend', (e) => {
+    if(!dragging){ direction = 0; return; }
+    dragging = false;
+    if(direction !== 'h'){ direction = 0; cleanupGhost(); return; }
+
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX;
+    const elapsed = Math.max(1, Date.now() - startTime);
+    const velocity = Math.abs(dx) / elapsed; // px/ms
+    const commit = ghost && (Math.abs(dx) > stageWidth * 0.3 || velocity > 0.5);
+    const goingNext = dx < 0;
+    const cur = mainImg();
+
+    if(commit){
+      cur.style.transition = 'transform 200ms ease-out';
+      ghost.style.transition = 'transform 200ms ease-out';
+      cur.style.transform = `translateX(${goingNext ? -stageWidth : stageWidth}px)`;
+      ghost.style.transform = 'translateX(0px)';
+      setTimeout(() => {
+        showLightboxPhoto(goingNext ? 1 : -1);
+        cur.style.transition = 'none';
+        cur.style.transform = '';
+        cleanupGhost();
+      }, 200);
+    } else {
+      cur.style.transition = 'transform 200ms ease-out';
+      cur.style.transform = 'translateX(0px)';
+      if(ghost){
+        ghost.style.transition = 'transform 200ms ease-out';
+        ghost.style.transform = `translateX(${goingNext ? stageWidth : -stageWidth}px)`;
+      }
+      setTimeout(cleanupGhost, 200);
+    }
+    direction = 0;
+  });
 }
 
 function renderLightboxPhoto(){

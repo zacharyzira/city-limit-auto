@@ -350,7 +350,15 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
   display:flex;align-items:center;justify-content:center;
 }
 .lightbox[hidden]{display:none;}
-.lightbox-img{max-width:88vw;max-height:82vh;object-fit:contain;border:1px solid var(--steel);}
+/* The stage shrink-wraps around the (normal-flow) main photo, so it always
+   has a real measurable pixel width for the swipe-drag math to use — the
+   ghost photo used mid-swipe is the only thing absolutely positioned. */
+.lightbox-stage{position:relative;display:inline-block;line-height:0;}
+.lightbox-stage .lightbox-img{
+  display:block;max-width:88vw;max-height:82vh;
+  object-fit:contain;border:1px solid var(--steel);will-change:transform;
+}
+.lightbox-img-ghost{position:absolute;top:0;left:0;width:100%;height:100%;}
 .lightbox-close{
   position:absolute;top:20px;right:24px;background:none;border:none;
   color:#fff;font-size:36px;line-height:1;cursor:pointer;
