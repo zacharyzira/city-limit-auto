@@ -144,9 +144,9 @@ function wireDragCarousel(stage, mainImg, opts){
 }
 
 // ---------- Photo lightbox (click a trailer photo to view all of them) ----------
-let lightboxPhotos = [];
-let lightboxIndex = 0;
-
+// A vertical scrolling feed of every photo, Redfin-style, with a persistent
+// info bar at the bottom (unit, specs, price, inquire) — not a one-photo-at-
+// a-time carousel, so there's no swipe/drag logic here, just native scroll.
 function ensureLightbox(){
   if(document.getElementById('lightbox')) return;
   const el = document.createElement('div');
@@ -154,54 +154,64 @@ function ensureLightbox(){
   el.className = 'lightbox';
   el.hidden = true;
   el.innerHTML = `
-    <button class="lightbox-close" aria-label="Close">&times;</button>
-    <button class="lightbox-prev" aria-label="Previous photo">&lsaquo;</button>
-    <div class="lightbox-stage">
-      <img class="lightbox-img" src="" alt="">
+    <div class="lightbox-topbar">
+      <button class="lightbox-back" aria-label="Back">&larr;</button>
+      <button class="lightbox-share" type="button"></button>
     </div>
-    <button class="lightbox-next" aria-label="Next photo">&rsaquo;</button>
-    <div class="lightbox-count"></div>
+    <div class="lightbox-scroll"></div>
+    <div class="lightbox-info"></div>
   `;
   document.body.appendChild(el);
 
-  el.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-  el.querySelector('.lightbox-prev').addEventListener('click', () => showLightboxPhoto(-1));
-  el.querySelector('.lightbox-next').addEventListener('click', () => showLightboxPhoto(1));
-  el.addEventListener('click', (e) => { if(e.target === el) closeLightbox(); });
+  el.querySelector('.lightbox-back').addEventListener('click', closeLightbox);
+  el.addEventListener('click', (e) => {
+    if(e.target === el || e.target.classList.contains('lightbox-scroll')) closeLightbox();
+  });
   document.addEventListener('keydown', (e) => {
     if(document.getElementById('lightbox')?.hidden) return;
     if(e.key === 'Escape') closeLightbox();
-    if(e.key === 'ArrowLeft') showLightboxPhoto(-1);
-    if(e.key === 'ArrowRight') showLightboxPhoto(1);
-  });
-  const stage = el.querySelector('.lightbox-stage');
-  wireDragCarousel(stage, stage.querySelector('.lightbox-img'), {
-    count: () => lightboxPhotos.length,
-    getIndex: () => lightboxIndex,
-    photoUrl: (i) => lightboxPhotos[i],
-    onSettle: (delta) => showLightboxPhoto(delta),
   });
 }
 
-function renderLightboxPhoto(){
-  const el = document.getElementById('lightbox');
-  if(!el) return;
-  el.querySelector('.lightbox-img').src = lightboxPhotos[lightboxIndex];
-  el.querySelector('.lightbox-count').textContent = `${lightboxIndex + 1} / ${lightboxPhotos.length}`;
-  const multi = lightboxPhotos.length > 1;
-  el.querySelector('.lightbox-prev').style.display = multi ? '' : 'none';
-  el.querySelector('.lightbox-next').style.display = multi ? '' : 'none';
-}
-
-function openLightbox(photos, index, title){
+// opts: { item, index, T, trSusp, trType, shareLink } — T/trSusp/trType/
+// shareLink are the same translation/share helpers renderInventory() already
+// built for the card, passed through so this reads correctly in Spanish too.
+function openLightbox(opts){
+  const { item, index, T, trSusp, trType, shareLink } = opts;
   ensureLightbox();
-  lightboxPhotos = photos;
-  lightboxIndex = index || 0;
   const el = document.getElementById('lightbox');
-  el.querySelector('.lightbox-img').alt = title || '';
+  const photos = Array.isArray(item.photos) ? item.photos : [];
+
+  const scroll = el.querySelector('.lightbox-scroll');
+  scroll.innerHTML = photos.map((src, i) =>
+    `<img src="${src}" alt="${item.title} — ${i + 1}/${photos.length}" loading="${i < 2 ? 'eager' : 'lazy'}">`
+  ).join('');
+
+  const shareBtn = el.querySelector('.lightbox-share');
+  shareBtn.textContent = T.share;
+  shareBtn.onclick = (e) => shareLink(item, e.currentTarget);
+
+  const statusLabel = T.status[item.status] || item.status;
+  el.querySelector('.lightbox-info').innerHTML = `
+    <div class="lightbox-info-main">
+      <span class="badge ${badgeClass(item.status)}">${statusLabel}</span>
+      <div>
+        <div class="lightbox-info-title">${item.make} — ${T.unit} ${item.unit}</div>
+        <div class="lightbox-info-specs">${item.year} · ${item.length} · ${trType(item.type)} · ${trSusp(item.suspension) || '—'}</div>
+      </div>
+    </div>
+    <div class="lightbox-info-cta">
+      <span class="lightbox-info-price">$${item.price.toLocaleString()}</span>
+      <a href="${T.contact}" class="tag-link">${T.inquire}</a>
+    </div>
+  `;
+
   el.hidden = false;
   document.body.style.overflow = 'hidden';
-  renderLightboxPhoto();
+  requestAnimationFrame(() => {
+    const target = scroll.children[index] || scroll.children[0];
+    if(target) target.scrollIntoView({ block: 'start' });
+  });
 }
 
 function closeLightbox(){
@@ -209,11 +219,6 @@ function closeLightbox(){
   if(!el) return;
   el.hidden = true;
   document.body.style.overflow = '';
-}
-
-function showLightboxPhoto(delta){
-  lightboxIndex = (lightboxIndex + delta + lightboxPhotos.length) % lightboxPhotos.length;
-  renderLightboxPhoto();
 }
 
 async function loadInventory(){
@@ -582,7 +587,7 @@ async function renderInventory(gridId, opts = {}){
         }
       }
 
-      photoEl.addEventListener('click', () => openLightbox(photos, photoIdx, item.title));
+      photoEl.addEventListener('click', () => openLightbox({ item, index: photoIdx, T, trSusp, trType, shareLink }));
     }
     card.querySelector('.tag-share').addEventListener('click', (e) => shareLink(item, e.currentTarget));
     return card;
