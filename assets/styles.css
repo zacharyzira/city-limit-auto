@@ -308,12 +308,15 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
 .tag-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed var(--steel);padding-top:14px;}
 .tag-price{font-family:'Oswald',sans-serif;font-size:22px;font-weight:600;color:var(--paper);}
 .tag-actions{display:flex;align-items:center;gap:14px;}
+/* Share and Inquire are a matched pair: same fill, same padding, fully
+   pill-shaped (border-radius past half the button's height rounds the ends
+   into a complete half-circle instead of just softening the corners). */
 .tag-share{
-  font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
-  color:var(--steel-light);background:none;border:1px solid var(--steel);border-radius:8px;
-  padding:6px 10px;cursor:pointer;text-transform:uppercase;letter-spacing:0.04em;
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:700;
+  color:#fff;background:var(--blue);border:2px solid var(--blue);border-radius:999px;
+  padding:8px 14px;cursor:pointer;text-transform:uppercase;letter-spacing:0.04em;
 }
-.tag-share:hover{color:var(--paper);border-color:var(--paper-dim);}
+.tag-share:hover{background:transparent;color:var(--blue);}
 .tag-link{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--blue);border-bottom:1px solid var(--blue);padding-bottom:2px;}
 .tag-link:hover{color:var(--paper);border-color:var(--paper);}
 /* On the trailer card specifically (not the standalone .tag-link used
@@ -321,7 +324,7 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
    rounded button instead of an underlined text link. */
 .tag-footer .tag-link{
   display:inline-block;color:#fff;background:var(--blue);
-  border:2px solid var(--blue);border-radius:8px;
+  border:2px solid var(--blue);border-radius:999px;
   padding:8px 14px;
 }
 .tag-footer .tag-link:hover{background:transparent;color:var(--blue);}
