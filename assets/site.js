@@ -296,6 +296,12 @@ async function renderInventory(gridId, opts = {}){
   // bar (the real inventory listing) — not the homepage teaser grid.
   const focusUnit = filterBar ? new URLSearchParams(location.search).get('unit') : null;
 
+  // Touch devices hide the tap arrows on card photos (swipe replaces them —
+  // see .tag-photo-nav in styles.css) and instead get a one-time nudge
+  // animation the first time a multi-photo card scrolls into view, so it's
+  // still obvious the photo can be swiped.
+  const isTouchDevice = matchMedia('(hover: none) and (pointer: coarse)').matches;
+
   // Suspension/type values come from the sales system in English ("Air",
   // "Spring", "Dry Van"). Translate them for display/filter labels on
   // Spanish pages; the underlying value used for matching/filtering stays
@@ -562,6 +568,18 @@ async function renderInventory(gridId, opts = {}){
           photoUrl: (i) => photos[i],
           onSettle: (delta) => showPhoto(photoIdx + delta),
         });
+
+        if(isTouchDevice){
+          const hintObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if(!entry.isIntersecting) return;
+              imgEl.classList.add('swipe-hint');
+              imgEl.addEventListener('animationend', () => imgEl.classList.remove('swipe-hint'), { once: true });
+              hintObserver.disconnect();
+            });
+          }, { threshold: 0.5 });
+          hintObserver.observe(photoEl);
+        }
       }
 
       photoEl.addEventListener('click', () => openLightbox(photos, photoIdx, item.title));

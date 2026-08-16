@@ -260,6 +260,21 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
 .tag-photo-nav:hover{border-color:var(--blue);color:var(--blue);background:rgba(0,0,0,0.75);}
 .tag-photo-prev{left:8px;}
 .tag-photo-next{right:8px;}
+/* Touch devices already have swipe — the tap arrows are redundant there and
+   just clutter a small thumbnail. Devices with a real pointer (mouse/
+   trackpad, no swipe) keep them since arrows are their only way to browse. */
+@media (hover:none) and (pointer:coarse){
+  .tag-photo-nav{display:none;}
+}
+/* One-time hint (see swipe-hint class in site.js) so touch users notice a
+   card's photo can be swiped, now that the arrows are gone on their device. */
+@keyframes swipeHint{
+  0%{transform:translateX(0);}
+  30%{transform:translateX(-18px);}
+  60%{transform:translateX(4px);}
+  100%{transform:translateX(0);}
+}
+.swipe-hint{animation:swipeHint 600ms ease-out;}
 .photo-count{
   position:absolute;bottom:12px;left:12px;z-index:2;
   background:rgba(0,0,0,0.7);border:1px solid var(--steel-light);color:#fff;
@@ -413,5 +428,5 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
-  *{transition:none !important;}
+  *{transition:none !important;animation:none !important;}
 }
