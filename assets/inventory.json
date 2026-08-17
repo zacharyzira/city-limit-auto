@@ -188,6 +188,21 @@
                    ]
     },
     {
+        "unit":  "CTLZ535038",
+        "vin":  "1JJV532D6CL588764",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  9000,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "P5031869",
         "vin":  "1JJV532W33L861869",
         "title":  "53\u0027  — Wabash",
