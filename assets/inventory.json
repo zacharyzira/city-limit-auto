@@ -27,9 +27,9 @@
         "title":  "53\u0027 Dry Van — Vanguard",
         "make":  "Vanguard",
         "type":  "Dry Van",
-        "year":  2011,
+        "year":  2012,
         "length":  "53\u0027",
-        "price":  9000,
+        "price":  10000,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -42,16 +42,7 @@
                        "/assets/photos/CTLZ033753/7.jpg",
                        "/assets/photos/CTLZ033753/8.jpg",
                        "/assets/photos/CTLZ033753/9.jpg",
-                       "/assets/photos/CTLZ033753/10.jpg",
-                       "/assets/photos/CTLZ033753/11.jpg",
-                       "/assets/photos/CTLZ033753/12.jpg",
-                       "/assets/photos/CTLZ033753/13.jpg",
-                       "/assets/photos/CTLZ033753/14.jpg",
-                       "/assets/photos/CTLZ033753/15.jpg",
-                       "/assets/photos/CTLZ033753/16.jpg",
-                       "/assets/photos/CTLZ033753/17.jpg",
-                       "/assets/photos/CTLZ033753/18.jpg",
-                       "/assets/photos/CTLZ033753/19.jpg"
+                       "/assets/photos/CTLZ033753/10.jpg"
                    ]
     },
     {
@@ -194,29 +185,6 @@
                        "/assets/photos/CTLZ534294/8.jpg",
                        "/assets/photos/CTLZ534294/9.jpg",
                        "/assets/photos/CTLZ534294/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "CTLZ537048",
-        "vin":  "5V8VC5329GM604184",
-        "title":  "53\u0027 Dry Van — Vanguard",
-        "make":  "Vanguard",
-        "type":  "Dry Van",
-        "year":  2016,
-        "length":  "53\u0027",
-        "price":  14000,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/CTLZ537048/1.jpg",
-                       "/assets/photos/CTLZ537048/2.jpg",
-                       "/assets/photos/CTLZ537048/3.jpg",
-                       "/assets/photos/CTLZ537048/4.jpg",
-                       "/assets/photos/CTLZ537048/5.jpg",
-                       "/assets/photos/CTLZ537048/6.jpg",
-                       "/assets/photos/CTLZ537048/7.jpg",
-                       "/assets/photos/CTLZ537048/8.jpg",
-                       "/assets/photos/CTLZ537048/9.jpg"
                    ]
     },
     {
