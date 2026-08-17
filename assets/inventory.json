@@ -164,6 +164,21 @@
                    ]
     },
     {
+        "unit":  "CTLZ534075",
+        "vin":  "5V8VC5325CM203967",
+        "title":  "53\u0027 Dry Van — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ534294",
         "vin":  "1JJV532W08L096644",
         "title":  "53\u0027 Dry Van — Wabash",
