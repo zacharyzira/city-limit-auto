@@ -240,9 +240,10 @@
       <div class="section-head">
         <div>
           <div class="section-eyebrow">Precalifíquese</div>
-          <h2>Solicitud de Financiamiento</h2>
+          <h2>Comience su Solicitud</h2>
         </div>
       </div>
+      <p style="max-width:600px;color:var(--steel);font-size:15px;margin:-16px 0 28px;">Solo necesitamos información básica de contacto para comenzar — sin detalles financieros aquí. Después de aplicar, le dirigiremos al sitio seguro de nuestro socio de financiamiento para terminar el resto directamente con ellos.</p>
       <form id="financingFormEs" class="form-grid" action="https://formspree.io/f/xeeyykdp" method="POST">
         <input type="hidden" name="_subject" value="Nueva Solicitud de Financiamiento (ES) — City Limit Auto">
         <input type="hidden" name="_cc" value="zach@citylimitauto.com,noe@citylimitauto.com,casey@flexfleettrailers.com">
@@ -264,272 +265,24 @@
           <label for="fe-email">Correo Electrónico</label>
           <input type="email" id="fe-email" name="email" required>
         </div>
-
-        <div class="full form-section-title">Información del Negocio</div>
         <div class="full">
-          <label for="fe-business-name">Nombre Legal del Negocio</label>
-          <input type="text" id="fe-business-name" name="fe-business-name" required placeholder="Déjelo en blanco si solicita como individuo">
-        </div>
-        <div class="full">
-          <label for="fe-business-address">Dirección del Negocio</label>
-          <input type="text" id="fe-business-address" name="fe-business-address">
-        </div>
-        <div class="full field-row-addr">
-          <div>
-            <label for="fe-business-city">Ciudad</label>
-            <input type="text" id="fe-business-city" name="fe-business-city">
-          </div>
-          <div>
-            <label for="fe-business-state">Estado</label>
-            <input type="text" id="fe-business-state" name="fe-business-state">
-          </div>
-          <div>
-            <label for="fe-business-zip">Código Postal</label>
-            <input type="text" id="fe-business-zip" name="fe-business-zip">
-          </div>
+          <label for="fe-business-name">Nombre del Negocio <span style="font-weight:400;text-transform:none;">(si aplica)</span></label>
+          <input type="text" id="fe-business-name" name="fe-business-name">
         </div>
         <div>
-          <label for="fe-ein">ID Federal de Impuestos / EIN</label>
-          <input type="text" id="fe-ein" name="fe-ein" placeholder="Si aplica">
-        </div>
-        <div>
-          <label for="fe-business-type">Tipo de Negocio</label>
-          <select id="fe-business-type" name="fe-business-type" class="form-input">
-            <option>Propietario Único</option>
-            <option>LLC</option>
-            <option>S-Corporation</option>
-            <option>C-Corporation</option>
-            <option>Sociedad</option>
-            <option>Individual / Personal</option>
-          </select>
-        </div>
-        <div>
-          <label for="fe-year-started">Año en que Inició el Negocio</label>
-          <input type="number" id="fe-year-started" name="fe-year-started" placeholder="ej. 2019" min="1900" max="2026">
-        </div>
-        <div>
-          <label for="fe-year-incorporated">Año de Incorporación <span style="font-weight:400;text-transform:none;">(si aplica)</span></label>
-          <input type="number" id="fe-year-incorporated" name="fe-year-incorporated" placeholder="ej. 2019" min="1900" max="2026">
-        </div>
-
-        <div class="full form-section-title">Finanzas del Negocio</div>
-        <div>
-          <label for="fe-revenue">Ingresos Anuales del Negocio</label>
-          <input type="text" id="fe-revenue" name="fe-revenue" placeholder="ej. $250,000">
-        </div>
-        <div>
-          <label for="fe-avg-balance">Saldo Bancario Promedio Mensual</label>
-          <input type="text" id="fe-avg-balance" name="fe-avg-balance" placeholder="ej. $15,000">
-        </div>
-        <div class="full field-row-3">
-          <div>
-            <label for="fe-fleet-trucks"># Camiones</label>
-            <input type="number" id="fe-fleet-trucks" name="fe-fleet-trucks" min="0">
-          </div>
-          <div>
-            <label for="fe-fleet-trailers"># Remolques</label>
-            <input type="number" id="fe-fleet-trailers" name="fe-fleet-trailers" min="0">
-          </div>
-          <div>
-            <label for="fe-fleet-tractors"># Tractocamiones</label>
-            <input type="number" id="fe-fleet-tractors" name="fe-fleet-tractors" min="0">
-          </div>
-        </div>
-
-        <div class="full form-section-title">Lo Que Está Financiando</div>
-        <div>
-          <label for="fe-mcdot">Número MC / DOT</label>
-          <input type="text" id="fe-mcdot" name="fe-mcdot" placeholder="Si aplica">
-        </div>
-        <div>
-          <label for="fe-interest">Tipo de Remolque de Interés</label>
-          <select id="fe-interest" name="fe-interest" class="form-input">
-            <option>Dry Van</option>
-            <option>Reefer</option>
-            <option>Flatbed</option>
-            <option>Aún no estoy seguro</option>
-          </select>
-        </div>
-        <div>
-          <label for="fe-unit-number">Número de Unidad (si lo sabe)</label>
+          <label for="fe-unit-number">Remolque de Interés <span style="font-weight:400;text-transform:none;">(si lo sabe)</span></label>
           <input type="text" id="fe-unit-number" name="fe-unit-number" placeholder="Vea nuestra página de inventario">
         </div>
         <div>
           <label for="fe-purchase-price">Precio de Compra</label>
           <input type="text" id="fe-purchase-price" name="fe-purchase-price" placeholder="ej. $10,000">
         </div>
-        <div>
-          <label for="fe-finance-amount">Monto a Financiar</label>
-          <input type="text" id="fe-finance-amount" name="fe-finance-amount" placeholder="ej. $8,000">
-        </div>
-        <div>
-          <label for="fe-down">Enganche</label>
-          <input type="text" id="fe-down" name="fe-down" placeholder="ej. $2,000">
-        </div>
-        <div>
-          <label for="fe-term">Plazo Deseado</label>
-          <select id="fe-term" name="fe-term" class="form-input">
-            <option>12 meses</option>
-            <option>24 meses</option>
-            <option>36 meses</option>
-            <option>48 meses</option>
-            <option>60+ meses</option>
-            <option>Aún no estoy seguro</option>
-          </select>
-        </div>
-
-        <div class="full form-section-title">Información del Propietario / Dueño</div>
-        <div>
-          <label for="fe-owner1-name">Nombre del Propietario</label>
-          <input type="text" id="fe-owner1-name" name="fe-owner1-name" required>
-        </div>
-        <div>
-          <label for="fe-owner1-title">Puesto</label>
-          <input type="text" id="fe-owner1-title" name="fe-owner1-title" placeholder="ej. Dueño, Presidente">
-        </div>
-        <div>
-          <label for="fe-owner1-percent">% de Propiedad</label>
-          <input type="text" id="fe-owner1-percent" name="fe-owner1-percent" placeholder="ej. 100%">
-        </div>
-        <div>
-          <label for="fe-owner1-homeowner">¿Es Dueño de Casa?</label>
-          <select id="fe-owner1-homeowner" name="fe-owner1-homeowner" class="form-input">
-            <option>Sí</option>
-            <option>No</option>
-          </select>
-        </div>
-        <div class="full">
-          <label for="fe-owner1-address">Dirección Particular</label>
-          <input type="text" id="fe-owner1-address" name="fe-owner1-address">
-        </div>
-        <div class="full field-row-addr">
-          <div>
-            <label for="fe-owner1-city">Ciudad</label>
-            <input type="text" id="fe-owner1-city" name="fe-owner1-city">
-          </div>
-          <div>
-            <label for="fe-owner1-state">Estado</label>
-            <input type="text" id="fe-owner1-state" name="fe-owner1-state">
-          </div>
-          <div>
-            <label for="fe-owner1-zip">Código Postal</label>
-            <input type="text" id="fe-owner1-zip" name="fe-owner1-zip">
-          </div>
-        </div>
-        <div>
-          <label for="fe-owner1-phone">Teléfono del Propietario</label>
-          <input type="tel" id="fe-owner1-phone" name="fe-owner1-phone">
-        </div>
-        <div>
-          <label for="fe-owner1-email">Correo del Propietario</label>
-          <input type="email" id="fe-owner1-email" name="fe-owner1-email">
-        </div>
-
-        <div class="full" style="margin-top:6px;">
-          <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--steel);text-transform:uppercase;">Segundo Propietario / Dueño <span style="font-weight:400;">(si aplica)</span></p>
-        </div>
-        <div>
-          <label for="fe-owner2-name">Nombre del Propietario</label>
-          <input type="text" id="fe-owner2-name" name="fe-owner2-name">
-        </div>
-        <div>
-          <label for="fe-owner2-title">Puesto</label>
-          <input type="text" id="fe-owner2-title" name="fe-owner2-title">
-        </div>
-        <div>
-          <label for="fe-owner2-percent">% de Propiedad</label>
-          <input type="text" id="fe-owner2-percent" name="fe-owner2-percent">
-        </div>
-        <div>
-          <label for="fe-owner2-homeowner">¿Es Dueño de Casa?</label>
-          <select id="fe-owner2-homeowner" name="fe-owner2-homeowner" class="form-input">
-            <option value="">—</option>
-            <option>Sí</option>
-            <option>No</option>
-          </select>
-        </div>
-        <div class="full">
-          <label for="fe-owner2-address">Dirección Particular</label>
-          <input type="text" id="fe-owner2-address" name="fe-owner2-address">
-        </div>
-        <div class="full field-row-addr">
-          <div>
-            <label for="fe-owner2-city">Ciudad</label>
-            <input type="text" id="fe-owner2-city" name="fe-owner2-city">
-          </div>
-          <div>
-            <label for="fe-owner2-state">Estado</label>
-            <input type="text" id="fe-owner2-state" name="fe-owner2-state">
-          </div>
-          <div>
-            <label for="fe-owner2-zip">Código Postal</label>
-            <input type="text" id="fe-owner2-zip" name="fe-owner2-zip">
-          </div>
-        </div>
-        <div>
-          <label for="fe-owner2-phone">Teléfono del Propietario</label>
-          <input type="tel" id="fe-owner2-phone" name="fe-owner2-phone">
-        </div>
-        <div>
-          <label for="fe-owner2-email">Correo del Propietario</label>
-          <input type="email" id="fe-owner2-email" name="fe-owner2-email">
-        </div>
-
-        <div class="full form-section-title">Historial de Crédito</div>
-        <div class="full">
-          <label>Marque lo que aplique</label>
-          <div class="checkbox-row">
-            <label class="checkbox-label"><input type="checkbox" id="fe-bankruptcy" name="fe-bankruptcy" value="Sí"> Se declaró en bancarrota</label>
-            <label class="checkbox-label"><input type="checkbox" id="fe-lien" name="fe-lien" value="Sí"> Sentencia o gravamen</label>
-            <label class="checkbox-label"><input type="checkbox" id="fe-repo" name="fe-repo" value="Sí"> Reposesión</label>
-          </div>
-        </div>
-        <div class="full">
-          <label for="fe-credit-explain">Si marcó alguna de las anteriores, explique brevemente</label>
-          <textarea id="fe-credit-explain" name="fe-credit-explain"></textarea>
-        </div>
-
-        <div class="full form-section-title">Referencias</div>
-        <div>
-          <label for="fe-efr-name">Referencia de Financiamiento de Equipo</label>
-          <input type="text" id="fe-efr-name" name="fe-efr-name" placeholder="Nombre del prestamista / compañía">
-        </div>
-        <div>
-          <label for="fe-efr-account">Número de Cuenta</label>
-          <input type="text" id="fe-efr-account" name="fe-efr-account">
-        </div>
-        <div>
-          <label for="fe-efr-contact">Nombre de Contacto</label>
-          <input type="text" id="fe-efr-contact" name="fe-efr-contact">
-        </div>
-        <div>
-          <label for="fe-efr-phone">Teléfono de Contacto</label>
-          <input type="tel" id="fe-efr-phone" name="fe-efr-phone">
-        </div>
-        <div>
-          <label for="fe-tr-company">Referencia Comercial / de Transporte</label>
-          <input type="text" id="fe-tr-company" name="fe-tr-company" placeholder="Nombre de la compañía">
-        </div>
-        <div>
-          <label for="fe-tr-contact">Nombre de Contacto</label>
-          <input type="text" id="fe-tr-contact" name="fe-tr-contact">
-        </div>
-        <div>
-          <label for="fe-tr-phone">Teléfono de Contacto</label>
-          <input type="tel" id="fe-tr-phone" name="fe-tr-phone">
-        </div>
-        <div>
-          <label for="fe-tr-years">¿Cuánto Tiempo? (años)</label>
-          <input type="number" id="fe-tr-years" name="fe-tr-years" min="0">
-        </div>
-
         <div class="full">
           <label for="fe-notes">Notas</label>
-          <textarea id="fe-notes" name="fe-notes" placeholder="Cuándo lo necesita, cualquier otro detalle relevante"></textarea>
+          <textarea id="fe-notes" name="fe-notes" placeholder="Qué está buscando financiar, y cualquier otro detalle que ayude"></textarea>
         </div>
-        <p class="form-note">Por favor no incluya su número de Seguro Social, fecha de nacimiento, u otros documentos personales sensibles aquí. Después de enviar, le dirigiremos al sitio seguro de nuestro socio de financiamiento para terminar esos detalles directamente con ellos.</p>
         <div class="full">
-          <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Enviar Solicitud</button>
+          <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Aplicar Ahora</button>
         </div>
       </form>
     </div>
@@ -564,7 +317,7 @@
 
 <script src="/assets/site.js"></script>
 <script>
-  wireForm('financingFormEs', "Gracias — recibimos su solicitud de financiamiento y le responderemos en un día hábil.<br><br>¿Listo para avanzar ahora? Continúe al sitio seguro de nuestro socio de financiamiento para terminar su solicitud — incluyendo su Seguro Social o fecha de nacimiento — directamente con ellos.<br><a href=\"https://forms.commercialfleetfinancing.com/connect/credit-application?vendorID=b14786af-149b-f111-b8db-70a8a5433964\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-primary\">Continuar a la Solicitud Segura →</a>");
+  wireForm('financingFormEs', "Gracias — recibimos su información y le responderemos pronto.<br><br>¿Listo para avanzar ahora? Continúe a la solicitud segura de nuestro socio de financiamiento para terminar el resto directamente con ellos.<br><a href=\"https://forms.commercialfleetfinancing.com/connect/credit-application?vendorID=b14786af-149b-f111-b8db-70a8a5433964\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-primary\">Continuar a la Solicitud Segura →</a>");
 
   // Viniendo del botón "Financiar" de un remolque específico, se rellenan
   // el número de unidad y el precio para que no haya que buscarlos de nuevo.

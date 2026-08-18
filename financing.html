@@ -240,11 +240,12 @@
       <div class="section-head">
         <div>
           <div class="section-eyebrow">Get Pre-Qualified</div>
-          <h2>Financing Application</h2>
+          <h2>Start Your Application</h2>
         </div>
       </div>
+      <p style="max-width:600px;color:var(--steel);font-size:15px;margin:-16px 0 28px;">We just need some basic contact info to get started — no financial details here. After you apply, we'll point you to our lending partner's secure site to finish the rest directly with them.</p>
       <form id="financingForm" class="form-grid" action="https://formspree.io/f/xeeyykdp" method="POST">
-        <input type="hidden" name="_subject" value="New Financing Application — City Limit Auto">
+        <input type="hidden" name="_subject" value="New Financing Lead — City Limit Auto">
         <input type="hidden" name="_cc" value="zach@citylimitauto.com,noe@citylimitauto.com,casey@flexfleettrailers.com">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
@@ -264,272 +265,24 @@
           <label for="email">Email</label>
           <input type="email" id="email" name="email" required>
         </div>
-
-        <div class="full form-section-title">Company Information</div>
         <div class="full">
-          <label for="business-name">Legal Business / Company Name</label>
-          <input type="text" id="business-name" name="business-name" required placeholder="Leave blank if applying as an individual">
-        </div>
-        <div class="full">
-          <label for="business-address">Company Address</label>
-          <input type="text" id="business-address" name="business-address">
-        </div>
-        <div class="full field-row-addr">
-          <div>
-            <label for="business-city">City</label>
-            <input type="text" id="business-city" name="business-city">
-          </div>
-          <div>
-            <label for="business-state">State</label>
-            <input type="text" id="business-state" name="business-state">
-          </div>
-          <div>
-            <label for="business-zip">Zip</label>
-            <input type="text" id="business-zip" name="business-zip">
-          </div>
+          <label for="business-name">Business / Company Name <span style="font-weight:400;text-transform:none;">(if applicable)</span></label>
+          <input type="text" id="business-name" name="business-name">
         </div>
         <div>
-          <label for="ein">Federal Tax ID / EIN</label>
-          <input type="text" id="ein" name="ein" placeholder="If applicable">
-        </div>
-        <div>
-          <label for="business-type">Business Type</label>
-          <select id="business-type" name="business-type" class="form-input">
-            <option>Sole Proprietorship</option>
-            <option>LLC</option>
-            <option>S-Corporation</option>
-            <option>C-Corporation</option>
-            <option>Partnership</option>
-            <option>Individual / Personal</option>
-          </select>
-        </div>
-        <div>
-          <label for="year-started">Year Business Started</label>
-          <input type="number" id="year-started" name="year-started" placeholder="e.g. 2019" min="1900" max="2026">
-        </div>
-        <div>
-          <label for="year-incorporated">Year Incorporated <span style="font-weight:400;text-transform:none;">(if applicable)</span></label>
-          <input type="number" id="year-incorporated" name="year-incorporated" placeholder="e.g. 2019" min="1900" max="2026">
-        </div>
-
-        <div class="full form-section-title">Business Financials</div>
-        <div>
-          <label for="revenue">Annual Business Revenue</label>
-          <input type="text" id="revenue" name="revenue" placeholder="e.g. $250,000">
-        </div>
-        <div>
-          <label for="avg-bank-balance">Average Monthly Bank Balance</label>
-          <input type="text" id="avg-bank-balance" name="avg-bank-balance" placeholder="e.g. $15,000">
-        </div>
-        <div class="full field-row-3">
-          <div>
-            <label for="fleet-trucks"># Trucks</label>
-            <input type="number" id="fleet-trucks" name="fleet-trucks" min="0">
-          </div>
-          <div>
-            <label for="fleet-trailers"># Trailers</label>
-            <input type="number" id="fleet-trailers" name="fleet-trailers" min="0">
-          </div>
-          <div>
-            <label for="fleet-tractors"># Tractors</label>
-            <input type="number" id="fleet-tractors" name="fleet-tractors" min="0">
-          </div>
-        </div>
-
-        <div class="full form-section-title">What You're Financing</div>
-        <div>
-          <label for="mc-dot">MC / DOT Number</label>
-          <input type="text" id="mc-dot" name="mc-dot" placeholder="If applicable">
-        </div>
-        <div>
-          <label for="unit-interest">Trailer Type of Interest</label>
-          <select id="unit-interest" name="unit-interest" class="form-input">
-            <option>Dry Van</option>
-            <option>Reefer</option>
-            <option>Flatbed</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div>
-          <label for="unit-number">Specific Unit # (if known)</label>
+          <label for="unit-number">Trailer of Interest <span style="font-weight:400;text-transform:none;">(if known)</span></label>
           <input type="text" id="unit-number" name="unit-number" placeholder="See our inventory page">
         </div>
         <div>
           <label for="purchase-price">Purchase Price</label>
           <input type="text" id="purchase-price" name="purchase-price" placeholder="e.g. $10,000">
         </div>
-        <div>
-          <label for="finance-amount">Amount to Finance</label>
-          <input type="text" id="finance-amount" name="finance-amount" placeholder="e.g. $8,000">
-        </div>
-        <div>
-          <label for="down-payment">Cash Down</label>
-          <input type="text" id="down-payment" name="down-payment" placeholder="e.g. $2,000">
-        </div>
-        <div>
-          <label for="term">Desired Term</label>
-          <select id="term" name="term" class="form-input">
-            <option>12 months</option>
-            <option>24 months</option>
-            <option>36 months</option>
-            <option>48 months</option>
-            <option>60+ months</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-
-        <div class="full form-section-title">Owner / Principal Information</div>
-        <div>
-          <label for="owner1-name">Owner Name</label>
-          <input type="text" id="owner1-name" name="owner1-name" required>
-        </div>
-        <div>
-          <label for="owner1-title">Title</label>
-          <input type="text" id="owner1-title" name="owner1-title" placeholder="e.g. Owner, President">
-        </div>
-        <div>
-          <label for="owner1-percent">% Owned</label>
-          <input type="text" id="owner1-percent" name="owner1-percent" placeholder="e.g. 100%">
-        </div>
-        <div>
-          <label for="owner1-homeowner">Homeowner?</label>
-          <select id="owner1-homeowner" name="owner1-homeowner" class="form-input">
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-        </div>
-        <div class="full">
-          <label for="owner1-address">Home Address</label>
-          <input type="text" id="owner1-address" name="owner1-address">
-        </div>
-        <div class="full field-row-addr">
-          <div>
-            <label for="owner1-city">City</label>
-            <input type="text" id="owner1-city" name="owner1-city">
-          </div>
-          <div>
-            <label for="owner1-state">State</label>
-            <input type="text" id="owner1-state" name="owner1-state">
-          </div>
-          <div>
-            <label for="owner1-zip">Zip</label>
-            <input type="text" id="owner1-zip" name="owner1-zip">
-          </div>
-        </div>
-        <div>
-          <label for="owner1-phone">Owner Phone</label>
-          <input type="tel" id="owner1-phone" name="owner1-phone">
-        </div>
-        <div>
-          <label for="owner1-email">Owner Email</label>
-          <input type="email" id="owner1-email" name="owner1-email">
-        </div>
-
-        <div class="full" style="margin-top:6px;">
-          <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--steel);text-transform:uppercase;">Second Owner / Principal <span style="font-weight:400;">(if applicable)</span></p>
-        </div>
-        <div>
-          <label for="owner2-name">Owner Name</label>
-          <input type="text" id="owner2-name" name="owner2-name">
-        </div>
-        <div>
-          <label for="owner2-title">Title</label>
-          <input type="text" id="owner2-title" name="owner2-title">
-        </div>
-        <div>
-          <label for="owner2-percent">% Owned</label>
-          <input type="text" id="owner2-percent" name="owner2-percent">
-        </div>
-        <div>
-          <label for="owner2-homeowner">Homeowner?</label>
-          <select id="owner2-homeowner" name="owner2-homeowner" class="form-input">
-            <option value="">—</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-        </div>
-        <div class="full">
-          <label for="owner2-address">Home Address</label>
-          <input type="text" id="owner2-address" name="owner2-address">
-        </div>
-        <div class="full field-row-addr">
-          <div>
-            <label for="owner2-city">City</label>
-            <input type="text" id="owner2-city" name="owner2-city">
-          </div>
-          <div>
-            <label for="owner2-state">State</label>
-            <input type="text" id="owner2-state" name="owner2-state">
-          </div>
-          <div>
-            <label for="owner2-zip">Zip</label>
-            <input type="text" id="owner2-zip" name="owner2-zip">
-          </div>
-        </div>
-        <div>
-          <label for="owner2-phone">Owner Phone</label>
-          <input type="tel" id="owner2-phone" name="owner2-phone">
-        </div>
-        <div>
-          <label for="owner2-email">Owner Email</label>
-          <input type="email" id="owner2-email" name="owner2-email">
-        </div>
-
-        <div class="full form-section-title">Credit History</div>
-        <div class="full">
-          <label>Check any that apply</label>
-          <div class="checkbox-row">
-            <label class="checkbox-label"><input type="checkbox" id="bankruptcy" name="bankruptcy" value="Yes"> Declared bankruptcy</label>
-            <label class="checkbox-label"><input type="checkbox" id="lien" name="lien" value="Yes"> Judgment or lien</label>
-            <label class="checkbox-label"><input type="checkbox" id="repo" name="repo" value="Yes"> Repossession</label>
-          </div>
-        </div>
-        <div class="full">
-          <label for="credit-explain">If you checked any of the above, briefly explain</label>
-          <textarea id="credit-explain" name="credit-explain"></textarea>
-        </div>
-
-        <div class="full form-section-title">References</div>
-        <div>
-          <label for="efr-name">Equipment Finance Reference</label>
-          <input type="text" id="efr-name" name="efr-name" placeholder="Lender / company name">
-        </div>
-        <div>
-          <label for="efr-account">Account #</label>
-          <input type="text" id="efr-account" name="efr-account">
-        </div>
-        <div>
-          <label for="efr-contact">Contact Name</label>
-          <input type="text" id="efr-contact" name="efr-contact">
-        </div>
-        <div>
-          <label for="efr-phone">Contact Phone</label>
-          <input type="tel" id="efr-phone" name="efr-phone">
-        </div>
-        <div>
-          <label for="tr-company">Trade / Hauling Reference</label>
-          <input type="text" id="tr-company" name="tr-company" placeholder="Company name">
-        </div>
-        <div>
-          <label for="tr-contact">Contact Name</label>
-          <input type="text" id="tr-contact" name="tr-contact">
-        </div>
-        <div>
-          <label for="tr-phone">Contact Phone</label>
-          <input type="tel" id="tr-phone" name="tr-phone">
-        </div>
-        <div>
-          <label for="tr-years">How Long? (years)</label>
-          <input type="number" id="tr-years" name="tr-years" min="0">
-        </div>
-
         <div class="full">
           <label for="notes">Notes</label>
-          <textarea id="notes" name="notes" placeholder="Timeline, anything else that's relevant"></textarea>
+          <textarea id="notes" name="notes" placeholder="What are you looking to finance, and anything else that's helpful"></textarea>
         </div>
-        <p class="form-note">Please don't include your Social Security number, date of birth, or other sensitive personal documents here. After you submit, we'll point you to our lending partner's secure site to finish those details directly with them.</p>
         <div class="full">
-          <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Submit Application</button>
+          <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Apply Now</button>
         </div>
       </form>
     </div>
@@ -564,7 +317,7 @@
 
 <script src="assets/site.js"></script>
 <script>
-  wireForm('financingForm', "Thanks — we've got your application and will follow up within one business day.<br><br>Ready to move forward now? Continue to our lending partner's secure site to finish your application — including any Social Security or date of birth details — directly with them.<br><a href=\"https://forms.commercialfleetfinancing.com/connect/credit-application?vendorID=b14786af-149b-f111-b8db-70a8a5433964\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-primary\">Continue to Lender's Secure Application →</a>");
+  wireForm('financingForm', "Thanks — we've got your info and will follow up shortly.<br><br>Ready to move forward now? Continue to our lending partner's secure application to finish the rest directly with them.<br><a href=\"https://forms.commercialfleetfinancing.com/connect/credit-application?vendorID=b14786af-149b-f111-b8db-70a8a5433964\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-primary\">Continue to Lender's Secure Application →</a>");
 
   // Coming from a specific trailer's "Apply" button pre-fills the unit
   // number and price so people don't have to look them up again.

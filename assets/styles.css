@@ -373,20 +373,6 @@ input:focus,select.form-input:focus,textarea:focus{outline:2px solid var(--rust)
   padding:20px 22px;font-size:15px;font-weight:500;margin-bottom:0;
 }
 .form-success .btn{margin-top:14px;}
-.form-section-title{
-  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;
-  color:var(--rust);text-transform:uppercase;border-top:2px solid var(--asphalt);
-  padding-top:22px;margin-top:8px;
-}
-.form-grid .full.form-section-title:first-child{border-top:none;padding-top:0;margin-top:0;}
-.checkbox-row{display:flex;gap:24px;flex-wrap:wrap;margin-top:2px;}
-.checkbox-label{
-  display:flex;align-items:center;gap:8px;font-size:14px;font-weight:400;
-  text-transform:none;letter-spacing:normal;color:var(--asphalt);cursor:pointer;
-}
-.checkbox-label input{width:auto;accent-color:var(--blue);}
-.field-row-addr{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;}
-.field-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
 
 /* ---------- Footer ---------- */
 footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
@@ -563,8 +549,6 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
   .content-grid{grid-template-columns:1fr;}
   .form-grid{grid-template-columns:1fr;}
   .faq-grid{grid-template-columns:1fr;}
-  .field-row-addr{grid-template-columns:1fr;}
-  .field-row-3{grid-template-columns:1fr;}
 }
 /* Narrow phones: brand + CTA + hamburger don't fit on one line, which forces
    the CTA and brand text to wrap. Contact is already reachable from the
