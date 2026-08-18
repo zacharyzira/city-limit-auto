@@ -2,12 +2,12 @@
     {
         "unit":  "7321293",
         "vin":  "1JJV532D4EL814819",
-        "title":  "53\u0027 Dry Van — Wabash",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
         "make":  "Wabash",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2014,
         "length":  "53\u0027",
-        "price":  12500,
+        "price":  13000,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -24,12 +24,12 @@
     {
         "unit":  "CTLZ033753",
         "vin":  "5V8VC532XCM203916",
-        "title":  "53\u0027 Dry Van — Vanguard",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
         "make":  "Vanguard",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2012,
         "length":  "53\u0027",
-        "price":  10000,
+        "price":  10500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -48,12 +48,12 @@
     {
         "unit":  "CTLZ038853",
         "vin":  "5V8VC5322CM204025",
-        "title":  "53\u0027 Dry Van — Vanguard",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
         "make":  "Vanguard",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2012,
         "length":  "53\u0027",
-        "price":  10000,
+        "price":  10500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -72,12 +72,12 @@
     {
         "unit":  "CTLZ533340",
         "vin":  "1JJV532W18L201904",
-        "title":  "53\u0027 Dry Van — Wabash",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
         "make":  "Wabash",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2008,
         "length":  "53\u0027",
-        "price":  8000,
+        "price":  8500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -95,12 +95,12 @@
     {
         "unit":  "CTLZ533382",
         "vin":  "1JJV532W38L219675",
-        "title":  "53\u0027 Dry Van — Wabash",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
         "make":  "Wabash",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2008,
         "length":  "53\u0027",
-        "price":  8000,
+        "price":  8500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -134,9 +134,9 @@
     {
         "unit":  "CTLZ533699",
         "vin":  "1JJV532W68L096678",
-        "title":  "53\u0027 Dry Van — Wabash",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
         "make":  "Wabash",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2008,
         "length":  "53\u0027",
         "price":  8000,
@@ -158,12 +158,12 @@
     {
         "unit":  "CTLZ533909",
         "vin":  "5V8VC532XCM204127",
-        "title":  "53\u0027 Dry Van — Vanguard",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
         "make":  "Vanguard",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2012,
         "length":  "53\u0027",
-        "price":  10000,
+        "price":  10500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -181,12 +181,12 @@
     {
         "unit":  "CTLZ534075",
         "vin":  "5V8VC5325CM203967",
-        "title":  "53\u0027 Dry Van — Vanguard",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
         "make":  "Vanguard",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2012,
         "length":  "53\u0027",
-        "price":  10000,
+        "price":  10500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -205,12 +205,12 @@
     {
         "unit":  "CTLZ534294",
         "vin":  "1JJV532W08L096644",
-        "title":  "53\u0027 Dry Van — Wabash",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
         "make":  "Wabash",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2008,
         "length":  "53\u0027",
-        "price":  8000,
+        "price":  8500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -227,38 +227,14 @@
                    ]
     },
     {
-        "unit":  "CTLZ535038",
-        "vin":  "1JJV532D6CL588764",
-        "title":  "53\u0027 Dry Van — Wabash",
-        "make":  "Wabash",
-        "type":  "Dry Van",
-        "year":  2012,
-        "length":  "53\u0027",
-        "price":  9500,
-        "suspension":  "Spring",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/CTLZ535038/1.jpg",
-                       "/assets/photos/CTLZ535038/2.jpg",
-                       "/assets/photos/CTLZ535038/3.jpg",
-                       "/assets/photos/CTLZ535038/4.jpg",
-                       "/assets/photos/CTLZ535038/5.jpg",
-                       "/assets/photos/CTLZ535038/6.jpg",
-                       "/assets/photos/CTLZ535038/7.jpg",
-                       "/assets/photos/CTLZ535038/8.jpg",
-                       "/assets/photos/CTLZ535038/9.jpg",
-                       "/assets/photos/CTLZ535038/10.jpg"
-                   ]
-    },
-    {
         "unit":  "PCAZ113492",
         "vin":  "1S12E95337E516703",
-        "title":  "53\u0027 Dry Van — Strick",
+        "title":  "53\u0027 Dry Van - Plate — Strick",
         "make":  "Strick",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2007,
         "length":  "53\u0027",
-        "price":  7000,
+        "price":  7500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -319,21 +295,6 @@
                        "/assets/photos/PIFZ305016/8.jpg",
                        "/assets/photos/PIFZ305016/9.jpg",
                        "/assets/photos/PIFZ305016/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "PIFZ804017",
-        "vin":  "2MN01JAH841003308",
-        "title":  "53\u0027 Dry Van — Trailmobile",
-        "make":  "Trailmobile",
-        "type":  "Dry Van",
-        "year":  2004,
-        "length":  "53\u0027",
-        "price":  5000,
-        "suspension":  "Spring",
-        "status":  "Available",
-        "photos":  [
-
                    ]
     },
     {
