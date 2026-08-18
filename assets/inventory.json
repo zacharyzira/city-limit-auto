@@ -175,7 +175,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ534075/1.jpg",
+                       "/assets/photos/CTLZ534075/2.jpg",
+                       "/assets/photos/CTLZ534075/3.jpg",
+                       "/assets/photos/CTLZ534075/4.jpg",
+                       "/assets/photos/CTLZ534075/5.jpg",
+                       "/assets/photos/CTLZ534075/6.jpg",
+                       "/assets/photos/CTLZ534075/7.jpg",
+                       "/assets/photos/CTLZ534075/8.jpg",
+                       "/assets/photos/CTLZ534075/9.jpg",
+                       "/assets/photos/CTLZ534075/10.jpg"
                    ]
     },
     {
@@ -214,15 +223,24 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ535038/1.jpg",
+                       "/assets/photos/CTLZ535038/2.jpg",
+                       "/assets/photos/CTLZ535038/3.jpg",
+                       "/assets/photos/CTLZ535038/4.jpg",
+                       "/assets/photos/CTLZ535038/5.jpg",
+                       "/assets/photos/CTLZ535038/6.jpg",
+                       "/assets/photos/CTLZ535038/7.jpg",
+                       "/assets/photos/CTLZ535038/8.jpg",
+                       "/assets/photos/CTLZ535038/9.jpg",
+                       "/assets/photos/CTLZ535038/10.jpg"
                    ]
     },
     {
         "unit":  "P5031869",
         "vin":  "1JJV532W33L861869",
-        "title":  "53\u0027  — Wabash",
+        "title":  "53\u0027 Dry Van — Wabash",
         "make":  "Wabash",
-        "type":  "",
+        "type":  "Dry Van",
         "year":  2003,
         "length":  "53\u0027",
         "price":  0,
@@ -301,6 +319,21 @@
                        "/assets/photos/PIFZ305016/8.jpg",
                        "/assets/photos/PIFZ305016/9.jpg",
                        "/assets/photos/PIFZ305016/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "PIFZ804017",
+        "vin":  "2MN01JAH841003308",
+        "title":  "53\u0027 Dry Van — Trailmobile",
+        "make":  "Trailmobile",
+        "type":  "Dry Van",
+        "year":  2004,
+        "length":  "53\u0027",
+        "price":  5000,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
                    ]
     },
     {
