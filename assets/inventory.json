@@ -230,56 +230,6 @@
                    ]
     },
     {
-        "unit":  "PT5303",
-        "vin":  "3H3V532CXVT035013",
-        "title":  "53\u0027 Dry Van — Hyundai",
-        "make":  "Hyundai",
-        "type":  "Dry Van",
-        "year":  1997,
-        "length":  "53\u0027",
-        "price":  3000,
-        "suspension":  "Spring",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/PT5303/1.jpg",
-                       "/assets/photos/PT5303/2.jpg",
-                       "/assets/photos/PT5303/3.jpg",
-                       "/assets/photos/PT5303/4.jpg",
-                       "/assets/photos/PT5303/5.jpg",
-                       "/assets/photos/PT5303/6.jpg",
-                       "/assets/photos/PT5303/7.jpg",
-                       "/assets/photos/PT5303/8.jpg",
-                       "/assets/photos/PT5303/9.jpg",
-                       "/assets/photos/PT5303/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "PT5365",
-        "vin":  "1GRAA0620RB010030",
-        "title":  "53\u0027 Dry Van — Great Dane",
-        "make":  "Great Dane",
-        "type":  "Dry Van",
-        "year":  1994,
-        "length":  "53\u0027",
-        "price":  3000,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/PT5365/1.jpg",
-                       "/assets/photos/PT5365/2.jpg",
-                       "/assets/photos/PT5365/3.jpg",
-                       "/assets/photos/PT5365/4.jpg",
-                       "/assets/photos/PT5365/5.jpg",
-                       "/assets/photos/PT5365/6.jpg",
-                       "/assets/photos/PT5365/7.jpg",
-                       "/assets/photos/PT5365/8.jpg",
-                       "/assets/photos/PT5365/9.jpg",
-                       "/assets/photos/PT5365/10.jpg",
-                       "/assets/photos/PT5365/11.jpg",
-                       "/assets/photos/PT5365/12.jpg"
-                   ]
-    },
-    {
         "unit":  "TENZ538034",
         "vin":  "1S12E95338E521238",
         "title":  "53\u0027 Dry Van - Plastic — Strick",
