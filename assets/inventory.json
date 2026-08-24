@@ -1,27 +1,5 @@
 ﻿[
     {
-        "unit":  "7321293",
-        "vin":  "1JJV532D4EL814819",
-        "title":  "53\u0027 Dry Van - Plate — Wabash",
-        "make":  "Wabash",
-        "type":  "Dry Van - Plate",
-        "year":  2014,
-        "length":  "53\u0027",
-        "price":  13000,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/7321293/1.jpg",
-                       "/assets/photos/7321293/2.jpg",
-                       "/assets/photos/7321293/3.jpg",
-                       "/assets/photos/7321293/4.jpg",
-                       "/assets/photos/7321293/5.jpg",
-                       "/assets/photos/7321293/6.jpg",
-                       "/assets/photos/7321293/7.jpg",
-                       "/assets/photos/7321293/8.jpg"
-                   ]
-    },
-    {
         "unit":  "CTLZ033753",
         "vin":  "5V8VC532XCM203916",
         "title":  "53\u0027 Dry Van - Plate — Vanguard",
@@ -81,7 +59,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ533379/1.jpg",
+                       "/assets/photos/CTLZ533379/2.jpg",
+                       "/assets/photos/CTLZ533379/3.jpg",
+                       "/assets/photos/CTLZ533379/4.jpg",
+                       "/assets/photos/CTLZ533379/5.jpg",
+                       "/assets/photos/CTLZ533379/6.jpg",
+                       "/assets/photos/CTLZ533379/7.jpg",
+                       "/assets/photos/CTLZ533379/8.jpg",
+                       "/assets/photos/CTLZ533379/9.jpg",
+                       "/assets/photos/CTLZ533379/10.jpg"
                    ]
     },
     {
