@@ -98,6 +98,21 @@
                    ]
     },
     {
+        "unit":  "CTLZ533685",
+        "vin":  "1JJV532W48L096548",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2008,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ534075",
         "vin":  "5V8VC5325CM203967",
         "title":  "53\u0027 Dry Van - Plate — Vanguard",
