@@ -14,6 +14,7 @@
   --blue:#1C97DD;
   --rust:#B33A3A;
   --green:#3E7B4F;
+  --amber:#C77D1E;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -298,6 +299,7 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
 .badge-available{background:var(--blue);color:#fff;}
 .badge-sold{background:var(--rust);color:var(--paper);}
 .badge-hold{background:var(--steel-light);color:var(--asphalt);}
+.badge-pending{background:var(--amber);color:#fff;}
 .tag-body{padding:18px;}
 .tag-unit{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--blue);letter-spacing:0.05em;margin-bottom:4px;}
 .tag-vin{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--steel-light);letter-spacing:0.03em;margin-bottom:8px;}
@@ -454,6 +456,7 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
 .lightbox-info-top .badge-available{color:var(--blue);}
 .lightbox-info-top .badge-sold{color:var(--rust);}
 .lightbox-info-top .badge-hold{color:var(--steel-light);}
+.lightbox-info-top .badge-pending{color:var(--amber);}
 .lightbox-info-price{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--paper);}
 .lightbox-info-title{
   /* Wraps instead of truncating — the unit number is information people

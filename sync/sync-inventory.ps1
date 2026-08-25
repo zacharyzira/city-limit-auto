@@ -92,7 +92,11 @@ try {
     # "Sold" is also published, but only for a limited window — see the sold
     # cache below — so a direct link (e.g. sent to a lender) stays alive for
     # a while after the sale without sold units lingering on the site forever.
-    $publicStatuses = @("Available", "Down", "Sold")
+    # "Pending Sale" (deal in progress, not yet final) is always published —
+    # no retention window, since it should just track whatever the source
+    # system currently says; it naturally becomes "Sold" or reverts to
+    # "Available" on its own once the deal resolves.
+    $publicStatuses = @("Available", "Down", "Sold", "Pending Sale")
 
     # ---- Sold-date tracking ----
     # The source API has no "date sold" field, so track it ourselves: the

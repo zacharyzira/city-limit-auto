@@ -482,6 +482,7 @@ function wireForm(formId, successMessage){
 function badgeClass(status){
   if(status === 'Available') return 'badge-available';
   if(status === 'Hold') return 'badge-hold';
+  if(status === 'Pending Sale') return 'badge-pending';
   return 'badge-sold';
 }
 
@@ -743,7 +744,7 @@ async function renderInventory(gridId, opts = {}){
        contact:'contact.html', financing:'financing.html', apply:'Financiar →',
        share:'Compartir', copied:'¡Copiado!',
        copyPrompt:'Copie este enlace:', prevPhoto:'Foto anterior', nextPhoto:'Foto siguiente',
-       status:{Available:'Disponible', Hold:'Apartado', Sold:'Vendido'}}
+       status:{Available:'Disponible', Hold:'Apartado', Sold:'Vendido', 'Pending Sale':'Venta Pendiente'}}
     : {unit:'UNIT', soon:'Photo Coming Soon', year:'Year',
        length:'Length', type:'Type', susp:'Suspension', inquire:'Inquire →',
        contact:'contact.html', financing:'financing.html', apply:'Apply →',
@@ -913,9 +914,10 @@ async function renderInventory(gridId, opts = {}){
       return true;
     });
 
-    // Sold units are still shown (badged), but sink below everything actually
-    // for sale so shoppers see available inventory first.
-    filtered.sort((a, b) => (a.status === 'Sold' ? 1 : 0) - (b.status === 'Sold' ? 1 : 0));
+    // Sold/pending-sale units are still shown (badged), but sink below
+    // everything actually for sale so shoppers see available inventory first.
+    const isSpokenFor = s => s === 'Sold' || s === 'Pending Sale';
+    filtered.sort((a, b) => (isSpokenFor(a.status) ? 1 : 0) - (isSpokenFor(b.status) ? 1 : 0));
 
     const matchCount = filtered.length;
     filtered = filtered.slice(0, limit);
