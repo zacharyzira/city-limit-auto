@@ -3,3 +3,4 @@ sync/sync.log
 sync/reviews.env
 sync/reviews.log
 sync/photo-cache.json
+sync/sold-cache.json

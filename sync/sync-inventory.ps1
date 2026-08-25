@@ -32,6 +32,15 @@ $PhotosPublicRoot = Join-Path $RepoRoot "assets\photos"
 # haven't changed. Never committed (see .gitignore); safe to delete anytime,
 # it just costs one slow full-reprocess run to rebuild.
 $PhotoCachePath = Join-Path $ScriptDir "photo-cache.json"
+# Local-only cache of "when did this VIN first show up as Sold" — the source
+# API has no sold-date field, so this is the only record of it. Lets a Sold
+# unit stay published (marked Sold) for a few weeks after the sale so a link
+# already sent out (e.g. to a lender financing the deal) keeps working,
+# without it lingering in the site's main inventory grid forever. Never
+# committed (see .gitignore); safe to delete anytime — worst case, currently
+# Sold units just drop off a run early instead of finishing out their window.
+$SoldCachePath = Join-Path $ScriptDir "sold-cache.json"
+$SoldRetentionDays = 21
 
 function Write-Log($msg) {
     $line = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')  $msg"
@@ -80,7 +89,58 @@ try {
     # NEVER pass through cost, vendor/pickup info, notes, or title status —
     # those are internal-only fields on the source record.
     # "Down" means sellable but not yet mechanic-inspected — still publish it.
-    $publicStatuses = @("Available", "Down")
+    # "Sold" is also published, but only for a limited window — see the sold
+    # cache below — so a direct link (e.g. sent to a lender) stays alive for
+    # a while after the sale without sold units lingering on the site forever.
+    $publicStatuses = @("Available", "Down", "Sold")
+
+    # ---- Sold-date tracking ----
+    # The source API has no "date sold" field, so track it ourselves: the
+    # first run that sees a VIN as Sold records the current time. If a unit's
+    # status later moves off Sold (deal fell through, relisted, etc.) its
+    # tracked date is cleared, so a later sale starts the window fresh.
+    $nowUtc = [DateTime]::UtcNow
+    $soldCache = @{}
+    if (Test-Path $SoldCachePath) {
+        try {
+            $raw = Get-Content $SoldCachePath -Raw | ConvertFrom-Json
+            $raw.PSObject.Properties | ForEach-Object { $soldCache[$_.Name] = $_.Value }
+        } catch {
+            Write-Log "WARNING: sold-cache.json unreadable, rebuilding from scratch: $($_.Exception.Message)"
+        }
+    }
+    $soldCacheChanged = $false
+
+    foreach ($item in $items) {
+        if ([string]::IsNullOrWhiteSpace($item.vin)) { continue }
+        if ($item.status -eq "Sold") {
+            if (-not $soldCache.ContainsKey($item.vin)) {
+                $soldCache[$item.vin] = $nowUtc.ToString("o")
+                $soldCacheChanged = $true
+            }
+        } elseif ($soldCache.ContainsKey($item.vin)) {
+            $soldCache.Remove($item.vin)
+            $soldCacheChanged = $true
+        }
+    }
+
+    function IsRecentlySold($vin) {
+        if (-not $soldCache.ContainsKey($vin)) { return $false }
+        try {
+            $soldAt = [DateTime]::Parse($soldCache[$vin], $null, [System.Globalization.DateTimeStyles]::RoundtripKind)
+            return ($nowUtc - $soldAt).TotalDays -le $SoldRetentionDays
+        } catch {
+            return $false
+        }
+    }
+
+    # Drop anything past the retention window from the cache so it doesn't
+    # grow forever — it'll just get re-added if the unit is ever sold again.
+    $staleVins = @($soldCache.Keys | Where-Object { -not (IsRecentlySold $_) })
+    foreach ($vin in $staleVins) {
+        $soldCache.Remove($vin)
+        $soldCacheChanged = $true
+    }
 
     function ToTitleCase($s) {
         if ([string]::IsNullOrWhiteSpace($s)) { return $s }
@@ -213,8 +273,12 @@ try {
     }
 
     # Rental-fleet units can carry status "Available" too, but they aren't
-    # for-sale inventory — exclude anything flagged rental:true.
-    $publicItems = @($items | Where-Object { $publicStatuses -contains $_.status -and -not $_.rental } | ForEach-Object {
+    # for-sale inventory — exclude anything flagged rental:true. A Sold unit
+    # only passes through while it's still within its retention window.
+    $publicItems = @($items | Where-Object {
+        $publicStatuses -contains $_.status -and -not $_.rental -and
+        ($_.status -ne "Sold" -or (IsRecentlySold $_.vin))
+    } | ForEach-Object {
         [ordered]@{
             unit   = $_.unit_number
             vin    = $_.vin
@@ -249,7 +313,8 @@ try {
     # back unwrapped, and .Count on a lone hashtable means "number of keys",
     # not "number of matches".
     $unitsWithPhotos = @($publicItems | Where-Object { $_.photos.Count -gt 0 }).Count
-    Write-Log "Wrote $($publicItems.Count) available unit(s) to $OutputPath ($photoCount photo(s) across $unitsWithPhotos unit(s))"
+    $soldCount = @($publicItems | Where-Object { $_.status -eq "Sold" }).Count
+    Write-Log "Wrote $($publicItems.Count) unit(s) to $OutputPath ($soldCount recently-sold, $photoCount photo(s) across $unitsWithPhotos unit(s))"
 
     # Persist the photo-folder cache so next run can skip untouched units.
     # Only rewritten when something actually changed, same spirit as the
@@ -257,6 +322,13 @@ try {
     if ($photoCacheChanged) {
         $photoCache | ConvertTo-Json -Depth 3 | Set-Content -Path $PhotoCachePath -Encoding UTF8
         Write-Log "Updated photo-cache.json ($($photoCache.Count) unit(s) tracked)."
+    }
+
+    # Persist the sold-date cache the same way — only rewritten when a VIN
+    # was newly marked Sold, un-sold, or aged out of the retention window.
+    if ($soldCacheChanged) {
+        $soldCache | ConvertTo-Json -Depth 3 | Set-Content -Path $SoldCachePath -Encoding UTF8
+        Write-Log "Updated sold-cache.json ($($soldCache.Count) unit(s) tracked)."
     }
 
     # ---- Publish via git, if this is a repo with a remote ----

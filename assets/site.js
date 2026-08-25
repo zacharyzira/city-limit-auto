@@ -536,9 +536,15 @@ async function renderInventory(gridId, opts = {}){
 
   grid.innerHTML = `<div class="empty-state">${IS_ES ? 'Cargando inventario…' : 'Loading inventory…'}</div>`;
   await loadInventory();
+  // Recently-sold units stay in inventory.json for a few weeks (see
+  // sync-inventory.ps1) purely so a direct ?unit= link someone already has
+  // — e.g. sent to a lender for financing — keeps working. They shouldn't
+  // show up in browsing/search, so every path here except the direct-link
+  // lookup below works off this filtered list instead of the raw `inventory`.
+  const visibleInventory = inventory.filter(i => i.status !== 'Sold');
   // Only the real inventory listing (has a filterBar), not the homepage
   // teaser grid — avoids publishing the same structured data from two pages.
-  if(filterBar) injectInventorySchema(inventory);
+  if(filterBar) injectInventorySchema(visibleInventory);
 
   const F = IS_ES
     ? {search:'Buscar por unidad, marca o VIN…', year:'Año', yearMin:'Año desde', yearMax:'Año hasta',
@@ -586,7 +592,7 @@ async function renderInventory(gridId, opts = {}){
     back.textContent = F.back;
     filterBar.appendChild(back);
   } else if(filterBar){
-    const uniq = key => [...new Set(inventory.map(i => i[key]).filter(v => v !== undefined && v !== null && String(v).trim() !== ''))];
+    const uniq = key => [...new Set(visibleInventory.map(i => i[key]).filter(v => v !== undefined && v !== null && String(v).trim() !== ''))];
 
     const search = document.createElement('input');
     search.type = 'text';
@@ -660,7 +666,7 @@ async function renderInventory(gridId, opts = {}){
 
     // Single-handle max-price slider — shoppers look for "under $X," not
     // "$X and up," so this only ever sets a ceiling, not a floor.
-    const prices = inventory.map(i => i.price).filter(p => typeof p === 'number');
+    const prices = visibleInventory.map(i => i.price).filter(p => typeof p === 'number');
     if(prices.length > 1){
       const step = 2500;
       const priceMin = Math.floor(Math.min(...prices) / step) * step;
@@ -893,7 +899,7 @@ async function renderInventory(gridId, opts = {}){
     const type = controls.type?.value || '';
     const maxPrice = controls.price?.value ? Number(controls.price.value) : null;
 
-    let filtered = inventory.filter(item => {
+    let filtered = visibleInventory.filter(item => {
       const haystack = [item.unit, item.title, item.length, item.make, item.vin]
         .filter(Boolean).join(' ').toLowerCase();
       if(q && !haystack.includes(q)) return false;
@@ -909,7 +915,7 @@ async function renderInventory(gridId, opts = {}){
     const matchCount = filtered.length;
     filtered = filtered.slice(0, limit);
 
-    if(controls.count) controls.count.textContent = F.showing(matchCount, inventory.length);
+    if(controls.count) controls.count.textContent = F.showing(matchCount, visibleInventory.length);
 
     grid.innerHTML = '';
     if(emptyState) emptyState.style.display = filtered.length ? 'none' : 'block';
