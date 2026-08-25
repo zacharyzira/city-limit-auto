@@ -537,11 +537,12 @@ async function renderInventory(gridId, opts = {}){
   grid.innerHTML = `<div class="empty-state">${IS_ES ? 'Cargando inventario…' : 'Loading inventory…'}</div>`;
   await loadInventory();
   // Recently-sold units stay in inventory.json for a few weeks (see
-  // sync-inventory.ps1) purely so a direct ?unit= link someone already has
-  // — e.g. sent to a lender for financing — keeps working. They shouldn't
-  // show up in browsing/search, so every path here except the direct-link
-  // lookup below works off this filtered list instead of the raw `inventory`.
-  const visibleInventory = inventory.filter(i => i.status !== 'Sold');
+  // sync-inventory.ps1) so they're still shown — badged Sold — on the full
+  // listing, and a direct ?unit= link someone already has (e.g. sent to a
+  // lender for financing) keeps working either way. The homepage's small
+  // teaser strip is the one place they're left out, so a sold trailer never
+  // crowds out actual available stock in those few featured slots.
+  const visibleInventory = filterBar ? inventory : inventory.filter(i => i.status !== 'Sold');
   // Only the real inventory listing (has a filterBar), not the homepage
   // teaser grid — avoids publishing the same structured data from two pages.
   if(filterBar) injectInventorySchema(visibleInventory);
@@ -911,6 +912,10 @@ async function renderInventory(gridId, opts = {}){
       if(maxPrice !== null && Number(item.price) > maxPrice) return false;
       return true;
     });
+
+    // Sold units are still shown (badged), but sink below everything actually
+    // for sale so shoppers see available inventory first.
+    filtered.sort((a, b) => (a.status === 'Sold' ? 1 : 0) - (b.status === 'Sold' ? 1 : 0));
 
     const matchCount = filtered.length;
     filtered = filtered.slice(0, limit);
