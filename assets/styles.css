@@ -213,6 +213,11 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
 }
 .range-input:focus-visible::-webkit-slider-thumb{outline:2px solid var(--blue);outline-offset:2px;}
 .range-input:focus-visible::-moz-range-thumb{outline:2px solid var(--blue);outline-offset:2px;}
+.filter-checkbox{
+  display:flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;
+  font-size:14px;color:var(--paper-dim);white-space:nowrap;cursor:pointer;
+}
+.filter-checkbox input{width:auto;accent-color:var(--blue);cursor:pointer;}
 .filter-clear{
   font-family:'Inter',sans-serif;font-size:13px;font-weight:600;
   color:var(--steel-light);background:none;border:1px solid var(--steel);

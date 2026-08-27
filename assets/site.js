@@ -554,13 +554,19 @@ async function renderInventory(gridId, opts = {}){
        priceLabel:'Precio', price:'Cualquier precio',
        upto:'Hasta', clear:'Limpiar filtros', back:'← Ver todo el inventario',
        notFound:'Ese remolque ya no está en la lista — puede que se haya vendido.',
-       showing:(n,t)=>`Mostrando ${n} de ${t} remolques`}
+       showing:(n,t)=>`Mostrando ${n} de ${t} remolques`,
+       sortLabel:'Ordenar', sortDefault:'Recomendado', sortPriceAsc:'Precio: menor a mayor',
+       sortPriceDesc:'Precio: mayor a menor', sortYearDesc:'Año: más nuevo primero', sortYearAsc:'Año: más antiguo primero',
+       hideSold:'Ocultar vendidos y pendientes'}
     : {search:'Search unit #, make, or VIN…', year:'Year', yearMin:'Year from', yearMax:'Year to',
        make:'Any make', susp:'Any suspension', type:'Any type',
        priceLabel:'Price', price:'Any price',
        upto:'Up to', clear:'Clear filters', back:'← View full inventory',
        notFound:'That trailer isn’t listed anymore — it may have sold.',
-       showing:(n,t)=>`Showing ${n} of ${t} trailers`};
+       showing:(n,t)=>`Showing ${n} of ${t} trailers`,
+       sortLabel:'Sort', sortDefault:'Recommended', sortPriceAsc:'Price: Low to High',
+       sortPriceDesc:'Price: High to Low', sortYearDesc:'Year: Newest First', sortYearAsc:'Year: Oldest First',
+       hideSold:'Hide sold & pending'};
 
   // A card's Share button links to ?unit=<unit>, so a single trailer can be
   // viewed and sent to a customer. Only meaningful on a page with a filter
@@ -707,6 +713,30 @@ async function renderInventory(gridId, opts = {}){
       }
     }
 
+    const sort = document.createElement('select');
+    sort.setAttribute('aria-label', F.sortLabel);
+    sort.innerHTML = `
+      <option value="">${F.sortDefault}</option>
+      <option value="price-asc">${F.sortPriceAsc}</option>
+      <option value="price-desc">${F.sortPriceDesc}</option>
+      <option value="year-desc">${F.sortYearDesc}</option>
+      <option value="year-asc">${F.sortYearAsc}</option>
+    `;
+    filterBar.appendChild(sort);
+    controls.sort = sort;
+
+    // Sold/pending units always show by default (see the status-priority
+    // sort below) so a shared link keeps working either way — this just
+    // lets someone browsing only care about units they can actually buy.
+    const hasSoldLike = visibleInventory.some(i => i.status === 'Sold' || i.status === 'Pending Sale');
+    if(hasSoldLike){
+      const hideLabel = document.createElement('label');
+      hideLabel.className = 'filter-checkbox';
+      hideLabel.innerHTML = `<input type="checkbox" id="hideSoldToggle"> ${F.hideSold}`;
+      filterBar.appendChild(hideLabel);
+      controls.hideSold = hideLabel.querySelector('input');
+    }
+
     const clear = document.createElement('button');
     clear.type = 'button';
     clear.className = 'filter-clear';
@@ -718,6 +748,8 @@ async function renderInventory(gridId, opts = {}){
       if(controls.type) controls.type.value = '';
       if(controls._yearReset) controls._yearReset();
       if(controls._priceReset) controls._priceReset();
+      if(controls.sort) controls.sort.value = '';
+      if(controls.hideSold) controls.hideSold.checked = false;
       render();
     });
     filterBar.appendChild(clear);
@@ -731,7 +763,7 @@ async function renderInventory(gridId, opts = {}){
     // (with min/max clamping for the year handles); only the plain selects
     // need a generic 'change' listener here.
     if(controls.search) controls.search.addEventListener('input', () => render());
-    ['make','susp','type'].forEach(k => {
+    ['make','susp','type','sort','hideSold'].forEach(k => {
       if(controls[k]) controls[k].addEventListener('change', () => render());
     });
   }
@@ -900,8 +932,12 @@ async function renderInventory(gridId, opts = {}){
     const susp = controls.susp?.value || '';
     const type = controls.type?.value || '';
     const maxPrice = controls.price?.value ? Number(controls.price.value) : null;
+    const isSpokenFor = s => s === 'Sold' || s === 'Pending Sale';
+    const hideSold = controls.hideSold?.checked || false;
+    const sortBy = controls.sort?.value || '';
 
     let filtered = visibleInventory.filter(item => {
+      if(hideSold && isSpokenFor(item.status)) return false;
       const haystack = [item.unit, item.title, item.length, item.make, item.vin]
         .filter(Boolean).join(' ').toLowerCase();
       if(q && !haystack.includes(q)) return false;
@@ -914,9 +950,17 @@ async function renderInventory(gridId, opts = {}){
       return true;
     });
 
-    // Sold/pending-sale units are still shown (badged), but sink below
-    // everything actually for sale so shoppers see available inventory first.
-    const isSpokenFor = s => s === 'Sold' || s === 'Pending Sale';
+    // Apply the chosen sort first — the status-priority sort right after is
+    // stable, so it only regroups Sold/Pending below without disturbing the
+    // order just established within each group.
+    if(sortBy === 'price-asc') filtered.sort((a, b) => Number(a.price) - Number(b.price));
+    else if(sortBy === 'price-desc') filtered.sort((a, b) => Number(b.price) - Number(a.price));
+    else if(sortBy === 'year-desc') filtered.sort((a, b) => Number(b.year) - Number(a.year));
+    else if(sortBy === 'year-asc') filtered.sort((a, b) => Number(a.year) - Number(b.year));
+
+    // Sold/pending-sale units are still shown (badged) unless hidden above,
+    // but sink below everything actually for sale so shoppers see available
+    // inventory first.
     filtered.sort((a, b) => (isSpokenFor(a.status) ? 1 : 0) - (isSpokenFor(b.status) ? 1 : 0));
 
     const matchCount = filtered.length;
