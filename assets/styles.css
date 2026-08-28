@@ -541,6 +541,15 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
 .calc-result-label{font-size:13px;color:var(--steel-light);text-transform:uppercase;letter-spacing:0.05em;}
 .calc-result-value{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--blue);}
 
+/* The lightbox's bottom sheet stays permanently open on desktop instead of
+   collapsing to a tap-to-reveal peek (see wireSheetDrag's isDesktop check in
+   site.js) — there's no drag/tap gesture left to hint at, so the handle bar
+   and pointer cursor (both "drag/tap me" affordances) would just be noise. */
+@media (min-width:861px){
+  .lightbox-sheet-handle{display:none;}
+  .lightbox-info-peek{cursor:default;}
+}
+
 @media (max-width:860px){
   nav{display:none;}
   header.nav-open nav{

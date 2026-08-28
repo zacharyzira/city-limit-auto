@@ -221,11 +221,18 @@ function wireSheetDrag(sheet){
   let collapsedY = 0, isOpen = false, dragging = false, moved = false;
   let startY = 0, startTime = 0, baseY = 0;
 
+  // The collapsed "peek, tap to reveal the calculator/form" pattern exists
+  // because mobile screens don't have room to show everything at once — on
+  // a wide enough viewport there's no such constraint, so the sheet just
+  // stays fully open and there's nothing to drag or tap open.
+  const isDesktop = () => window.matchMedia('(min-width: 861px)').matches;
+
   function measure(){
     collapsedY = Math.max(0, sheet.offsetHeight - handleEl.offsetHeight - peekEl.offsetHeight);
   }
 
   function applyOpen(open, animate){
+    if(isDesktop()) open = true;
     isOpen = open;
     sheet.style.transition = animate ? 'transform 260ms ease-out' : 'none';
     sheet.style.transform = `translateY(${open ? 0 : collapsedY}px)`;
@@ -235,6 +242,7 @@ function wireSheetDrag(sheet){
   }
 
   function onStart(e){
+    if(isDesktop()) return; // nothing to drag open — it's already fully shown
     const t = e.touches[0];
     startY = t.clientY; startTime = Date.now();
     measure();
@@ -273,7 +281,7 @@ function wireSheetDrag(sheet){
 
   [handleEl, peekEl].forEach(target => {
     target.addEventListener('touchstart', onStart, { passive: true });
-    target.addEventListener('click', () => { if(!moved) applyOpen(!isOpen, true); });
+    target.addEventListener('click', () => { if(!moved && !isDesktop()) applyOpen(!isOpen, true); });
   });
   sheet.addEventListener('touchmove', onMove, { passive: false });
   sheet.addEventListener('touchend', onEnd);
