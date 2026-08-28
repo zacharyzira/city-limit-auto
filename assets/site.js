@@ -306,10 +306,12 @@ function ensureLightbox(){
   el.className = 'lightbox';
   el.hidden = true;
   el.innerHTML = `
-    <div class="lightbox-topbar">
-      <button class="lightbox-back" aria-label="Back">&larr;</button>
+    <div class="lightbox-photos">
+      <div class="lightbox-topbar">
+        <button class="lightbox-back" aria-label="Back">&larr;</button>
+      </div>
+      <div class="lightbox-scroll"></div>
     </div>
-    <div class="lightbox-scroll"></div>
     <div class="lightbox-sheet-wrap">
       <div class="lightbox-sheet">
         <div class="lightbox-sheet-handle"></div>

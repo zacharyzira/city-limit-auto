@@ -399,6 +399,11 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
   display:flex;flex-direction:column;
 }
 .lightbox[hidden]{display:none;}
+/* Wraps the topbar + scroll feed as one column so the topbar overlay stays
+   scoped to just the photo side once desktop splits it from the sheet
+   (see the min-width:861px block below) instead of stretching full-width
+   over the info panel too. */
+.lightbox-photos{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;}
 .lightbox-topbar{
   position:absolute;top:0;left:0;right:0;z-index:10;
   display:flex;justify-content:space-between;align-items:center;
@@ -415,7 +420,9 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
   display:flex;flex-direction:column;align-items:center;
   /* The sheet overlays the bottom of this area rather than pushing it up
      (so it can be dragged open without reflowing the photo feed) — this
-     padding keeps the last photo from being permanently hidden behind it. */
+     padding keeps the last photo from being permanently hidden behind it.
+     Desktop sits the sheet beside the photos instead of overlaying them,
+     so this gets zeroed out there — see the min-width:861px block below. */
   padding-bottom:170px;
 }
 .lightbox-scroll img{
@@ -541,11 +548,23 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
 .calc-result-label{font-size:13px;color:var(--steel-light);text-transform:uppercase;letter-spacing:0.05em;}
 .calc-result-value{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--blue);}
 
-/* The lightbox's bottom sheet stays permanently open on desktop instead of
-   collapsing to a tap-to-reveal peek (see wireSheetDrag's isDesktop check in
-   site.js) — there's no drag/tap gesture left to hint at, so the handle bar
-   and pointer cursor (both "drag/tap me" affordances) would just be noise. */
+/* On desktop the sheet sits beside the photos as a fixed-width column
+   instead of overlaying their bottom — an overlay tall enough to show the
+   calculator/form in full would just bury the photos underneath it, and
+   there's no mobile-style tap/drag gesture left to shrink it back out of
+   the way (see wireSheetDrag's isDesktop check in site.js). Side-by-side
+   means neither the photos nor the details ever have to hide the other. */
 @media (min-width:861px){
+  .lightbox{flex-direction:row;}
+  .lightbox-scroll{padding-bottom:0;}
+  .lightbox-sheet-wrap{
+    position:static;width:440px;flex-shrink:0;max-width:none;margin:0;height:100%;
+  }
+  .lightbox-sheet{
+    height:100%;max-height:none;border-radius:0;border:none;
+    border-left:1px solid var(--steel);box-shadow:none;
+  }
+  .lightbox-info-form-wrap{flex:1;}
   .lightbox-sheet-handle{display:none;}
   .lightbox-info-peek{cursor:default;}
 }
