@@ -629,54 +629,15 @@ async function renderInventory(gridId, opts = {}){
       return sel;
     }
 
-    // Dual-handle year range — dragging either end sets min/max, like the
-    // range sliders on CarGurus/AutoTrader, instead of two separate dropdowns.
-    const years = uniq('year').map(Number).filter(n => !isNaN(n));
-    if(years.length > 1){
-      const yearMin = Math.min(...years), yearMax = Math.max(...years);
-      const wrap = document.createElement('div');
-      wrap.className = 'range-slider';
-      wrap.innerHTML = `
-        <div class="range-slider-label">
-          <span>${F.year}</span>
-          <span class="range-slider-value"><b class="yr-min-val">${yearMin}</b> – <b class="yr-max-val">${yearMax}</b></span>
-        </div>
-        <div class="range-track">
-          <div class="range-fill yr-fill"></div>
-          <input type="range" class="range-input yr-min-input" min="${yearMin}" max="${yearMax}" step="1" value="${yearMin}" aria-label="${F.yearMin}">
-          <input type="range" class="range-input yr-max-input" min="${yearMin}" max="${yearMax}" step="1" value="${yearMax}" aria-label="${F.yearMax}">
-        </div>
-      `;
-      filterBar.appendChild(wrap);
-
-      const minInput = wrap.querySelector('.yr-min-input');
-      const maxInput = wrap.querySelector('.yr-max-input');
-      const fill = wrap.querySelector('.yr-fill');
-      const minVal = wrap.querySelector('.yr-min-val');
-      const maxVal = wrap.querySelector('.yr-max-val');
-
-      function updateYearUI(){
-        const lo = Number(minInput.value), hi = Number(maxInput.value);
-        minVal.textContent = lo;
-        maxVal.textContent = hi;
-        fill.style.left = (((lo - yearMin) / (yearMax - yearMin)) * 100) + '%';
-        fill.style.right = (100 - ((hi - yearMin) / (yearMax - yearMin)) * 100) + '%';
-      }
-      updateYearUI();
-
-      minInput.addEventListener('input', () => {
-        if(Number(minInput.value) > Number(maxInput.value)) minInput.value = maxInput.value;
-        updateYearUI(); render();
-      });
-      maxInput.addEventListener('input', () => {
-        if(Number(maxInput.value) < Number(minInput.value)) maxInput.value = minInput.value;
-        updateYearUI(); render();
-      });
-
-      controls.yearMin = minInput;
-      controls.yearMax = maxInput;
-      controls._yearReset = () => { minInput.value = yearMin; maxInput.value = yearMax; updateYearUI(); };
-    }
+    // Two plain dropdowns (Year From / Year To) rather than a range slider —
+    // same min/max filtering underneath, just a simpler, more familiar control.
+    const years = uniq('year').map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
+    controls.yearMin = addSelect(F.yearMin, years);
+    controls.yearMax = addSelect(F.yearMax, years);
+    controls._yearReset = () => {
+      if(controls.yearMin) controls.yearMin.value = '';
+      if(controls.yearMax) controls.yearMax.value = '';
+    };
 
     controls.make = addSelect(F.make, uniq('make').sort());
     controls.susp = addSelect(F.susp, uniq('suspension').sort(), trSusp);
@@ -772,11 +733,10 @@ async function renderInventory(gridId, opts = {}){
     filterBar.appendChild(count);
     controls.count = count;
 
-    // Year and price already have their own 'input' listeners wired above
-    // (with min/max clamping for the year handles); only the plain selects
-    // need a generic 'change' listener here.
+    // Price already has its own 'input' listener wired above; everything
+    // else here is a plain select, so one generic 'change' listener covers it.
     if(controls.search) controls.search.addEventListener('input', () => render());
-    ['make','susp','type','sort','showSold'].forEach(k => {
+    ['yearMin','yearMax','make','susp','type','sort','showSold'].forEach(k => {
       if(controls[k]) controls[k].addEventListener('change', () => render());
     });
   }
