@@ -1,5 +1,35 @@
 ﻿[
     {
+        "unit":  "141443",
+        "vin":  "1JJV532D4BL375083",
+        "title":  "53\u0027 Dry Van - Plate — Wabsh",
+        "make":  "Wabsh",
+        "type":  "Dry Van - Plate",
+        "year":  2011,
+        "length":  "53\u0027",
+        "price":  8500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "503205",
+        "vin":  "1JJV532W16L012862",
+        "title":  "53\u0027 Dry Van - Plate — Wabsh",
+        "make":  "Wabsh",
+        "type":  "Dry Van - Plate",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "81042",
         "vin":  "1JJV532W19L257519",
         "title":  "53\u0027 Dry Van — Wabash",
@@ -184,6 +214,21 @@
     {
         "unit":  "CTLZ533661",
         "vin":  "5V8VC532XCM204029",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10500,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "CTLZ533667",
+        "vin":  "5V8VC5327CM204134",
         "title":  "53\u0027 Dry Van - Plate — Vanguard",
         "make":  "Vanguard",
         "type":  "Dry Van - Plate",
