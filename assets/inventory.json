@@ -99,7 +99,7 @@
         "length":  "53\u0027",
         "price":  10500,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/CTLZ038853/1.jpg",
                        "/assets/photos/CTLZ038853/2.jpg",
@@ -119,11 +119,11 @@
         "title":  "53\u0027 Dry Van - Plate — Hyundai",
         "make":  "Hyundai",
         "type":  "Dry Van - Plate",
-        "year":  2011,
+        "year":  2012,
         "length":  "53\u0027",
-        "price":  10000,
+        "price":  11000,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/CTLZ042553/1.jpg",
                        "/assets/photos/CTLZ042553/2.jpg",
@@ -147,7 +147,7 @@
         "length":  "53\u0027",
         "price":  8500,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/CTLZ533405/1.jpg",
                        "/assets/photos/CTLZ533405/2.jpg",
@@ -173,7 +173,7 @@
         "length":  "53\u0027",
         "price":  11000,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/CTLZ533640/1.jpg",
                        "/assets/photos/CTLZ533640/2.jpg",
@@ -197,7 +197,7 @@
         "length":  "53\u0027",
         "price":  11000,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/CTLZ533641/1.jpg",
                        "/assets/photos/CTLZ533641/2.jpg",
@@ -221,9 +221,18 @@
         "length":  "53\u0027",
         "price":  10500,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ533661/1.jpg",
+                       "/assets/photos/CTLZ533661/2.jpg",
+                       "/assets/photos/CTLZ533661/3.jpg",
+                       "/assets/photos/CTLZ533661/4.jpg",
+                       "/assets/photos/CTLZ533661/5.jpg",
+                       "/assets/photos/CTLZ533661/6.jpg",
+                       "/assets/photos/CTLZ533661/7.jpg",
+                       "/assets/photos/CTLZ533661/8.jpg",
+                       "/assets/photos/CTLZ533661/9.jpg",
+                       "/assets/photos/CTLZ533661/10.jpg"
                    ]
     },
     {
@@ -236,9 +245,18 @@
         "length":  "53\u0027",
         "price":  10500,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ533667/1.jpg",
+                       "/assets/photos/CTLZ533667/2.jpg",
+                       "/assets/photos/CTLZ533667/3.jpg",
+                       "/assets/photos/CTLZ533667/4.jpg",
+                       "/assets/photos/CTLZ533667/5.jpg",
+                       "/assets/photos/CTLZ533667/6.jpg",
+                       "/assets/photos/CTLZ533667/7.jpg",
+                       "/assets/photos/CTLZ533667/8.jpg",
+                       "/assets/photos/CTLZ533667/9.jpg",
+                       "/assets/photos/CTLZ533667/10.jpg"
                    ]
     },
     {
@@ -287,6 +305,21 @@
                        "/assets/photos/CTLZ534294/8.jpg",
                        "/assets/photos/CTLZ534294/9.jpg",
                        "/assets/photos/CTLZ534294/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ534846",
+        "vin":  "1JJV532D2DL745577",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2013,
+        "length":  "53\u0027",
+        "price":  11000,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
                    ]
     },
     {
@@ -357,7 +390,7 @@
         "length":  "53\u0027",
         "price":  7250,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/PCAZ113492/1.jpg",
                        "/assets/photos/PCAZ113492/2.jpg",
@@ -419,7 +452,7 @@
         "length":  "53\u0027",
         "price":  6000,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/PIFZ305016/1.jpg",
                        "/assets/photos/PIFZ305016/2.jpg",
@@ -458,7 +491,7 @@
         "length":  "53\u0027",
         "price":  7750,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/TENZ538034/1.jpg",
                        "/assets/photos/TENZ538034/2.jpg",
