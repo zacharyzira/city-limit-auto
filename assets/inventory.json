@@ -284,6 +284,21 @@
                    ]
     },
     {
+        "unit":  "CTLZ533907",
+        "vin":  "5V8VC5320CM204105",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10500,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ534117",
         "vin":  "3H3V532C9CT186373",
         "title":  "53\u0027 Dry Van - Plate — Hyundai",
@@ -1166,6 +1181,21 @@
                        "/assets/photos/CTLZ534075/8.jpg",
                        "/assets/photos/CTLZ534075/9.jpg",
                        "/assets/photos/CTLZ534075/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ534107",
+        "vin":  "3H3V532C0CT186097",
+        "title":  "53\u0027 Dry Van — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
                    ]
     },
     {
