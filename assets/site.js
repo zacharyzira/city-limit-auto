@@ -483,8 +483,8 @@ function wireForm(formId, successMessage){
       btn.disabled = false;
       btn.textContent = originalText;
       alert(IS_ES
-        ? "Hubo un problema al enviar su mensaje. Por favor llámenos al (951) 330-7545 o escriba a sales@citylimitauto.com."
-        : "Something went wrong sending your message. Please call us at (951) 330-7545 or email sales@citylimitauto.com.");
+        ? "Hubo un problema al enviar su mensaje. Por favor llámenos al (951) 330-7545 o escriba a info@citylimitauto.com."
+        : "Something went wrong sending your message. Please call us at (951) 330-7545 or email info@citylimitauto.com.");
     }
   });
 }
