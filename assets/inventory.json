@@ -284,6 +284,21 @@
                    ]
     },
     {
+        "unit":  "CTLZ534117",
+        "vin":  "3H3V532C9CT186373",
+        "title":  "53\u0027 Dry Van - Plate — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  11000,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ534294",
         "vin":  "1JJV532W08L096644",
         "title":  "53\u0027 Dry Van - Plate — Wabash",
