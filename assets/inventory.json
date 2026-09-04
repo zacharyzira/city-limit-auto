@@ -62,13 +62,13 @@
     {
         "unit":  "81506",
         "vin":  "1JJV532W59L257989",
-        "title":  "53\u0027  — Wabash",
+        "title":  "53\u0027 Dry Van — Wabash",
         "make":  "Wabash",
-        "type":  "",
+        "type":  "Dry Van",
         "year":  2009,
         "length":  "53\u0027",
-        "price":  8500,
-        "suspension":  "",
+        "price":  7500,
+        "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
 
@@ -295,7 +295,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ533907/1.jpg",
+                       "/assets/photos/CTLZ533907/2.jpg",
+                       "/assets/photos/CTLZ533907/3.jpg",
+                       "/assets/photos/CTLZ533907/4.jpg",
+                       "/assets/photos/CTLZ533907/5.jpg",
+                       "/assets/photos/CTLZ533907/6.jpg",
+                       "/assets/photos/CTLZ533907/7.jpg",
+                       "/assets/photos/CTLZ533907/8.jpg",
+                       "/assets/photos/CTLZ533907/9.jpg",
+                       "/assets/photos/CTLZ533907/10.jpg"
                    ]
     },
     {
@@ -310,7 +319,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ534117/1.jpg",
+                       "/assets/photos/CTLZ534117/2.jpg",
+                       "/assets/photos/CTLZ534117/3.jpg",
+                       "/assets/photos/CTLZ534117/4.jpg",
+                       "/assets/photos/CTLZ534117/5.jpg",
+                       "/assets/photos/CTLZ534117/6.jpg",
+                       "/assets/photos/CTLZ534117/7.jpg",
+                       "/assets/photos/CTLZ534117/8.jpg",
+                       "/assets/photos/CTLZ534117/9.jpg",
+                       "/assets/photos/CTLZ534117/10.jpg"
                    ]
     },
     {
@@ -482,7 +500,7 @@
         "length":  "53\u0027",
         "price":  6000,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/PIFZ305016/1.jpg",
                        "/assets/photos/PIFZ305016/2.jpg",
