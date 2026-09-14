@@ -1,5 +1,20 @@
 ﻿[
     {
+        "unit":  "200614",
+        "vin":  "1UYVS25387G194715",
+        "title":  "53\u0027 Dry Van - Plastic — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plastic",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7250,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "500774",
         "vin":  "1JJV532W15L954893",
         "title":  "53\u0027 Dry Van - Plate — Wabsh",
