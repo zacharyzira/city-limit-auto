@@ -341,6 +341,21 @@
                    ]
     },
     {
+        "unit":  "CTLZ534766",
+        "vin":  "1JJV532D5CL585614",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  9500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ534846",
         "vin":  "1JJV532D2DL745577",
         "title":  "53\u0027 Dry Van - Plate — Wabash",
