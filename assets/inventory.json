@@ -15,51 +15,6 @@
                    ]
     },
     {
-        "unit":  "503205",
-        "vin":  "1JJV532W16L012862",
-        "title":  "53\u0027 Dry Van - Plate — Wabsh",
-        "make":  "Wabsh",
-        "type":  "Dry Van - Plate",
-        "year":  2006,
-        "length":  "53\u0027",
-        "price":  5000,
-        "suspension":  "Spring",
-        "status":  "Pending Sale",
-        "photos":  [
-
-                   ]
-    },
-    {
-        "unit":  "81042",
-        "vin":  "1JJV532W19L257519",
-        "title":  "53\u0027 Dry Van — Wabash",
-        "make":  "Wabash",
-        "type":  "Dry Van",
-        "year":  2009,
-        "length":  "53\u0027",
-        "price":  8000,
-        "suspension":  "",
-        "status":  "Pending Sale",
-        "photos":  [
-
-                   ]
-    },
-    {
-        "unit":  "81060",
-        "vin":  "1JJV532W39L257537",
-        "title":  "53\u0027  — Wabash",
-        "make":  "Wabash",
-        "type":  "",
-        "year":  2009,
-        "length":  "53\u0027",
-        "price":  7000,
-        "suspension":  "Spring",
-        "status":  "Pending Sale",
-        "photos":  [
-
-                   ]
-    },
-    {
         "unit":  "CTLZ038853",
         "vin":  "5V8VC5322CM204025",
         "title":  "53\u0027 Dry Van - Plate — Vanguard",
@@ -93,7 +48,7 @@
         "length":  "53\u0027",
         "price":  10500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/CTLZ042553/1.jpg",
                        "/assets/photos/CTLZ042553/2.jpg",
@@ -440,21 +395,6 @@
                    ]
     },
     {
-        "unit":  "P5031869",
-        "vin":  "1JJV532W33L861869",
-        "title":  "53\u0027 Dry Van — Wabash",
-        "make":  "Wabash",
-        "type":  "Dry Van",
-        "year":  2003,
-        "length":  "53\u0027",
-        "price":  0,
-        "suspension":  "Spring",
-        "status":  "Pending Sale",
-        "photos":  [
-
-                   ]
-    },
-    {
         "unit":  "PCAZ112269",
         "vin":  "1DW1A53287B982283",
         "title":  "53\u0027 Dry Van — Stoughton",
@@ -566,21 +506,6 @@
                        "/assets/photos/PIFZ305016/8.jpg",
                        "/assets/photos/PIFZ305016/9.jpg",
                        "/assets/photos/PIFZ305016/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "PIFZ940032",
-        "vin":  "1JJV532W44L869786",
-        "title":  "53\u0027 Dry Van — Wabash",
-        "make":  "Wabash",
-        "type":  "Dry Van",
-        "year":  2004,
-        "length":  "53\u0027",
-        "price":  5000,
-        "suspension":  "Spring",
-        "status":  "Pending Sale",
-        "photos":  [
-
                    ]
     },
     {
