@@ -532,6 +532,207 @@
                    ]
     },
     {
+        "unit":  "002002",
+        "slug":  "2000-great-dane-48ft-sa-flatbed-002002",
+        "vin":  "1GRDM9625YM002002",
+        "title":  "48\u0027 SA Flatbed — Great Dane",
+        "make":  "Great Dane",
+        "type":  "SA Flatbed",
+        "year":  2000,
+        "length":  "48\u0027",
+        "price":  13500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "1234191PLA",
+        "slug":  "2012-vanguard-53ft-dry-van-1234191pla",
+        "vin":  "5V8VC5323CM201702",
+        "title":  "53\u0027 Dry Van — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  9500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "1435560PLA",
+        "slug":  "2014-vanguard-53ft-dry-van-1435560pla",
+        "vin":  "5V8VC5323EM401708",
+        "title":  "53\u0027 Dry Van — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van",
+        "year":  2014,
+        "length":  "53\u0027",
+        "price":  14000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "502062",
+        "slug":  "2006-wabash-53ft-dry-van-502062",
+        "vin":  "1JJV532W16L983411",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "502393",
+        "slug":  "2006-wabash-53ft-dry-van-502393",
+        "vin":  "1JJV532W26L983742",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  6000,
+        "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "505520",
+        "slug":  "2006-wabash-53ft-dry-van-505520",
+        "vin":  "1JJV532W16L015177",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "548750",
+        "slug":  "2008-wabash-53ft-dry-van-548750",
+        "vin":  "1JJV532W88L208901",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2008,
+        "length":  "53\u0027",
+        "price":  6500,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "7322675",
+        "slug":  "2015-wabash-53ft-dry-van-7322675",
+        "vin":  "1JJV532D3FL872776",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2015,
+        "length":  "53\u0027",
+        "price":  13000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "7362718",
+        "slug":  "2010-vanguard-53ft-dry-van-7362718",
+        "vin":  "5V8VC5320AM000661",
+        "title":  "53\u0027 Dry Van — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van",
+        "year":  2010,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/7362718/1.jpg",
+                       "/assets/photos/7362718/2.jpg",
+                       "/assets/photos/7362718/3.jpg",
+                       "/assets/photos/7362718/4.jpg",
+                       "/assets/photos/7362718/5.jpg",
+                       "/assets/photos/7362718/6.jpg",
+                       "/assets/photos/7362718/7.jpg",
+                       "/assets/photos/7362718/8.jpg",
+                       "/assets/photos/7362718/9.jpg",
+                       "/assets/photos/7362718/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "80071",
+        "slug":  "2009-great-dane-53ft-dry-van-80071",
+        "vin":  "1GRAP06279T549995",
+        "title":  "53\u0027 Dry Van — Great Dane",
+        "make":  "Great Dane",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "80771",
+        "slug":  "2009-wabash-53ft-dry-van-80771",
+        "vin":  "1JJV532W79L257248",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "80996",
+        "slug":  "2009-wabash-53ft-dry-van-80996",
+        "vin":  "1JJV532W39L257473",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "81042",
         "slug":  "2009-wabash-53ft-dry-van-81042",
         "vin":  "1JJV532W19L257519",
@@ -564,6 +765,262 @@
                    ]
     },
     {
+        "unit":  "81078",
+        "slug":  "2009-wabash-53ft-dry-van-81078",
+        "vin":  "1JJV532W59L257555",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "81336",
+        "slug":  "2009-wabash-53ft-dry-van-81336",
+        "vin":  "1JJV532W19L257813",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "81391",
+        "slug":  "2009-wabash-53ft-dry-van-81391",
+        "vin":  "1JJV532W49L257868",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "81926",
+        "slug":  "2009-wabash-53ft-dry-van-81926",
+        "vin":  "1JJV532WX9L258409",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "82231",
+        "slug":  "2009-wabash-53ft-dry-van-82231",
+        "vin":  "1JJV532W49L258714",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "82361",
+        "slug":  "2009-wabash-53ft-dry-van-82361",
+        "vin":  "1JJV532W79L319232",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "82521",
+        "slug":  "2009-wabash-53ft-dry-van-82521",
+        "vin":  "1JJV532W79L319392",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "82703",
+        "slug":  "2009-wabash-53ft-dry-van-82703",
+        "vin":  "1JJV532W29L319574",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "83525",
+        "slug":  "2009-wabash-53ft-dry-van-83525",
+        "vin":  "1JJV532W99L320396",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "83850",
+        "slug":  "2009-wabash-53ft-dry-van-83850",
+        "vin":  "1JJV532W59L320721",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "9328876",
+        "slug":  "2011-wabash-53ft-dry-van-9328876",
+        "vin":  "1JJV532D8CL657633",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2011,
+        "length":  "53\u0027",
+        "price":  9000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "CATZ964905",
+        "slug":  "2006-wabash-53ft-dry-van-catz964905",
+        "vin":  "1JJV532W76L944905",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "CATZ978469",
+        "slug":  "2007-wabash-53ft-dry-van-catz978469",
+        "vin":  "1JJV532W67L038469",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  6500,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "CTLZ024053",
+        "slug":  "2012-vanguard-53ft-dry-van-ctlz024053",
+        "vin":  "5V8VC5325CM204150",
+        "title":  "53\u0027 Dry Van — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  9500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "CTLZ026753",
+        "slug":  "2012-hyundai-53ft-dry-van-ctlz026753",
+        "vin":  "3H3V532C2CT186022",
+        "title":  "53\u0027 Dry Van — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "CTLZ033353",
+        "slug":  "2012-hyundai-53ft-dry-van-ctlz033353",
+        "vin":  "3H3V532C6CT188131",
+        "title":  "53\u0027 Dry Van — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ033753",
         "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz033753",
         "vin":  "5V8VC532XCM203916",
@@ -589,6 +1046,46 @@
                    ]
     },
     {
+        "unit":  "CTLZ533340",
+        "slug":  "2008-wabash-53ft-dry-van-plate-ctlz533340",
+        "vin":  "1JJV532W18L201904",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2008,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533340/1.jpg",
+                       "/assets/photos/CTLZ533340/2.jpg",
+                       "/assets/photos/CTLZ533340/3.jpg",
+                       "/assets/photos/CTLZ533340/4.jpg",
+                       "/assets/photos/CTLZ533340/5.jpg",
+                       "/assets/photos/CTLZ533340/6.jpg",
+                       "/assets/photos/CTLZ533340/7.jpg",
+                       "/assets/photos/CTLZ533340/8.jpg",
+                       "/assets/photos/CTLZ533340/9.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ533362",
+        "slug":  "2008-wabash-53ft-dry-van-ctlz533362",
+        "vin":  "1JJV532W38L219742",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2008,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ533379",
         "slug":  "2008-wabash-53ft-dry-van-plate-ctlz533379",
         "vin":  "1JJV532W98L201956",
@@ -611,6 +1108,121 @@
                        "/assets/photos/CTLZ533379/8.jpg",
                        "/assets/photos/CTLZ533379/9.jpg",
                        "/assets/photos/CTLZ533379/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ533382",
+        "slug":  "2008-wabash-53ft-dry-van-plate-ctlz533382",
+        "vin":  "1JJV532W38L219675",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2008,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533382/1.jpg",
+                       "/assets/photos/CTLZ533382/2.jpg",
+                       "/assets/photos/CTLZ533382/3.jpg",
+                       "/assets/photos/CTLZ533382/4.jpg",
+                       "/assets/photos/CTLZ533382/5.jpg",
+                       "/assets/photos/CTLZ533382/6.jpg",
+                       "/assets/photos/CTLZ533382/7.jpg",
+                       "/assets/photos/CTLZ533382/8.jpg",
+                       "/assets/photos/CTLZ533382/9.jpg",
+                       "/assets/photos/CTLZ533382/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ533403",
+        "slug":  "2008-wabash-53ft-dry-van-ctlz533403",
+        "vin":  "1JJV532W98L201892",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2008,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "CTLZ533633",
+        "slug":  "2012-hyundai-53ft-dry-van-ctlz533633",
+        "vin":  "3H3V532CXCT186009",
+        "title":  "53\u0027 Dry Van — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533633/1.jpg",
+                       "/assets/photos/CTLZ533633/2.jpg",
+                       "/assets/photos/CTLZ533633/3.jpg",
+                       "/assets/photos/CTLZ533633/4.jpg",
+                       "/assets/photos/CTLZ533633/5.jpg",
+                       "/assets/photos/CTLZ533633/6.jpg",
+                       "/assets/photos/CTLZ533633/7.jpg",
+                       "/assets/photos/CTLZ533633/8.jpg",
+                       "/assets/photos/CTLZ533633/9.jpg",
+                       "/assets/photos/CTLZ533633/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ533699",
+        "slug":  "2008-wabash-53ft-dry-van-plate-ctlz533699",
+        "vin":  "1JJV532W68L096678",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2008,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533699/1.jpg",
+                       "/assets/photos/CTLZ533699/2.jpg",
+                       "/assets/photos/CTLZ533699/3.jpg",
+                       "/assets/photos/CTLZ533699/4.jpg",
+                       "/assets/photos/CTLZ533699/5.jpg",
+                       "/assets/photos/CTLZ533699/6.jpg",
+                       "/assets/photos/CTLZ533699/7.jpg",
+                       "/assets/photos/CTLZ533699/8.jpg",
+                       "/assets/photos/CTLZ533699/9.jpg",
+                       "/assets/photos/CTLZ533699/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ533909",
+        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz533909",
+        "vin":  "5V8VC532XCM204127",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533909/1.jpg",
+                       "/assets/photos/CTLZ533909/2.jpg",
+                       "/assets/photos/CTLZ533909/3.jpg",
+                       "/assets/photos/CTLZ533909/4.jpg",
+                       "/assets/photos/CTLZ533909/5.jpg",
+                       "/assets/photos/CTLZ533909/6.jpg",
+                       "/assets/photos/CTLZ533909/7.jpg",
+                       "/assets/photos/CTLZ533909/8.jpg",
+                       "/assets/photos/CTLZ533909/9.jpg"
                    ]
     },
     {
@@ -655,6 +1267,78 @@
                    ]
     },
     {
+        "unit":  "CTLZ537048",
+        "slug":  "2016-vanguard-53ft-dry-van-ctlz537048",
+        "vin":  "5V8VC5329GM604184",
+        "title":  "53\u0027 Dry Van — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van",
+        "year":  2016,
+        "length":  "53\u0027",
+        "price":  13500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ537048/1.jpg",
+                       "/assets/photos/CTLZ537048/2.jpg",
+                       "/assets/photos/CTLZ537048/3.jpg",
+                       "/assets/photos/CTLZ537048/4.jpg",
+                       "/assets/photos/CTLZ537048/5.jpg",
+                       "/assets/photos/CTLZ537048/6.jpg",
+                       "/assets/photos/CTLZ537048/7.jpg",
+                       "/assets/photos/CTLZ537048/8.jpg",
+                       "/assets/photos/CTLZ537048/9.jpg"
+                   ]
+    },
+    {
+        "unit":  "D40239",
+        "slug":  "2009-great-dane-53ft-dry-van-d40239",
+        "vin":  "1GRAA06249T550460",
+        "title":  "53\u0027 Dry Van — Great Dane",
+        "make":  "Great Dane",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "D40442",
+        "slug":  "2009-great-dane-53ft-dry-van-d40442",
+        "vin":  "1GRAA06219T550481",
+        "title":  "53\u0027 Dry Van — Great Dane",
+        "make":  "Great Dane",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "D41016",
+        "slug":  "2009-great-dane-53ft-dry-van-d41016",
+        "vin":  "1GRAA06249T550538",
+        "title":  "53\u0027 Dry Van — Great Dane",
+        "make":  "Great Dane",
+        "type":  "Dry Van",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "P5031869",
         "slug":  "2003-wabash-53ft-dry-van-p5031869",
         "vin":  "1JJV532W33L861869",
@@ -671,6 +1355,38 @@
                    ]
     },
     {
+        "unit":  "PIFZ112508",
+        "slug":  "2007-stoughton-53ft-dry-van-pifz112508",
+        "vin":  "1DW1A53217E018218",
+        "title":  "53\u0027 Dry Van — Stoughton",
+        "make":  "Stoughton",
+        "type":  "Dry Van",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PIFZ310646",
+        "slug":  "2007-hyundai-53ft-dry-van-pifz310646",
+        "vin":  "3H3V532C27T139014",
+        "title":  "53\u0027 Dry Van — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "PIFZ940032",
         "slug":  "2004-wabash-53ft-dry-van-pifz940032",
         "vin":  "1JJV532W44L869786",
@@ -680,6 +1396,63 @@
         "year":  2004,
         "length":  "53\u0027",
         "price":  5000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PIFZ959825",
+        "slug":  "2005-wabash-53ft-dry-van-pifz959825",
+        "vin":  "1JJV532WX5L934402",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2005,
+        "length":  "53\u0027",
+        "price":  5000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PT5303",
+        "slug":  "1997-hyundai-53ft-dry-van-pt5303",
+        "vin":  "3H3V532CXVT035013",
+        "title":  "53\u0027 Dry Van — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van",
+        "year":  1997,
+        "length":  "53\u0027",
+        "price":  3000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/PT5303/1.jpg",
+                       "/assets/photos/PT5303/2.jpg",
+                       "/assets/photos/PT5303/3.jpg",
+                       "/assets/photos/PT5303/4.jpg",
+                       "/assets/photos/PT5303/5.jpg",
+                       "/assets/photos/PT5303/6.jpg",
+                       "/assets/photos/PT5303/7.jpg",
+                       "/assets/photos/PT5303/8.jpg",
+                       "/assets/photos/PT5303/9.jpg",
+                       "/assets/photos/PT5303/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "PT5304",
+        "slug":  "1991-strick-53ft-dry-van-pt5304",
+        "vin":  "1S12E8535ME335334",
+        "title":  "53\u0027 Dry Van — Strick",
+        "make":  "Strick",
+        "type":  "Dry Van",
+        "year":  1991,
+        "length":  "53\u0027",
+        "price":  3000,
         "suspension":  "Spring",
         "status":  "Sold",
         "photos":  [
@@ -719,6 +1492,70 @@
                    ]
     },
     {
+        "unit":  "PT5333",
+        "slug":  "1995-trailmobile-53ft-pt5333",
+        "vin":  "1PTG1JAH3S9002491",
+        "title":  "53\u0027  — Trailmobile",
+        "make":  "Trailmobile",
+        "type":  "",
+        "year":  1995,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PT5338",
+        "slug":  "1994-stoughton-53ft-pt5338",
+        "vin":  "1DW1A5326RS927401",
+        "title":  "53\u0027  — Stoughton",
+        "make":  "Stoughton",
+        "type":  "",
+        "year":  1994,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PT5341",
+        "slug":  "2001-stoughton-53ft-dry-van-pt5341",
+        "vin":  "1DW1A532X1S429755",
+        "title":  "53\u0027 Dry Van — Stoughton",
+        "make":  "Stoughton",
+        "type":  "Dry Van",
+        "year":  2001,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PT5346",
+        "slug":  "1997-trailmobile-53ft-dry-van-pt5346",
+        "vin":  "1PT01JAH2V9003198",
+        "title":  "53\u0027 Dry Van — Trailmobile",
+        "make":  "Trailmobile",
+        "type":  "Dry Van",
+        "year":  1997,
+        "length":  "53\u0027",
+        "price":  4000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "PT5348",
         "slug":  "1995-wabash-53ft-pt5348",
         "vin":  "1JJV532Y9SL320356",
@@ -745,6 +1582,49 @@
         "length":  "53\u0027",
         "price":  0,
         "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PT5365",
+        "slug":  "1994-great-dane-53ft-dry-van-pt5365",
+        "vin":  "1GRAA0620RB010030",
+        "title":  "53\u0027 Dry Van — Great Dane",
+        "make":  "Great Dane",
+        "type":  "Dry Van",
+        "year":  1994,
+        "length":  "53\u0027",
+        "price":  3000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/PT5365/1.jpg",
+                       "/assets/photos/PT5365/2.jpg",
+                       "/assets/photos/PT5365/3.jpg",
+                       "/assets/photos/PT5365/4.jpg",
+                       "/assets/photos/PT5365/5.jpg",
+                       "/assets/photos/PT5365/6.jpg",
+                       "/assets/photos/PT5365/7.jpg",
+                       "/assets/photos/PT5365/8.jpg",
+                       "/assets/photos/PT5365/9.jpg",
+                       "/assets/photos/PT5365/10.jpg",
+                       "/assets/photos/PT5365/11.jpg",
+                       "/assets/photos/PT5365/12.jpg"
+                   ]
+    },
+    {
+        "unit":  "PT5367",
+        "slug":  "1999-utility-53ft-dry-van-pt5367",
+        "vin":  "1UYVS2539XC057810",
+        "title":  "53\u0027 Dry Van — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van",
+        "year":  1999,
+        "length":  "53\u0027",
+        "price":  4000,
+        "suspension":  "Spring",
         "status":  "Sold",
         "photos":  [
 
