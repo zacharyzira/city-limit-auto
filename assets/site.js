@@ -456,6 +456,35 @@ async function loadInventory(){
   }
 }
 
+// Shared native-share/clipboard/prompt fallback chain — used by the grid's
+// per-card Share button (via shareLink() below, which builds the ?unit= URL)
+// and directly by the static per-trailer pages (assets/site.js is unaware of
+// those pages, but they call this global function with their own URL/labels).
+async function shareUrl(title, text, url, btn, copiedLabel, promptLabel){
+  // On phones/tablets (and some desktop browsers) this opens the native
+  // share sheet — text, email, WhatsApp, etc. — instead of just copying.
+  if(navigator.share){
+    try {
+      await navigator.share({ title, text, url });
+      return;
+    } catch (e) {
+      if(e.name === 'AbortError') return; // user closed the share sheet
+      // otherwise fall through to the clipboard fallback below
+    }
+  }
+
+  // innerHTML (not textContent) so this also works for icon-only share
+  // buttons like the lightbox's — swapping textContent would wipe the SVG.
+  const original = btn.innerHTML;
+  try {
+    await navigator.clipboard.writeText(url);
+    btn.textContent = copiedLabel;
+  } catch (e) {
+    try { window.prompt(promptLabel, url); } catch (e2) { /* nothing more we can do */ }
+  }
+  setTimeout(() => { btn.innerHTML = original; }, 1600);
+}
+
 // Submits a form to Formspree via fetch and swaps in a success message on the page.
 function wireForm(formId, successMessage){
   const form = document.getElementById(formId);
@@ -507,6 +536,12 @@ function injectInventorySchema(items){
   if(!items.length) return;
 
   const path = IS_ES ? '/es/inventory.html' : '/inventory.html';
+  // Points at each trailer's own indexable static page now (see
+  // sync-inventory.ps1's New-UnitPageHtml) rather than the grid's ?unit=
+  // deep link — that link still works for sharing/financing-prefill, it's
+  // just no longer what's advertised to search engines. Falls back to the
+  // old query-string form if a slug is somehow missing (e.g. inventory.json
+  // briefly stale mid-deploy of this change).
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -525,7 +560,9 @@ function injectInventorySchema(items){
           price: String(item.price),
           priceCurrency: 'USD',
           availability: item.status === 'Available' ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
-          url: `${location.origin}${path}?unit=${encodeURIComponent(item.unit)}`,
+          url: item.slug
+            ? `${location.origin}${IS_ES ? '/es' : ''}/inventory/${item.slug}.html`
+            : `${location.origin}${path}?unit=${encodeURIComponent(item.unit)}`,
         },
       },
     })),
@@ -760,29 +797,7 @@ async function renderInventory(gridId, opts = {}){
   async function shareLink(item, btn){
     const path = IS_ES ? '/es/inventory.html' : '/inventory.html';
     const url = `${location.origin}${path}?unit=${encodeURIComponent(item.unit)}`;
-
-    // On phones/tablets (and some desktop browsers) this opens the native
-    // share sheet — text, email, WhatsApp, etc. — instead of just copying.
-    if(navigator.share){
-      try {
-        await navigator.share({ title: item.title, text: `${item.title} — $${item.price.toLocaleString()}`, url });
-        return;
-      } catch (e) {
-        if(e.name === 'AbortError') return; // user closed the share sheet
-        // otherwise fall through to the clipboard fallback below
-      }
-    }
-
-    // innerHTML (not textContent) so this also works for icon-only share
-    // buttons like the lightbox's — swapping textContent would wipe the SVG.
-    const original = btn.innerHTML;
-    try {
-      await navigator.clipboard.writeText(url);
-      btn.textContent = T.copied;
-    } catch (e) {
-      try { window.prompt(T.copyPrompt, url); } catch (e2) { /* nothing more we can do */ }
-    }
-    setTimeout(() => { btn.innerHTML = original; }, 1600);
+    await shareUrl(item.title, `${item.title} — $${item.price.toLocaleString()}`, url, btn, T.copied, T.copyPrompt);
   }
 
   function buildCard(item){

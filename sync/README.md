@@ -59,11 +59,31 @@ Unregister-ScheduledTask -TaskName "CityLimitAuto-InventorySync" -Confirm:$false
 
 ## What gets published vs. kept private
 
-Only these fields go into the public `inventory.json`: unit number, year,
-make, trailer type, length, price, and status. Everything else on the
-source record — cost, vendor/pickup contact info, internal notes, title
-status — is intentionally left out and never touches the public site.
+These fields go into the public `inventory.json`: unit number, slug (the
+URL-safe identifier used by the individual listing pages, see below), VIN,
+year, make, trailer type, length, price, suspension, status, and photo
+paths. Everything else on the source record — cost, vendor/pickup contact
+info, internal notes, title status — is intentionally left out and never
+touches the public site.
 
-Only units with status `Available` are published. Sold, on-hold, and rental
-units are excluded. To change that, edit the `$publicStatuses` list near
-the top of `sync-inventory.ps1`.
+Units with status `Available` or `Down` (relabeled "Available" publicly)
+are always published. `Pending Sale` is always published too (it isn't
+final). `Sold` units are published for a limited window after the sale
+(see `$SoldRetentionDays` and `sold-cache.json`) so a link already sent out
+— e.g. to a lender financing the deal — keeps working for a few weeks
+without lingering on the site forever. Rental-fleet units are always
+excluded. To change any of this, edit the `$publicStatuses` list near the
+top of `sync-inventory.ps1`.
+
+## Generated files — don't hand-edit these
+
+This script also generates, on every run:
+- `inventory/*.html` and `es/inventory/*.html` — one static, indexable page
+  per currently-published unit (for SEO — real crawlable content, not just
+  a JS-rendered card). Pages for units that age out or get removed are
+  deleted automatically.
+- `sitemap.xml` — fully regenerated each run (the 12 core pages plus one
+  entry per Available/Pending-Sale unit; Sold units are excluded from the
+  sitemap on purpose, though their page keeps working). A manual edit to
+  `sitemap.xml` will be silently overwritten on the next run — change the
+  `$staticSitemapPages` array in `sync-inventory.ps1` instead.
