@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
@@ -6,55 +6,26 @@
     <lastmod>2026-08-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/index.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/index.html"/>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://citylimitauto.com/inventory.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory.html"/>
-    <changefreq>hourly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://citylimitauto.com/financing.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/financing.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/financing.html"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://citylimitauto.com/repairs.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/repairs.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/repairs.html"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://citylimitauto.com/about.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/about.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/about.html"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://citylimitauto.com/contact.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/contact.html"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://citylimitauto.com/es/index.html</loc>
     <lastmod>2026-08-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/index.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/index.html"/>
     <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory.html"/>
+    <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
@@ -62,7 +33,17 @@
     <lastmod>2026-08-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory.html"/>
     <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/financing.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/financing.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/financing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/financing.html"/>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -70,6 +51,16 @@
     <lastmod>2026-08-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/financing.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/financing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/financing.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/repairs.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/repairs.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/repairs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/repairs.html"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -78,7 +69,17 @@
     <lastmod>2026-08-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/repairs.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/repairs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/repairs.html"/>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/about.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/about.html"/>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
@@ -86,15 +87,458 @@
     <lastmod>2026-08-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/about.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/about.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/contact.html</loc>
+    <lastmod>2026-08-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://citylimitauto.com/es/contact.html</loc>
     <lastmod>2026-08-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/contact.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/contact.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2007-utility-53ft-dry-van-plastic-200614.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2007-utility-53ft-dry-van-plastic-200614.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2007-utility-53ft-dry-van-plastic-200614.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2007-utility-53ft-dry-van-plastic-200614.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2007-utility-53ft-dry-van-plastic-200614.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2007-utility-53ft-dry-van-plastic-200614.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2007-utility-53ft-dry-van-plastic-200614.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2007-utility-53ft-dry-van-plastic-200614.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2005-wabsh-53ft-dry-van-plate-500774.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2005-wabsh-53ft-dry-van-plate-500774.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2005-wabsh-53ft-dry-van-plate-500774.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2005-wabsh-53ft-dry-van-plate-500774.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2005-wabsh-53ft-dry-van-plate-500774.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2005-wabsh-53ft-dry-van-plate-500774.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2005-wabsh-53ft-dry-van-plate-500774.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2005-wabsh-53ft-dry-van-plate-500774.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz038853.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz038853.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz038853.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz038853.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz038853.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz038853.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz038853.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz038853.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz042553.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz042553.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz042553.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz042553.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz042553.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz042553.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz042553.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz042553.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz533405.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz533405.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2008-wabash-53ft-dry-van-plate-ctlz533405.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz533405.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2008-wabash-53ft-dry-van-plate-ctlz533405.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz533405.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2008-wabash-53ft-dry-van-plate-ctlz533405.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz533405.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533640.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533640.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533640.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533640.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533640.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533640.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533640.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533640.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533641.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533641.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533641.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533641.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533641.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533641.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533641.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz533641.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533661.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533661.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533661.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533661.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533661.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533661.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533661.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533661.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533667.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533667.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533667.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533667.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533667.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533667.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533667.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533667.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz533685.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz533685.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2008-wabash-53ft-dry-van-plate-ctlz533685.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz533685.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2008-wabash-53ft-dry-van-plate-ctlz533685.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz533685.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2008-wabash-53ft-dry-van-plate-ctlz533685.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz533685.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533907.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533907.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533907.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533907.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533907.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533907.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533907.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-vanguard-53ft-dry-van-plate-ctlz533907.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz534117.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz534117.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz534117.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz534117.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz534117.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz534117.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-hyundai-53ft-dry-van-plate-ctlz534117.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-hyundai-53ft-dry-van-plate-ctlz534117.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534157.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534157.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534157.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534157.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534157.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534157.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534157.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534157.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534211.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534211.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534211.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534211.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534211.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534211.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534211.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534211.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz534294.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz534294.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2008-wabash-53ft-dry-van-plate-ctlz534294.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz534294.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2008-wabash-53ft-dry-van-plate-ctlz534294.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz534294.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2008-wabash-53ft-dry-van-plate-ctlz534294.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2008-wabash-53ft-dry-van-plate-ctlz534294.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2013-wabash-53ft-dry-van-plate-ctlz534849.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2013-wabash-53ft-dry-van-plate-ctlz534849.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2013-wabash-53ft-dry-van-plate-ctlz534849.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2013-wabash-53ft-dry-van-plate-ctlz534849.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2013-wabash-53ft-dry-van-plate-ctlz534849.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2013-wabash-53ft-dry-van-plate-ctlz534849.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2013-wabash-53ft-dry-van-plate-ctlz534849.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2013-wabash-53ft-dry-van-plate-ctlz534849.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534871.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534871.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534871.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534871.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534871.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534871.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534871.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534871.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534875.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534875.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534875.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534875.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534875.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534875.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2012-wabash-53ft-dry-van-plate-ctlz534875.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2012-wabash-53ft-dry-van-plate-ctlz534875.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2007-stoughton-53ft-dry-van-pcaz112269.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2007-stoughton-53ft-dry-van-pcaz112269.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2007-stoughton-53ft-dry-van-pcaz112269.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2007-stoughton-53ft-dry-van-pcaz112269.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2007-stoughton-53ft-dry-van-pcaz112269.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2007-stoughton-53ft-dry-van-pcaz112269.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2007-stoughton-53ft-dry-van-pcaz112269.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2007-stoughton-53ft-dry-van-pcaz112269.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2007-strick-53ft-dry-van-plastic-pcaz113492.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2007-strick-53ft-dry-van-plastic-pcaz113492.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2007-strick-53ft-dry-van-plastic-pcaz113492.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2007-strick-53ft-dry-van-plastic-pcaz113492.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2007-strick-53ft-dry-van-plastic-pcaz113492.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2007-strick-53ft-dry-van-plastic-pcaz113492.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2007-strick-53ft-dry-van-plastic-pcaz113492.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2007-strick-53ft-dry-van-plastic-pcaz113492.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2006-stoughton-53ft-dry-van-pifz111486.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2006-stoughton-53ft-dry-van-pifz111486.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2006-stoughton-53ft-dry-van-pifz111486.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2006-stoughton-53ft-dry-van-pifz111486.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2006-stoughton-53ft-dry-van-pifz111486.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2006-stoughton-53ft-dry-van-pifz111486.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2006-stoughton-53ft-dry-van-pifz111486.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2006-stoughton-53ft-dry-van-pifz111486.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2007-stoughton-53ft-dry-van-pifz112040.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2007-stoughton-53ft-dry-van-pifz112040.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2007-stoughton-53ft-dry-van-pifz112040.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2007-stoughton-53ft-dry-van-pifz112040.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2007-stoughton-53ft-dry-van-pifz112040.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2007-stoughton-53ft-dry-van-pifz112040.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2007-stoughton-53ft-dry-van-pifz112040.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2007-stoughton-53ft-dry-van-pifz112040.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2005-stoughton-53ft-dry-van-pifz305016.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2005-stoughton-53ft-dry-van-pifz305016.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2005-stoughton-53ft-dry-van-pifz305016.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2005-stoughton-53ft-dry-van-pifz305016.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2005-stoughton-53ft-dry-van-pifz305016.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2005-stoughton-53ft-dry-van-pifz305016.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2005-stoughton-53ft-dry-van-pifz305016.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2005-stoughton-53ft-dry-van-pifz305016.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2008-strick-53ft-dry-van-plastic-tenz538034.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2008-strick-53ft-dry-van-plastic-tenz538034.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2008-strick-53ft-dry-van-plastic-tenz538034.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2008-strick-53ft-dry-van-plastic-tenz538034.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2008-strick-53ft-dry-van-plastic-tenz538034.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2008-strick-53ft-dry-van-plastic-tenz538034.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2008-strick-53ft-dry-van-plastic-tenz538034.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2008-strick-53ft-dry-van-plastic-tenz538034.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
