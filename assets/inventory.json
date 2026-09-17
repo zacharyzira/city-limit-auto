@@ -32,6 +32,38 @@
                    ]
     },
     {
+        "unit":  "504634",
+        "slug":  "2006-wabsh-53ft-dry-van-plate-504634",
+        "vin":  "1JJV532W56L014291",
+        "title":  "53\u0027 Dry Van - Plate — Wabsh",
+        "make":  "Wabsh",
+        "type":  "Dry Van - Plate",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5000,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "807020",
+        "slug":  "2007-utility-53ft-dry-van-plate-807020",
+        "vin":  "1UYVS25347G194775",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ038853",
         "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz038853",
         "vin":  "5V8VC5322CM204025",
@@ -296,7 +328,16 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ534157/1.jpg",
+                       "/assets/photos/CTLZ534157/2.jpg",
+                       "/assets/photos/CTLZ534157/3.jpg",
+                       "/assets/photos/CTLZ534157/4.jpg",
+                       "/assets/photos/CTLZ534157/5.jpg",
+                       "/assets/photos/CTLZ534157/6.jpg",
+                       "/assets/photos/CTLZ534157/7.jpg",
+                       "/assets/photos/CTLZ534157/8.jpg",
+                       "/assets/photos/CTLZ534157/9.jpg",
+                       "/assets/photos/CTLZ534157/10.jpg"
                    ]
     },
     {
@@ -312,7 +353,16 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ534211/1.jpg",
+                       "/assets/photos/CTLZ534211/2.jpg",
+                       "/assets/photos/CTLZ534211/3.jpg",
+                       "/assets/photos/CTLZ534211/4.jpg",
+                       "/assets/photos/CTLZ534211/5.jpg",
+                       "/assets/photos/CTLZ534211/6.jpg",
+                       "/assets/photos/CTLZ534211/7.jpg",
+                       "/assets/photos/CTLZ534211/8.jpg",
+                       "/assets/photos/CTLZ534211/9.jpg",
+                       "/assets/photos/CTLZ534211/10.jpg"
                    ]
     },
     {
@@ -353,7 +403,16 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ534849/1.jpg",
+                       "/assets/photos/CTLZ534849/2.jpg",
+                       "/assets/photos/CTLZ534849/3.jpg",
+                       "/assets/photos/CTLZ534849/4.jpg",
+                       "/assets/photos/CTLZ534849/5.jpg",
+                       "/assets/photos/CTLZ534849/6.jpg",
+                       "/assets/photos/CTLZ534849/7.jpg",
+                       "/assets/photos/CTLZ534849/8.jpg",
+                       "/assets/photos/CTLZ534849/9.jpg",
+                       "/assets/photos/CTLZ534849/10.jpg"
                    ]
     },
     {
@@ -369,7 +428,16 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ534871/1.jpg",
+                       "/assets/photos/CTLZ534871/2.jpg",
+                       "/assets/photos/CTLZ534871/3.jpg",
+                       "/assets/photos/CTLZ534871/4.jpg",
+                       "/assets/photos/CTLZ534871/5.jpg",
+                       "/assets/photos/CTLZ534871/6.jpg",
+                       "/assets/photos/CTLZ534871/7.jpg",
+                       "/assets/photos/CTLZ534871/8.jpg",
+                       "/assets/photos/CTLZ534871/9.jpg",
+                       "/assets/photos/CTLZ534871/10.jpg"
                    ]
     },
     {
