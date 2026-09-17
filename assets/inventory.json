@@ -1,14 +1,14 @@
 ﻿[
     {
         "unit":  "200614",
-        "slug":  "2007-utility-53ft-dry-van-plastic-200614",
+        "slug":  "2007-utility-53ft-dry-van-plate-200614",
         "vin":  "1UYVS25387G194715",
-        "title":  "53\u0027 Dry Van - Plastic — Utility",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
         "make":  "Utility",
-        "type":  "Dry Van - Plastic",
+        "type":  "Dry Van - Plate",
         "year":  2007,
         "length":  "53\u0027",
-        "price":  7250,
+        "price":  7500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -28,7 +28,16 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/500774/1.jpg",
+                       "/assets/photos/500774/2.jpg",
+                       "/assets/photos/500774/3.jpg",
+                       "/assets/photos/500774/4.jpg",
+                       "/assets/photos/500774/5.jpg",
+                       "/assets/photos/500774/6.jpg",
+                       "/assets/photos/500774/7.jpg",
+                       "/assets/photos/500774/8.jpg",
+                       "/assets/photos/500774/9.jpg",
+                       "/assets/photos/500774/10.jpg"
                    ]
     },
     {
@@ -457,35 +466,6 @@
                    ]
     },
     {
-        "unit":  "PCAZ112269",
-        "slug":  "2007-stoughton-53ft-dry-van-pcaz112269",
-        "vin":  "1DW1A53287B982283",
-        "title":  "53\u0027 Dry Van — Stoughton",
-        "make":  "Stoughton",
-        "type":  "Dry Van",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7000,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/PCAZ112269/1.jpg",
-                       "/assets/photos/PCAZ112269/2.jpg",
-                       "/assets/photos/PCAZ112269/3.jpg",
-                       "/assets/photos/PCAZ112269/4.jpg",
-                       "/assets/photos/PCAZ112269/5.jpg",
-                       "/assets/photos/PCAZ112269/6.jpg",
-                       "/assets/photos/PCAZ112269/7.jpg",
-                       "/assets/photos/PCAZ112269/8.jpg",
-                       "/assets/photos/PCAZ112269/9.jpg",
-                       "/assets/photos/PCAZ112269/10.jpg",
-                       "/assets/photos/PCAZ112269/11.jpg",
-                       "/assets/photos/PCAZ112269/12.jpg",
-                       "/assets/photos/PCAZ112269/13.jpg",
-                       "/assets/photos/PCAZ112269/14.jpg"
-                   ]
-    },
-    {
         "unit":  "PCAZ113492",
         "slug":  "2007-strick-53ft-dry-van-plastic-pcaz113492",
         "vin":  "1S12E95337E516703",
@@ -674,6 +654,22 @@
         "length":  "53\u0027",
         "price":  6000,
         "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "503205",
+        "slug":  "2006-wabsh-53ft-dry-van-plate-503205",
+        "vin":  "1JJV532W16L012862",
+        "title":  "53\u0027 Dry Van - Plate — Wabsh",
+        "make":  "Wabsh",
+        "type":  "Dry Van - Plate",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5000,
+        "suspension":  "Spring",
         "status":  "Sold",
         "photos":  [
 
