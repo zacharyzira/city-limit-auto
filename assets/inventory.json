@@ -12,7 +12,14 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/200614/1.jpg",
+                       "/assets/photos/200614/2.jpg",
+                       "/assets/photos/200614/3.jpg",
+                       "/assets/photos/200614/4.jpg",
+                       "/assets/photos/200614/5.jpg",
+                       "/assets/photos/200614/6.jpg",
+                       "/assets/photos/200614/7.jpg",
+                       "/assets/photos/200614/8.jpg"
                    ]
     },
     {
@@ -322,31 +329,6 @@
                        "/assets/photos/CTLZ534117/8.jpg",
                        "/assets/photos/CTLZ534117/9.jpg",
                        "/assets/photos/CTLZ534117/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "CTLZ534157",
-        "slug":  "2012-wabash-53ft-dry-van-plate-ctlz534157",
-        "vin":  "1JJV532D5CL585712",
-        "title":  "53\u0027 Dry Van - Plate — Wabash",
-        "make":  "Wabash",
-        "type":  "Dry Van - Plate",
-        "year":  2012,
-        "length":  "53\u0027",
-        "price":  9500,
-        "suspension":  "Spring",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/CTLZ534157/1.jpg",
-                       "/assets/photos/CTLZ534157/2.jpg",
-                       "/assets/photos/CTLZ534157/3.jpg",
-                       "/assets/photos/CTLZ534157/4.jpg",
-                       "/assets/photos/CTLZ534157/5.jpg",
-                       "/assets/photos/CTLZ534157/6.jpg",
-                       "/assets/photos/CTLZ534157/7.jpg",
-                       "/assets/photos/CTLZ534157/8.jpg",
-                       "/assets/photos/CTLZ534157/9.jpg",
-                       "/assets/photos/CTLZ534157/10.jpg"
                    ]
     },
     {
