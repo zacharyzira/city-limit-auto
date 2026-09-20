@@ -807,6 +807,15 @@ async function renderInventory(gridId, opts = {}){
     await shareUrl(item.title, `${item.title} — $${item.price.toLocaleString()}`, url, btn, T.copied, T.copyPrompt);
   }
 
+  // Grid cards show a ~70KB thumbnail (photos/<unit>/t/N.jpg, made by the sync
+  // script) instead of the ~500KB full photo; the lightbox still uses the full
+  // one. Falls back to the full photo if a thumbnail doesn't exist (yet).
+  const thumbUrl = p => p.replace(/\/(\d+\.jpg)$/, '/t/$1');
+  function setCardImg(img, full){
+    img.onerror = () => { img.onerror = null; img.src = full; };
+    img.src = thumbUrl(full);
+  }
+
   function buildCard(item){
     const card = document.createElement('article');
     card.className = 'tag-card';
@@ -818,7 +827,7 @@ async function renderInventory(gridId, opts = {}){
       <div class="tag-photo${hasPhoto ? ' has-photo clickable' : ''}">
         <span class="badge ${badgeClass(item.status)}">${statusLabel}</span>
         ${hasPhoto
-          ? `<img src="${photos[0]}" alt="${item.title}" loading="lazy">
+          ? `<img src="${thumbUrl(photos[0])}" alt="${item.title}" loading="lazy">
              ${photos.length > 1 ? `
                <button type="button" class="tag-photo-nav tag-photo-prev" aria-label="${T.prevPhoto}">&lsaquo;</button>
                <button type="button" class="tag-photo-nav tag-photo-next" aria-label="${T.nextPhoto}">&rsaquo;</button>
@@ -854,12 +863,13 @@ async function renderInventory(gridId, opts = {}){
       const photoEl = card.querySelector('.tag-photo');
       const imgEl = photoEl.querySelector('img');
       const countEl = photoEl.querySelector('.photo-count');
+      imgEl.onerror = () => { imgEl.onerror = null; imgEl.src = photos[photoIdx]; };
 
       // Lets a visitor flip through a trailer's photos right on the grid
       // card — no need to open the lightbox just to browse.
       function showPhoto(i){
         photoIdx = (i + photos.length) % photos.length;
-        imgEl.src = photos[photoIdx];
+        setCardImg(imgEl, photos[photoIdx]);
         if(countEl) countEl.textContent = `${photoIdx + 1} / ${photos.length}`;
       }
 

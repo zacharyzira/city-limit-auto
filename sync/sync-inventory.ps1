@@ -637,6 +637,22 @@ $productSchemaJson
         try { $encoder.Save($stream) } finally { $stream.Close() }
     }
 
+    # Small (720px) copy of a published photo for the inventory grid cards, in a
+    # "t" subfolder next to it. The cards used to load the full 1600px photo
+    # (~500KB each) just to show a ~300px thumbnail; this is ~70KB. Built from
+    # the already-published photo (orientation already applied), and skipped
+    # if it exists — so it also backfills units whose photos haven't changed.
+    function Ensure-PhotoThumb($fullPath, $thumbDir) {
+        $thumbPath = Join-Path $thumbDir (Split-Path $fullPath -Leaf)
+        if (Test-Path $thumbPath) { return }
+        try {
+            New-Item -ItemType Directory -Force -Path $thumbDir | Out-Null
+            Convert-PhotoToWebJpg $fullPath $thumbPath 720 76
+        } catch {
+            Write-Log "WARNING: couldn't make thumbnail for '$fullPath': $($_.Exception.Message)"
+        }
+    }
+
     # Staff name photo folders either as the full VIN (e.g. "1JJV532D4EL814819")
     # or, more commonly in practice, the last 5 characters of the VIN followed
     # by whatever notes help a human recognize the unit (make, size, etc — e.g.
@@ -677,6 +693,7 @@ $productSchemaJson
             # a 10+-photo unit as "changed" on every subsequent run.
             $existing = @(Get-ChildItem $destFolder -File -Filter "*.jpg" | Sort-Object { [int]$_.BaseName })
             if ($existing.Count -eq $expectedCount) {
+                foreach ($x in $existing) { Ensure-PhotoThumb $x.FullName (Join-Path $destFolder "t") }
                 return @($existing | ForEach-Object { "/assets/photos/$unitNumber/$($_.Name)" })
             }
         }
@@ -691,6 +708,7 @@ $productSchemaJson
             $destPath = Join-Path $destFolder $destName
             try {
                 Convert-PhotoToWebJpg $f.FullName $destPath
+                Ensure-PhotoThumb $destPath (Join-Path $destFolder "t")
                 # Root-absolute so /es/ pages resolve photos correctly too.
                 $publicPaths += "/assets/photos/$unitNumber/$destName"
                 $i++
