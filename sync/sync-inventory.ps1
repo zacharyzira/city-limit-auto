@@ -843,6 +843,7 @@ $productSchemaJson
         @{ path = "repairs.html";   lastmod = "2026-08-16"; changefreq = "weekly";  priorityEn = "0.7"; priorityEs = "0.6" }
         @{ path = "about.html";     lastmod = "2026-08-16"; changefreq = "monthly"; priorityEn = "0.6"; priorityEs = "0.5" }
         @{ path = "contact.html";   lastmod = "2026-08-16"; changefreq = "monthly"; priorityEn = "0.6"; priorityEs = "0.5" }
+        @{ path = "areas/fontana-ontario-bloomington.html"; lastmod = "2026-09-19"; changefreq = "monthly"; priorityEn = "0.7"; priorityEs = "0.6" }
     )
 
     $sitemapEntries = @()

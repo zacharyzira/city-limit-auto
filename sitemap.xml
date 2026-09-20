@@ -109,7 +109,25 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+   <url>
+    <loc>https://citylimitauto.com/areas/fontana-ontario-bloomington.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/areas/fontana-ontario-bloomington.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/areas/fontana-ontario-bloomington.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/areas/fontana-ontario-bloomington.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
+    <loc>https://citylimitauto.com/es/areas/fontana-ontario-bloomington.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/areas/fontana-ontario-bloomington.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/areas/fontana-ontario-bloomington.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/areas/fontana-ontario-bloomington.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+ <url>
     <loc>https://citylimitauto.com/inventory/2007-utility-53ft-dry-van-plate-200614.html</loc>
     <lastmod>2026-09-18</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2007-utility-53ft-dry-van-plate-200614.html"/>
