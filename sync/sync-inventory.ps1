@@ -890,7 +890,10 @@ $productSchemaJson
 $($sitemapEntries -join "`n")
 </urlset>
 "@
-    Set-Content -Path (Join-Path $RepoRoot "sitemap.xml") -Value $sitemapXml -Encoding UTF8
+    # Written WITHOUT a byte-order mark (Set-Content -Encoding UTF8 adds one in
+    # Windows PowerShell 5.1); a BOM before the <?xml declaration can make
+    # crawlers reject the sitemap.
+    [System.IO.File]::WriteAllText((Join-Path $RepoRoot "sitemap.xml"), $sitemapXml, (New-Object System.Text.UTF8Encoding($false)))
     Write-Log "Regenerated sitemap.xml ($($sitemapEntries.Count) URL entries)."
 
     # ---- Publish via git, if this is a repo with a remote ----
