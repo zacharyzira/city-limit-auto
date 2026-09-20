@@ -539,6 +539,7 @@ $productSchemaJson
         <h4>City Limit Auto</h4>
         <p>1281 W Oleander Ave<br>Perris, CA 92571</p>
         <p>$($L.licensedDealer)</p>
+        <a href="$langPath/areas/">$( if ($isEs) { 'Áreas que Atendemos' } else { 'Areas We Serve' } )</a>
       </div>
       <div>
         <h4>$($L.contact)</h4>
