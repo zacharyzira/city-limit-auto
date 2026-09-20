@@ -110,6 +110,24 @@
     <priority>0.5</priority>
   </url>
    <url>
+    <loc>https://citylimitauto.com/areas/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/areas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/areas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/areas/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/areas/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/areas/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/areas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/areas/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://citylimitauto.com/areas/fontana-ontario-bloomington.html</loc>
     <lastmod>2026-09-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/areas/fontana-ontario-bloomington.html"/>
