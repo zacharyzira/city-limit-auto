@@ -424,21 +424,21 @@ $productSchemaJson
 
 <header>
   <div class="nav">
-    <a href="/index.html" class="brand">
+    <a href="$langPath/index.html" class="brand">
       <img src="/assets/img/logo.png" alt="$($L.logoAlt)" class="brand-mark">
       <div class="brand-text">City Limit Auto<span>$($L.brandTag)</span></div>
     </a>
     <nav>
       <ul>
-        <li><a href="/index.html">$($L.home)</a></li>
-        <li><a href="/inventory.html" aria-current="page">$($L.inventoryNav)</a></li>
-        <li><a href="/repairs.html">$($L.repairs)</a></li>
-        <li><a href="/financing.html">$($L.financingNav)</a></li>
-        <li><a href="/about.html">$($L.about)</a></li>
-        <li><a href="/contact.html">$($L.contact)</a></li>
+        <li><a href="$langPath/index.html">$($L.home)</a></li>
+        <li><a href="$langPath/inventory.html" aria-current="page">$($L.inventoryNav)</a></li>
+        <li><a href="$langPath/repairs.html">$($L.repairs)</a></li>
+        <li><a href="$langPath/financing.html">$($L.financingNav)</a></li>
+        <li><a href="$langPath/about.html">$($L.about)</a></li>
+        <li><a href="$langPath/contact.html">$($L.contact)</a></li>
       </ul>
     </nav>
-    <a href="/contact.html" class="nav-cta">$($L.getQuote)</a>
+    <a href="$langPath/contact.html" class="nav-cta">$($L.getQuote)</a>
     <a href="$langToggleHref" class="lang-toggle" hreflang="$( if ($isEs) { 'en' } else { 'es' } )" lang="$( if ($isEs) { 'en' } else { 'es' } )">$( if ($isEs) { 'EN' } else { 'ES' } )</a>
     <button class="mobile-toggle" aria-label="$($L.openMenu)">☰</button>
   </div>
@@ -447,7 +447,7 @@ $productSchemaJson
 <main id="main">
   <div class="page-header">
     <div class="wrap">
-      <div class="section-eyebrow"><a href="/inventory.html" style="color:inherit;">$($L.breadcrumbInv)</a> / $unit</div>
+      <div class="section-eyebrow"><a href="$langPath/inventory.html" style="color:inherit;">$($L.breadcrumbInv)</a> / $unit</div>
       <h1>$titleCore</h1>
     </div>
   </div>
@@ -526,7 +526,7 @@ $productSchemaJson
   <section class="cta-band">
     <div class="wrap cta-inner">
       <h2>$($L.cta)</h2>
-      <a href="/contact.html" class="btn btn-dark">$($L.ctaBtn)</a>
+      <a href="$langPath/contact.html" class="btn btn-dark">$($L.ctaBtn)</a>
     </div>
   </section>
 </main>

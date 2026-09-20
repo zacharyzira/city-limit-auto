@@ -81,12 +81,17 @@ function wireCalculator(els){
   const prefersEs = langs.some(l => (l || '').toLowerCase().startsWith('es'));
   if(!prefersEs) return;
 
-  const page = location.pathname.split('/').pop() || 'index.html';
+  // The Spanish mirror lives at the same path under /es/ — built from the full
+  // pathname (not just the last segment) so nested pages like
+  // /areas/<city>.html and /inventory/<slug>.html point at their real
+  // counterpart instead of a page that doesn't exist.
+  const path = location.pathname;
+  const esPath = '/es' + (path.endsWith('/') ? path + 'index.html' : path);
   const bar = document.createElement('div');
   bar.className = 'lang-banner';
   bar.innerHTML = `
     <span>¿Prefiere ver este sitio en español?</span>
-    <a class="lang-banner-go" href="/es/${page}">Ver en español</a>
+    <a class="lang-banner-go" href="${esPath}">Ver en español</a>
     <button class="lang-banner-close" aria-label="Cerrar">&times;</button>
   `;
   document.body.insertBefore(bar, document.body.firstChild);
@@ -779,17 +784,19 @@ async function renderInventory(gridId, opts = {}){
   }
 
   // Card labels are translated; the data itself (make, "Dry Van", "Air",
-  // measurements) stays as-is since it's proper nouns and numbers.
+  // measurements) stays as-is since it's proper nouns and numbers. The
+  // financing link is root-absolute so the lightbox's Apply button still
+  // resolves from nested pages (e.g. /areas/<city>.html), not just the root.
   const T = IS_ES
     ? {unit:'UNIDAD', soon:'Foto próximamente', year:'Año',
        length:'Longitud', type:'Tipo', susp:'Suspensión', inquire:'Consultar →',
-       contact:'contact.html', financing:'financing.html', apply:'Financiar →',
+       contact:'contact.html', financing:'/es/financing.html', apply:'Financiar →',
        share:'Compartir', copied:'¡Copiado!',
        copyPrompt:'Copie este enlace:', prevPhoto:'Foto anterior', nextPhoto:'Foto siguiente',
        status:{Available:'Disponible', Hold:'Apartado', Sold:'Vendido', 'Pending Sale':'Venta Pendiente'}}
     : {unit:'UNIT', soon:'Photo Coming Soon', year:'Year',
        length:'Length', type:'Type', susp:'Suspension', inquire:'Inquire →',
-       contact:'contact.html', financing:'financing.html', apply:'Apply →',
+       contact:'contact.html', financing:'/financing.html', apply:'Apply →',
        share:'Share', copied:'Copied!',
        copyPrompt:'Copy this link:', prevPhoto:'Previous photo', nextPhoto:'Next photo',
        status:{}};
