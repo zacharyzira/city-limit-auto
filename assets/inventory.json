@@ -158,7 +158,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/807050/1.jpg",
+                       "/assets/photos/807050/2.jpg",
+                       "/assets/photos/807050/3.jpg",
+                       "/assets/photos/807050/4.jpg",
+                       "/assets/photos/807050/5.jpg",
+                       "/assets/photos/807050/6.jpg",
+                       "/assets/photos/807050/7.jpg",
+                       "/assets/photos/807050/8.jpg",
+                       "/assets/photos/807050/9.jpg",
+                       "/assets/photos/807050/10.jpg"
                    ]
     },
     {
@@ -446,6 +455,22 @@
                    ]
     },
     {
+        "unit":  "CTLZ533976",
+        "slug":  "2012-wabash-53ft-dry-van-plate-ctlz533976",
+        "vin":  "1JJV532D0CL586492",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  9500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ534117",
         "slug":  "2012-hyundai-53ft-dry-van-plate-ctlz534117",
         "vin":  "3H3V532C9CT186373",
@@ -481,7 +506,7 @@
         "length":  "53\u0027",
         "price":  9500,
         "suspension":  "Spring",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/CTLZ534211/1.jpg",
                        "/assets/photos/CTLZ534211/2.jpg",
@@ -531,7 +556,7 @@
         "length":  "53\u0027",
         "price":  10500,
         "suspension":  "Spring",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/CTLZ534849/1.jpg",
                        "/assets/photos/CTLZ534849/2.jpg",
@@ -572,7 +597,7 @@
         "length":  "53\u0027",
         "price":  9500,
         "suspension":  "Spring",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/CTLZ534871/1.jpg",
                        "/assets/photos/CTLZ534871/2.jpg",
@@ -1222,6 +1247,31 @@
                    ]
     },
     {
+        "unit":  "CTLZ033753",
+        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz033753",
+        "vin":  "5V8VC532XCM203916",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ033753/1.jpg",
+                       "/assets/photos/CTLZ033753/2.jpg",
+                       "/assets/photos/CTLZ033753/3.jpg",
+                       "/assets/photos/CTLZ033753/4.jpg",
+                       "/assets/photos/CTLZ033753/5.jpg",
+                       "/assets/photos/CTLZ033753/6.jpg",
+                       "/assets/photos/CTLZ033753/7.jpg",
+                       "/assets/photos/CTLZ033753/8.jpg",
+                       "/assets/photos/CTLZ033753/9.jpg",
+                       "/assets/photos/CTLZ033753/10.jpg"
+                   ]
+    },
+    {
         "unit":  "CTLZ533340",
         "slug":  "2008-wabash-53ft-dry-van-plate-ctlz533340",
         "vin":  "1JJV532W18L201904",
@@ -1259,6 +1309,31 @@
         "status":  "Sold",
         "photos":  [
 
+                   ]
+    },
+    {
+        "unit":  "CTLZ533379",
+        "slug":  "2008-wabash-53ft-dry-van-plate-ctlz533379",
+        "vin":  "1JJV532W98L201956",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2008,
+        "length":  "53\u0027",
+        "price":  8000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533379/1.jpg",
+                       "/assets/photos/CTLZ533379/2.jpg",
+                       "/assets/photos/CTLZ533379/3.jpg",
+                       "/assets/photos/CTLZ533379/4.jpg",
+                       "/assets/photos/CTLZ533379/5.jpg",
+                       "/assets/photos/CTLZ533379/6.jpg",
+                       "/assets/photos/CTLZ533379/7.jpg",
+                       "/assets/photos/CTLZ533379/8.jpg",
+                       "/assets/photos/CTLZ533379/9.jpg",
+                       "/assets/photos/CTLZ533379/10.jpg"
                    ]
     },
     {
@@ -1374,6 +1449,31 @@
                        "/assets/photos/CTLZ533909/7.jpg",
                        "/assets/photos/CTLZ533909/8.jpg",
                        "/assets/photos/CTLZ533909/9.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ534075",
+        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz534075",
+        "vin":  "5V8VC5325CM203967",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ534075/1.jpg",
+                       "/assets/photos/CTLZ534075/2.jpg",
+                       "/assets/photos/CTLZ534075/3.jpg",
+                       "/assets/photos/CTLZ534075/4.jpg",
+                       "/assets/photos/CTLZ534075/5.jpg",
+                       "/assets/photos/CTLZ534075/6.jpg",
+                       "/assets/photos/CTLZ534075/7.jpg",
+                       "/assets/photos/CTLZ534075/8.jpg",
+                       "/assets/photos/CTLZ534075/9.jpg",
+                       "/assets/photos/CTLZ534075/10.jpg"
                    ]
     },
     {
@@ -1586,6 +1686,38 @@
                    ]
     },
     {
+        "unit":  "PT5306",
+        "slug":  "1993-trailmobile-53ft-pt5306",
+        "vin":  "1PT01JAH0P9011464",
+        "title":  "53\u0027  — Trailmobile",
+        "make":  "Trailmobile",
+        "type":  "",
+        "year":  1993,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PT5331",
+        "slug":  "1993-trailmobile-53ft-pt5331",
+        "vin":  "1PT01JPXP9001077",
+        "title":  "53\u0027  — Trailmobile",
+        "make":  "Trailmobile",
+        "type":  "",
+        "year":  1993,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "PT5333",
         "slug":  "1995-trailmobile-53ft-pt5333",
         "vin":  "1PTG1JAH3S9002491",
@@ -1644,6 +1776,38 @@
         "length":  "53\u0027",
         "price":  4000,
         "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PT5348",
+        "slug":  "1995-wabash-53ft-pt5348",
+        "vin":  "1JJV532Y9SL320356",
+        "title":  "53\u0027  — Wabash",
+        "make":  "Wabash",
+        "type":  "",
+        "year":  1995,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PT5355",
+        "slug":  "1993-wabash-53ft-pt5355",
+        "vin":  "1JJV532Y4PL170258",
+        "title":  "53\u0027  — Wabash",
+        "make":  "Wabash",
+        "type":  "",
+        "year":  1993,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "",
         "status":  "Sold",
         "photos":  [
 
