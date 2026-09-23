@@ -149,7 +149,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/807032/1.jpg",
                        "/assets/photos/807032/2.jpg",
@@ -579,6 +579,22 @@
                        "/assets/photos/CTLZ534294/8.jpg",
                        "/assets/photos/CTLZ534294/9.jpg",
                        "/assets/photos/CTLZ534294/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ534810",
+        "slug":  "2013-wabash-53ft-dry-van-plate-ctlz534810",
+        "vin":  "1JJV532D4DL745306",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2013,
+        "length":  "53\u0027",
+        "price":  10500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
                    ]
     },
     {
