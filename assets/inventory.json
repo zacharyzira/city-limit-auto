@@ -73,47 +73,6 @@
                    ]
     },
     {
-        "unit":  "500774",
-        "slug":  "2005-wabsh-53ft-dry-van-plate-500774",
-        "vin":  "1JJV532W15L954893",
-        "title":  "53\u0027 Dry Van - Plate — Wabsh",
-        "make":  "Wabsh",
-        "type":  "Dry Van - Plate",
-        "year":  2005,
-        "length":  "53\u0027",
-        "price":  5000,
-        "suspension":  "Spring",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/500774/1.jpg",
-                       "/assets/photos/500774/2.jpg",
-                       "/assets/photos/500774/3.jpg",
-                       "/assets/photos/500774/4.jpg",
-                       "/assets/photos/500774/5.jpg",
-                       "/assets/photos/500774/6.jpg",
-                       "/assets/photos/500774/7.jpg",
-                       "/assets/photos/500774/8.jpg",
-                       "/assets/photos/500774/9.jpg",
-                       "/assets/photos/500774/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "504634",
-        "slug":  "2006-wabsh-53ft-dry-van-plate-504634",
-        "vin":  "1JJV532W56L014291",
-        "title":  "53\u0027 Dry Van - Plate — Wabsh",
-        "make":  "Wabsh",
-        "type":  "Dry Van - Plate",
-        "year":  2006,
-        "length":  "53\u0027",
-        "price":  5000,
-        "suspension":  "Spring",
-        "status":  "Available",
-        "photos":  [
-
-                   ]
-    },
-    {
         "unit":  "807020",
         "slug":  "2007-utility-53ft-dry-van-plate-807020",
         "vin":  "1UYVS25347G194775",
