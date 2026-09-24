@@ -1429,6 +1429,22 @@
                    ]
     },
     {
+        "unit":  "CTLZ534107",
+        "slug":  "2012-hyundai-53ft-dry-van-ctlz534107",
+        "vin":  "3H3V532C0CT186097",
+        "title":  "53\u0027 Dry Van — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ537048",
         "slug":  "2016-vanguard-53ft-dry-van-ctlz537048",
         "vin":  "5V8VC5329GM604184",
