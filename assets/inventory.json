@@ -73,31 +73,6 @@
                    ]
     },
     {
-        "unit":  "807020",
-        "slug":  "2007-utility-53ft-dry-van-plate-807020",
-        "vin":  "1UYVS25347G194775",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7500,
-        "suspension":  "Air",
-        "status":  "Pending Sale",
-        "photos":  [
-                       "/assets/photos/807020/1.jpg",
-                       "/assets/photos/807020/2.jpg",
-                       "/assets/photos/807020/3.jpg",
-                       "/assets/photos/807020/4.jpg",
-                       "/assets/photos/807020/5.jpg",
-                       "/assets/photos/807020/6.jpg",
-                       "/assets/photos/807020/7.jpg",
-                       "/assets/photos/807020/8.jpg",
-                       "/assets/photos/807020/9.jpg",
-                       "/assets/photos/807020/10.jpg"
-                   ]
-    },
-    {
         "unit":  "807032",
         "slug":  "2007-utility-53ft-dry-van-plate-807032",
         "vin":  "1UYVS25307G194756",
@@ -108,7 +83,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/807032/1.jpg",
                        "/assets/photos/807032/2.jpg",
@@ -208,7 +183,7 @@
         "length":  "53\u0027",
         "price":  10500,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/CTLZ042553/1.jpg",
                        "/assets/photos/CTLZ042553/2.jpg",
