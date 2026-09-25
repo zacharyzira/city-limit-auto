@@ -775,10 +775,10 @@
     },
     {
         "unit":  "503205",
-        "slug":  "2006-wabsh-53ft-dry-van-plate-503205",
+        "slug":  "2006-wabash-53ft-dry-van-plate-503205",
         "vin":  "1JJV532W16L012862",
-        "title":  "53\u0027 Dry Van - Plate — Wabsh",
-        "make":  "Wabsh",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
         "type":  "Dry Van - Plate",
         "year":  2006,
         "length":  "53\u0027",
@@ -876,6 +876,31 @@
         "status":  "Sold",
         "photos":  [
 
+                   ]
+    },
+    {
+        "unit":  "807020",
+        "slug":  "2007-utility-53ft-dry-van-plate-807020",
+        "vin":  "1UYVS25347G194775",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/807020/1.jpg",
+                       "/assets/photos/807020/2.jpg",
+                       "/assets/photos/807020/3.jpg",
+                       "/assets/photos/807020/4.jpg",
+                       "/assets/photos/807020/5.jpg",
+                       "/assets/photos/807020/6.jpg",
+                       "/assets/photos/807020/7.jpg",
+                       "/assets/photos/807020/8.jpg",
+                       "/assets/photos/807020/9.jpg",
+                       "/assets/photos/807020/10.jpg"
                    ]
     },
     {
@@ -1442,6 +1467,31 @@
         "status":  "Sold",
         "photos":  [
 
+                   ]
+    },
+    {
+        "unit":  "CTLZ534117",
+        "slug":  "2012-hyundai-53ft-dry-van-plate-ctlz534117",
+        "vin":  "3H3V532C9CT186373",
+        "title":  "53\u0027 Dry Van - Plate — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ534117/1.jpg",
+                       "/assets/photos/CTLZ534117/2.jpg",
+                       "/assets/photos/CTLZ534117/3.jpg",
+                       "/assets/photos/CTLZ534117/4.jpg",
+                       "/assets/photos/CTLZ534117/5.jpg",
+                       "/assets/photos/CTLZ534117/6.jpg",
+                       "/assets/photos/CTLZ534117/7.jpg",
+                       "/assets/photos/CTLZ534117/8.jpg",
+                       "/assets/photos/CTLZ534117/9.jpg",
+                       "/assets/photos/CTLZ534117/10.jpg"
                    ]
     },
     {
