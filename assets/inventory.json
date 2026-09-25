@@ -73,6 +73,22 @@
                    ]
     },
     {
+        "unit":  "80682",
+        "slug":  "2009-wabash-53ft-dry-van-plate-80682",
+        "vin":  "1JJV532W89L257159",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "807032",
         "slug":  "2007-utility-53ft-dry-van-plate-807032",
         "vin":  "1UYVS25307G194756",
@@ -145,6 +161,22 @@
                        "/assets/photos/807052/8.jpg",
                        "/assets/photos/807052/9.jpg",
                        "/assets/photos/807052/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "807053",
+        "slug":  "2007-utility-53ft-dry-van-plastic-807053",
+        "vin":  "1UYVS25337G194721",
+        "title":  "53\u0027 Dry Van - Plastic — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plastic",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7250,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
                    ]
     },
     {
@@ -422,6 +454,22 @@
                        "/assets/photos/CTLZ533976/8.jpg",
                        "/assets/photos/CTLZ533976/9.jpg",
                        "/assets/photos/CTLZ533976/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ534158",
+        "slug":  "2012-wabash-53ft-dry-van-plate-ctlz534158",
+        "vin":  "1JJV532D6CL589333",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  9500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
                    ]
     },
     {
@@ -1589,6 +1637,35 @@
         "status":  "Sold",
         "photos":  [
 
+                   ]
+    },
+    {
+        "unit":  "PCAZ112269",
+        "slug":  "2007-stoughton-53ft-dry-van-pcaz112269",
+        "vin":  "1DW1A53287B982283",
+        "title":  "53\u0027 Dry Van — Stoughton",
+        "make":  "Stoughton",
+        "type":  "Dry Van",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/PCAZ112269/1.jpg",
+                       "/assets/photos/PCAZ112269/2.jpg",
+                       "/assets/photos/PCAZ112269/3.jpg",
+                       "/assets/photos/PCAZ112269/4.jpg",
+                       "/assets/photos/PCAZ112269/5.jpg",
+                       "/assets/photos/PCAZ112269/6.jpg",
+                       "/assets/photos/PCAZ112269/7.jpg",
+                       "/assets/photos/PCAZ112269/8.jpg",
+                       "/assets/photos/PCAZ112269/9.jpg",
+                       "/assets/photos/PCAZ112269/10.jpg",
+                       "/assets/photos/PCAZ112269/11.jpg",
+                       "/assets/photos/PCAZ112269/12.jpg",
+                       "/assets/photos/PCAZ112269/13.jpg",
+                       "/assets/photos/PCAZ112269/14.jpg"
                    ]
     },
     {
