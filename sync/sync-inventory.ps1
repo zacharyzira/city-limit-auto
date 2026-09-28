@@ -506,8 +506,9 @@ $productSchemaJson
                 <p class="form-note">$($L.calcNote)</p>
               </div>
               <h3 class="lightbox-form-heading">$($L.formHeading)</h3>
-              <form id="unitInquireForm" class="lightbox-form" action="https://formspree.io/f/xeeyykdp" method="POST">
-                <input type="hidden" name="_subject" value="$formSubject">
+              <form id="unitInquireForm" class="lightbox-form" method="POST" data-netlify="true" data-netlify-honeypot="_gotcha" name="inquiry">
+                <input type="hidden" name="form-name" value="inquiry">
+                <input type="hidden" name="subject" value="$formSubject">
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                 <input type="text" name="i-fname" placeholder="$($L.firstName)" required>
                 <input type="text" name="i-lname" placeholder="$($L.lastName)" required>
