@@ -114,65 +114,15 @@
                    ]
     },
     {
-        "unit":  "807050",
-        "slug":  "2007-utility-53ft-dry-van-plate-807050",
-        "vin":  "1UYVS25347G194727",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7500,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/807050/1.jpg",
-                       "/assets/photos/807050/2.jpg",
-                       "/assets/photos/807050/3.jpg",
-                       "/assets/photos/807050/4.jpg",
-                       "/assets/photos/807050/5.jpg",
-                       "/assets/photos/807050/6.jpg",
-                       "/assets/photos/807050/7.jpg",
-                       "/assets/photos/807050/8.jpg",
-                       "/assets/photos/807050/9.jpg",
-                       "/assets/photos/807050/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "807052",
-        "slug":  "2007-utility-53ft-dry-van-plate-807052",
-        "vin":  "1UYVS25387G194729",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7500,
-        "suspension":  "Air",
-        "status":  "Pending Sale",
-        "photos":  [
-                       "/assets/photos/807052/1.jpg",
-                       "/assets/photos/807052/2.jpg",
-                       "/assets/photos/807052/3.jpg",
-                       "/assets/photos/807052/4.jpg",
-                       "/assets/photos/807052/5.jpg",
-                       "/assets/photos/807052/6.jpg",
-                       "/assets/photos/807052/7.jpg",
-                       "/assets/photos/807052/8.jpg",
-                       "/assets/photos/807052/9.jpg",
-                       "/assets/photos/807052/10.jpg"
-                   ]
-    },
-    {
         "unit":  "807053",
-        "slug":  "2007-utility-53ft-dry-van-plastic-807053",
+        "slug":  "2007-utility-53ft-dry-van-plate-807053",
         "vin":  "1UYVS25337G194721",
-        "title":  "53\u0027 Dry Van - Plastic — Utility",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
         "make":  "Utility",
-        "type":  "Dry Van - Plastic",
+        "type":  "Dry Van - Plate",
         "year":  2007,
         "length":  "53\u0027",
-        "price":  7250,
+        "price":  7500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
@@ -1434,6 +1384,31 @@
                        "/assets/photos/CTLZ533633/8.jpg",
                        "/assets/photos/CTLZ533633/9.jpg",
                        "/assets/photos/CTLZ533633/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ533641",
+        "slug":  "2012-hyundai-53ft-dry-van-plate-ctlz533641",
+        "vin":  "3H3V532C8CT186364",
+        "title":  "53\u0027 Dry Van - Plate — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533641/1.jpg",
+                       "/assets/photos/CTLZ533641/2.jpg",
+                       "/assets/photos/CTLZ533641/3.jpg",
+                       "/assets/photos/CTLZ533641/4.jpg",
+                       "/assets/photos/CTLZ533641/5.jpg",
+                       "/assets/photos/CTLZ533641/6.jpg",
+                       "/assets/photos/CTLZ533641/7.jpg",
+                       "/assets/photos/CTLZ533641/8.jpg",
+                       "/assets/photos/CTLZ533641/9.jpg",
+                       "/assets/photos/CTLZ533641/10.jpg"
                    ]
     },
     {
