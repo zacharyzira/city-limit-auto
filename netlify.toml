@@ -1,0 +1,6 @@
+# Only sets where Netlify Functions live — doesn't touch the site's
+# existing build/publish settings (this is a plain static site with no
+# build step, and this file is intentionally kept minimal to avoid
+# changing that).
+[build]
+  functions = "netlify/functions"
