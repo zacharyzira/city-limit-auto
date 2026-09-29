@@ -524,6 +524,89 @@ function wireForm(formId, successMessage){
   });
 }
 
+// Same submit handling as wireForm(), but for a form whose real finish
+// line is on another site (the financing form's lender application) — a
+// plain inline success message left the rest of the page fully visible
+// and scrollable, which is exactly what let people think they were done
+// and leave without ever continuing to the lender. This takes over the
+// screen instead, so the next step can't be missed or scrolled past.
+// opts: { eyebrow, heading, body (may contain HTML), ctaText, ctaUrl,
+//         laterText, closeLabel, sendingText, errorText }
+function wireFormHandoff(formId, opts){
+  const form = document.getElementById(formId);
+  if(!form) return;
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = opts.sendingText;
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      });
+      if(res.ok){
+        showHandoffModal(opts);
+        form.reset();
+        btn.disabled = false;
+        btn.textContent = originalText;
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = originalText;
+      alert(opts.errorText);
+    }
+  });
+}
+
+function showHandoffModal(opts){
+  let el = document.getElementById('handoffModal');
+  if(!el){
+    el = document.createElement('div');
+    el.id = 'handoffModal';
+    el.className = 'handoff-modal';
+    el.hidden = true;
+    document.body.appendChild(el);
+    // Attached once on the outer element, which is reused across calls —
+    // attaching this inside the innerHTML rebuild below would stack a new
+    // duplicate listener on `el` every time the form is submitted.
+    el.addEventListener('click', function(e){ if(e.target === el) closeHandoffModal(); });
+  }
+  el.innerHTML = `
+    <div class="handoff-card" role="dialog" aria-modal="true" aria-labelledby="handoffHeading">
+      <button type="button" class="handoff-close" aria-label="${opts.closeLabel}">&times;</button>
+      <div class="handoff-icon">&#10003;</div>
+      <div class="handoff-eyebrow">${opts.eyebrow}</div>
+      <h2 id="handoffHeading">${opts.heading}</h2>
+      <p>${opts.body}</p>
+      <a href="${opts.ctaUrl}" target="_blank" rel="noopener" class="btn btn-primary">${opts.ctaText}</a>
+      <button type="button" class="handoff-later">${opts.laterText}</button>
+    </div>
+  `;
+  el.hidden = false;
+  document.body.style.overflow = 'hidden';
+  el.querySelector('.handoff-close').addEventListener('click', closeHandoffModal);
+  el.querySelector('.handoff-later').addEventListener('click', closeHandoffModal);
+  document.addEventListener('keydown', handoffEscHandler);
+}
+
+function handoffEscHandler(e){
+  if(e.key === 'Escape') closeHandoffModal();
+}
+
+function closeHandoffModal(){
+  const el = document.getElementById('handoffModal');
+  if(el) el.hidden = true;
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', handoffEscHandler);
+}
+
 function badgeClass(status){
   if(status === 'Available') return 'badge-available';
   if(status === 'Hold') return 'badge-hold';

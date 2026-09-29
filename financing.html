@@ -325,7 +325,17 @@
 
 <script src="assets/site.js"></script>
 <script>
-  wireForm('financingForm', "Thanks — we've got your info and will follow up shortly.<br><br>Ready to move forward now? Continue to our lending partner's secure application to finish the rest directly with them.<br><a href=\"https://www.rbauction.com/services/financial-services?utm_source=referral&amp;utm_medium=referral&amp;utm_content=Travis+Busch\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-primary\">Continue to Lender's Secure Application →</a>");
+  wireFormHandoff('financingForm', {
+    eyebrow: "Almost There",
+    heading: "One More Step to Apply",
+    body: "We've got your contact info and will follow up shortly. To finish your application now, continue to our lending partner's secure site — it opens in a new tab, so this page stays right here.",
+    ctaText: "Continue to Lender's Secure Application →",
+    ctaUrl: "https://www.rbauction.com/services/financial-services?utm_source=referral&utm_medium=referral&utm_content=Travis+Busch",
+    laterText: "I'll finish this later",
+    closeLabel: "Close",
+    sendingText: "Sending…",
+    errorText: "Something went wrong sending your message. Please call us at (951) 330-7545 or email info@citylimitauto.com."
+  });
 
   // Coming from a specific trailer's "Apply" button pre-fills the unit
   // number and price so people don't have to look them up again.

@@ -325,7 +325,17 @@
 
 <script src="/assets/site.js"></script>
 <script>
-  wireForm('financingFormEs', "Gracias — recibimos su información y le responderemos pronto.<br><br>¿Listo para avanzar ahora? Continúe a la solicitud segura de nuestro socio de financiamiento para terminar el resto directamente con ellos.<br><a href=\"https://www.rbauction.com/services/financial-services?utm_source=referral&amp;utm_medium=referral&amp;utm_content=Travis+Busch\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-primary\">Continuar a la Solicitud Segura →</a>");
+  wireFormHandoff('financingFormEs', {
+    eyebrow: "Casi Listo",
+    heading: "Un Paso Más para Aplicar",
+    body: "Ya tenemos su información de contacto y le responderemos pronto. Para terminar su solicitud ahora, continúe al sitio seguro de nuestro socio de financiamiento — se abre en una pestaña nueva, así que esta página se queda aquí.",
+    ctaText: "Continuar a la Solicitud Segura del Prestamista →",
+    ctaUrl: "https://www.rbauction.com/services/financial-services?utm_source=referral&utm_medium=referral&utm_content=Travis+Busch",
+    laterText: "Lo terminaré después",
+    closeLabel: "Cerrar",
+    sendingText: "Enviando…",
+    errorText: "Hubo un problema al enviar su mensaje. Por favor llámenos al (951) 330-7545 o escriba a info@citylimitauto.com."
+  });
 
   // Viniendo del botón "Financiar" de un remolque específico, se rellenan
   // el número de unidad y el precio para que no haya que buscarlos de nuevo.
