@@ -18,6 +18,7 @@ const FORM_T = IS_ES
   ? {
       heading: 'Consultar sobre este remolque', firstName: 'Nombre', lastName: 'Apellido',
       phone: 'Teléfono', email: 'Correo electrónico', send: 'Enviar consulta',
+      emailPattern: 'Ingrese un correo electrónico completo, como nombre@ejemplo.com',
       success: (unit) => `¡Gracias! Nos pondremos en contacto sobre la Unidad ${unit} pronto.`,
       prefill: (item) => `Estoy interesado en la Unidad ${item.unit} — ${item.year} ${item.make}, ${item.length}, $${item.price.toLocaleString()}.`,
       calcHeading: 'Calculadora de Pagos', calcDown: 'Enganche', calcTerm: 'Plazo',
@@ -27,6 +28,7 @@ const FORM_T = IS_ES
   : {
       heading: 'Inquire About This Trailer', firstName: 'First Name', lastName: 'Last Name',
       phone: 'Phone', email: 'Email', send: 'Send Inquiry',
+      emailPattern: 'Enter a full email address, like name@example.com',
       success: (unit) => `Thanks! We'll be in touch about Unit ${unit} shortly.`,
       prefill: (item) => `I'm interested in Unit ${item.unit} — ${item.year} ${item.make}, ${item.length}, $${item.price.toLocaleString()}.`,
       calcHeading: 'Payment Calculator', calcDown: 'Down Payment', calcTerm: 'Term',
@@ -418,7 +420,7 @@ function openLightbox(opts){
       <input type="text" name="i-fname" placeholder="${FORM_T.firstName}" required>
       <input type="text" name="i-lname" placeholder="${FORM_T.lastName}" required>
       <input type="tel" name="i-phone" placeholder="${FORM_T.phone}">
-      <input type="email" name="email" placeholder="${FORM_T.email}" required>
+      <input type="email" name="email" placeholder="${FORM_T.email}" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="${FORM_T.emailPattern}">
       <textarea name="i-message" required>${FORM_T.prefill(item)}</textarea>
       <button type="submit" class="lightbox-form-submit">${FORM_T.send}</button>
     </form>

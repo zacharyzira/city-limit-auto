@@ -211,6 +211,7 @@ try {
                 calcNote = "Solo es un estimado — su tasa y pago real dependen de la aprobación de crédito."
                 formHeading = "Consultar sobre este remolque"; firstName = "Nombre"; lastName = "Apellido"
                 phoneLabel = "Teléfono"; emailLabel = "Correo electrónico"; send = "Enviar consulta"
+                emailPattern = "Ingrese un correo electrónico completo, como nombre@ejemplo.com"
                 breadcrumbHome = "Inicio"; breadcrumbInv = "Inventario"
                 statusMap = @{ Available = "Disponible"; Hold = "Apartado"; Sold = "Vendido"; "Pending Sale" = "Venta Pendiente" }
                 typeMap = @{ "Dry Van" = "Caja Seca" }
@@ -235,6 +236,7 @@ try {
                 calcNote = "Estimate only — your actual rate and payment depend on credit approval."
                 formHeading = "Inquire About This Trailer"; firstName = "First Name"; lastName = "Last Name"
                 phoneLabel = "Phone"; emailLabel = "Email"; send = "Send Inquiry"
+                emailPattern = "Enter a full email address, like name@example.com"
                 breadcrumbHome = "Home"; breadcrumbInv = "Inventory"
                 statusMap = @{}
                 typeMap = @{}
@@ -513,7 +515,7 @@ $productSchemaJson
                 <input type="text" name="i-fname" placeholder="$($L.firstName)" required>
                 <input type="text" name="i-lname" placeholder="$($L.lastName)" required>
                 <input type="tel" name="i-phone" placeholder="$($L.phoneLabel)">
-                <input type="email" name="email" placeholder="$($L.emailLabel)" required>
+                <input type="email" name="email" placeholder="$($L.emailLabel)" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="$($L.emailPattern)">
                 <textarea name="i-message" required>$prefillMsg</textarea>
                 <button type="submit" class="lightbox-form-submit">$($L.send)</button>
               </form>
