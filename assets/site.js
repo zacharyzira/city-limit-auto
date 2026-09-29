@@ -411,8 +411,9 @@ function openLightbox(opts){
       <p class="form-note">${FORM_T.calcNote}</p>
     </div>
     <h3 class="lightbox-form-heading">${FORM_T.heading}</h3>
-    <form id="lightboxInquireForm" class="lightbox-form" action="https://formspree.io/f/xeeyykdp" method="POST">
-      <input type="hidden" name="_subject" value="Trailer Inquiry — Unit ${item.unit}">
+    <form id="lightboxInquireForm" class="lightbox-form" method="POST" data-netlify="true" data-netlify-honeypot="_gotcha" name="inquiry">
+      <input type="hidden" name="form-name" value="inquiry">
+      <input type="hidden" name="subject" value="Trailer Inquiry — Unit ${item.unit}">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <input type="text" name="i-fname" placeholder="${FORM_T.firstName}" required>
       <input type="text" name="i-lname" placeholder="${FORM_T.lastName}" required>
@@ -503,10 +504,10 @@ function wireForm(formId, successMessage){
     btn.textContent = IS_ES ? 'Enviando…' : 'Sending…';
 
     try {
-      const res = await fetch(form.action, {
+      const res = await fetch('/', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
       });
       if(res.ok){
         form.innerHTML = `<div class="full"><p class="form-success">${successMessage}</p></div>`;
