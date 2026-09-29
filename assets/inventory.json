@@ -85,32 +85,16 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-
-                   ]
-    },
-    {
-        "unit":  "807032",
-        "slug":  "2007-utility-53ft-dry-van-plate-807032",
-        "vin":  "1UYVS25307G194756",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7500,
-        "suspension":  "Air",
-        "status":  "Pending Sale",
-        "photos":  [
-                       "/assets/photos/807032/1.jpg",
-                       "/assets/photos/807032/2.jpg",
-                       "/assets/photos/807032/3.jpg",
-                       "/assets/photos/807032/4.jpg",
-                       "/assets/photos/807032/5.jpg",
-                       "/assets/photos/807032/6.jpg",
-                       "/assets/photos/807032/7.jpg",
-                       "/assets/photos/807032/8.jpg",
-                       "/assets/photos/807032/9.jpg",
-                       "/assets/photos/807032/10.jpg"
+                       "/assets/photos/80682/1.jpg",
+                       "/assets/photos/80682/2.jpg",
+                       "/assets/photos/80682/3.jpg",
+                       "/assets/photos/80682/4.jpg",
+                       "/assets/photos/80682/5.jpg",
+                       "/assets/photos/80682/6.jpg",
+                       "/assets/photos/80682/7.jpg",
+                       "/assets/photos/80682/8.jpg",
+                       "/assets/photos/80682/9.jpg",
+                       "/assets/photos/80682/10.jpg"
                    ]
     },
     {
@@ -501,7 +485,16 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/CTLZ534810/1.jpg",
+                       "/assets/photos/CTLZ534810/2.jpg",
+                       "/assets/photos/CTLZ534810/3.jpg",
+                       "/assets/photos/CTLZ534810/4.jpg",
+                       "/assets/photos/CTLZ534810/5.jpg",
+                       "/assets/photos/CTLZ534810/6.jpg",
+                       "/assets/photos/CTLZ534810/7.jpg",
+                       "/assets/photos/CTLZ534810/8.jpg",
+                       "/assets/photos/CTLZ534810/9.jpg",
+                       "/assets/photos/CTLZ534810/10.jpg"
                    ]
     },
     {
