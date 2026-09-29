@@ -111,9 +111,8 @@
     <div class="wrap content-grid">
       <div>
         <h2 style="font-size:26px;margin-bottom:18px;">Send a message</h2>
-        <form id="contactForm" class="form-grid" method="POST" data-netlify="true" data-netlify-honeypot="_gotcha" name="contact">
-          <input type="hidden" name="form-name" value="contact">
-          <input type="hidden" name="subject" value="New Contact Form Submission — City Limit Auto">
+        <form id="contactForm" class="form-grid" action="https://formspree.io/f/xeeyykdp" method="POST">
+          <input type="hidden" name="_subject" value="New Contact Form Submission — City Limit Auto">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <div>
             <label for="c-fname">First Name</label>

@@ -253,9 +253,8 @@
           <h2>Request Service</h2>
         </div>
       </div>
-      <form id="repairForm" class="form-grid" method="POST" data-netlify="true" data-netlify-honeypot="_gotcha" name="repairs">
-        <input type="hidden" name="form-name" value="repairs">
-        <input type="hidden" name="subject" value="New Repair Request — City Limit Auto">
+      <form id="repairForm" class="form-grid" action="https://formspree.io/f/xeeyykdp" method="POST">
+        <input type="hidden" name="_subject" value="New Repair Request — City Limit Auto">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div>
           <label for="r-fname">First Name</label>
