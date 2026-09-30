@@ -128,7 +128,7 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
    a quiet visual cue this is metadata, not more hero copy. */
 .hero-contact{
   display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;
-  margin-bottom:44px;padding-top:20px;font-size:13.5px;
+  margin-bottom:20px;padding-top:20px;font-size:13.5px;
   border-top:1px solid rgba(255,255,255,0.14);
 }
 .hero-contact-item{
@@ -140,20 +140,21 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
 .hero-contact-icon{width:15px;height:15px;flex-shrink:0;color:var(--blue);}
 .hero-contact-caret{width:9px;height:9px;flex-shrink:0;color:var(--steel-light);transition:transform 150ms ease;}
 .hero-contact-item[aria-expanded="true"] .hero-contact-caret{transform:rotate(180deg);}
-.hero-contact-address{position:relative;}
-/* Address opens a small "which maps app" choice instead of guessing one —
-   see wireAddressMapChooser in site.js. */
+/* Address opens a small "which maps app" choice — see wireAddressMapChooser
+   in site.js. Sits in normal document flow (not an absolute overlay) and
+   pushes the stat strip down slightly when open, rather than floating over
+   the buttons above or the stat strip below either way it's positioned. */
 .map-chooser{
-  position:absolute;top:calc(100% + 10px);left:0;z-index:20;
-  background:var(--asphalt-2);border:1px solid var(--steel);border-radius:8px;
-  padding:6px;display:flex;flex-direction:column;min-width:190px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  display:flex;gap:10px;flex-wrap:wrap;margin:0 0 34px;
 }
+.map-chooser[hidden]{display:none;}
 .map-chooser a{
-  padding:9px 12px;color:var(--paper);text-decoration:none;font-size:13px;
-  border-radius:5px;white-space:nowrap;font-family:'Inter',sans-serif;
+  display:inline-flex;align-items:center;padding:9px 14px;
+  background:var(--asphalt-2);border:1px solid var(--steel);border-radius:999px;
+  color:var(--paper);text-decoration:none;font-size:13px;font-family:'Inter',sans-serif;
+  white-space:nowrap;
 }
-.map-chooser a:hover{background:var(--asphalt);color:var(--blue);}
+.map-chooser a:hover{border-color:var(--blue);color:var(--blue);}
 .btn{
   display:inline-block;padding:15px 26px;font-weight:700;font-size:14px;
   text-transform:uppercase;letter-spacing:0.05em;border:2px solid var(--blue);
