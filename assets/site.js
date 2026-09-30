@@ -353,7 +353,7 @@ function openLightbox(opts){
 
   const scroll = el.querySelector('.lightbox-scroll');
   scroll.innerHTML = photos.map((src, i) =>
-    `<img src="${src}" alt="${item.title} — ${i + 1}/${photos.length}" loading="${i < 2 ? 'eager' : 'lazy'}">`
+    `<img src="${src}" alt="${item.title} — ${i + 1}/${photos.length}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async">`
   ).join('');
 
   const statusLabel = T.status[item.status] || item.status;
@@ -1035,7 +1035,7 @@ async function renderInventory(gridId, opts = {}){
         wireDragCarousel(photoEl, imgEl, {
           count: () => photos.length,
           getIndex: () => photoIdx,
-          photoUrl: (i) => photos[i],
+          photoUrl: (i) => thumbUrl(photos[i]),
           onSettle: (delta) => showPhoto(photoIdx + delta),
         });
 
