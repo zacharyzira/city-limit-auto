@@ -111,8 +111,7 @@
     <div class="wrap content-grid">
       <div>
         <h2 style="font-size:26px;margin-bottom:18px;">Send a message</h2>
-        <form id="contactForm" class="form-grid" method="POST" data-netlify="true" data-netlify-honeypot="_gotcha" name="contact">
-          <input type="hidden" name="form-name" value="contact">
+        <form id="contactForm" class="form-grid" method="POST" name="contact">
           <input type="hidden" name="subject" value="New Contact Form Submission — City Limit Auto">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <div>
@@ -129,11 +128,11 @@
           </div>
           <div>
             <label for="c-email">Email</label>
-            <input type="email" id="c-email" name="email" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Enter a full email address, like name@example.com">
+            <input type="email" id="c-email" name="email">
           </div>
           <div class="full">
             <label for="c-message">Message</label>
-            <textarea id="c-message" name="c-message" required placeholder="Tell us what you're looking for…"></textarea>
+            <textarea id="c-message" name="c-message" placeholder="Tell us what you're looking for…"></textarea>
           </div>
           <div class="full">
             <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Send Message</button>

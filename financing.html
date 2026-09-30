@@ -251,8 +251,7 @@
         </div>
       </div>
       <p style="max-width:600px;color:var(--steel);font-size:15px;margin:-16px 0 28px;">We just need some basic contact info to get started — no financial details here. After you apply, we'll point you to our lending partner's secure site to finish the rest directly with them.</p>
-      <form id="financingForm" class="form-grid" method="POST" data-netlify="true" data-netlify-honeypot="_gotcha" name="financing">
-        <input type="hidden" name="form-name" value="financing">
+      <form id="financingForm" class="form-grid" method="POST" name="financing">
         <input type="hidden" name="subject" value="New Financing Lead — City Limit Auto">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
@@ -266,11 +265,11 @@
         </div>
         <div>
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" required>
+          <input type="tel" id="phone" name="phone">
         </div>
         <div>
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Enter a full email address, like name@example.com">
+          <input type="email" id="email" name="email">
         </div>
         <div class="full">
           <label for="business-name">Business / Company Name <span style="font-weight:400;text-transform:none;">(if applicable)</span></label>

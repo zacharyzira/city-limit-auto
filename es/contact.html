@@ -111,8 +111,7 @@
     <div class="wrap content-grid">
       <div>
         <h2 style="font-size:26px;margin-bottom:18px;">Envíenos un mensaje</h2>
-        <form id="contactFormEs" class="form-grid" method="POST" data-netlify="true" data-netlify-honeypot="_gotcha" name="contact-es">
-          <input type="hidden" name="form-name" value="contact-es">
+        <form id="contactFormEs" class="form-grid" method="POST" name="contact-es">
           <input type="hidden" name="subject" value="Nuevo Mensaje de Contacto (ES) — City Limit Auto">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <div>
@@ -129,11 +128,11 @@
           </div>
           <div>
             <label for="ce-email">Correo Electrónico</label>
-            <input type="email" id="ce-email" name="email" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Ingrese un correo electrónico completo, como nombre@ejemplo.com">
+            <input type="email" id="ce-email" name="email">
           </div>
           <div class="full">
             <label for="ce-message">Mensaje</label>
-            <textarea id="ce-message" name="ce-message" required placeholder="Cuéntenos qué está buscando…"></textarea>
+            <textarea id="ce-message" name="ce-message" placeholder="Cuéntenos qué está buscando…"></textarea>
           </div>
           <div class="full">
             <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Enviar Mensaje</button>

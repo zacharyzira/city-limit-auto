@@ -375,6 +375,7 @@ input[type="text"],input[type="email"],input[type="tel"],input[type="number"],se
 textarea{resize:vertical;min-height:120px;}
 input:focus,select.form-input:focus,textarea:focus{outline:2px solid var(--rust);outline-offset:1px;}
 .form-note{font-size:12px;color:var(--steel);margin-top:14px;}
+.email-soft-warning{font-size:12px;color:var(--amber);margin-top:6px;}
 .form-grid .form-success{
   background:var(--asphalt);color:var(--paper);border-left:4px solid var(--blue);
   padding:20px 22px;font-size:15px;font-weight:500;margin-bottom:0;

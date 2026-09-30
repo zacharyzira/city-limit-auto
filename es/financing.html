@@ -251,8 +251,7 @@
         </div>
       </div>
       <p style="max-width:600px;color:var(--steel);font-size:15px;margin:-16px 0 28px;">Solo necesitamos información básica de contacto para comenzar — sin detalles financieros aquí. Después de aplicar, le dirigiremos al sitio seguro de nuestro socio de financiamiento para terminar el resto directamente con ellos.</p>
-      <form id="financingFormEs" class="form-grid" method="POST" data-netlify="true" data-netlify-honeypot="_gotcha" name="financing-es">
-        <input type="hidden" name="form-name" value="financing-es">
+      <form id="financingFormEs" class="form-grid" method="POST" name="financing-es">
         <input type="hidden" name="subject" value="Nueva Solicitud de Financiamiento (ES) — City Limit Auto">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
@@ -266,11 +265,11 @@
         </div>
         <div>
           <label for="fe-phone">Teléfono</label>
-          <input type="tel" id="fe-phone" name="fe-phone" required>
+          <input type="tel" id="fe-phone" name="fe-phone">
         </div>
         <div>
           <label for="fe-email">Correo Electrónico</label>
-          <input type="email" id="fe-email" name="email" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Ingrese un correo electrónico completo, como nombre@ejemplo.com">
+          <input type="email" id="fe-email" name="email">
         </div>
         <div class="full">
           <label for="fe-business-name">Nombre del Negocio <span style="font-weight:400;text-transform:none;">(si aplica)</span></label>

@@ -253,8 +253,7 @@
           <h2>Request Service</h2>
         </div>
       </div>
-      <form id="repairForm" class="form-grid" method="POST" data-netlify="true" data-netlify-honeypot="_gotcha" name="repairs">
-        <input type="hidden" name="form-name" value="repairs">
+      <form id="repairForm" class="form-grid" method="POST" name="repairs">
         <input type="hidden" name="subject" value="New Repair Request — City Limit Auto">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div>
@@ -267,11 +266,11 @@
         </div>
         <div>
           <label for="r-phone">Phone</label>
-          <input type="tel" id="r-phone" name="r-phone" required>
+          <input type="tel" id="r-phone" name="r-phone">
         </div>
         <div>
           <label for="r-email">Email</label>
-          <input type="email" id="r-email" name="email" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Enter a full email address, like name@example.com">
+          <input type="email" id="r-email" name="email">
         </div>
         <div class="full">
           <label for="r-service">Where do you need the work done?</label>
@@ -283,7 +282,7 @@
         </div>
         <div class="full">
           <label for="r-notes">What does it need?</label>
-          <textarea id="r-notes" name="r-notes" required placeholder="Trailer make/year, what's wrong, and where it's located if you need mobile service."></textarea>
+          <textarea id="r-notes" name="r-notes" placeholder="Trailer make/year, what's wrong, and where it's located if you need mobile service."></textarea>
         </div>
         <div class="full">
           <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Request Service</button>

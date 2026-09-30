@@ -413,15 +413,14 @@ function openLightbox(opts){
       <p class="form-note">${FORM_T.calcNote}</p>
     </div>
     <h3 class="lightbox-form-heading">${FORM_T.heading}</h3>
-    <form id="lightboxInquireForm" class="lightbox-form" method="POST" data-netlify="true" data-netlify-honeypot="_gotcha" name="inquiry">
-      <input type="hidden" name="form-name" value="inquiry">
+    <form id="lightboxInquireForm" class="lightbox-form" method="POST" name="inquiry">
       <input type="hidden" name="subject" value="Trailer Inquiry — Unit ${item.unit}">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <input type="text" name="i-fname" placeholder="${FORM_T.firstName}" required>
       <input type="text" name="i-lname" placeholder="${FORM_T.lastName}" required>
       <input type="tel" name="i-phone" placeholder="${FORM_T.phone}">
-      <input type="email" name="email" placeholder="${FORM_T.email}" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="${FORM_T.emailPattern}">
-      <textarea name="i-message" required>${FORM_T.prefill(item)}</textarea>
+      <input type="email" name="email" placeholder="${FORM_T.email}">
+      <textarea name="i-message">${FORM_T.prefill(item)}</textarea>
       <button type="submit" class="lightbox-form-submit">${FORM_T.send}</button>
     </form>
   `;
@@ -493,29 +492,104 @@ async function shareUrl(title, text, url, btn, copiedLabel, promptLabel){
   setTimeout(() => { btn.innerHTML = original; }, 1600);
 }
 
-// Submits a form to Formspree via fetch and swaps in a success message on the page.
+// ---- Lead form intake: page -> our own Netlify Function -> Apps Script ----
+// (writes the Sheet row and sends the notification email itself — Netlify
+// Forms is not used anywhere in this pipeline).
+const LEAD_FUNCTION_URL = '/.netlify/functions/forward-to-sheet';
+const LEAD_SUBMIT_TIMEOUT_MS = 15000;
+
+// Builds the payload the function expects: which form, where it was
+// submitted from, and every field the visitor actually filled in.
+function buildLeadPayload_(form){
+  const formData = new FormData(form);
+  const data = {};
+  for(const [k, v] of formData.entries()) data[k] = v;
+  return {
+    formName: form.getAttribute('name') || form.id || 'unknown',
+    pageUrl: location.href,
+    lang: IS_ES ? 'es' : 'en',
+    submittedAt: new Date().toISOString(),
+    data
+  };
+}
+
+// Posts to our own function and waits (up to ~15s) for it to confirm the
+// lead was actually saved AND emailed before treating this as success —
+// a 200 here means both of those really happened, not just that Netlify
+// received the request.
+async function submitLead_(form){
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), LEAD_SUBMIT_TIMEOUT_MS);
+  try {
+    const res = await fetch(LEAD_FUNCTION_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(buildLeadPayload_(form))
+    , signal: controller.signal });
+    if(!res.ok) throw new Error('Lead submission failed');
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// The only hard requirements left: a name, and at least one way to reach
+// the person (phone or email) — everything else on every form is
+// optional. There's no single HTML attribute for "one of two fields", so
+// this runs on submit instead.
+function hasMinimumLeadInfo_(form){
+  const firstNameField = form.querySelector('input[name$="fname"]');
+  const lastNameField = form.querySelector('input[name$="lname"]');
+  const phoneField = form.querySelector('input[type="tel"]');
+  const emailField = form.querySelector('input[type="email"]');
+  const missingName = (firstNameField && !firstNameField.value.trim()) || (lastNameField && !lastNameField.value.trim());
+  const noContact = !(phoneField && phoneField.value.trim()) && !(emailField && emailField.value.trim());
+  if(missingName || noContact){
+    alert(IS_ES
+      ? 'Por favor ingrese su nombre y al menos un teléfono o correo electrónico.'
+      : 'Please enter your name and at least a phone number or email.');
+    return false;
+  }
+  return true;
+}
+
+// A soft nudge, not a block: if the email doesn't look complete, show a
+// quiet warning under the field on blur, but never stop the form from
+// submitting over it — that's for hasMinimumLeadInfo_ (name + one contact
+// method) to enforce, not the shape of the email itself.
+function attachEmailSoftWarning_(form){
+  const emailField = form.querySelector('input[type="email"]');
+  if(!emailField || emailField.dataset.softWarningWired) return;
+  emailField.dataset.softWarningWired = '1';
+  const warn = document.createElement('div');
+  warn.className = 'email-soft-warning';
+  warn.hidden = true;
+  warn.textContent = IS_ES
+    ? 'Esto no parece un correo completo — puede continuar, pero quizás no podamos contactarlo por correo.'
+    : "That doesn't look like a complete email — you can still continue, but we may not be able to reach you by email.";
+  emailField.insertAdjacentElement('afterend', warn);
+  emailField.addEventListener('blur', function(){
+    const v = emailField.value.trim();
+    warn.hidden = !v || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  });
+}
+
+// Submits a lead via submitLead_() and swaps in a success message on the page.
 function wireForm(formId, successMessage){
   const form = document.getElementById(formId);
   if(!form) return;
+  attachEmailSoftWarning_(form);
 
   form.addEventListener('submit', async function(e){
     e.preventDefault();
+    if(!hasMinimumLeadInfo_(form)) return;
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
     btn.disabled = true;
     btn.textContent = IS_ES ? 'Enviando…' : 'Sending…';
 
     try {
-      const res = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
-      });
-      if(res.ok){
-        form.innerHTML = `<div class="full"><p class="form-success">${successMessage}</p></div>`;
-      } else {
-        throw new Error('Form submission failed');
-      }
+      await submitLead_(form);
+      form.innerHTML = `<div class="full"><p class="form-success">${successMessage}</p></div>`;
     } catch (err) {
       btn.disabled = false;
       btn.textContent = originalText;
@@ -537,28 +611,22 @@ function wireForm(formId, successMessage){
 function wireFormHandoff(formId, opts){
   const form = document.getElementById(formId);
   if(!form) return;
+  attachEmailSoftWarning_(form);
 
   form.addEventListener('submit', async function(e){
     e.preventDefault();
+    if(!hasMinimumLeadInfo_(form)) return;
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
     btn.disabled = true;
     btn.textContent = opts.sendingText;
 
     try {
-      const res = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
-      });
-      if(res.ok){
-        showHandoffModal(opts);
-        form.reset();
-        btn.disabled = false;
-        btn.textContent = originalText;
-      } else {
-        throw new Error('Form submission failed');
-      }
+      await submitLead_(form);
+      showHandoffModal(opts);
+      form.reset();
+      btn.disabled = false;
+      btn.textContent = originalText;
     } catch (err) {
       btn.disabled = false;
       btn.textContent = originalText;
