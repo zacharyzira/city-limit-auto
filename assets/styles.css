@@ -138,13 +138,16 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
   color:var(--paper-dim);text-decoration:none;font-family:'Inter',sans-serif;
   font-weight:500;background:none;border:none;padding:0;font-size:15px;
 }
-/* Phone/email are real tap targets, so they get the same outlined-chip
-   treatment as the map links below — reads as clearly clickable instead of
-   just text. The address stays plain (it's a <span>, not a link): the
-   actual actions on it are the copy button and the map pills, not the
-   address text itself. */
-a.hero-contact-item{
-  padding:8px 14px;border:1px solid rgba(255,255,255,0.22);border-radius:999px;
+/* Phone/email/address all get the same outlined-chip treatment so the row
+   reads as one consistent set, square-cornered to match the hero's own
+   buttons (.btn) — a rounded-pill shape exists elsewhere on the site (the
+   lightbox sheet's buttons), but mixing that into the hero next to its
+   sharp-cornered CTAs is what read as inconsistent. Only the <a> phone/
+   email chips get the hover color change, though: the address <span>
+   isn't a link — its box is just visual grouping for the copy button
+   nested inside it, not a clickable whole. */
+a.hero-contact-item, span.hero-contact-item{
+  padding:8px 14px;border:1px solid rgba(255,255,255,0.22);
 }
 a.hero-contact-item:hover{border-color:var(--blue);color:var(--blue);}
 .hero-contact-icon{width:14px;height:14px;flex-shrink:0;color:var(--blue);}
@@ -156,7 +159,7 @@ a.hero-contact-item:hover{border-color:var(--blue);color:var(--blue);}
    clipping it. */
 .hero-contact-copy{
   display:inline-flex;align-items:center;justify-content:center;
-  min-width:24px;height:24px;padding:0 5px;flex-shrink:0;border-radius:6px;
+  min-width:24px;height:24px;padding:0 5px;flex-shrink:0;
   background:none;border:none;color:var(--steel-light);cursor:pointer;
   font-family:'Inter',sans-serif;font-size:12px;font-weight:600;white-space:nowrap;
 }
@@ -168,7 +171,7 @@ a.hero-contact-item:hover{border-color:var(--blue);color:var(--blue);}
 .hero-map-links{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 34px;}
 .hero-map-links a{
   display:inline-flex;align-items:center;padding:9px 14px;
-  background:var(--asphalt-2);border:1px solid var(--steel);border-radius:999px;
+  background:var(--asphalt-2);border:1px solid var(--steel);
   color:var(--paper);text-decoration:none;font-size:13px;font-family:'Inter',sans-serif;
   white-space:nowrap;
 }
