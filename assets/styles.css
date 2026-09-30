@@ -138,7 +138,15 @@ nav ul a:hover,nav ul a:focus-visible,nav ul a[aria-current="page"]{color:var(--
   color:var(--paper-dim);text-decoration:none;font-family:'Inter',sans-serif;
   font-weight:500;background:none;border:none;padding:0;font-size:15px;
 }
-a.hero-contact-item:hover{color:var(--paper);}
+/* Phone/email are real tap targets, so they get the same outlined-chip
+   treatment as the map links below — reads as clearly clickable instead of
+   just text. The address stays plain (it's a <span>, not a link): the
+   actual actions on it are the copy button and the map pills, not the
+   address text itself. */
+a.hero-contact-item{
+  padding:8px 14px;border:1px solid rgba(255,255,255,0.22);border-radius:999px;
+}
+a.hero-contact-item:hover{border-color:var(--blue);color:var(--blue);}
 .hero-contact-icon{width:14px;height:14px;flex-shrink:0;color:var(--blue);}
 /* Copies the address instead of just displaying it — see wireAddressCopy in
    site.js. A small icon-only button right next to the text, not a separate
