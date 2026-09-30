@@ -104,6 +104,17 @@
             <a href="inventory.html" class="btn btn-primary">Ver Inventario</a>
             <a href="contact.html" class="btn btn-ghost">Hablar con Ventas</a>
           </div>
+          <div class="hero-contact">
+            <a href="tel:+19513307545" class="hero-contact-item">(951) 330-7545</a>
+            <a href="mailto:info@citylimitauto.com" class="hero-contact-item">info@citylimitauto.com</a>
+            <div class="hero-contact-address">
+              <button type="button" class="hero-contact-item" id="heroAddressBtn" aria-haspopup="true" aria-expanded="false">1281 W Oleander Ave, Perris, CA 92571</button>
+              <div class="map-chooser" id="heroAddressMenu" hidden>
+                <a href="https://www.google.com/maps/search/?api=1&query=1281+W+Oleander+Ave%2C+Perris%2C+CA+92571" target="_blank" rel="noopener">Abrir en Google Maps</a>
+                <a href="https://maps.apple.com/?address=1281+W+Oleander+Ave,+Perris,+CA+92571" target="_blank" rel="noopener">Abrir en Apple Maps</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="stat-strip">
@@ -277,6 +288,7 @@
 <script src="/assets/site.js"></script>
 <script>
   renderInventory('invGrid', { limit: 3 });
+  wireAddressMapChooser('heroAddressBtn', 'heroAddressMenu');
 </script>
 </body>
 </html>

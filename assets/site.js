@@ -119,6 +119,36 @@ function wireCalculator(els){
   header.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => setOpen(false)));
 })();
 
+// ---------- Address "which maps app" chooser ----------
+// A phone or email link is unambiguous, but an address could reasonably open
+// in Google Maps or Apple Maps depending on what someone actually has —
+// rather than guess, clicking it shows both as a small choice.
+function wireAddressMapChooser(btnId, menuId){
+  const btn = document.getElementById(btnId);
+  const menu = document.getElementById(menuId);
+  if(!btn || !menu) return;
+
+  function close(){
+    menu.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+  }
+  function open(){
+    menu.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+  }
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if(menu.hidden) open(); else close();
+  });
+  document.addEventListener('click', (e) => {
+    if(!menu.hidden && e.target !== btn && !menu.contains(e.target)) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && !menu.hidden) close();
+  });
+}
+
 // ---------- Swipe-to-drag photo carousel (touch devices) ----------
 // The photo tracks the finger 1:1 while dragging (no easing lag, no snap
 // until the finger lifts), then either finishes the transition or springs
