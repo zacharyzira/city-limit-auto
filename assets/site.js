@@ -119,33 +119,29 @@ function wireCalculator(els){
   header.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => setOpen(false)));
 })();
 
-// ---------- Address "which maps app" chooser ----------
-// A phone or email link is unambiguous, but an address could reasonably open
-// in Google Maps or Apple Maps depending on what someone actually has —
-// rather than guess, clicking it shows both as a small choice.
-function wireAddressMapChooser(btnId, menuId){
+// ---------- Clipboard copy (shared by shareUrl and the address copy button) ----------
+// Copies text and swaps the button's content to copiedLabel briefly so the
+// click has visible feedback; falls back to a prompt() (manual copy) on a
+// browser/context where the Clipboard API isn't available at all.
+async function copyToClipboard_(btn, text, copiedLabel, promptLabel){
+  const original = btn.innerHTML;
+  try {
+    await navigator.clipboard.writeText(text);
+    btn.textContent = copiedLabel;
+  } catch (e) {
+    try { window.prompt(promptLabel, text); } catch (e2) { /* nothing more we can do */ }
+  }
+  setTimeout(() => { btn.innerHTML = original; }, 1600);
+}
+
+// ---------- Address copy button ----------
+function wireAddressCopy(btnId, address){
   const btn = document.getElementById(btnId);
-  const menu = document.getElementById(menuId);
-  if(!btn || !menu) return;
-
-  function close(){
-    menu.hidden = true;
-    btn.setAttribute('aria-expanded', 'false');
-  }
-  function open(){
-    menu.hidden = false;
-    btn.setAttribute('aria-expanded', 'true');
-  }
-
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if(menu.hidden) open(); else close();
-  });
-  document.addEventListener('click', (e) => {
-    if(!menu.hidden && e.target !== btn && !menu.contains(e.target)) close();
-  });
-  document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape' && !menu.hidden) close();
+  if(!btn) return;
+  btn.addEventListener('click', () => {
+    copyToClipboard_(btn, address,
+      IS_ES ? '¡Copiado!' : 'Copied!',
+      IS_ES ? 'Copie esta dirección:' : 'Copy this address:');
   });
 }
 
@@ -537,16 +533,7 @@ async function shareUrl(title, text, url, btn, copiedLabel, promptLabel){
     }
   }
 
-  // innerHTML (not textContent) so this also works for icon-only share
-  // buttons like the lightbox's — swapping textContent would wipe the SVG.
-  const original = btn.innerHTML;
-  try {
-    await navigator.clipboard.writeText(url);
-    btn.textContent = copiedLabel;
-  } catch (e) {
-    try { window.prompt(promptLabel, url); } catch (e2) { /* nothing more we can do */ }
-  }
-  setTimeout(() => { btn.innerHTML = original; }, 1600);
+  await copyToClipboard_(btn, url, copiedLabel, promptLabel);
 }
 
 // ---- Lead form intake: page -> our own Netlify Function -> Apps Script ----
