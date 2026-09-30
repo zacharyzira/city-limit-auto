@@ -318,6 +318,7 @@ function ensureLightbox(){
         <button class="lightbox-back" aria-label="Back">&larr;</button>
       </div>
       <div class="lightbox-scroll"></div>
+      <div class="lightbox-dots" hidden></div>
     </div>
     <div class="lightbox-sheet-wrap">
       <div class="lightbox-sheet">
@@ -355,6 +356,32 @@ function openLightbox(opts){
   scroll.innerHTML = photos.map((src, i) =>
     `<img src="${src}" alt="${item.title} — ${i + 1}/${photos.length}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async">`
   ).join('');
+
+  // Bubble indicators showing how many photos there are and which one is
+  // currently in view — a plain vertical scroll gives no other hint that
+  // there's more to see below the fold. Rebuilt fresh each open (photo
+  // count varies per trailer); the old IntersectionObserver is torn down
+  // first so re-opening for a different unit doesn't stack up watchers on
+  // photo elements that no longer exist.
+  const dotsEl = el.querySelector('.lightbox-dots');
+  if(el._dotsObserver) el._dotsObserver.disconnect();
+  if(photos.length > 1){
+    dotsEl.hidden = false;
+    dotsEl.innerHTML = photos.map(() => '<span class="lightbox-dot"></span>').join('');
+    const dots = dotsEl.querySelectorAll('.lightbox-dot');
+    const photoEls = scroll.querySelectorAll('img');
+    el._dotsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        const i = Array.prototype.indexOf.call(photoEls, entry.target);
+        dots.forEach((d, di) => d.classList.toggle('is-active', di === i));
+      });
+    }, { root: scroll, threshold: 0.5 });
+    photoEls.forEach(img => el._dotsObserver.observe(img));
+  } else {
+    dotsEl.hidden = true;
+    dotsEl.innerHTML = '';
+  }
 
   const statusLabel = T.status[item.status] || item.status;
   el.querySelector('.lightbox-info-peek').innerHTML = `

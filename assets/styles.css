@@ -477,6 +477,25 @@ footer{background:var(--asphalt-2);color:var(--paper-dim);padding:48px 0 28px;}
      through and reading as a flash of black as you scroll to the next one. */
   background:linear-gradient(180deg, var(--asphalt-2) 0%, var(--asphalt) 100%);
 }
+/* Bubble indicators showing how many photos there are and which one is in
+   view — sits above the collapsed sheet's peek (170px, matching the scroll's
+   own padding-bottom above) so it's never hidden behind it; desktop's sheet
+   is a side column instead of an overlay, so it can sit right at the bottom. */
+.lightbox-dots{
+  position:absolute;left:0;right:0;bottom:170px;z-index:4;
+  display:flex;justify-content:center;align-items:center;flex-wrap:wrap;
+  gap:6px;padding:10px 16px;pointer-events:none;
+}
+.lightbox-dot{
+  width:6px;height:6px;border-radius:50%;flex-shrink:0;
+  background:rgba(255,255,255,0.4);box-shadow:0 0 2px rgba(0,0,0,0.5);
+  transition:background 150ms ease, transform 150ms ease;
+}
+.lightbox-dot.is-active{background:var(--paper);transform:scale(1.35);}
+@media (min-width:861px){
+  .lightbox-dots{bottom:16px;}
+}
+
 /* Swipe-up bottom sheet: collapsed shows just the peek summary, dragging (or
    tapping) it up reveals the inquiry form beneath. A visible border all the
    way around (not just background contrast) keeps the rounded top corners

@@ -149,6 +149,58 @@
 
   <section class="section" style="padding-bottom:0;">
     <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-eyebrow">Get Pre-Qualified</div>
+          <h2>Start Your Application</h2>
+        </div>
+      </div>
+      <p style="max-width:600px;color:var(--steel);font-size:15px;margin:-16px 0 28px;">We just need some basic contact info to get started — no financial details here. After you apply, we'll point you to our lending partner's secure site to finish the rest directly with them.</p>
+      <form id="financingForm" class="form-grid" method="POST" name="financing">
+        <input type="hidden" name="subject" value="New Financing Lead — City Limit Auto">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div>
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" required>
+        </div>
+        <div>
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="full">
+          <label for="business-name">Business / Company Name <span style="font-weight:400;text-transform:none;">(if applicable)</span></label>
+          <input type="text" id="business-name" name="business-name">
+        </div>
+        <div>
+          <label for="unit-number">Trailer of Interest <span style="font-weight:400;text-transform:none;">(if known)</span></label>
+          <input type="text" id="unit-number" name="unit-number" placeholder="See our inventory page">
+        </div>
+        <div>
+          <label for="purchase-price">Purchase Price</label>
+          <input type="text" id="purchase-price" name="purchase-price" placeholder="e.g. $10,000">
+        </div>
+        <div class="full">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" placeholder="What are you looking to finance, and anything else that's helpful"></textarea>
+        </div>
+        <div class="full">
+          <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Apply Now</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="wrap">
       <img src="assets/img/team-handoff.jpg" alt="City Limit Auto team member walking a customer through a trailer" width="1200" height="800" loading="lazy" style="width:100%;border:1px solid var(--steel);">
     </div>
   </section>
@@ -242,57 +294,6 @@
     </div>
   </section>
 
-  <section class="section" style="padding-top:0;">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="section-eyebrow">Get Pre-Qualified</div>
-          <h2>Start Your Application</h2>
-        </div>
-      </div>
-      <p style="max-width:600px;color:var(--steel);font-size:15px;margin:-16px 0 28px;">We just need some basic contact info to get started — no financial details here. After you apply, we'll point you to our lending partner's secure site to finish the rest directly with them.</p>
-      <form id="financingForm" class="form-grid" method="POST" name="financing">
-        <input type="hidden" name="subject" value="New Financing Lead — City Limit Auto">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-        <div>
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="fname" required>
-        </div>
-        <div>
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lname" required>
-        </div>
-        <div>
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email">
-        </div>
-        <div class="full">
-          <label for="business-name">Business / Company Name <span style="font-weight:400;text-transform:none;">(if applicable)</span></label>
-          <input type="text" id="business-name" name="business-name">
-        </div>
-        <div>
-          <label for="unit-number">Trailer of Interest <span style="font-weight:400;text-transform:none;">(if known)</span></label>
-          <input type="text" id="unit-number" name="unit-number" placeholder="See our inventory page">
-        </div>
-        <div>
-          <label for="purchase-price">Purchase Price</label>
-          <input type="text" id="purchase-price" name="purchase-price" placeholder="e.g. $10,000">
-        </div>
-        <div class="full">
-          <label for="notes">Notes</label>
-          <textarea id="notes" name="notes" placeholder="What are you looking to finance, and anything else that's helpful"></textarea>
-        </div>
-        <div class="full">
-          <button type="submit" class="btn btn-dark" style="background:var(--asphalt);border-color:var(--asphalt);">Apply Now</button>
-        </div>
-      </form>
-    </div>
-  </section>
 </main>
 
 <footer>
