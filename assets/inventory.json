@@ -291,6 +291,22 @@
                    ]
     },
     {
+        "unit":  "CTLZ533840",
+        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz533840",
+        "vin":  "5V8VC5324CM204009",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ533860",
         "slug":  "2012-hyundai-53ft-dry-van-plate-ctlz533860",
         "vin":  "3H3V532C3CT186174",
@@ -632,6 +648,22 @@
                    ]
     },
     {
+        "unit":  "CTLZ534935",
+        "slug":  "2013-wabash-53ft-dry-van-plate-ctlz534935",
+        "vin":  "1JJV532D1DL745313",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2013,
+        "length":  "53\u0027",
+        "price":  10500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ535051",
         "slug":  "2012-wabash-53ft-dry-van-plate-ctlz535051",
         "vin":  "1JJV532D6CL590188",
@@ -953,6 +985,56 @@
                        "/assets/photos/807020/8.jpg",
                        "/assets/photos/807020/9.jpg",
                        "/assets/photos/807020/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "807032",
+        "slug":  "2007-utility-53ft-dry-van-plate-807032",
+        "vin":  "1UYVS25307G194756",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/807032/1.jpg",
+                       "/assets/photos/807032/2.jpg",
+                       "/assets/photos/807032/3.jpg",
+                       "/assets/photos/807032/4.jpg",
+                       "/assets/photos/807032/5.jpg",
+                       "/assets/photos/807032/6.jpg",
+                       "/assets/photos/807032/7.jpg",
+                       "/assets/photos/807032/8.jpg",
+                       "/assets/photos/807032/9.jpg",
+                       "/assets/photos/807032/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "807050",
+        "slug":  "2007-utility-53ft-dry-van-plate-807050",
+        "vin":  "1UYVS25347G194727",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/807050/1.jpg",
+                       "/assets/photos/807050/2.jpg",
+                       "/assets/photos/807050/3.jpg",
+                       "/assets/photos/807050/4.jpg",
+                       "/assets/photos/807050/5.jpg",
+                       "/assets/photos/807050/6.jpg",
+                       "/assets/photos/807050/7.jpg",
+                       "/assets/photos/807050/8.jpg",
+                       "/assets/photos/807050/9.jpg",
+                       "/assets/photos/807050/10.jpg"
                    ]
     },
     {
@@ -1711,6 +1793,31 @@
                        "/assets/photos/PCAZ112269/12.jpg",
                        "/assets/photos/PCAZ112269/13.jpg",
                        "/assets/photos/PCAZ112269/14.jpg"
+                   ]
+    },
+    {
+        "unit":  "PCAZ113492",
+        "slug":  "2007-strick-53ft-dry-van-plastic-pcaz113492",
+        "vin":  "1S12E95337E516703",
+        "title":  "53\u0027 Dry Van - Plastic — Strick",
+        "make":  "Strick",
+        "type":  "Dry Van - Plastic",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  6500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/PCAZ113492/1.jpg",
+                       "/assets/photos/PCAZ113492/2.jpg",
+                       "/assets/photos/PCAZ113492/3.jpg",
+                       "/assets/photos/PCAZ113492/4.jpg",
+                       "/assets/photos/PCAZ113492/5.jpg",
+                       "/assets/photos/PCAZ113492/6.jpg",
+                       "/assets/photos/PCAZ113492/7.jpg",
+                       "/assets/photos/PCAZ113492/8.jpg",
+                       "/assets/photos/PCAZ113492/9.jpg",
+                       "/assets/photos/PCAZ113492/10.jpg"
                    ]
     },
     {
