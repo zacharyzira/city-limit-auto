@@ -1113,38 +1113,6 @@
                    ]
     },
     {
-        "unit":  "81042",
-        "slug":  "2009-wabash-53ft-dry-van-81042",
-        "vin":  "1JJV532W19L257519",
-        "title":  "53\u0027 Dry Van — Wabash",
-        "make":  "Wabash",
-        "type":  "Dry Van",
-        "year":  2009,
-        "length":  "53\u0027",
-        "price":  8000,
-        "suspension":  "",
-        "status":  "Sold",
-        "photos":  [
-
-                   ]
-    },
-    {
-        "unit":  "81060",
-        "slug":  "2009-wabash-53ft-81060",
-        "vin":  "1JJV532W39L257537",
-        "title":  "53\u0027  — Wabash",
-        "make":  "Wabash",
-        "type":  "",
-        "year":  2009,
-        "length":  "53\u0027",
-        "price":  7000,
-        "suspension":  "Spring",
-        "status":  "Sold",
-        "photos":  [
-
-                   ]
-    },
-    {
         "unit":  "81078",
         "slug":  "2009-wabash-53ft-dry-van-81078",
         "vin":  "1JJV532W59L257555",
@@ -1763,22 +1731,6 @@
         "length":  "53\u0027",
         "price":  8000,
         "suspension":  "Air",
-        "status":  "Sold",
-        "photos":  [
-
-                   ]
-    },
-    {
-        "unit":  "P5031869",
-        "slug":  "2003-wabash-53ft-dry-van-p5031869",
-        "vin":  "1JJV532W33L861869",
-        "title":  "53\u0027 Dry Van — Wabash",
-        "make":  "Wabash",
-        "type":  "Dry Van",
-        "year":  2003,
-        "length":  "53\u0027",
-        "price":  0,
-        "suspension":  "Spring",
         "status":  "Sold",
         "photos":  [
 
