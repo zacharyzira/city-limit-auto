@@ -813,6 +813,22 @@
                    ]
     },
     {
+        "unit":  "503205",
+        "slug":  "2006-wabash-53ft-dry-van-plate-503205",
+        "vin":  "1JJV532W16L012862",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5500,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "505520",
         "slug":  "2006-wabash-53ft-dry-van-505520",
         "vin":  "1JJV532W16L015177",
