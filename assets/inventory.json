@@ -41,6 +41,38 @@
                    ]
     },
     {
+        "unit":  "807004",
+        "slug":  "2007-utility-53ft-dry-van-plastic-807004",
+        "vin":  "1UYVS25307G194708",
+        "title":  "53\u0027 Dry Van - Plastic — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plastic",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7250,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "807015",
+        "slug":  "2007-utility-53ft-dry-van-plastic-807015",
+        "vin":  "1UYVS25327G194757",
+        "title":  "53\u0027 Dry Van - Plastic — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plastic",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7250,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ038853",
         "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz038853",
         "vin":  "5V8VC5322CM204025",
