@@ -1,5 +1,21 @@
 ﻿[
     {
+        "unit":  "200617",
+        "slug":  "2007-utility-53ft-200617",
+        "vin":  "1UYVS25337G194718",
+        "title":  "53\u0027  — Utility",
+        "make":  "Utility",
+        "type":  "",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "",
+        "status":  "Pending Sale",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "201407",
         "slug":  "2014-wabash-53ft-dry-van-plate-201407",
         "vin":  "1JJV532DXEL797704",
@@ -1525,6 +1541,22 @@
                        "/assets/photos/CTLZ534075/8.jpg",
                        "/assets/photos/CTLZ534075/9.jpg",
                        "/assets/photos/CTLZ534075/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ534107",
+        "slug":  "2012-hyundai-53ft-dry-van-ctlz534107",
+        "vin":  "3H3V532C0CT186097",
+        "title":  "53\u0027 Dry Van — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
                    ]
     },
     {
