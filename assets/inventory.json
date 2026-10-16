@@ -1,5 +1,21 @@
 ﻿[
     {
+        "unit":  "141301",
+        "slug":  "2011-wabash-53ft-dry-van-plate-141301",
+        "vin":  "1JJV532D8BL374941",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2011,
+        "length":  "53\u0027",
+        "price":  9000,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "200617",
         "slug":  "2007-utility-53ft-200617",
         "vin":  "1UYVS25337G194718",
@@ -38,6 +54,22 @@
                        "/assets/photos/201407/8.jpg",
                        "/assets/photos/201407/9.jpg",
                        "/assets/photos/201407/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "504719",
+        "slug":  "2006-wabash-53ft-dry-van-plate-504719",
+        "vin":  "1JJV532W26L014376",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
                    ]
     },
     {
@@ -99,6 +131,22 @@
         "length":  "53\u0027",
         "price":  7250,
         "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "83796",
+        "slug":  "2009-wabash-53ft-dry-van-plate-83796",
+        "vin":  "1JJV532W39L320667",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
 
@@ -561,6 +609,22 @@
                    ]
     },
     {
+        "unit":  "WMT614",
+        "slug":  "1999-wabash-53ft-dry-van-plate-wmt614",
+        "vin":  "1JJV532W4XL541868",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  1999,
+        "length":  "53\u0027",
+        "price":  0,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "002002",
         "slug":  "2000-great-dane-48ft-sa-flatbed-002002",
         "vin":  "1GRDM9625YM002002",
@@ -816,6 +880,31 @@
                        "/assets/photos/80682/8.jpg",
                        "/assets/photos/80682/9.jpg",
                        "/assets/photos/80682/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "807020",
+        "slug":  "2007-utility-53ft-dry-van-plate-807020",
+        "vin":  "1UYVS25347G194775",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/807020/1.jpg",
+                       "/assets/photos/807020/2.jpg",
+                       "/assets/photos/807020/3.jpg",
+                       "/assets/photos/807020/4.jpg",
+                       "/assets/photos/807020/5.jpg",
+                       "/assets/photos/807020/6.jpg",
+                       "/assets/photos/807020/7.jpg",
+                       "/assets/photos/807020/8.jpg",
+                       "/assets/photos/807020/9.jpg",
+                       "/assets/photos/807020/10.jpg"
                    ]
     },
     {
@@ -1603,6 +1692,31 @@
                    ]
     },
     {
+        "unit":  "CTLZ534117",
+        "slug":  "2012-hyundai-53ft-dry-van-plate-ctlz534117",
+        "vin":  "3H3V532C9CT186373",
+        "title":  "53\u0027 Dry Van - Plate — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ534117/1.jpg",
+                       "/assets/photos/CTLZ534117/2.jpg",
+                       "/assets/photos/CTLZ534117/3.jpg",
+                       "/assets/photos/CTLZ534117/4.jpg",
+                       "/assets/photos/CTLZ534117/5.jpg",
+                       "/assets/photos/CTLZ534117/6.jpg",
+                       "/assets/photos/CTLZ534117/7.jpg",
+                       "/assets/photos/CTLZ534117/8.jpg",
+                       "/assets/photos/CTLZ534117/9.jpg",
+                       "/assets/photos/CTLZ534117/10.jpg"
+                   ]
+    },
+    {
         "unit":  "CTLZ534158",
         "slug":  "2012-wabash-53ft-dry-van-plate-ctlz534158",
         "vin":  "1JJV532D6CL589333",
@@ -1788,35 +1902,6 @@
         "status":  "Sold",
         "photos":  [
 
-                   ]
-    },
-    {
-        "unit":  "PCAZ112269",
-        "slug":  "2007-stoughton-53ft-dry-van-pcaz112269",
-        "vin":  "1DW1A53287B982283",
-        "title":  "53\u0027 Dry Van — Stoughton",
-        "make":  "Stoughton",
-        "type":  "Dry Van",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7000,
-        "suspension":  "Air",
-        "status":  "Sold",
-        "photos":  [
-                       "/assets/photos/PCAZ112269/1.jpg",
-                       "/assets/photos/PCAZ112269/2.jpg",
-                       "/assets/photos/PCAZ112269/3.jpg",
-                       "/assets/photos/PCAZ112269/4.jpg",
-                       "/assets/photos/PCAZ112269/5.jpg",
-                       "/assets/photos/PCAZ112269/6.jpg",
-                       "/assets/photos/PCAZ112269/7.jpg",
-                       "/assets/photos/PCAZ112269/8.jpg",
-                       "/assets/photos/PCAZ112269/9.jpg",
-                       "/assets/photos/PCAZ112269/10.jpg",
-                       "/assets/photos/PCAZ112269/11.jpg",
-                       "/assets/photos/PCAZ112269/12.jpg",
-                       "/assets/photos/PCAZ112269/13.jpg",
-                       "/assets/photos/PCAZ112269/14.jpg"
                    ]
     },
     {
