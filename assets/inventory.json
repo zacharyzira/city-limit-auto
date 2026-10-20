@@ -94,7 +94,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/807004/1.jpg",
+                       "/assets/photos/807004/2.jpg",
+                       "/assets/photos/807004/3.jpg",
+                       "/assets/photos/807004/4.jpg",
+                       "/assets/photos/807004/5.jpg",
+                       "/assets/photos/807004/6.jpg",
+                       "/assets/photos/807004/7.jpg",
+                       "/assets/photos/807004/8.jpg",
+                       "/assets/photos/807004/9.jpg",
+                       "/assets/photos/807004/10.jpg"
                    ]
     },
     {
@@ -135,7 +144,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/807022/1.jpg",
+                       "/assets/photos/807022/2.jpg",
+                       "/assets/photos/807022/3.jpg",
+                       "/assets/photos/807022/4.jpg",
+                       "/assets/photos/807022/5.jpg",
+                       "/assets/photos/807022/6.jpg",
+                       "/assets/photos/807022/7.jpg",
+                       "/assets/photos/807022/8.jpg",
+                       "/assets/photos/807022/9.jpg",
+                       "/assets/photos/807022/10.jpg"
                    ]
     },
     {
@@ -151,7 +169,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/807030/1.jpg",
+                       "/assets/photos/807030/2.jpg",
+                       "/assets/photos/807030/3.jpg",
+                       "/assets/photos/807030/4.jpg",
+                       "/assets/photos/807030/5.jpg",
+                       "/assets/photos/807030/6.jpg",
+                       "/assets/photos/807030/7.jpg",
+                       "/assets/photos/807030/8.jpg",
+                       "/assets/photos/807030/9.jpg",
+                       "/assets/photos/807030/10.jpg"
                    ]
     },
     {
@@ -167,7 +194,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/807042/1.jpg",
+                       "/assets/photos/807042/2.jpg",
+                       "/assets/photos/807042/3.jpg",
+                       "/assets/photos/807042/4.jpg",
+                       "/assets/photos/807042/5.jpg",
+                       "/assets/photos/807042/6.jpg",
+                       "/assets/photos/807042/7.jpg",
+                       "/assets/photos/807042/8.jpg",
+                       "/assets/photos/807042/9.jpg",
+                       "/assets/photos/807042/10.jpg"
                    ]
     },
     {
@@ -356,7 +392,7 @@
         "length":  "53\u0027",
         "price":  10000,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/CTLZ533908/1.jpg",
                        "/assets/photos/CTLZ533908/2.jpg",
@@ -1476,6 +1512,31 @@
                        "/assets/photos/CTLZ533633/8.jpg",
                        "/assets/photos/CTLZ533633/9.jpg",
                        "/assets/photos/CTLZ533633/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ533641",
+        "slug":  "2012-hyundai-53ft-dry-van-plate-ctlz533641",
+        "vin":  "3H3V532C8CT186364",
+        "title":  "53\u0027 Dry Van - Plate — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533641/1.jpg",
+                       "/assets/photos/CTLZ533641/2.jpg",
+                       "/assets/photos/CTLZ533641/3.jpg",
+                       "/assets/photos/CTLZ533641/4.jpg",
+                       "/assets/photos/CTLZ533641/5.jpg",
+                       "/assets/photos/CTLZ533641/6.jpg",
+                       "/assets/photos/CTLZ533641/7.jpg",
+                       "/assets/photos/CTLZ533641/8.jpg",
+                       "/assets/photos/CTLZ533641/9.jpg",
+                       "/assets/photos/CTLZ533641/10.jpg"
                    ]
     },
     {
