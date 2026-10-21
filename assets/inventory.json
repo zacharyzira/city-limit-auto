@@ -119,7 +119,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/807004/1.jpg",
                        "/assets/photos/807004/2.jpg",
@@ -144,7 +144,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/807015/1.jpg",
                        "/assets/photos/807015/2.jpg",
@@ -210,14 +210,14 @@
     },
     {
         "unit":  "807042",
-        "slug":  "2007-utility-53ft-dry-van-plastic-807042",
+        "slug":  "2007-utility-53ft-dry-van-plate-807042",
         "vin":  "1UYVS25307G194725",
-        "title":  "53\u0027 Dry Van - Plastic — Utility",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
         "make":  "Utility",
-        "type":  "Dry Van - Plastic",
+        "type":  "Dry Van - Plate",
         "year":  2007,
         "length":  "53\u0027",
-        "price":  7250,
+        "price":  7500,
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
