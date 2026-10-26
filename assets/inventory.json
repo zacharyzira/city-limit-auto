@@ -1,5 +1,21 @@
 ﻿[
     {
+        "unit":  "141301",
+        "slug":  "2011-wabash-53ft-dry-van-plate-141301",
+        "vin":  "1JJV532D8BL374941",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2011,
+        "length":  "53\u0027",
+        "price":  9000,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "167881197",
         "slug":  "2015-utility-53ft-dry-van-plate-167881197",
         "vin":  "1UYVS2532FG088033",
@@ -121,7 +137,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/807022/1.jpg",
                        "/assets/photos/807022/2.jpg",
@@ -146,7 +162,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/807030/1.jpg",
                        "/assets/photos/807030/2.jpg",
