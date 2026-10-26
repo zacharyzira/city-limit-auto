@@ -71,7 +71,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/807002/1.jpg",
                        "/assets/photos/807002/2.jpg",
@@ -171,7 +171,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Pending Sale",
+        "status":  "Available",
         "photos":  [
                        "/assets/photos/807030/1.jpg",
                        "/assets/photos/807030/2.jpg",
