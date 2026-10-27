@@ -83,7 +83,16 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/502688/1.jpg",
+                       "/assets/photos/502688/2.jpg",
+                       "/assets/photos/502688/3.jpg",
+                       "/assets/photos/502688/4.jpg",
+                       "/assets/photos/502688/5.jpg",
+                       "/assets/photos/502688/6.jpg",
+                       "/assets/photos/502688/7.jpg",
+                       "/assets/photos/502688/8.jpg",
+                       "/assets/photos/502688/9.jpg",
+                       "/assets/photos/502688/10.jpg"
                    ]
     },
     {
@@ -141,56 +150,6 @@
                        "/assets/photos/807002/8.jpg",
                        "/assets/photos/807002/9.jpg",
                        "/assets/photos/807002/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "807004",
-        "slug":  "2007-utility-53ft-dry-van-plate-807004",
-        "vin":  "1UYVS25307G194708",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7500,
-        "suspension":  "Air",
-        "status":  "Pending Sale",
-        "photos":  [
-                       "/assets/photos/807004/1.jpg",
-                       "/assets/photos/807004/2.jpg",
-                       "/assets/photos/807004/3.jpg",
-                       "/assets/photos/807004/4.jpg",
-                       "/assets/photos/807004/5.jpg",
-                       "/assets/photos/807004/6.jpg",
-                       "/assets/photos/807004/7.jpg",
-                       "/assets/photos/807004/8.jpg",
-                       "/assets/photos/807004/9.jpg",
-                       "/assets/photos/807004/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "807015",
-        "slug":  "2007-utility-53ft-dry-van-plate-807015",
-        "vin":  "1UYVS25327G194757",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7500,
-        "suspension":  "Air",
-        "status":  "Pending Sale",
-        "photos":  [
-                       "/assets/photos/807015/1.jpg",
-                       "/assets/photos/807015/2.jpg",
-                       "/assets/photos/807015/3.jpg",
-                       "/assets/photos/807015/4.jpg",
-                       "/assets/photos/807015/5.jpg",
-                       "/assets/photos/807015/6.jpg",
-                       "/assets/photos/807015/7.jpg",
-                       "/assets/photos/807015/8.jpg",
-                       "/assets/photos/807015/9.jpg",
-                       "/assets/photos/807015/10.jpg"
                    ]
     },
     {
@@ -256,7 +215,16 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/83796/1.jpg",
+                       "/assets/photos/83796/2.jpg",
+                       "/assets/photos/83796/3.jpg",
+                       "/assets/photos/83796/4.jpg",
+                       "/assets/photos/83796/5.jpg",
+                       "/assets/photos/83796/6.jpg",
+                       "/assets/photos/83796/7.jpg",
+                       "/assets/photos/83796/8.jpg",
+                       "/assets/photos/83796/9.jpg",
+                       "/assets/photos/83796/10.jpg"
                    ]
     },
     {
