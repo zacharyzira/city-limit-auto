@@ -57,20 +57,30 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-
+                       "/assets/photos/34213/1.jpg",
+                       "/assets/photos/34213/2.jpg",
+                       "/assets/photos/34213/3.jpg",
+                       "/assets/photos/34213/4.jpg",
+                       "/assets/photos/34213/5.jpg",
+                       "/assets/photos/34213/6.jpg",
+                       "/assets/photos/34213/7.jpg",
+                       "/assets/photos/34213/8.jpg",
+                       "/assets/photos/34213/9.jpg",
+                       "/assets/photos/34213/10.jpg",
+                       "/assets/photos/34213/11.jpg"
                    ]
     },
     {
         "unit":  "502688",
-        "slug":  "2006-wabash-53ft-502688",
+        "slug":  "2006-wabash-53ft-dry-van-plate-502688",
         "vin":  "1JJV532W86L984037",
-        "title":  "53\u0027  — Wabash",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
         "make":  "Wabash",
-        "type":  "",
+        "type":  "Dry Van - Plate",
         "year":  2006,
         "length":  "53\u0027",
-        "price":  6000,
-        "suspension":  "",
+        "price":  5500,
+        "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
 
