@@ -71,6 +71,22 @@
                    ]
     },
     {
+        "unit":  "501518",
+        "slug":  "2006-wabash-53ft-dry-van-plate-501518",
+        "vin":  "1JJV532W66L982867",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5000,
+        "suspension":  "Spring",
+        "status":  "Pending Sale",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "502688",
         "slug":  "2006-wabash-53ft-dry-van-plate-502688",
         "vin":  "1JJV532W86L984037",
@@ -81,7 +97,7 @@
         "length":  "53\u0027",
         "price":  5500,
         "suspension":  "Spring",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/502688/1.jpg",
                        "/assets/photos/502688/2.jpg",
@@ -120,9 +136,9 @@
         "type":  "Dry Van - Plate",
         "year":  2006,
         "length":  "53\u0027",
-        "price":  5500,
+        "price":  6000,
         "suspension":  "Spring",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
 
                    ]
@@ -213,7 +229,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Spring",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/83796/1.jpg",
                        "/assets/photos/83796/2.jpg",
@@ -225,31 +241,6 @@
                        "/assets/photos/83796/8.jpg",
                        "/assets/photos/83796/9.jpg",
                        "/assets/photos/83796/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "CTLZ038853",
-        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz038853",
-        "vin":  "5V8VC5322CM204025",
-        "title":  "53\u0027 Dry Van - Plate — Vanguard",
-        "make":  "Vanguard",
-        "type":  "Dry Van - Plate",
-        "year":  2012,
-        "length":  "53\u0027",
-        "price":  10000,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/CTLZ038853/1.jpg",
-                       "/assets/photos/CTLZ038853/2.jpg",
-                       "/assets/photos/CTLZ038853/3.jpg",
-                       "/assets/photos/CTLZ038853/4.jpg",
-                       "/assets/photos/CTLZ038853/5.jpg",
-                       "/assets/photos/CTLZ038853/6.jpg",
-                       "/assets/photos/CTLZ038853/7.jpg",
-                       "/assets/photos/CTLZ038853/8.jpg",
-                       "/assets/photos/CTLZ038853/9.jpg",
-                       "/assets/photos/CTLZ038853/10.jpg"
                    ]
     },
     {
@@ -275,31 +266,6 @@
                        "/assets/photos/CTLZ533640/8.jpg",
                        "/assets/photos/CTLZ533640/9.jpg",
                        "/assets/photos/CTLZ533640/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "CTLZ533661",
-        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz533661",
-        "vin":  "5V8VC532XCM204029",
-        "title":  "53\u0027 Dry Van - Plate — Vanguard",
-        "make":  "Vanguard",
-        "type":  "Dry Van - Plate",
-        "year":  2012,
-        "length":  "53\u0027",
-        "price":  10000,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/CTLZ533661/1.jpg",
-                       "/assets/photos/CTLZ533661/2.jpg",
-                       "/assets/photos/CTLZ533661/3.jpg",
-                       "/assets/photos/CTLZ533661/4.jpg",
-                       "/assets/photos/CTLZ533661/5.jpg",
-                       "/assets/photos/CTLZ533661/6.jpg",
-                       "/assets/photos/CTLZ533661/7.jpg",
-                       "/assets/photos/CTLZ533661/8.jpg",
-                       "/assets/photos/CTLZ533661/9.jpg",
-                       "/assets/photos/CTLZ533661/10.jpg"
                    ]
     },
     {
@@ -2104,6 +2070,22 @@
         "length":  "53\u0027",
         "price":  7000,
         "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PIFZ940032",
+        "slug":  "2004-wabash-53ft-dry-van-pifz940032",
+        "vin":  "1JJV532W44L869786",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2004,
+        "length":  "53\u0027",
+        "price":  5000,
+        "suspension":  "Spring",
         "status":  "Sold",
         "photos":  [
 
