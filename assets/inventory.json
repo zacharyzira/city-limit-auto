@@ -71,6 +71,32 @@
                    ]
     },
     {
+        "unit":  "41514",
+        "slug":  "2015-utility-53ft-dry-van-plate-41514",
+        "vin":  "1UYVS253XFP089429",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2015,
+        "length":  "53\u0027",
+        "price":  13500,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+                       "/assets/photos/41514/1.jpg",
+                       "/assets/photos/41514/2.jpg",
+                       "/assets/photos/41514/3.jpg",
+                       "/assets/photos/41514/4.jpg",
+                       "/assets/photos/41514/5.jpg",
+                       "/assets/photos/41514/6.jpg",
+                       "/assets/photos/41514/7.jpg",
+                       "/assets/photos/41514/8.jpg",
+                       "/assets/photos/41514/9.jpg",
+                       "/assets/photos/41514/10.jpg",
+                       "/assets/photos/41514/11.jpg"
+                   ]
+    },
+    {
         "unit":  "501518",
         "slug":  "2006-wabash-53ft-dry-van-plate-501518",
         "vin":  "1JJV532W66L982867",
@@ -166,6 +192,31 @@
                        "/assets/photos/807002/8.jpg",
                        "/assets/photos/807002/9.jpg",
                        "/assets/photos/807002/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "807014",
+        "slug":  "2007-utility-53ft-dry-van-plate-807014",
+        "vin":  "1UTVS25367G194759",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+                       "/assets/photos/807014/1.jpg",
+                       "/assets/photos/807014/2.jpg",
+                       "/assets/photos/807014/3.jpg",
+                       "/assets/photos/807014/4.jpg",
+                       "/assets/photos/807014/5.jpg",
+                       "/assets/photos/807014/6.jpg",
+                       "/assets/photos/807014/7.jpg",
+                       "/assets/photos/807014/8.jpg",
+                       "/assets/photos/807014/9.jpg",
+                       "/assets/photos/807014/10.jpg"
                    ]
     },
     {
@@ -266,31 +317,6 @@
                        "/assets/photos/CTLZ533640/8.jpg",
                        "/assets/photos/CTLZ533640/9.jpg",
                        "/assets/photos/CTLZ533640/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "CTLZ533840",
-        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz533840",
-        "vin":  "5V8VC5324CM204009",
-        "title":  "53\u0027 Dry Van - Plate — Vanguard",
-        "make":  "Vanguard",
-        "type":  "Dry Van - Plate",
-        "year":  2012,
-        "length":  "53\u0027",
-        "price":  10000,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/CTLZ533840/1.jpg",
-                       "/assets/photos/CTLZ533840/2.jpg",
-                       "/assets/photos/CTLZ533840/3.jpg",
-                       "/assets/photos/CTLZ533840/4.jpg",
-                       "/assets/photos/CTLZ533840/5.jpg",
-                       "/assets/photos/CTLZ533840/6.jpg",
-                       "/assets/photos/CTLZ533840/7.jpg",
-                       "/assets/photos/CTLZ533840/8.jpg",
-                       "/assets/photos/CTLZ533840/9.jpg",
-                       "/assets/photos/CTLZ533840/10.jpg"
                    ]
     },
     {
@@ -492,7 +518,7 @@
         "type":  "Dry Van",
         "year":  1999,
         "length":  "53\u0027",
-        "price":  0,
+        "price":  3500,
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
@@ -1313,6 +1339,31 @@
                    ]
     },
     {
+        "unit":  "CTLZ038853",
+        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz038853",
+        "vin":  "5V8VC5322CM204025",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ038853/1.jpg",
+                       "/assets/photos/CTLZ038853/2.jpg",
+                       "/assets/photos/CTLZ038853/3.jpg",
+                       "/assets/photos/CTLZ038853/4.jpg",
+                       "/assets/photos/CTLZ038853/5.jpg",
+                       "/assets/photos/CTLZ038853/6.jpg",
+                       "/assets/photos/CTLZ038853/7.jpg",
+                       "/assets/photos/CTLZ038853/8.jpg",
+                       "/assets/photos/CTLZ038853/9.jpg",
+                       "/assets/photos/CTLZ038853/10.jpg"
+                   ]
+    },
+    {
         "unit":  "CTLZ042553",
         "slug":  "2012-hyundai-53ft-dry-van-plate-ctlz042553",
         "vin":  "3H3V532C7CT186016",
@@ -1521,6 +1572,31 @@
                    ]
     },
     {
+        "unit":  "CTLZ533661",
+        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz533661",
+        "vin":  "5V8VC532XCM204029",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533661/1.jpg",
+                       "/assets/photos/CTLZ533661/2.jpg",
+                       "/assets/photos/CTLZ533661/3.jpg",
+                       "/assets/photos/CTLZ533661/4.jpg",
+                       "/assets/photos/CTLZ533661/5.jpg",
+                       "/assets/photos/CTLZ533661/6.jpg",
+                       "/assets/photos/CTLZ533661/7.jpg",
+                       "/assets/photos/CTLZ533661/8.jpg",
+                       "/assets/photos/CTLZ533661/9.jpg",
+                       "/assets/photos/CTLZ533661/10.jpg"
+                   ]
+    },
+    {
         "unit":  "CTLZ533667",
         "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz533667",
         "vin":  "5V8VC5327CM204134",
@@ -1593,6 +1669,31 @@
                        "/assets/photos/CTLZ533699/8.jpg",
                        "/assets/photos/CTLZ533699/9.jpg",
                        "/assets/photos/CTLZ533699/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ533840",
+        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz533840",
+        "vin":  "5V8VC5324CM204009",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533840/1.jpg",
+                       "/assets/photos/CTLZ533840/2.jpg",
+                       "/assets/photos/CTLZ533840/3.jpg",
+                       "/assets/photos/CTLZ533840/4.jpg",
+                       "/assets/photos/CTLZ533840/5.jpg",
+                       "/assets/photos/CTLZ533840/6.jpg",
+                       "/assets/photos/CTLZ533840/7.jpg",
+                       "/assets/photos/CTLZ533840/8.jpg",
+                       "/assets/photos/CTLZ533840/9.jpg",
+                       "/assets/photos/CTLZ533840/10.jpg"
                    ]
     },
     {
