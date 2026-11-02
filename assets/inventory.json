@@ -183,6 +183,22 @@
                    ]
     },
     {
+        "unit":  "CTLZ533820",
+        "slug":  "2012-wabash-53ft-dry-van-plate-ctlz533820",
+        "vin":  "1JJV532D1CL588767",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  9500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ533860",
         "slug":  "2012-hyundai-53ft-dry-van-plate-ctlz533860",
         "vin":  "3H3V532C3CT186174",
@@ -531,6 +547,22 @@
                        "/assets/photos/502688/8.jpg",
                        "/assets/photos/502688/9.jpg",
                        "/assets/photos/502688/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "503205",
+        "slug":  "2006-wabash-53ft-dry-van-plate-503205",
+        "vin":  "1JJV532W16L012862",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5500,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
                    ]
     },
     {
