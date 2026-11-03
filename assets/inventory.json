@@ -742,6 +742,31 @@
                    ]
     },
     {
+        "unit":  "807002",
+        "slug":  "2007-utility-53ft-dry-van-plate-807002",
+        "vin":  "1UYVS25367G194728",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/807002/1.jpg",
+                       "/assets/photos/807002/2.jpg",
+                       "/assets/photos/807002/3.jpg",
+                       "/assets/photos/807002/4.jpg",
+                       "/assets/photos/807002/5.jpg",
+                       "/assets/photos/807002/6.jpg",
+                       "/assets/photos/807002/7.jpg",
+                       "/assets/photos/807002/8.jpg",
+                       "/assets/photos/807002/9.jpg",
+                       "/assets/photos/807002/10.jpg"
+                   ]
+    },
+    {
         "unit":  "807015",
         "slug":  "2007-utility-53ft-dry-van-plate-807015",
         "vin":  "1UYVS25327G194757",
