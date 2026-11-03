@@ -142,31 +142,6 @@
                    ]
     },
     {
-        "unit":  "807002",
-        "slug":  "2007-utility-53ft-dry-van-plate-807002",
-        "vin":  "1UYVS25367G194728",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7500,
-        "suspension":  "Air",
-        "status":  "Pending Sale",
-        "photos":  [
-                       "/assets/photos/807002/1.jpg",
-                       "/assets/photos/807002/2.jpg",
-                       "/assets/photos/807002/3.jpg",
-                       "/assets/photos/807002/4.jpg",
-                       "/assets/photos/807002/5.jpg",
-                       "/assets/photos/807002/6.jpg",
-                       "/assets/photos/807002/7.jpg",
-                       "/assets/photos/807002/8.jpg",
-                       "/assets/photos/807002/9.jpg",
-                       "/assets/photos/807002/10.jpg"
-                   ]
-    },
-    {
         "unit":  "807014",
         "slug":  "2007-utility-53ft-dry-van-plate-807014",
         "vin":  "1UTVS25367G194759",
@@ -189,31 +164,6 @@
                        "/assets/photos/807014/8.jpg",
                        "/assets/photos/807014/9.jpg",
                        "/assets/photos/807014/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "807022",
-        "slug":  "2007-utility-53ft-dry-van-plate-807022",
-        "vin":  "1UYVS25327G194760",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7500,
-        "suspension":  "Air",
-        "status":  "Pending Sale",
-        "photos":  [
-                       "/assets/photos/807022/1.jpg",
-                       "/assets/photos/807022/2.jpg",
-                       "/assets/photos/807022/3.jpg",
-                       "/assets/photos/807022/4.jpg",
-                       "/assets/photos/807022/5.jpg",
-                       "/assets/photos/807022/6.jpg",
-                       "/assets/photos/807022/7.jpg",
-                       "/assets/photos/807022/8.jpg",
-                       "/assets/photos/807022/9.jpg",
-                       "/assets/photos/807022/10.jpg"
                    ]
     },
     {
