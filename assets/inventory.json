@@ -57,6 +57,22 @@
                    ]
     },
     {
+        "unit":  "33514",
+        "slug":  "2015-utility-53ft-dry-van-plate-33514",
+        "vin":  "1UYVS2537FG088125",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2015,
+        "length":  "53\u0027",
+        "price":  13500,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "34213",
         "slug":  "2014-utility-53ft-dry-van-plate-34213",
         "vin":  "1UYVS2531EG766558",
@@ -84,15 +100,15 @@
     },
     {
         "unit":  "40114",
-        "slug":  "2015-utility-53ft-dry-van-40114",
+        "slug":  "2015-utility-53ft-dry-van-plate-40114",
         "vin":  "1UYVS253XFP089415",
-        "title":  "53\u0027 Dry Van — Utility",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
         "make":  "Utility",
-        "type":  "Dry Van",
+        "type":  "Dry Van - Plate",
         "year":  2015,
         "length":  "53\u0027",
-        "price":  0,
-        "suspension":  "",
+        "price":  13500,
+        "suspension":  "Air",
         "status":  "Available",
         "photos":  [
 
