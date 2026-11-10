@@ -1609,6 +1609,31 @@
                    ]
     },
     {
+        "unit":  "CTLZ533641",
+        "slug":  "2012-hyundai-53ft-dry-van-plate-ctlz533641",
+        "vin":  "3H3V532C8CT186364",
+        "title":  "53\u0027 Dry Van - Plate — Hyundai",
+        "make":  "Hyundai",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533641/1.jpg",
+                       "/assets/photos/CTLZ533641/2.jpg",
+                       "/assets/photos/CTLZ533641/3.jpg",
+                       "/assets/photos/CTLZ533641/4.jpg",
+                       "/assets/photos/CTLZ533641/5.jpg",
+                       "/assets/photos/CTLZ533641/6.jpg",
+                       "/assets/photos/CTLZ533641/7.jpg",
+                       "/assets/photos/CTLZ533641/8.jpg",
+                       "/assets/photos/CTLZ533641/9.jpg",
+                       "/assets/photos/CTLZ533641/10.jpg"
+                   ]
+    },
+    {
         "unit":  "CTLZ533661",
         "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz533661",
         "vin":  "5V8VC532XCM204029",
@@ -2209,6 +2234,35 @@
         "status":  "Sold",
         "photos":  [
 
+                   ]
+    },
+    {
+        "unit":  "PCAZ112269",
+        "slug":  "2007-stoughton-53ft-dry-van-pcaz112269",
+        "vin":  "1DW1A53287B982283",
+        "title":  "53\u0027 Dry Van — Stoughton",
+        "make":  "Stoughton",
+        "type":  "Dry Van",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/PCAZ112269/1.jpg",
+                       "/assets/photos/PCAZ112269/2.jpg",
+                       "/assets/photos/PCAZ112269/3.jpg",
+                       "/assets/photos/PCAZ112269/4.jpg",
+                       "/assets/photos/PCAZ112269/5.jpg",
+                       "/assets/photos/PCAZ112269/6.jpg",
+                       "/assets/photos/PCAZ112269/7.jpg",
+                       "/assets/photos/PCAZ112269/8.jpg",
+                       "/assets/photos/PCAZ112269/9.jpg",
+                       "/assets/photos/PCAZ112269/10.jpg",
+                       "/assets/photos/PCAZ112269/11.jpg",
+                       "/assets/photos/PCAZ112269/12.jpg",
+                       "/assets/photos/PCAZ112269/13.jpg",
+                       "/assets/photos/PCAZ112269/14.jpg"
                    ]
     },
     {
