@@ -129,16 +129,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_175935597_iOS.heic\u0027 for unit 40114 (1UYVS253XFP089415): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_175950629_iOS.heic\u0027 for unit 40114 (1UYVS253XFP089415): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_180015729_iOS.heic\u0027 for unit 40114 (1UYVS253XFP089415): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_180034065_iOS.heic\u0027 for unit 40114 (1UYVS253XFP089415): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_180100821_iOS.heic\u0027 for unit 40114 (1UYVS253XFP089415): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_180130058_iOS.heic\u0027 for unit 40114 (1UYVS253XFP089415): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_181837355_iOS.heic\u0027 for unit 40114 (1UYVS253XFP089415): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_181855897_iOS.heic\u0027 for unit 40114 (1UYVS253XFP089415): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_181908251_iOS.heic\u0027 for unit 40114 (1UYVS253XFP089415): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_181932616_iOS.heic\u0027 for unit 40114 (1UYVS253XFP089415): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\""
+                       "/assets/photos/40114/1.jpg",
+                       "/assets/photos/40114/2.jpg",
+                       "/assets/photos/40114/3.jpg",
+                       "/assets/photos/40114/4.jpg",
+                       "/assets/photos/40114/5.jpg",
+                       "/assets/photos/40114/6.jpg",
+                       "/assets/photos/40114/7.jpg",
+                       "/assets/photos/40114/8.jpg",
+                       "/assets/photos/40114/9.jpg",
+                       "/assets/photos/40114/10.jpg"
                    ]
     },
     {
@@ -154,16 +154,16 @@
         "suspension":  "Air",
         "status":  "Available",
         "photos":  [
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_174758029_iOS.heic\u0027 for unit 64714 (1UYVS2532FG234706): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_174813349_iOS.heic\u0027 for unit 64714 (1UYVS2532FG234706): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_174841513_iOS.heic\u0027 for unit 64714 (1UYVS2532FG234706): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_174853260_iOS.heic\u0027 for unit 64714 (1UYVS2532FG234706): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_174918860_iOS.heic\u0027 for unit 64714 (1UYVS2532FG234706): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_174937866_iOS.heic\u0027 for unit 64714 (1UYVS2532FG234706): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_175007248_iOS.heic\u0027 for unit 64714 (1UYVS2532FG234706): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_175038139_iOS.heic\u0027 for unit 64714 (1UYVS2532FG234706): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_175050672_iOS.heic\u0027 for unit 64714 (1UYVS2532FG234706): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_175132894_iOS.heic\u0027 for unit 64714 (1UYVS2532FG234706): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\""
+                       "/assets/photos/64714/1.jpg",
+                       "/assets/photos/64714/2.jpg",
+                       "/assets/photos/64714/3.jpg",
+                       "/assets/photos/64714/4.jpg",
+                       "/assets/photos/64714/5.jpg",
+                       "/assets/photos/64714/6.jpg",
+                       "/assets/photos/64714/7.jpg",
+                       "/assets/photos/64714/8.jpg",
+                       "/assets/photos/64714/9.jpg",
+                       "/assets/photos/64714/10.jpg"
                    ]
     },
     {
@@ -295,16 +295,16 @@
         "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_182931484_iOS.heic\u0027 for unit CTLZ534653 (5V8VA5326AM003070): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_182944591_iOS.heic\u0027 for unit CTLZ534653 (5V8VA5326AM003070): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_183017316_iOS.heic\u0027 for unit CTLZ534653 (5V8VA5326AM003070): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_183029039_iOS.heic\u0027 for unit CTLZ534653 (5V8VA5326AM003070): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_183103675_iOS.heic\u0027 for unit CTLZ534653 (5V8VA5326AM003070): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_183125960_iOS.heic\u0027 for unit CTLZ534653 (5V8VA5326AM003070): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_183147858_iOS.heic\u0027 for unit CTLZ534653 (5V8VA5326AM003070): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_183227322_iOS.heic\u0027 for unit CTLZ534653 (5V8VA5326AM003070): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_183245464_iOS.heic\u0027 for unit CTLZ534653 (5V8VA5326AM003070): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\"",
-                       "2026-11-12 11:09:44  WARNING: couldn\u0027t convert photo \u002720261111_183308494_iOS.heic\u0027 for unit CTLZ534653 (5V8VA5326AM003070): Exception calling \"Create\" with \"3\" argument(s): \"The cloud file provider is not running. (Exception from HRESULT: 0x8007016A)\""
+                       "/assets/photos/CTLZ534653/1.jpg",
+                       "/assets/photos/CTLZ534653/2.jpg",
+                       "/assets/photos/CTLZ534653/3.jpg",
+                       "/assets/photos/CTLZ534653/4.jpg",
+                       "/assets/photos/CTLZ534653/5.jpg",
+                       "/assets/photos/CTLZ534653/6.jpg",
+                       "/assets/photos/CTLZ534653/7.jpg",
+                       "/assets/photos/CTLZ534653/8.jpg",
+                       "/assets/photos/CTLZ534653/9.jpg",
+                       "/assets/photos/CTLZ534653/10.jpg"
                    ]
     },
     {
@@ -645,6 +645,27 @@
         "status":  "Sold",
         "photos":  [
 
+                   ]
+    },
+    {
+        "unit":  "504727",
+        "slug":  "2006-wabash-53ft-dry-van-plate-504727",
+        "vin":  "1JJV532W16L014384",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2006,
+        "length":  "53\u0027",
+        "price":  5500,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/504727/1.jpg",
+                       "/assets/photos/504727/2.jpg",
+                       "/assets/photos/504727/3.jpg",
+                       "/assets/photos/504727/4.jpg",
+                       "/assets/photos/504727/5.jpg",
+                       "/assets/photos/504727/6.jpg"
                    ]
     },
     {
@@ -1000,6 +1021,31 @@
                        "/assets/photos/807050/8.jpg",
                        "/assets/photos/807050/9.jpg",
                        "/assets/photos/807050/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "807052",
+        "slug":  "2007-utility-53ft-dry-van-plate-807052",
+        "vin":  "1UYVS25387G194729",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2007,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/807052/1.jpg",
+                       "/assets/photos/807052/2.jpg",
+                       "/assets/photos/807052/3.jpg",
+                       "/assets/photos/807052/4.jpg",
+                       "/assets/photos/807052/5.jpg",
+                       "/assets/photos/807052/6.jpg",
+                       "/assets/photos/807052/7.jpg",
+                       "/assets/photos/807052/8.jpg",
+                       "/assets/photos/807052/9.jpg",
+                       "/assets/photos/807052/10.jpg"
                    ]
     },
     {
