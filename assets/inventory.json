@@ -210,7 +210,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/807014/1.jpg",
                        "/assets/photos/807014/2.jpg",
@@ -235,7 +235,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/807030/1.jpg",
                        "/assets/photos/807030/2.jpg",
@@ -272,6 +272,30 @@
                        "/assets/photos/CTLZ533860/8.jpg",
                        "/assets/photos/CTLZ533860/9.jpg",
                        "/assets/photos/CTLZ533860/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ534080",
+        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz534080",
+        "vin":  "5VAVC5323CM204051",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+                       "/assets/photos/CTLZ534080/1.jpg",
+                       "/assets/photos/CTLZ534080/2.jpg",
+                       "/assets/photos/CTLZ534080/3.jpg",
+                       "/assets/photos/CTLZ534080/4.jpg",
+                       "/assets/photos/CTLZ534080/5.jpg",
+                       "/assets/photos/CTLZ534080/6.jpg",
+                       "/assets/photos/CTLZ534080/7.jpg",
+                       "/assets/photos/CTLZ534080/8.jpg",
+                       "/assets/photos/CTLZ534080/9.jpg"
                    ]
     },
     {
@@ -401,7 +425,7 @@
         "length":  "53\u0027",
         "price":  5500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/PIFZ305016/1.jpg",
                        "/assets/photos/PIFZ305016/2.jpg",
