@@ -176,30 +176,6 @@
                    ]
     },
     {
-        "unit":  "69714",
-        "slug":  "2015-utility-53ft-dry-van-plate-69714",
-        "vin":  "1UYVS2535FP089631",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2015,
-        "length":  "53\u0027",
-        "price":  13500,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/69714/1.jpg",
-                       "/assets/photos/69714/2.jpg",
-                       "/assets/photos/69714/3.jpg",
-                       "/assets/photos/69714/4.jpg",
-                       "/assets/photos/69714/5.jpg",
-                       "/assets/photos/69714/6.jpg",
-                       "/assets/photos/69714/7.jpg",
-                       "/assets/photos/69714/8.jpg",
-                       "/assets/photos/69714/9.jpg"
-                   ]
-    },
-    {
         "unit":  "807014",
         "slug":  "2007-utility-53ft-dry-van-plate-807014",
         "vin":  "1UTVS25367G194759",
@@ -412,31 +388,6 @@
         "status":  "Pending Sale",
         "photos":  [
 
-                   ]
-    },
-    {
-        "unit":  "PIFZ305016",
-        "slug":  "2005-stoughton-53ft-dry-van-pifz305016",
-        "vin":  "1DW1A53215S830150",
-        "title":  "53\u0027 Dry Van — Stoughton",
-        "make":  "Stoughton",
-        "type":  "Dry Van",
-        "year":  2005,
-        "length":  "53\u0027",
-        "price":  5500,
-        "suspension":  "Air",
-        "status":  "Pending Sale",
-        "photos":  [
-                       "/assets/photos/PIFZ305016/1.jpg",
-                       "/assets/photos/PIFZ305016/2.jpg",
-                       "/assets/photos/PIFZ305016/3.jpg",
-                       "/assets/photos/PIFZ305016/4.jpg",
-                       "/assets/photos/PIFZ305016/5.jpg",
-                       "/assets/photos/PIFZ305016/6.jpg",
-                       "/assets/photos/PIFZ305016/7.jpg",
-                       "/assets/photos/PIFZ305016/8.jpg",
-                       "/assets/photos/PIFZ305016/9.jpg",
-                       "/assets/photos/PIFZ305016/10.jpg"
                    ]
     },
     {
