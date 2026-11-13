@@ -150,6 +150,22 @@
                    ]
     },
     {
+        "unit":  "81851",
+        "slug":  "2009-wabash-53ft-dry-van-plate-81851",
+        "vin":  "1JJV532W59L258334",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "CTLZ533860",
         "slug":  "2012-hyundai-53ft-dry-van-plate-ctlz533860",
         "vin":  "3H3V532C3CT186174",
@@ -344,6 +360,31 @@
         "status":  "Sold",
         "photos":  [
 
+                   ]
+    },
+    {
+        "unit":  "141301",
+        "slug":  "2011-wabash-53ft-dry-van-plate-141301",
+        "vin":  "1JJV532D8BL374941",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2011,
+        "length":  "53\u0027",
+        "price":  9000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/141301/1.jpg",
+                       "/assets/photos/141301/2.jpg",
+                       "/assets/photos/141301/3.jpg",
+                       "/assets/photos/141301/4.jpg",
+                       "/assets/photos/141301/5.jpg",
+                       "/assets/photos/141301/6.jpg",
+                       "/assets/photos/141301/7.jpg",
+                       "/assets/photos/141301/8.jpg",
+                       "/assets/photos/141301/9.jpg",
+                       "/assets/photos/141301/10.jpg"
                    ]
     },
     {
@@ -627,6 +668,22 @@
         "length":  "53\u0027",
         "price":  6500,
         "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "66014",
+        "slug":  "2015-utility-53ft-dry-van-66014",
+        "vin":  "1UYVS2530FG234719",
+        "title":  "53\u0027 Dry Van — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van",
+        "year":  2015,
+        "length":  "53\u0027",
+        "price":  13500,
+        "suspension":  "",
         "status":  "Sold",
         "photos":  [
 
@@ -2319,6 +2376,31 @@
         "status":  "Sold",
         "photos":  [
 
+                   ]
+    },
+    {
+        "unit":  "PIFZ305016",
+        "slug":  "2005-stoughton-53ft-dry-van-pifz305016",
+        "vin":  "1DW1A53215S830150",
+        "title":  "53\u0027 Dry Van — Stoughton",
+        "make":  "Stoughton",
+        "type":  "Dry Van",
+        "year":  2005,
+        "length":  "53\u0027",
+        "price":  5500,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/PIFZ305016/1.jpg",
+                       "/assets/photos/PIFZ305016/2.jpg",
+                       "/assets/photos/PIFZ305016/3.jpg",
+                       "/assets/photos/PIFZ305016/4.jpg",
+                       "/assets/photos/PIFZ305016/5.jpg",
+                       "/assets/photos/PIFZ305016/6.jpg",
+                       "/assets/photos/PIFZ305016/7.jpg",
+                       "/assets/photos/PIFZ305016/8.jpg",
+                       "/assets/photos/PIFZ305016/9.jpg",
+                       "/assets/photos/PIFZ305016/10.jpg"
                    ]
     },
     {
