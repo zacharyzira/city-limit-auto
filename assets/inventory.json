@@ -75,6 +75,22 @@
                    ]
     },
     {
+        "unit":  "34113",
+        "slug":  "2014-utility-53ft-dry-van-plate-34113",
+        "vin":  "1UYVS253XEG766557",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2014,
+        "length":  "53\u0027",
+        "price":  12500,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
+                   ]
+    },
+    {
         "unit":  "40114",
         "slug":  "2015-utility-53ft-dry-van-plate-40114",
         "vin":  "1UYVS253XFP089415",
@@ -326,6 +342,22 @@
         "price":  9500,
         "suspension":  "Spring",
         "status":  "Pending Sale",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PND204",
+        "slug":  "2009-wabash-53ft-dry-van-plate-pnd204",
+        "vin":  "1JJV532W59L320735",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Spring",
+        "status":  "Available",
         "photos":  [
 
                    ]
@@ -1813,6 +1845,31 @@
                        "/assets/photos/CTLZ533907/8.jpg",
                        "/assets/photos/CTLZ533907/9.jpg",
                        "/assets/photos/CTLZ533907/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "CTLZ533908",
+        "slug":  "2012-vanguard-53ft-dry-van-plate-ctlz533908",
+        "vin":  "5V8VC5326CM204108",
+        "title":  "53\u0027 Dry Van - Plate — Vanguard",
+        "make":  "Vanguard",
+        "type":  "Dry Van - Plate",
+        "year":  2012,
+        "length":  "53\u0027",
+        "price":  10000,
+        "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+                       "/assets/photos/CTLZ533908/1.jpg",
+                       "/assets/photos/CTLZ533908/2.jpg",
+                       "/assets/photos/CTLZ533908/3.jpg",
+                       "/assets/photos/CTLZ533908/4.jpg",
+                       "/assets/photos/CTLZ533908/5.jpg",
+                       "/assets/photos/CTLZ533908/6.jpg",
+                       "/assets/photos/CTLZ533908/7.jpg",
+                       "/assets/photos/CTLZ533908/8.jpg",
+                       "/assets/photos/CTLZ533908/9.jpg",
+                       "/assets/photos/CTLZ533908/10.jpg"
                    ]
     },
     {
