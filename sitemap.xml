@@ -146,24 +146,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://citylimitauto.com/inventory/2011-wabash-53ft-dry-van-119954.html</loc>
-    <lastmod>2026-11-17</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2011-wabash-53ft-dry-van-119954.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2011-wabash-53ft-dry-van-119954.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2011-wabash-53ft-dry-van-119954.html"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://citylimitauto.com/es/inventory/2011-wabash-53ft-dry-van-119954.html</loc>
-    <lastmod>2026-11-17</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2011-wabash-53ft-dry-van-119954.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2011-wabash-53ft-dry-van-119954.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2011-wabash-53ft-dry-van-119954.html"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://citylimitauto.com/inventory/2015-utility-53ft-dry-van-plate-19814.html</loc>
     <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2015-utility-53ft-dry-van-plate-19814.html"/>
@@ -268,6 +250,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2015-utility-53ft-dry-van-plate-46414.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2015-utility-53ft-dry-van-plate-46414.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2015-utility-53ft-dry-van-plate-46414.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/inventory/2006-wabash-53ft-501067.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2006-wabash-53ft-501067.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2006-wabash-53ft-501067.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2006-wabash-53ft-501067.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citylimitauto.com/es/inventory/2006-wabash-53ft-501067.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://citylimitauto.com/inventory/2006-wabash-53ft-501067.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://citylimitauto.com/es/inventory/2006-wabash-53ft-501067.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://citylimitauto.com/inventory/2006-wabash-53ft-501067.html"/>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
