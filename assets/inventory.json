@@ -26,7 +26,7 @@
         "length":  "53\u0027",
         "price":  13500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/19814/1.jpg",
                        "/assets/photos/19814/2.jpg",
@@ -220,22 +220,6 @@
                        "/assets/photos/81851/8.jpg",
                        "/assets/photos/81851/9.jpg",
                        "/assets/photos/81851/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "CTLZ532498",
-        "slug":  "2010-wabash-53ft-dry-van-plate-ctlz532498",
-        "vin":  "1JJV532D0AL363110",
-        "title":  "53\u0027 Dry Van - Plate — Wabash",
-        "make":  "Wabash",
-        "type":  "Dry Van - Plate",
-        "year":  2010,
-        "length":  "53\u0027",
-        "price":  8500,
-        "suspension":  "Spring",
-        "status":  "Available",
-        "photos":  [
-
                    ]
     },
     {
@@ -829,6 +813,22 @@
         "year":  2009,
         "length":  "53\u0027",
         "price":  7000,
+        "suspension":  "Spring",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "80432",
+        "slug":  "2009-great-dane-53ft-dry-van-plate-80432",
+        "vin":  "1GRAP06289K208272",
+        "title":  "53\u0027 Dry Van - Plate — Great Dane",
+        "make":  "Great Dane",
+        "type":  "Dry Van - Plate",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7500,
         "suspension":  "Spring",
         "status":  "Sold",
         "photos":  [
