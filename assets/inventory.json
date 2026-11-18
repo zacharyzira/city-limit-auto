@@ -50,31 +50,6 @@
                    ]
     },
     {
-        "unit":  "33514",
-        "slug":  "2015-utility-53ft-dry-van-plate-33514",
-        "vin":  "1UYVS2537FG088125",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2015,
-        "length":  "53\u0027",
-        "price":  13500,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/33514/1.jpg",
-                       "/assets/photos/33514/2.jpg",
-                       "/assets/photos/33514/3.jpg",
-                       "/assets/photos/33514/4.jpg",
-                       "/assets/photos/33514/5.jpg",
-                       "/assets/photos/33514/6.jpg",
-                       "/assets/photos/33514/7.jpg",
-                       "/assets/photos/33514/8.jpg",
-                       "/assets/photos/33514/9.jpg",
-                       "/assets/photos/33514/10.jpg"
-                   ]
-    },
-    {
         "unit":  "34113",
         "slug":  "2014-utility-53ft-dry-van-plate-34113",
         "vin":  "1UYVS253XEG766557",
@@ -91,57 +66,16 @@
                    ]
     },
     {
-        "unit":  "40114",
-        "slug":  "2015-utility-53ft-dry-van-plate-40114",
-        "vin":  "1UYVS253XFP089415",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2015,
-        "length":  "53\u0027",
-        "price":  13500,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-                       "/assets/photos/40114/1.jpg",
-                       "/assets/photos/40114/2.jpg",
-                       "/assets/photos/40114/3.jpg",
-                       "/assets/photos/40114/4.jpg",
-                       "/assets/photos/40114/5.jpg",
-                       "/assets/photos/40114/6.jpg",
-                       "/assets/photos/40114/7.jpg",
-                       "/assets/photos/40114/8.jpg",
-                       "/assets/photos/40114/9.jpg",
-                       "/assets/photos/40114/10.jpg"
-                   ]
-    },
-    {
-        "unit":  "46414",
-        "slug":  "2015-utility-53ft-dry-van-plate-46414",
-        "vin":  "1UYVS2538FG088201",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2015,
-        "length":  "53\u0027",
-        "price":  13500,
-        "suspension":  "Air",
-        "status":  "Available",
-        "photos":  [
-
-                   ]
-    },
-    {
         "unit":  "501067",
-        "slug":  "2006-wabash-53ft-501067",
+        "slug":  "2006-wabash-53ft-dry-van-plate-501067",
         "vin":  "1JJV532W66L982416",
-        "title":  "53\u0027  — Wabash",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
         "make":  "Wabash",
-        "type":  "",
+        "type":  "Dry Van - Plate",
         "year":  2006,
         "length":  "53\u0027",
-        "price":  6000,
-        "suspension":  "",
+        "price":  5500,
+        "suspension":  "Spring",
         "status":  "Available",
         "photos":  [
 
@@ -2503,6 +2437,22 @@
         "length":  "53\u0027",
         "price":  7000,
         "suspension":  "Air",
+        "status":  "Sold",
+        "photos":  [
+
+                   ]
+    },
+    {
+        "unit":  "PIFZ940032",
+        "slug":  "2004-wabash-53ft-dry-van-pifz940032",
+        "vin":  "1JJV532W44L869786",
+        "title":  "53\u0027 Dry Van — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van",
+        "year":  2004,
+        "length":  "53\u0027",
+        "price":  5000,
+        "suspension":  "Spring",
         "status":  "Sold",
         "photos":  [
 
