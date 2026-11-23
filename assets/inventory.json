@@ -85,7 +85,7 @@
         "length":  "53\u0027",
         "price":  13500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/27914/1.jpg",
                        "/assets/photos/27914/2.jpg",
@@ -213,6 +213,22 @@
                        "/assets/photos/501484/8.jpg",
                        "/assets/photos/501484/9.jpg",
                        "/assets/photos/501484/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "50313",
+        "slug":  "2014-utility-53ft-dry-van-plate-50313",
+        "vin":  "1UYVS2533EG766643",
+        "title":  "53\u0027 Dry Van - Plate — Utility",
+        "make":  "Utility",
+        "type":  "Dry Van - Plate",
+        "year":  2014,
+        "length":  "53\u0027",
+        "price":  12500,
+        "suspension":  "Air",
+        "status":  "Available",
+        "photos":  [
+
                    ]
     },
     {
