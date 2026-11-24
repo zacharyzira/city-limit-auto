@@ -201,7 +201,7 @@
         "length":  "53\u0027",
         "price":  6000,
         "suspension":  "Spring",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/501484/1.jpg",
                        "/assets/photos/501484/2.jpg",
@@ -232,31 +232,6 @@
                    ]
     },
     {
-        "unit":  "807014",
-        "slug":  "2007-utility-53ft-dry-van-plate-807014",
-        "vin":  "1UTVS25367G194759",
-        "title":  "53\u0027 Dry Van - Plate — Utility",
-        "make":  "Utility",
-        "type":  "Dry Van - Plate",
-        "year":  2007,
-        "length":  "53\u0027",
-        "price":  7500,
-        "suspension":  "Air",
-        "status":  "Pending Sale",
-        "photos":  [
-                       "/assets/photos/807014/1.jpg",
-                       "/assets/photos/807014/2.jpg",
-                       "/assets/photos/807014/3.jpg",
-                       "/assets/photos/807014/4.jpg",
-                       "/assets/photos/807014/5.jpg",
-                       "/assets/photos/807014/6.jpg",
-                       "/assets/photos/807014/7.jpg",
-                       "/assets/photos/807014/8.jpg",
-                       "/assets/photos/807014/9.jpg",
-                       "/assets/photos/807014/10.jpg"
-                   ]
-    },
-    {
         "unit":  "807030",
         "slug":  "2007-utility-53ft-dry-van-plate-807030",
         "vin":  "1UYVS25377G194723",
@@ -267,7 +242,7 @@
         "length":  "53\u0027",
         "price":  7500,
         "suspension":  "Air",
-        "status":  "Available",
+        "status":  "Pending Sale",
         "photos":  [
                        "/assets/photos/807030/1.jpg",
                        "/assets/photos/807030/2.jpg",
@@ -279,6 +254,22 @@
                        "/assets/photos/807030/8.jpg",
                        "/assets/photos/807030/9.jpg",
                        "/assets/photos/807030/10.jpg"
+                   ]
+    },
+    {
+        "unit":  "82415",
+        "slug":  "2009-wabash-53ft-dry-van-plate-82415",
+        "vin":  "1JJV532W89L319286",
+        "title":  "53\u0027 Dry Van - Plate — Wabash",
+        "make":  "Wabash",
+        "type":  "Dry Van - Plate",
+        "year":  2009,
+        "length":  "53\u0027",
+        "price":  7500,
+        "suspension":  "Spring",
+        "status":  "Available",
+        "photos":  [
+
                    ]
     },
     {
